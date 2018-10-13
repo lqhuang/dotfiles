@@ -1,0 +1,15 @@
+{
+    "installed_packages": [
+        "Anaconda",
+        "MagicPython",
+        "SideBarEnhancements",
+        "Emmet",
+        "markdownPreview",
+        "Git",
+        "GitGutter",
+        "GitSavvy",
+        "GitStatusBar",
+        "SublimeLinter",
+        "SublimeLinter-pyyaml"
+    ]
+}

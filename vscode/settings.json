@@ -1,0 +1,15 @@
+{
+    // editor config
+    "files.trimTrailingWhitespace": true,
+    "files.eol": "\n",
+    "editor.fontSize": 16,
+
+    // Python formatter
+    "python.formatting.provider": "yapf",
+    "python.formatting.yapfArgs": [
+        "--style",
+        "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true}"
+    ],
+    // Python doc
+    "autoDocstring.docstringFormat": "google"
+}

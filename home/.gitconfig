@@ -1,0 +1,13 @@
+# git-config: https://git-scm.com/docs/git-config
+# Customizing-Git-Git-Configuration: https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+# some commented options have been default from git 2.0
+[core]
+	autocrlf = input  # Dealing with line endings
+	# whitespace = trailing-space,space-before-tab,-indent-with-non-tab
+
+[push]
+	# default = simple
+	followTags = true
+
+# [color]
+	# ui = auto
