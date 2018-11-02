@@ -1,0 +1,9 @@
+davidanson.vscode-markdownlint
+donjayamanne.githistory
+eamodio.gitlens
+jithurjacob.nbpreviewer
+justusadam.language-haskell
+ms-python.python
+ms-vscode.cpptools
+njpwerner.autodocstring
+peterjausovec.vscode-docker

@@ -1,8 +1,16 @@
+// Depending on your platform, the user settings file is located here:
+//     Windows %APPDATA%\Code\User\settings.json
+//     macOS $HOME/Library/Application Support/Code/User/settings.json
+//     Linux $HOME/.config/Code/User/settings.json
 {
     // editor config
     "files.trimTrailingWhitespace": true,
     "files.eol": "\n",
-    "editor.fontSize": 16,
+    "editor.fontSize": 15,
+
+    // C++ format style
+    // http://clang.llvm.org/docs/ClangFormatStyleOptions.html
+    "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, IndentWidth: 4, MaxEmptyLinesToKeep: 2}",
 
     // Python formatter
     "python.formatting.provider": "yapf",
