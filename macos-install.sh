@@ -31,6 +31,8 @@ apps=(
     # cmake
     # coreutils
     # findutils
+    htop
+    tmux
     # wget
     zsh
 )
@@ -46,12 +48,16 @@ caskapps=(
     # vagrant
 )
 
+brew doctor
+
 brew tap homebrew/versions
 brew update
 brew upgrade --all
 brew install ${apps[@]}
 
 brew tap caskroom/versions
+brew tap caskroom/cask
+brew tap cashroom/fonts
 brew cask update
 brew cask install --appdir="/Applications" ${caskapps[@]}
 brew cleanup
