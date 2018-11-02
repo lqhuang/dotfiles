@@ -105,3 +105,6 @@ alias deactivate="source deactivate"
 
 # set locale config
 export LC_ALL=en_US.UTF-8
+
+# simple safe-rm
+alias rm="/usr/local/bin/rm.sh"

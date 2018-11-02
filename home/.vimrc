@@ -14,7 +14,7 @@ set autowrite  " Automatically save before commands like :next and :make
 set hidden  " Hide buffers when they are abandoned
 set mouse=a  " Enable mouse usage (all modes)
 
-set smarttab=on  " Insert blanks according to tab settings are used in other places
+set smarttab  " Insert blanks according to tab settings are used in other places
 set tabstop=4  " Number of spaces that a <Tab> in the file counts for.
 set softtabstop=4     " Number of spaces that a <Tab> counts for while performing editing operations, like inserting a <Tab> or using <BS>.
 set shiftwidth=4  " Set the shift width (the number of characters text is moved sideways for the shift command (<< and >>)).
