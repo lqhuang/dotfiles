@@ -1,0 +1,27 @@
+[repositories]
+  ## sbt documentation - [Proxy Repositories](https://www.scala-sbt.org/1.x/docs/Proxy-Repositories.html)
+  local
+
+  ## huawei (https://mirrors.huaweicloud.com)
+  huaweicloud-ivy: https://mirrors.huaweicloud.com/repository/ivy/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+  huaweicloud-maven: https://mirrors.huaweicloud.com/repository/maven/
+
+  ## aliyun (https://maven.aliyun.com/mvn/view)
+  aliyun-maven: https://maven.aliyun.com/repository/public/
+
+  ## typesafe
+  typesafe-ivy-releases: https://repo.typesafe.com/typesafe/ivy-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+  typesafe-maven-releases: https://repo.typesafe.com/typesafe/maven-releases/
+
+  ## sbt plugin
+  sbt-plugin-releases: https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+
+  ## maven central
+  maven-central: http://repo1.maven.org/maven2
+  # maven-central-2: http://repo2.maven.org/maven2
+
+  ## sonatype
+  # sonatype-maven: https://repository.sonatype.org/content/groups/public/
+  # sonatype-oss-public: https://oss.sonatype.org/content/repositories/public
+  # sonatype-oss-releases: https://oss.sonatype.org/content/repositories/releases
+  # sonatype-oss-snapshots: https://oss.sonatype.org/content/repositories/snapshots
