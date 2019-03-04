@@ -1,13 +1,15 @@
 // Settings in here override those in "Default/Preferences.sublime-settings",
 // and are overridden in turn by syntax-specific settings.
 {
-	"default_line_ending": "unix",
-	"font_size": 13,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"theme": "Default.sublime-theme",
-	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+    "default_line_ending": "unix",
+    "font_size": 13,
+    "ignored_packages": [
+        // "SideBarEnhancements",
+        "Vintage"
+    ],
+    "show_encoding": true,
+    "show_line_endings": true,
+    "theme": "Default.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true
 }
