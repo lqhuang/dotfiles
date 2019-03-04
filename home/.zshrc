@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/${USER}/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -65,6 +65,8 @@ ZSH_THEME="af-magic"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  zsh-completions
+  kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -99,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # miniconda
-export PATH="$PATH:/home/${USER}/Software/miniconda3/bin"
+export PATH="${PATH}:${HOME}/Software/miniconda3/bin"
 alias activate="source activate"
 alias deactivate="source deactivate"
 
@@ -108,3 +110,17 @@ export LC_ALL=en_US.UTF-8
 
 # simple safe-rm
 alias rm="/usr/local/bin/rm.sh"
+# custom PATH for Software
+export PATH="${PATH}:${HOME}/Software/bin"
+
+# Haskell Stack
+export PATH="${PATH}:${HOME}/.local/bin"
+
+# Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/lqhuang/.sdkman"
+[[ -s "/home/lqhuang/.sdkman/bin/sdkman-init.sh" ]] && source "/home/lqhuang/.sdkman/bin/sdkman-init.sh"
