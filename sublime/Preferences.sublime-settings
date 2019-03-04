@@ -2,10 +2,9 @@
 // and are overridden in turn by syntax-specific settings.
 {
 	"default_line_ending": "unix",
-	"font_size": 12,
+	"font_size": 13,
 	"ignored_packages":
 	[
-		"SideBarEnhancements",
 		"Vintage"
 	],
 	"theme": "Default.sublime-theme",

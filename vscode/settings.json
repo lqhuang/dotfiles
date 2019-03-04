@@ -8,6 +8,16 @@
     "files.eol": "\n",
     "editor.fontSize": 15,
 
+    "breadcrumbs.enabled": true,
+    "window.zoomLevel": 0,
+
+    // language specific settings
+    "[markdown]": {
+        "editor.renderWhitespace": "boundary",
+        "editor.wordWrap": "on",
+        "files.trimTrailingWhitespace": false
+    },
+
     // C++ format style
     // http://clang.llvm.org/docs/ClangFormatStyleOptions.html
     "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, IndentWidth: 4, MaxEmptyLinesToKeep: 2}",
@@ -19,5 +29,5 @@
         "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true}"
     ],
     // Python doc
-    "autoDocstring.docstringFormat": "google"
+    "autoDocstring.docstringFormat": "numpy"
 }
