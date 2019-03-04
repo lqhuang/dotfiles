@@ -1,7 +1,22 @@
+## .condarc file location
+## unix-like: $HOME/.condarc
+## windows: %HOME%\.condarc
+## full example is here https://conda.io/projects/conda/en/latest/configuration.html
 channels:
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
-  # - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  # - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+  # - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
   - defaults
 # show_channel_urls: yes
+
+## https://conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html
+## if you are behind a proxy
+
+# proxy_servers:
+#     http: http://user:pass@hostname:port
+#     https: http://user:pass@hostname:port
+# ssl_verify: False
+
+## or just left it by default, proxy settings are pulled from the `HTTP_PROXY` and
+## `HTTPS_PROXY` environment variables or the system.
