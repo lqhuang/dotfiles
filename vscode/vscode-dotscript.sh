@@ -12,7 +12,7 @@ print_usage() {
 LISTNAME=extensions.txt
 LISTFILE=$(dirname `realpath $0`)/$LISTNAME
 
-dump () {
+dump() {
     local system=$(uname -s)
     local extdir=${HOME}/.vscode/extensions
     local curr_extensions=()
@@ -38,7 +38,7 @@ dump () {
     return 0
 }
 
-install () {
+install() {
     # extensions=(
     #     davidanson.vscode-markdownlint
     #     donjayamanne.githistory
@@ -65,7 +65,7 @@ install () {
     return 0
 }
 
-
+## main
 subcommand=$1
 
 case $subcommand in

@@ -3,7 +3,7 @@
 REPODIR=$(dirname `realpath $0`)
 KERNEL=$(uname -s)
 
-link_dotfile () {
+link_dotfile() {
     local target=$1
     local dest=$2
     local backupdir=$(dirname $target)
