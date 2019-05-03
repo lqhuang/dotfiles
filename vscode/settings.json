@@ -4,12 +4,19 @@
 //     Linux $HOME/.config/Code/User/settings.json
 {
     // editor config
-    "files.trimTrailingWhitespace": true,
-    "files.eol": "\n",
     "editor.fontSize": 15,
-
     "breadcrumbs.enabled": true,
     "window.zoomLevel": 0,
+
+    "files.eol": "\n",
+    "files.trimTrailingWhitespace": true,
+    // visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
+    // https://code.visualstudio.com/docs/setup/linux
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true
+      },
 
     // language specific settings
     "[markdown]": {
