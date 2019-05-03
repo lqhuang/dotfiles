@@ -21,7 +21,7 @@ sudo ubuntu-drivers autoinstall
 
 # Install tuna mirror source
 # Debian
-add_debian_tuna_sources () {
+add_debian_tuna_sources() {
     sudo apt install apt-transport-https
     sudo cat > /etc/apt/sources.list.d/tuna-sources.list << EOL
 # Debian
@@ -37,8 +37,8 @@ EOL
 }
 
 # Ubuntu
-add_ubuntu_tuna_sources () {
-    sudo cat > ./tuna-sources.list << EOL
+add_ubuntu_tuna_sources() {
+    sudo cat > /etc/apt/sources.list.d/tuna-sources.list << EOL
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ $(lsb_release -cs) main restricted universe multiverse
 # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ $(lsb_release -cs) main restricted universe multiverse
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ $(lsb_release -cs)-updates main restricted universe multiverse
@@ -69,14 +69,14 @@ systemctl get-default
 
 
 # SSH server
-sudo apt install openssh-server
-sudo systemctl restart sshd.service
+# sudo apt install openssh-server
+# sudo systemctl restart sshd.service
 
 
 # utils
 sudo apt install net-tools curl -y
 sudo apt install htop tmux zsh git -y
-sudo apt build-essential -y
+sudo apt install build-essential -y
 
 
 # oh-my-zsh
@@ -96,21 +96,28 @@ bash ~/Downloads/Miniconda3-latest-Linux-x86_64.sh -b -p ~/Software/miniconda3
 
 
 # docker-ce
+# DISTRO_LOWER=$(echo ${DISTRO} | tr '[:upper:]' '[:lower:]')
+DISTRO_LOWER=${DISTRO,,}  # Non Posix: BASH 4.0 to lowercase
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+curl -fsSL https://download.docker.com/linux/${DISTRO_LOWER}/gpg | sudo apt-key add -
+# sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/${DISTRO_LOWER} $(lsb_release -cs) stable"
+echo "deb [arch=amd64] https://download.docker.com/linux/${DISTRO_LOWER} $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
 sudo apt-get update
 sudo apt-get install docker-ce -y
-sudo usermod -aG docker $USER
+sudo usermod -aG docker ${USER}
 # you still need to log out and log in again to make this change work
 # or
 # su root  # switch to root user
 # su ${USER}  # switch back again
 
+# docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+# check https://github.com/docker/compose/releases for latest compose release
+sudo chmod +x /usr/local/bin/docker-compose
 
 # vscode
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /tmp/microsoft.gpg
-sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo install -o root -g root -m 644 /tmp/microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo rm /tmp/microsoft.gpg
 # sudo apt-get install apt-transport-https
@@ -143,25 +150,43 @@ sudo apt-get update
 sudo apt-get install google-chrome-stable -y
 
 
-# dev-tools
-# sudo apt-get install clang-format
-
-
 # repair Firefox download file name
 sudo apt install nautilus-filename-repairer
 
 
 # Install LaTex fundamental packages
 sudo apt-get install -y texlive-latex-base
-
+# xelatex
+sudo apt-get install -y texlive-xetex
 
 # Haskell Stack
 curl -sSL https://get.haskellstack.org/ | sh
 
-stack upgrade
-stack setup
+stack upgrade --binary-only
+# stack setup
 # stack install hlint
 
 
 # rust
-curl https://sh.rustup.rs -sSf | sh # -s -- -y
+# curl https://sh.rustup.rs -sSf | sh # -s -- -y
+
+# SDKMAN
+curl -s "https://get.sdkman.io" | bash
+
+# nvm - node / npm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+
+# Linuxbrew
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+
+
+# install kubectl
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+
+echo "source <(kubectl completion bash)" >> ~/.bashrc
+# or
+# plugins=(git zsh-completions kubectl)
+# for Oh-My-Zsh
+
