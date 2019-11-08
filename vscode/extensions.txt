@@ -5,5 +5,8 @@ jithurjacob.nbpreviewer
 justusadam.language-haskell
 ms-python.python
 ms-vscode.cpptools
+ms-vscode-remote.remote-ssh
+ms-vscode-remote.remote-ssh-edit
 njpwerner.autodocstring
-peterjausovec.vscode-docker
+redhat.vscode-yaml
+scala-lang.scala

@@ -1,10 +1,13 @@
-// Depending on your platform, the user settings file is located here:
-//     Windows %APPDATA%\Code\User\settings.json
-//     macOS $HOME/Library/Application Support/Code/User/settings.json
-//     Linux $HOME/.config/Code/User/settings.json
+/*
+ * Depending on your platform, the user settings file is located here:
+ *     Windows %APPDATA%\Code\User\settings.json
+ *     macOS $HOME/Library/Application Support/Code/User/settings.json
+ *     Linux $HOME/.config/Code/User/settings.json
+ */
 {
     // editor config
-    "editor.fontSize": 15,
+    "editor.fontSize": 16,
+    "diffEditor.ignoreTrimWhitespace": false,
     "breadcrumbs.enabled": true,
     "window.zoomLevel": 0,
 
@@ -33,7 +36,7 @@
     "python.formatting.provider": "yapf",
     "python.formatting.yapfArgs": [
         "--style",
-        "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true}"
+        "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true, coalesce_brackets: true}"
     ],
     // Python doc
     "autoDocstring.docstringFormat": "numpy"
