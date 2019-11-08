@@ -96,8 +96,8 @@ bash ~/Downloads/Miniconda3-latest-Linux-x86_64.sh -b -p ~/Software/miniconda3
 
 
 # docker-ce
-# DISTRO_LOWER=$(echo ${DISTRO} | tr '[:upper:]' '[:lower:]')
-DISTRO_LOWER=${DISTRO,,}  # Non Posix: BASH 4.0 to lowercase
+DISTRO_LOWER=$(echo ${DISTRO} | tr '[:upper:]' '[:lower:]')
+# DISTRO_LOWER=${DISTRO,,}  # Non Posix: BASH 4.0 to lowercase. Not work under zsh
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
 curl -fsSL https://download.docker.com/linux/${DISTRO_LOWER}/gpg | sudo apt-key add -
 # sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/${DISTRO_LOWER} $(lsb_release -cs) stable"
@@ -110,10 +110,12 @@ sudo usermod -aG docker ${USER}
 # su root  # switch to root user
 # su ${USER}  # switch back again
 
+
 # docker-compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 # check https://github.com/docker/compose/releases for latest compose release
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+
 
 # vscode
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /tmp/microsoft.gpg
@@ -123,7 +125,6 @@ sudo rm /tmp/microsoft.gpg
 # sudo apt-get install apt-transport-https
 sudo apt-get update
 sudo apt-get install code
-
 
 # sublime
 # sublime https://www.sublimetext.com/docs/3/linux_repositories.html
@@ -159,6 +160,7 @@ sudo apt-get install -y texlive-latex-base
 # xelatex
 sudo apt-get install -y texlive-xetex
 
+
 # Haskell Stack
 curl -sSL https://get.haskellstack.org/ | sh
 
@@ -167,14 +169,18 @@ stack upgrade --binary-only
 # stack install hlint
 
 
-# rust
+# rustup
 # curl https://sh.rustup.rs -sSf | sh # -s -- -y
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 
 # SDKMAN
 curl -s "https://get.sdkman.io" | bash
 
+
 # nvm - node / npm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+
 
 # Linuxbrew
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
@@ -189,4 +195,3 @@ echo "source <(kubectl completion bash)" >> ~/.bashrc
 # or
 # plugins=(git zsh-completions kubectl)
 # for Oh-My-Zsh
-
