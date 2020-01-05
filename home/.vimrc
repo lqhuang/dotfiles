@@ -41,6 +41,8 @@ set shiftround     " <Tab>(>>) indents to next multiple of 'shiftwidth'.
 set autoindent     " Copy indent from current line when starting a new line/
 set smartindent    " Do smart autoindenting when starting a new line.
 
+set autoread       " Set to auto read when a file is changed from the outside
+
 " filetype on         " To enable file type detection
 " filetype plugin on  " enable loading the plugin files for specific file types
 " filetype indent on  " enable loading the indent file for specific file types

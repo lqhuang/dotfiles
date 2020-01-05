@@ -17,8 +17,8 @@
   sbt-plugin-releases: https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
 
   ## maven central
-  maven-central: http://repo1.maven.org/maven2
-  # maven-central-2: http://repo2.maven.org/maven2
+  maven-central: https://repo1.maven.org/maven2
+  # maven-central-2: https://repo2.maven.org/maven2
 
   ## sonatype
   # sonatype-maven: https://repository.sonatype.org/content/groups/public/
