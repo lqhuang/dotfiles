@@ -1,4 +1,8 @@
-# If you come from bash you might have to change your $PATH.
+if [[ -n $ZSH_PROF ]]; then
+  zmodload zsh/zprof
+fi
+
+# I f you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -10,6 +14,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="af-magic"
 # ZSH_THEME="fishy"
+# ZSH_THEME="ys"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -156,6 +161,10 @@ alias deactivate="conda deactivate"
 # set locale config
 export LC_ALL=en_US.UTF-8
 
+# set visual and editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # simple safe-rm
 alias rm="/usr/local/bin/rm.sh"
 # custom PATH for Software
@@ -165,17 +174,39 @@ export PATH="${PATH}:${HOME}/Software/bin"
 export PATH="${PATH}:${HOME}/.local/bin"
 
 # Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Defer initialization of nvm until nvm, node or a node-dependent command is
+# run. Ensure this block is only run once if .bashrc gets sourced multiple times
+# by checking whether __init_nvm is a function.
+if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+  declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'gulp' 'grunt' 'webpack')
+  function __init_nvm() {
+    for i in "${__node_commands[@]}"; do unalias $i; done
+    \. "$NVM_DIR"/nvm.sh  # This loads nvm
+    \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    unset __node_commands
+    unset -f __init_nvm
+  }
+  for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
+fi
 
 # rustup
 export PATH="$HOME/.cargo/bin:$PATH"
 # rustup mirror from tuna
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+# export RUSTUP_UPDATE_ROOT=http://mirrors.ustc.edu.cn/rust-static/rustup
 
 export SBT_OPTS="-Dsbt.override.build.repos=true ${SBT_OPTS}"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="${HOME}/.sdkman"
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
+if [[ -n $ZSH_PROF ]]; then
+  zprof
+fi
