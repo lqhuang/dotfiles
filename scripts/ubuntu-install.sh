@@ -80,9 +80,10 @@ sudo apt install build-essential -y
 
 
 # oh-my-zsh
-sudo chsh -s $(which zsh)
-sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-
+# index: https://ohmyz.sh/
+sudo chsh -s $(which zsh) ${USER}
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # miniconda3
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh > ~/Downloads/Miniconda3-latest-Linux-x86_64.sh
@@ -110,10 +111,12 @@ sudo usermod -aG docker ${USER}
 # su root  # switch to root user
 # su ${USER}  # switch back again
 
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
 
 # docker-compose
 # check https://github.com/docker/compose/releases for latest compose release
-sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.25.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 
@@ -179,8 +182,12 @@ curl -s "https://get.sdkman.io" | bash
 
 
 # nvm - node / npm
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+# index: https://github.com/nvm-sh/nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 
+# if you work in China.
+npm config set registry https://registry.npm.taobao.org/
+# npm config set registry https://r.cnpmjs.org/
 
 # Linuxbrew
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
