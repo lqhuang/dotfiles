@@ -41,8 +41,6 @@ set shiftround     " <Tab>(>>) indents to next multiple of 'shiftwidth'.
 set autoindent     " Copy indent from current line when starting a new line/
 set smartindent    " Do smart autoindenting when starting a new line.
 
-set autoread       " Set to auto read when a file is changed from the outside
-
 " filetype on         " To enable file type detection
 " filetype plugin on  " enable loading the plugin files for specific file types
 " filetype indent on  " enable loading the indent file for specific file types
@@ -53,7 +51,22 @@ syntax on  " Enable syntax highlighting
 
 set list  " Show non-printable characters.
 if has('multi_byte') && &encoding ==# 'utf-8'
-  let &listchars = 'tab:▸ ,extends:❯,precedes:❮,nbsp:±'
+    let &listchars = 'tab:▸ ,extends:❯,precedes:❮,nbsp:±'
 else
-  let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
+    let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
 endif
+
+" Move selection up/down (add =gv to reindent after move)
+" https://vim.fandom.com/wiki/Moving_lines_up_or_down
+nnoremap <C-S-Up> :m-2<CR>==
+nnoremap <C-S-Down> :m+<CR>==
+inoremap <C-S-Up> <Esc>:m-2<CR>==gi
+inoremap <C-S-Down> <Esc>:m+<CR>==gi
+vnoremap <C-S-Up> :m-2<CR>gv=gv
+vnoremap <C-S-Down> :m'>+<CR>gv=gv
+
+" share clipboard with system in macOS
+" let mapleader=";"
+" vmap <Leader>y :w !pbcopy<CR><CR>
+" nmap <Leader>y :w !pbcopy<CR><CR>
+" nmap <Leader>p :r !pbpaste<CR><CR>
