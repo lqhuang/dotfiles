@@ -10,7 +10,7 @@
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: xterm-256color
+  #TERM: alacritty
 
 window:
   # Window dimensions (changes require restart)
@@ -65,14 +65,14 @@ window:
   # Window title
   #title: Alacritty
 
-  # Window class (Linux only):
+  # Window class (Linux/BSD only):
   #class:
     # Application instance name
     #instance: Alacritty
     # General application class
     #general: Alacritty
 
-  # GTK theme variant (Linux only)
+  # GTK theme variant (Linux/BSD only)
   #
   # Override the variant of the GTK theme. Commonly supported values are `dark` and `light`.
   # Set this to `None` to use the default theme variant.
@@ -87,19 +87,7 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
-  # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
-
-# Spaces per Tab (changes require restart)
-#
-# This setting defines the width of a tab in cells.
-#
-# Some applications, like Emacs, rely on knowing about the width of a tab.
-# To prevent unexpected behavior in these applications, it's also required to
-# change the `it` value in terminfo when altering this setting.
-tabspaces: 8
-
-# Font configuration (changes require restart)
+# Font configuration
 font:
   # Normal (roman) font face
   #normal:
@@ -107,7 +95,7 @@ font:
     #
     # Default:
     #   - (macOS) Menlo
-    #   - (Linux) monospace
+    #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     #family: monospace
 
@@ -179,7 +167,7 @@ font:
   use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
 
 # Colors (iTerm 2 default theme)
 # https://github.com/jwilm/alacritty/wiki/Color-schemes
@@ -187,24 +175,24 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x101421'
-    foreground: '0xfffbf6'
+    background: '#101421'
+    foreground: '#fffbf6'
 
     # Bright and dim foreground colors
     #
     # The dimmed foreground color is calculated automatically if it is not present.
     # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
     # is `false`, the normal foreground color will be used.
-    #dim_foreground: '0x9a9a9a'
-    #bright_foreground: '0xffffff'
+    #dim_foreground: '#9a9a9a'
+    #bright_foreground: '#ffffff'
 
   # Cursor colors
   #
   # Colors which should be used to draw the terminal cursor. If these are unset,
   # the cursor color will be the inverse of the cell color.
   #cursor:
-  #  text: '0x000000'
-  #  cursor: '0xffffff'
+  #  text: '#000000'
+  #  cursor: '#ffffff'
 
   # Selection colors
   #
@@ -212,44 +200,44 @@ colors:
   # background is unset, selection color will be the inverse of the cell colors.
   # If only text is unset the cell text color will remain the same.
   #selection:
-  #  text: '0xeaeaea'
-  #  background: '0x404040'
+  #  text: '#eaeaea'
+  #  background: '#404040'
 
   # Normal colors
   normal:
-    black:   '0x2e2e2e'
-    red:     '0xeb4129'
-    green:   '0xabe047'
-    yellow:  '0xf6c744'
-    blue:    '0x47a0f3'
-    magenta: '0x7b5cb0'
-    cyan:    '0x64dbed'
-    white:   '0xe5e9f0'
+    black:   '#2e2e2e'
+    red:     '#eb4129'
+    green:   '#abe047'
+    yellow:  '#f6c744'
+    blue:    '#47a0f3'
+    magenta: '#7b5cb0'
+    cyan:    '#64dbed'
+    white:   '#e5e9f0'
 
   # Bright colors
   bright:
-    black:   '0x565656'
-    red:     '0xec5357'
-    green:   '0xc0e17d'
-    yellow:  '0xf9da6a'
-    blue:    '0x49a4f8'
-    magenta: '0xa47de9'
-    cyan:    '0x99faf2'
-    white:   '0xffffff'
+    black:   '#565656'
+    red:     '#ec5357'
+    green:   '#c0e17d'
+    yellow:  '#f9da6a'
+    blue:    '#49a4f8'
+    magenta: '#a47de9'
+    cyan:    '#99faf2'
+    white:   '#ffffff'
 
   # Dim colors
   #
   # If the dim colors are not set, they will be calculated automatically based
   # on the `normal` colors.
   #dim:
-  #  black:   '0x000000'
-  #  red:     '0x8c3336'
-  #  green:   '0x7a8530'
-  #  yellow:  '0x97822e'
-  #  blue:    '0x506d8f'
-  #  magenta: '0x80638e'
-  #  cyan:    '0x497e7a'
-  #  white:   '0x9a9a9a'
+  #  black:   '#000000'
+  #  red:     '#8c3336'
+  #  green:   '#7a8530'
+  #  yellow:  '#97822e'
+  #  blue:    '#506d8f'
+  #  magenta: '#80638e'
+  #  cyan:    '#497e7a'
+  #  white:   '#9a9a9a'
 
   # Indexed Colors
   #
@@ -257,7 +245,7 @@ colors:
   # When these are not set, they're filled with sensible defaults.
   #
   # Example:
-  #   `- { index: 16, color: '0xff00ff' }`
+  #   `- { index: 16, color: '#ff00ff' }`
   #
   indexed_colors: []
 
@@ -285,7 +273,7 @@ colors:
 visual_bell:
   animation: EaseOutExpo
   duration: 0
-  color: '0xffffff'
+  color: '#ffffff'
 
 # Background opacity
 #
@@ -294,7 +282,7 @@ visual_bell:
 background_opacity: 1.0
 
 selection:
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: false
@@ -325,7 +313,7 @@ live_config_reload: true
 #
 # Default:
 #   - (macOS) /bin/bash --login
-#   - (Linux) user login shell
+#   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 #shell:
 #  program: /bin/bash
@@ -338,61 +326,18 @@ live_config_reload: true
 # directory of the parent process will be used.
 working_directory: None
 
-# Windows 10 ConPTY backend (Windows only)
+# WinPTY backend (Windows only)
 #
-# This will enable better color support and may resolve other issues,
-# however this API and its implementation is still young and so is
-# disabled by default, as stability may not be as good as the winpty
-# backend.
+# Alacritty defaults to using the newer ConPTY backend if it is available,
+# since it resolves a lot of bugs and is quite a bit faster. If it is not
+# available, the the WinPTY backend will be used instead.
 #
-# Alacritty will fall back to the WinPTY automatically if the ConPTY
-# backend cannot be initialized.
-enable_experimental_conpty_backend: false
+# Setting this option to `true` makes Alacritty use the legacy WinPTY backend,
+# even if the ConPTY backend is available.
+#winpty_backend: false
 
 # Send ESC (\x1b) before characters when alt is pressed.
 alt_send_esc: true
-
-debug:
-  # Display the time it takes to redraw each frame.
-  render_timer: false
-
-  # Keep the log file after quitting Alacritty.
-  persistent_logging: false
-
-  # Log level
-  #
-  # Values for `log_level`:
-  #   - None
-  #   - Error
-  #   - Warn
-  #   - Info
-  #   - Debug
-  #   - Trace
-  log_level: Warn
-
-  # Print all received window events.
-  print_events: false
-
-  # Record all characters and escape sequences as test data.
-  ref_test: false
-
-# Mouse bindings
-#
-# Available fields:
-#   - mouse
-#   - action
-#   - mods (optional)
-#
-# Values for `mouse`:
-#   - Middle
-#   - Left
-#   - Right
-#   - Numeric identifier such as `5`
-#
-# All available `mods` and `action` values are documented in the key binding
-# section.
-mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
 
 mouse:
   # Click settings
@@ -416,7 +361,7 @@ mouse:
     #
     # Default:
     #   - (macOS) open
-    #   - (Linux) xdg-open
+    #   - (Linux/BSD) xdg-open
     #   - (Windows) explorer
     #launcher:
     #  program: xdg-open
@@ -432,6 +377,9 @@ mouse:
 #
 # Mouse bindings are specified as a list of objects, much like the key
 # bindings further below.
+#
+# To trigger mouse bindings when an application running within Alacritty captures the mouse, the
+# `Shift` modifier is automatically added as a requirement.
 #
 # Each mouse binding will specify a:
 #
@@ -502,6 +450,7 @@ mouse:
 #   - ScrollToBottom
 #   - ClearHistory
 #   - Hide
+#   - Minimize
 #   - Quit
 #   - ToggleFullscreen
 #   - SpawnNewInstance
@@ -549,8 +498,11 @@ mouse:
 # binding with the same triggers is defined. To unset a default binding, it can
 # be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
 # a no-op if you do not wish to receive input characters for that binding.
+#
+# If the same trigger is assigned to multiple actions, all of them are executed
+# at once.
 key_bindings:
-  # (Windows/Linux only)
+  # (Windows, Linux, and BSD only)
   #- { key: V,        mods: Control|Shift, action: Paste            }
   #- { key: C,        mods: Control|Shift, action: Copy             }
   #- { key: Insert,   mods: Shift,         action: PasteSelection   }
@@ -559,6 +511,8 @@ key_bindings:
   #- { key: Add,      mods: Control,       action: IncreaseFontSize }
   #- { key: Subtract, mods: Control,       action: DecreaseFontSize }
   #- { key: Minus,    mods: Control,       action: DecreaseFontSize }
+
+  # (Windows only)
   #- { key: Return,   mods: Alt,           action: ToggleFullscreen }
 
   # (macOS only)
@@ -571,6 +525,7 @@ key_bindings:
   #- { key: V,      mods: Command,         action: Paste            }
   #- { key: C,      mods: Command,         action: Copy             }
   #- { key: H,      mods: Command,         action: Hide             }
+  #- { key: M,      mods: Command,         action: Minimize         }
   #- { key: Q,      mods: Command,         action: Quit             }
   #- { key: W,      mods: Command,         action: Quit             }
   #- { key: F,      mods: Command|Control, action: ToggleFullscreen }
@@ -684,3 +639,24 @@ key_bindings:
 
   # Custom
   - { key: T,        mods: Control|Shift, action: SpawnNewInstance           }
+
+debug:
+  # Display the time it takes to redraw each frame.
+  render_timer: false
+
+  # Keep the log file after quitting Alacritty.
+  persistent_logging: false
+
+  # Log level
+  #
+  # Values for `log_level`:
+  #   - None
+  #   - Error
+  #   - Warn
+  #   - Info
+  #   - Debug
+  #   - Trace
+  log_level: Warn
+
+  # Print all received window events.
+  print_events: false
