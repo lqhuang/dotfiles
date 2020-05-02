@@ -12,9 +12,12 @@ export ZSH="${HOME}/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="af-magic"
-# ZSH_THEME="fishy"
-# ZSH_THEME="ys"
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  # ZSH_THEME="fishy"
+  ZSH_THEME="ys"
+else
+  ZSH_THEME="af-magic"
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -115,7 +118,7 @@ alias free='free -m'                      # show sizes in MB
 # # ex - archive extractor
 # # usage: extract <file>
 extract () {
-  if [ -f $1 ] ; then
+  if [ -f $1 ]; then
     case $1 in
       *.tar.bz2)   tar xjf $1    ;;
       *.tar.gz)    tar xzf $1    ;;
@@ -129,7 +132,7 @@ extract () {
       *.zip)       unzip $1      ;;
       *.Z)         uncompress $1 ;;
       *.7z)        7z x $1       ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
+      *)           echo "'$1' cannot be extracted via exract()" ;;
     esac
   else
     echo "'$1' is not a valid file"
