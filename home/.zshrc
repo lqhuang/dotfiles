@@ -174,7 +174,7 @@ alias rm="/usr/local/bin/rm.sh"
 export PATH="${PATH}:${HOME}/Software/bin"
 
 # Haskell Stack
-export PATH="${PATH}:${HOME}/.local/bin"
+export PATH="${HOME}/.local/bin:${PATH}"
 
 # Node Version Manager
 # export NVM_DIR="$HOME/.nvm"
@@ -200,7 +200,7 @@ fi
 
 # rustup
 export PATH="$HOME/.cargo/bin:$PATH"
-# rustup mirror from tuna
+# rustup mirror from tuna and ustc-tug
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
