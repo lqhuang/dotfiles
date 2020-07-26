@@ -202,7 +202,7 @@ fi
 export PATH="$HOME/.cargo/bin:$PATH"
 # rustup mirror from tuna
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
-# export RUSTUP_UPDATE_ROOT=http://mirrors.ustc.edu.cn/rust-static/rustup
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
 export SBT_OPTS="-Dsbt.override.build.repos=true ${SBT_OPTS}"
 
