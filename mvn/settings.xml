@@ -6,7 +6,7 @@
     <mirror>
       <id>aliyunmaven</id>
       <name>阿里云 Central 仓库</name>
-      <url>https://maven.aliyun.com/repository/central</url>
+      <url>https://maven.aliyun.com/repository/central/</url>
       <mirrorOf>*</mirrorOf>
     </mirror>
     <mirror>
