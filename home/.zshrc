@@ -204,7 +204,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
+# sbt / scala
 export SBT_OPTS="-Dsbt.override.build.repos=true ${SBT_OPTS}"
+export JVM_OPTS="-Dhttps.protocols=TLSv1.1,TLSv1.2 ${JVM_OPTS}"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="${HOME}/.sdkman"

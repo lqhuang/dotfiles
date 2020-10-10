@@ -13,7 +13,7 @@
   # aliyun-maven: https://maven.aliyun.com/repository/public/
 
   ## typesafe
-  typesafe-ivy-releases: https://repo.typesafe.com/typesafe/ivy-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+  # typesafe-ivy-releases: https://repo.typesafe.com/typesafe/ivy-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
   # typesafe-maven-releases: https://repo.typesafe.com/typesafe/maven-releases/
 
   ## sbt plugin
