@@ -33,8 +33,9 @@ ghc-options:
   "$everything": -haddock
 
 ### ADD THIS IF YOU LIVE IN CHINA
-# source for stackage repository
-setup-info: "http://mirrors.tuna.tsinghua.edu.cn/stackage/stack-setup.yaml"
+# source for stackage repository (stack >= v2.3.1)
+setup-info-locations:
+  - "http://mirrors.tuna.tsinghua.edu.cn/stackage/stack-setup.yaml"
 urls:
   latest-snapshot: http://mirrors.tuna.tsinghua.edu.cn/stackage/snapshots.json
 
