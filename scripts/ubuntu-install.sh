@@ -173,8 +173,10 @@ stack upgrade --binary-only
 
 
 # rustup
-# curl https://sh.rustup.rs -sSf | sh # -s -- -y
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile default --default-toolchain beta --no-modify-path
+# rustup component add rustfmt --toolchain beta-x86_64-unknown-linux-gnu
+# rustup component add clippy --toolchain beta-x86_64-unknown-linux-gnu
 
 
 # SDKMAN

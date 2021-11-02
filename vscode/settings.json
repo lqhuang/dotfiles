@@ -1,4 +1,4 @@
-/*
+/**
  * Depending on your platform, the user settings file is located here:
  *     Windows %APPDATA%\Code\User\settings.json
  *     macOS $HOME/Library/Application Support/Code/User/settings.json
@@ -7,37 +7,118 @@
 {
     // editor config
     "editor.fontSize": 16,
+    "editor.linkedEditing": true,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "selection",
+    "editor.suggest.preview": false,
+    "editor.guides.bracketPairs": true,
     "diffEditor.ignoreTrimWhitespace": false,
+    // apperance
     "breadcrumbs.enabled": true,
-    "window.zoomLevel": 0,
+    // "workbench.statusBar.visible": true,
+    "window.zoomLevel": 3,
 
+    // files behavior
     "files.eol": "\n",
     "files.trimTrailingWhitespace": true,
+    "files.maxMemoryForLargeFilesMB": 16384,
     // visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
     // https://code.visualstudio.com/docs/setup/linux
     "files.watcherExclude": {
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
-        "**/node_modules/*/**": true
-      },
+        "**/node_modules/*/**": true,
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
+
+    // others
+    // "terminal.integrated.inheritEnv": false,
 
     // language specific settings
     "[markdown]": {
         "editor.renderWhitespace": "boundary",
-        "editor.wordWrap": "on",
+        "editor.wordWrap": "bounded",
         "files.trimTrailingWhitespace": false
     },
+    "[haskell]": {
+        "editor.fontFamily": "'Fira Code', 'Cascadia Code', monospace",
+        "editor.fontLigatures": "'ss03', 'ss05', 'zero'",
+        "editor.defaultFormatter": "haskell.haskell"
+    },
+    "haskell.formattingProvider": "stylish-haskell",
+    "haskell.serverExecutablePath": "haskell-language-server-wrapper",
 
     // C++ format style
     // http://clang.llvm.org/docs/ClangFormatStyleOptions.html
     "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, IndentWidth: 4, MaxEmptyLinesToKeep: 2}",
 
-    // Python formatter
-    "python.formatting.provider": "yapf",
+    // Python
+    "python.formatting.provider": "black",
     "python.formatting.yapfArgs": [
         "--style",
-        "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true, coalesce_brackets: true}"
+        "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true, coalesce_brackets: false, split_before_dot: true}"
     ],
-    // Python doc
-    "autoDocstring.docstringFormat": "numpy"
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "79"
+    ],
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyArgs": [
+        "--follow-imports=normal",
+        "--show-column-numbers",
+        "--show-error-codes",
+        "--ignore-missing-imports"
+    ],
+    "python.linting.flake8Enabled": true,
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
+
+    // "autoDocstring.docstringFormat": "numpy",
+    "[python]": {
+        // "terminal.integrated.inheritEnv": false,
+        "editor.rulers": [79, 120]
+    },
+
+    // Others
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "metals.serverProperties": [
+        "-Dhttps.protocols=TLSv1.1,TLSv1.2,TLSv1.3"
+    ],
+    "rust-client.engine": "rust-analyzer",
+    "rust-analyzer.checkOnSave.command": "clippy",
+
+    // javascript, typescript
+    "typescript.preferences.quoteStyle": "single",
+    "typescript.suggest.completeFunctionCalls": true,
+    "eslint.format.enable": true,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+
+    // Proxy
+    // "http.proxy": "http://localhost:8118",
+
+    // if windows flicker
+    // "disable-hardware-acceleration": true, // set up this in ~/.vsocde/argv.json
+    // "window.titleBarStyle": "native",
+    // "terminal.integrated.rendererType": "canvas",
 }

@@ -78,8 +78,6 @@ fi
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  # kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -179,6 +177,7 @@ unset __conda_setup
 # > conda config --set auto_activate_base false
 alias activate="conda activate"
 alias deactivate="conda deactivate"
+alias pip="noglob pip"
 
 # set locale config
 export LC_ALL=en_US.UTF-8
@@ -189,10 +188,8 @@ export EDITOR="$VISUAL"
 
 # simple safe-rm
 alias rm="/usr/local/bin/rm.sh"
-# custom PATH for Software
-export PATH="${PATH}:${HOME}/Software/bin"
 
-# Haskell Stack
+# Custom software bin and Haskell Stack
 export PATH="${HOME}/.local/bin:${PATH}"
 
 # Node Version Manager

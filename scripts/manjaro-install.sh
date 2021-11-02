@@ -47,6 +47,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/manjaro/stable/$repo/$arch
 
 
 # Haskell
+pacman -S make
 yay -S stack-static
 
 
