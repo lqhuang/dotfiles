@@ -3,6 +3,9 @@
 # https://doc.rust-lang.org/cargo/reference/config.html
 # https://doc.rust-lang.org/cargo/reference/source-replacement.html
 
+[build]
+target-dir = "~/.cargo/target"
+
 # Configuration keys related to the registry
 [registry]
 default = "tuna" # Name of the default ("crates.io") registry to use
@@ -19,6 +22,9 @@ index = "https://mirrors.ustc.edu.cn/crates.io-index"
 [registries.sjtu]
 index = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index"
 
+[registries.rsproxy]
+index = "https://rsproxy.cn/crates.io-index"
+
 # Config source for crates-io
 [source.crates-io]
 registry = "https://github.com/rust-lang/crates.io-index"
@@ -32,3 +38,6 @@ registry = "https://mirrors.ustc.edu.cn/crates.io-index"
 
 [source.sjtu]
 registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index"
+
+[source.rsproxy]
+registry = "https://rsproxy.cn/crates.io-index"
