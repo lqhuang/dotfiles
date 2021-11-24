@@ -33,9 +33,6 @@
         "**/.ammonite": true
     },
 
-    // others
-    // "terminal.integrated.inheritEnv": false,
-
     // language specific settings
     "[markdown]": {
         "editor.renderWhitespace": "boundary",
@@ -81,16 +78,6 @@
         "editor.rulers": [79, 120]
     },
 
-    // Others
-    "[yaml]": {
-        "editor.defaultFormatter": "redhat.vscode-yaml"
-    },
-    "metals.serverProperties": [
-        "-Dhttps.protocols=TLSv1.1,TLSv1.2,TLSv1.3"
-    ],
-    "rust-client.engine": "rust-analyzer",
-    "rust-analyzer.checkOnSave.command": "clippy",
-
     // javascript, typescript
     "typescript.preferences.quoteStyle": "single",
     "typescript.suggest.completeFunctionCalls": true,
@@ -112,7 +99,22 @@
     },
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    // Others
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "metals.serverProperties": [
+        "-Dhttps.protocols=TLSv1.1,TLSv1.2,TLSv1.3"
+    ],
+    "rust-client.engine": "rust-analyzer",
+    "rust-analyzer.checkOnSave.command": "clippy",
+    "redhat.telemetry.enabled": false,
+    "restructuredtext.experimental": true
 
     // Proxy
     // "http.proxy": "http://localhost:8118",
