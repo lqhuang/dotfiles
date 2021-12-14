@@ -33,6 +33,10 @@
         "**/.ammonite": true
     },
 
+    // If the Tasks: Run Task command is slow,
+    // disabling auto detect for task providers may help.
+    "task.autoDetect": "off",
+
     // language specific settings
     "[markdown]": {
         "editor.renderWhitespace": "boundary",
@@ -71,7 +75,6 @@
     "python.linting.flake8Enabled": true,
     "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "basic",
-
     // "autoDocstring.docstringFormat": "numpy",
     "[python]": {
         // "terminal.integrated.inheritEnv": false,

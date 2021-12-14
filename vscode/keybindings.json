@@ -4,5 +4,10 @@
         "key": "ctrl+w", // "cmd+w" for macOS
         "command": "workbench.action.closeWindow",
         "when": "!editorIsOpen && !multipleEditorGroups"
+    },
+    {
+        "key": "F4",
+        "command": "workbench.action.tasks.runTask",
+        "args": "fast-format"
     }
 ]
