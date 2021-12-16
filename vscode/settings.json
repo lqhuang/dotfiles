@@ -67,14 +67,17 @@
     ],
     "python.linting.mypyEnabled": true,
     "python.linting.mypyArgs": [
-        "--follow-imports=normal",
+        "--show-error-context",
         "--show-column-numbers",
         "--show-error-codes",
-        "--ignore-missing-imports"
+        "--no-pretty",
+        "--no-color-output"
     ],
     "python.linting.flake8Enabled": true,
     "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "basic",
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
     // "autoDocstring.docstringFormat": "numpy",
     "[python]": {
         // "terminal.integrated.inheritEnv": false,
@@ -110,6 +113,9 @@
     // Others
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
     },
     "metals.serverProperties": [
         "-Dhttps.protocols=TLSv1.1,TLSv1.2,TLSv1.3"
