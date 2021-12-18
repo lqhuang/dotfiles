@@ -16,7 +16,7 @@
     // apperance
     "breadcrumbs.enabled": true,
     // "workbench.statusBar.visible": true,
-    "window.zoomLevel": 3,
+    "window.zoomLevel": 2,
 
     // files behavior
     "files.eol": "\n",
@@ -118,12 +118,13 @@
         "editor.defaultFormatter": "tamasfe.even-better-toml"
     },
     "metals.serverProperties": [
-        "-Dhttps.protocols=TLSv1.1,TLSv1.2,TLSv1.3"
+        "-Dhttps.protocols=TLSv1.2,TLSv1.3"
     ],
     "rust-client.engine": "rust-analyzer",
     "rust-analyzer.checkOnSave.command": "clippy",
     "redhat.telemetry.enabled": false,
-    "restructuredtext.experimental": true
+    "restructuredtext.experimental": true,
+    "telemetry.telemetryLevel": "error"
 
     // Proxy
     // "http.proxy": "http://localhost:8118",
