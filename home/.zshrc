@@ -1,18 +1,17 @@
-if [[ -n $ZSH_PROF ]]; then
+if [[ -n ${ZSH_PROF} ]]; then
   zmodload zsh/zprof
 fi
 
-# I f you come from bash you might have to change your $PATH.
+# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
+# Set name of the theme to load --- if set to "random", it will # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
   # ZSH_THEME="fishy"
   ZSH_THEME="ys"
 else
@@ -21,7 +20,7 @@ fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -32,17 +31,16 @@ fi
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -54,6 +52,9 @@ fi
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -73,12 +74,11 @@ fi
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,34 +108,42 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-## inspired from manjaro `.zshrc` configuration
-setopt correct                                                  # Auto correct mistakes
+######## Custom ########
+KERNEL_NAME=$(uname -s)
+
+# inspired from manjaro `.zshrc` configuration
+setopt correct                            # Auto correct mistakes
 
 alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 
-# auto completion
+## auto completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
 zstyle ':completion:*' rehash true                              # automatically find new executables in path
-# Speed up completions
+## Speed up completions
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path $ZSH/cache
+zstyle ':completion:*' cache-path ${ZSH}/cache
 
 ## Plugins section: Enable fish style features
-# Use syntax highlighting
+### Use syntax highlighting: zsh-syntax-highlighting.zsh
+### Use history substring search: zsh-history-substring-search.zsh
+### Use autosuggestion: zsh-autosuggestions.zsh
+if [[ ${KERNEL_NAME} == "Linux" ]]; then
 # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# Use history substring search
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-# Use autosuggestion
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
+  source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+  source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+fi
 
-# extract - archive extractor
-# usage: extract <file>
+## extract - archive extractor
+## usage: extract <file>
 extract () {
-  if [ -f $1 ]; then
+  if [[ -f $1 ]]; then
     case $1 in
       *.tar.bz2)   tar xjf $1    ;;
       *.tar.gz)    tar xzf $1    ;;
@@ -156,7 +164,19 @@ extract () {
   fi
 }
 
-# miniconda
+# Env Setup
+
+## set locale config
+export LC_ALL=en_US.UTF-8
+
+## set visual and editor
+export VISUAL=vim
+export EDITOR="${VISUAL}"
+
+## simple safe-rm
+alias rm="/usr/local/bin/rm.sh"
+
+## miniconda
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('"'"${HOME}"'"/Software/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -166,7 +186,7 @@ else
     if [ -f "${HOME}/Software/miniconda3/etc/profile.d/conda.sh" ]; then
         . "${HOME}/Software/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="${HOME}/Software/miniconda3/bin:$PATH"
+        export PATH="${HOME}/Software/miniconda3/bin:${PATH}"
     fi
 fi
 unset __conda_setup
@@ -175,24 +195,25 @@ unset __conda_setup
 # Set the `auto_activate_base` parameter to `false` after installation,
 # which makes base environment not be activated on startup.
 # > conda config --set auto_activate_base false
-alias activate="conda activate"
-alias deactivate="conda deactivate"
 alias pip="noglob pip"
 
-# set locale config
-export LC_ALL=en_US.UTF-8
+# export PYENV_ROOT="${HOME}/.pyenv"
+# export PATH="${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:${PATH}"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
-# set visual and editor
-export VISUAL=vim
-export EDITOR="$VISUAL"
-
-# simple safe-rm
-alias rm="/usr/local/bin/rm.sh"
-
-# Custom software bin and Haskell Stack
+## Custom software bin and Haskell Stack
 export PATH="${HOME}/.local/bin:${PATH}"
 
-# Node Version Manager
+## Homebrew
+if [[ ${KERNEL_NAME} == "Darwin" ]]; then
+  export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}"
+  export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+  export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+  export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+fi
+
+## Node Version Manager
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -203,7 +224,7 @@ export PATH="${HOME}/.local/bin:${PATH}"
 if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-  declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'gulp' 'grunt' 'webpack')
+  declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'pnpm' 'gulp' 'grunt' 'webpack')
   function __init_nvm() {
     for i in "${__node_commands[@]}"; do unalias $i; done
     \. "$NVM_DIR"/nvm.sh  # This loads nvm
@@ -214,24 +235,24 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; the
   for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 fi
 
-# rustup
-export PATH="$HOME/.cargo/bin:$PATH"
+## rustup
+export PATH="${HOME}/.cargo/bin:${PATH}"
 # rustup mirror from tuna and ustc-tug
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+# export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+# export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
-export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
-
-# sbt / scala
+## sbt / scala
 export SBT_OPTS="-Dsbt.override.build.repos=true ${SBT_OPTS}"
 export JVM_OPTS="-Dhttps.protocols=TLSv1.1,TLSv1.2 ${JVM_OPTS}"
-export PATH="$PATH:/home/lqhuang/.cache/scalacli/local-repo/bin/scala-cli"
+SCALA_CLI="${HOME}/.cache/scalacli/local-repo/bin/scala-cli"
+[[ -s "${SCALA_CLI}/scala-cli" ]] && export PATH="${SCALA_CLI}:${PATH}"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="${HOME}/.sdkman"
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
-if [[ -n $ZSH_PROF ]]; then
+if [[ -n ${ZSH_PROF} ]]; then
   zprof
 fi
