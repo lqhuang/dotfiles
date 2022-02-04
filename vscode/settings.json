@@ -124,7 +124,13 @@
     "rust-analyzer.checkOnSave.command": "clippy",
     "redhat.telemetry.enabled": false,
     "restructuredtext.experimental": true,
-    "telemetry.telemetryLevel": "error"
+    "telemetry.telemetryLevel": "error",
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": true,
+        "plaintext": true,
+        "markdown": true
+    }
 
     // Proxy
     // "http.proxy": "http://localhost:8118",

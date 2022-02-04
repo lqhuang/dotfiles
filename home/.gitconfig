@@ -2,8 +2,11 @@
 # Customizing-Git-Git-Configuration: https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
 # some commented options have been default from git 2.0
 [user]
-    name =
-    email =
+    name = Lanqing Huang
+    email = lqhuang@outlook.com
+
+[init]
+	defaultBranch = master
 
 [core]
     autocrlf = input  # Dealing with line endings
