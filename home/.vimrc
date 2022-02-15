@@ -44,7 +44,7 @@ set shiftwidth=4   " Set the shift width (the number of characters text is moved
 set expandtab      " Use the appropriate number of spaces to insert a <Tab>.
 set shiftround     " <Tab>(>>) indents to next multiple of 'shiftwidth'.
 
-set autoindent     " Copy indent from current line when starting a new line/
+set autoindent     " Copy indent from current line when starting a new line
 set smartindent    " Do smart autoindenting when starting a new line.
 
 " filetype on         " To enable file type detection
@@ -79,3 +79,5 @@ vnoremap <C-S-Down> :m'>+<CR>gv=gv
 
 " Internal Package install
 packadd! matchit
+
+" set clipboard+=unnamedplus

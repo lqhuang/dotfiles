@@ -133,11 +133,15 @@ zstyle ':completion:*' cache-path ${ZSH}/cache
 ### Use autosuggestion: zsh-autosuggestions.zsh
 if [[ ${KERNEL_NAME} == "Linux" ]]; then
 # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+  if [[ -f /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
+    source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+  fi
 elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
-  source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-  source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+  if [[ -f /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
+    source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  fi
 fi
 
 ## extract - archive extractor
