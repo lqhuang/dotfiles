@@ -14,10 +14,7 @@
     "editor.guides.bracketPairs": true,
     "diffEditor.ignoreTrimWhitespace": false,
     // apperance
-    "breadcrumbs.enabled": true,
-    // "workbench.statusBar.visible": true,
     "window.zoomLevel": 2,
-
     // files behavior
     "files.eol": "\n",
     "files.trimTrailingWhitespace": true,
@@ -32,17 +29,26 @@
         "**/.metals": true,
         "**/.ammonite": true
     },
-
     // If the Tasks: Run Task command is slow,
     // disabling auto detect for task providers may help.
     "task.autoDetect": "off",
-
+    // telemetry
+    "telemetry.telemetryLevel": "error",
     // language specific settings
+    // markup language
     "[markdown]": {
         "editor.renderWhitespace": "boundary",
         "editor.wordWrap": "bounded",
+        "editor.fontFamily": "'Noto Sans Mono CJK SC', Menlo, Monaco, 'Courier New', monospace",
         "files.trimTrailingWhitespace": false
     },
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+    // Haskell
     "[haskell]": {
         "editor.fontFamily": "'Fira Code', 'Cascadia Code', monospace",
         "editor.fontLigatures": "'ss03', 'ss05', 'zero'",
@@ -50,12 +56,11 @@
     },
     "haskell.formattingProvider": "stylish-haskell",
     "haskell.serverExecutablePath": "haskell-language-server-wrapper",
-
     // C++ format style
     // http://clang.llvm.org/docs/ClangFormatStyleOptions.html
     "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, IndentWidth: 4, MaxEmptyLinesToKeep: 2}",
-
     // Python
+    "python.languageServer": "Pylance",
     "python.formatting.provider": "black",
     "python.formatting.yapfArgs": [
         "--style",
@@ -74,20 +79,27 @@
         "--no-color-output"
     ],
     "python.linting.flake8Enabled": true,
-    "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "basic",
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
     // "autoDocstring.docstringFormat": "numpy",
     "[python]": {
-        // "terminal.integrated.inheritEnv": false,
-        "editor.rulers": [79, 120]
+        "editor.rulers": [
+            79,
+            120
+        ]
     },
-
-    // javascript, typescript
+    // Rust
+    "rust-client.engine": "rust-analyzer",
+    "rust-analyzer.checkOnSave.command": "clippy",
+    // Scala
+    "metals.serverProperties": [
+        "-Dhttps.protocols=TLSv1.2,TLSv1.3"
+    ],
+    // Javascript/Typescript
     "typescript.preferences.quoteStyle": "single",
     "typescript.suggest.completeFunctionCalls": true,
-    "eslint.format.enable": true,
+    "svelte.enable-ts-plugin": true,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -95,7 +107,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -109,32 +121,17 @@
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-
     // Others
-    "[yaml]": {
-        "editor.defaultFormatter": "redhat.vscode-yaml"
-    },
-    "[toml]": {
-        "editor.defaultFormatter": "tamasfe.even-better-toml"
-    },
-    "metals.serverProperties": [
-        "-Dhttps.protocols=TLSv1.2,TLSv1.3"
-    ],
-    "rust-client.engine": "rust-analyzer",
-    "rust-analyzer.checkOnSave.command": "clippy",
     "redhat.telemetry.enabled": false,
     "restructuredtext.experimental": true,
-    "telemetry.telemetryLevel": "error",
     "github.copilot.enable": {
         "*": true,
         "yaml": true,
         "plaintext": true,
         "markdown": true
     }
-
     // Proxy
     // "http.proxy": "http://localhost:8118",
-
     // if windows flicker
     // "disable-hardware-acceleration": true, // set up this in ~/.vsocde/argv.json
     // "window.titleBarStyle": "native",
