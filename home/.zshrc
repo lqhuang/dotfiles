@@ -206,9 +206,6 @@ alias pip="noglob pip"
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 
-## Custom software bin and Haskell Stack
-export PATH="${HOME}/.local/bin:${PATH}"
-
 ## Homebrew
 if [[ ${KERNEL_NAME} == "Darwin" ]]; then
   export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}"
@@ -239,7 +236,17 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; the
   for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 fi
 
-## rustup
+## Deno
+if [[ -s "${HOME}/.deno/bin/deno" ]]; then
+  export DENO_INSTALL="${HOME}/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
+fi
+
+## Custom local bin for Haskell, Rust and etc
+export PATH="${HOME}/.local/bin:${PATH}"
+
+## Rust
+# rustup path
 export PATH="${HOME}/.cargo/bin:${PATH}"
 # rustup mirror from tuna and ustc-tug
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
@@ -250,8 +257,6 @@ export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
 ## sbt / scala
 export SBT_OPTS="-Dsbt.override.build.repos=true ${SBT_OPTS}"
 export JVM_OPTS="-Dhttps.protocols=TLSv1.1,TLSv1.2 ${JVM_OPTS}"
-SCALA_CLI="${HOME}/.cache/scalacli/local-repo/bin/scala-cli"
-[[ -s "${SCALA_CLI}/scala-cli" ]] && export PATH="${SCALA_CLI}:${PATH}"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="${HOME}/.sdkman"

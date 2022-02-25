@@ -10,7 +10,7 @@
     "editor.linkedEditing": true,
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "selection",
-    "editor.suggest.preview": false,
+    "editor.inlineSuggest.enabled": true,
     "editor.guides.bracketPairs": true,
     "diffEditor.ignoreTrimWhitespace": false,
     // apperance
@@ -38,7 +38,7 @@
     // markup language
     "[markdown]": {
         "editor.renderWhitespace": "boundary",
-        "editor.wordWrap": "bounded",
+        "editor.wordWrap": "off",
         "editor.fontFamily": "'Noto Sans Mono CJK SC', Menlo, Monaco, 'Courier New', monospace",
         "files.trimTrailingWhitespace": false
     },
@@ -82,7 +82,7 @@
     "python.analysis.typeCheckingMode": "basic",
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
-    // "autoDocstring.docstringFormat": "numpy",
+    "autoDocstring.docstringFormat": "numpy",
     "[python]": {
         "editor.rulers": [
             79,
@@ -90,7 +90,6 @@
         ]
     },
     // Rust
-    "rust-client.engine": "rust-analyzer",
     "rust-analyzer.checkOnSave.command": "clippy",
     // Scala
     "metals.serverProperties": [
