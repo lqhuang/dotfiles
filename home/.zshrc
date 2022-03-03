@@ -199,7 +199,6 @@ unset __conda_setup
 # Set the `auto_activate_base` parameter to `false` after installation,
 # which makes base environment not be activated on startup.
 # > conda config --set auto_activate_base false
-alias pip="noglob pip"
 
 # export PYENV_ROOT="${HOME}/.pyenv"
 # export PATH="${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:${PATH}"
