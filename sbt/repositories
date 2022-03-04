@@ -4,7 +4,7 @@
 
   ## huawei (https://mirrors.huaweicloud.com)
   huaweicloud-ivy: https://mirrors.huaweicloud.com/repository/ivy/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
-  huaweicloud-maven: https://mirrors.huaweicloud.com/repository/maven/
+  # huaweicloud-maven: https://mirrors.huaweicloud.com/repository/maven/
 
   ## Google
   google-maven-central-asia: https://maven-central-asia.storage-download.googleapis.com/maven2/
@@ -17,7 +17,7 @@
   # typesafe-maven-releases: https://repo.typesafe.com/typesafe/maven-releases/
 
   ## sbt plugin
-  # sbt-plugin-releases: https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+  sbt-plugin-releases: https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
 
   ## maven central
   # maven-central: https://repo1.maven.org/maven2
