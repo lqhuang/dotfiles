@@ -27,14 +27,12 @@ fi
 
 # packages to be installed
 apps=(
-    # caskroom/cask/brew-cask
     # cmake
     # coreutils
     # findutils
     htop
     tmux
     # wget
-    zsh
 )
 
 caskapps=(

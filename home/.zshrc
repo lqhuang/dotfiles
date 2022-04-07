@@ -177,9 +177,6 @@ export LC_ALL=en_US.UTF-8
 export VISUAL=vim
 export EDITOR="${VISUAL}"
 
-## simple safe-rm
-alias rm="/usr/local/bin/rm.sh"
-
 ## miniconda
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

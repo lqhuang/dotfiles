@@ -12,13 +12,19 @@
     "editor.renderWhitespace": "selection",
     "editor.inlineSuggest.enabled": true,
     "editor.guides.bracketPairs": true,
+    "editor.unicodeHighlight.allowedLocales": {
+        "zh-hans": true
+    },
     "diffEditor.ignoreTrimWhitespace": false,
+    // "workbench.fontAliasing": "antialiased",
     // apperance
+    "window.nativeTabs": true,
     "window.zoomLevel": 2,
     // files behavior
     "files.eol": "\n",
     "files.trimTrailingWhitespace": true,
     "files.maxMemoryForLargeFilesMB": 16384,
+    "explorer.experimental.fileNesting.enabled": true,
     // visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
     // https://code.visualstudio.com/docs/setup/linux
     "files.watcherExclude": {
@@ -29,6 +35,17 @@
         "**/.metals": true,
         "**/.ammonite": true
     },
+    "search.exclude": {
+        "**/.git": true,
+        "**/.github": true,
+        "**/.pnpm": true,
+        "**/.vscode": true,
+        "**/node_modules": true,
+        "**/package-lock.json": true,
+        "**/pnpm-lock.yaml": true,
+        "**/yarn.lock": true
+    },
+    // "explorer.experimental.fileNesting.enabled": true,
     // If the Tasks: Run Task command is slow,
     // disabling auto detect for task providers may help.
     "task.autoDetect": "off",
@@ -39,7 +56,7 @@
     "[markdown]": {
         "editor.renderWhitespace": "boundary",
         "editor.wordWrap": "off",
-        "editor.fontFamily": "'Noto Sans Mono CJK SC', Menlo, Monaco, 'Courier New', monospace",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
         "files.trimTrailingWhitespace": false
     },
     "[yaml]": {
@@ -79,6 +96,10 @@
         "--no-color-output"
     ],
     "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--ignore",
+        "E203,E501,W503"
+    ],
     "python.analysis.typeCheckingMode": "basic",
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
@@ -90,7 +111,7 @@
         ]
     },
     // Rust
-    "rust-analyzer.checkOnSave.command": "clippy",
+    // "rust-analyzer.checkOnSave.command": "clippy",
     // Scala
     "metals.serverProperties": [
         "-Dhttps.protocols=TLSv1.2,TLSv1.3"
@@ -128,7 +149,9 @@
         "yaml": true,
         "plaintext": true,
         "markdown": true
-    }
+    },
+    "extensions.ignoreRecommendations": true,
+    "prettier.proseWrap": "always"
     // Proxy
     // "http.proxy": "http://localhost:8118",
     // if windows flicker
