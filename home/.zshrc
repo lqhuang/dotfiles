@@ -110,9 +110,19 @@ source $ZSH/oh-my-zsh.sh
 
 ######## Custom ########
 KERNEL_NAME=$(uname -s)
+ARCH_NAME=$(uname -m)
+
+# BREW_PREFIX=$(brew --prefix)
+if [[ ${KERNEL_NAME} == "Darwin" ]]; then
+  if [[ ${ARCH_NAME} == 'x86_64' ]]; then
+    BREW_PREFIX="/usr/local"
+  else
+    BREW_PREFIX="/opt/homebrew"
+  fi
+fi
 
 # inspired from manjaro `.zshrc` configuration
-setopt correct                            # Auto correct mistakes
+# setopt correct                            # Auto correct mistakes
 
 alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
@@ -132,15 +142,15 @@ zstyle ':completion:*' cache-path ${ZSH}/cache
 ### Use history substring search: zsh-history-substring-search.zsh
 ### Use autosuggestion: zsh-autosuggestions.zsh
 if [[ ${KERNEL_NAME} == "Linux" ]]; then
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   if [[ -f /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
     source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   fi
 elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
-  if [[ -f /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
-    source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  if [[ -f ${BREW_PREFIX}/share/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
+    source ${BREW_PREFIX}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+    source ${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   fi
 fi
 
@@ -204,7 +214,7 @@ unset __conda_setup
 
 ## Homebrew
 if [[ ${KERNEL_NAME} == "Darwin" ]]; then
-  export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}"
+  [[ ${ARCH_NAME} == "arm64" ]] && export PATH="${BREW_PREFIX}/bin:${BREW_PREFIX}/sbin:${PATH}"
   # export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
   # export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
   export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"

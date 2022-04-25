@@ -25,6 +25,10 @@ set wildmenu    " command-line completion operates in an enhanced mode
 set incsearch   " Incremental search. Highlight while searching with / or ?.
 set hlsearch    " Keep matches highlighted.
 
+" set noendofline
+" set nofixendofline
+" https://stackoverflow.com/questions/16222530/why-do-i-need-vim-in-binary-mode-for-noeol-to-work
+
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>

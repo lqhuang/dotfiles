@@ -14,3 +14,4 @@ There are two locations where a `settings.xml` file may live:
 3. [阿里云云效 Maven](https://maven.aliyun.com/mvn/guide)
 4. [Maven Central mirror hosted on Google Cloud Storage](https://maven-central.storage.googleapis.com/index.html)
 5. [华为开源镜像站](https://mirrors.huaweicloud.com/)
+6. [Guide to Public Maven Repositories](https://www.deps.co/guides/public-maven-repositories/)
