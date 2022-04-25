@@ -6,7 +6,7 @@
  */
 {
     // editor config
-    "editor.fontSize": 16,
+    "editor.fontSize": 17,
     "editor.linkedEditing": true,
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "selection",
@@ -19,7 +19,7 @@
     // "workbench.fontAliasing": "antialiased",
     // apperance
     "window.nativeTabs": true,
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 1,
     // files behavior
     "files.eol": "\n",
     "files.trimTrailingWhitespace": true,
@@ -59,7 +59,10 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "files.trimTrailingWhitespace": false
     },
-    "[yaml]": {
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[yaml][html][json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[toml]": {
@@ -103,12 +106,17 @@
     "python.analysis.typeCheckingMode": "basic",
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
+    "black-formatter.args": [
+        "--line-length",
+        "79"
+    ],
     "autoDocstring.docstringFormat": "numpy",
     "[python]": {
         "editor.rulers": [
             79,
             120
-        ]
+        ],
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
     // Rust
     // "rust-analyzer.checkOnSave.command": "clippy",
@@ -116,31 +124,23 @@
     "metals.serverProperties": [
         "-Dhttps.protocols=TLSv1.2,TLSv1.3"
     ],
+    "metals.showImplicitArguments": true,
+    "metals.showImplicitConversionsAndClasses": true,
     // Javascript/Typescript
     "typescript.preferences.quoteStyle": "single",
     "typescript.suggest.completeFunctionCalls": true,
     "svelte.enable-ts-plugin": true,
-    "[typescriptreact]": {
+    "[javascript][typescript][javascriptreact][typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
+    // // SQL
+    // "[sql]": {
+    //     "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+    // },
+    // "Prettier-SQL.commaPosition": "before",
+    // "Prettier-SQL.tabSizeOverride": 2,
+    // "Prettier-SQL.linesBetweenQueries": 2,
+    // "Prettier-SQL.SQLFlavourOverride": "postgresql",
     // Others
     "redhat.telemetry.enabled": false,
     "restructuredtext.experimental": true,
@@ -156,6 +156,5 @@
     // "http.proxy": "http://localhost:8118",
     // if windows flicker
     // "disable-hardware-acceleration": true, // set up this in ~/.vsocde/argv.json
-    // "window.titleBarStyle": "native",
     // "terminal.integrated.rendererType": "canvas",
 }
