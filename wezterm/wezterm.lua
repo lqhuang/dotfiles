@@ -5,8 +5,14 @@
 -- `$HOME/.wezterm.lua` (where `$HOME` is the home directory of the user).
 -- Ref: https://wezfurlong.org/wezterm/config/files.html
 
-local wezterm = require 'wezterm';
+-- local wezterm = require 'wezterm';
 
 return {
-    font_size = 18.0
+    font_size = 18.0,
+
+    -- Tab Bar appearance
+    window_frame = {
+        -- The size of the font in the tab bar.
+        font_size = 14.0,
+    }
 }

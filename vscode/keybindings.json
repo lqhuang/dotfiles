@@ -1,7 +1,14 @@
 // Place your key bindings in this file to override the defaults
 [
     {
-        "key": "ctrl+w", // "cmd+w" for macOS
+        // "ctrl+w" for Linux
+        "key": "ctrl+w",
+        "command": "workbench.action.closeWindow",
+        "when": "!editorIsOpen && !multipleEditorGroups"
+    },
+    {
+        // "cmd+w" for macOS
+        "key": "cmd+w",
         "command": "workbench.action.closeWindow",
         "when": "!editorIsOpen && !multipleEditorGroups"
     },
