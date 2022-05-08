@@ -6,7 +6,7 @@
     email = lqhuang@outlook.com
 
 [init]
-	defaultBranch = master
+    defaultBranch = master
 
 [core]
     autocrlf = input  # Dealing with line endings
