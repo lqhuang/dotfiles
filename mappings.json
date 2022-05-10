@@ -1,0 +1,100 @@
+{
+  "cargo": {
+    "source": "cargo/config",
+    "target": "$HOME/.cargo/config"
+  },
+  "conda": {
+    "condarc": {
+      "source": "conda/.condarc",
+      "target": "${HOME}/.condarc"
+    }
+  },
+  "coursier": {
+    "_meta": {
+      "linux": { "target_dir": "${HOME}/.config/coursier" },
+      "darwin": {
+        "target_dir": "${HOME}/Library/Preferences/Coursier"
+      }
+    },
+    "mirror": {
+      "source": "coursier/mirror.properties",
+      "target": "${target_dir}/mirror.properties"
+    }
+  },
+  "git": {
+    "gitconfig": {
+      "source": "home/.gitconfig",
+      "target": "${HOME}/.gitconfig"
+    }
+  },
+  "haskell": {
+    "cabal": {},
+    "stack": {
+      "source": "stack/config.yaml",
+      "target": "$HOME/.stack/config.yaml"
+    }
+  },
+  "mvn": {
+    "source": "mvn/settings.xml",
+    "target": "${HOME}/.m2/settings.xml"
+  },
+  "node": {
+    "npmrc": {
+      "source": "home/.npmrc",
+      "target": "${HOME}/.npmrc"
+    }
+  },
+  "pip": {
+    "conf": {
+      "source": "pip/pip.conf",
+      "target": "${HOME}/.config/pip/pip.conf"
+    }
+  },
+  "sbt": {
+    "repositories": {
+      "source": "sbt/repositories",
+      "target": "${HOME}/.sbt/repositories"
+    }
+  },
+  "vim": {
+    "vimrc": {
+      "source": "home/.vimrc",
+      "target": "${HOME}/.vimrc"
+    }
+  },
+  "vscode": {
+    "_meta": {
+      "linux": {
+        "source_dir": "vscode/",
+        "target_dir": "${HOME}/.config/Code/User"
+      },
+      "darwin": {
+        "source_dir": "vscode/",
+        "target_dir": "${HOME}/Library/Application Support/Code/User"
+      }
+    },
+    "settings": {
+      "source": "${source_dir}/settings.json",
+      "target": "${target_dir}/settings.json"
+    },
+    "tasks": {
+      "source": "${source_dir}/tasks.json",
+      "target": "${target_dir}/tasks.json"
+    },
+    "keybindings": {
+      "source": "${source_dir}/keybindings.json",
+      "target": "${target_dir}/keybindings.json"
+    }
+  },
+  "wezterm": {
+    "source": "wezterm/wezterm.lua",
+    "target": "$HOME/.config/wezterm/wezterm.lua"
+  },
+  "zsh": {
+    "zshrc": {
+      "source": "home/.zshrc",
+      "target": "${HOME}/.zshrc",
+      "is_dir": false
+    }
+  }
+}
