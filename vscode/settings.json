@@ -162,6 +162,7 @@
     "[mongodb]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "shellformat.flag": "-bn -ci -kp",
     // General
     "github.copilot.enable": {
         "*": true,

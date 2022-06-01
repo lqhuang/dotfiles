@@ -109,8 +109,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 ######## Custom ########
-KERNEL_NAME=$(uname -s)
-ARCH_NAME=$(uname -m)
+KERNEL_NAME=$(uname -s)  # Linux / Darwin
+ARCH_NAME=$(uname -m)  # x86_64 / arm64
 
 # BREW_PREFIX=$(brew --prefix)
 if [[ ${KERNEL_NAME} == "Darwin" ]]; then
@@ -207,10 +207,12 @@ unset __conda_setup
 # which makes base environment not be activated on startup.
 # > conda config --set auto_activate_base false
 
-# export PYENV_ROOT="${HOME}/.pyenv"
-# export PATH="${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:${PATH}"
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
+if [[ ${KERNEL_NAME} == "Linux" ]]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
 
 ## Homebrew
 if [[ ${KERNEL_NAME} == "Darwin" ]]; then
@@ -292,6 +294,10 @@ export SBT_OPTS="-Dsbt.override.build.repos=true ${SBT_OPTS}"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="${HOME}/.sdkman"
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+# fpath+=~/.zfunc
 
 if [[ -n ${ZSH_PROF} ]]; then
   zprof
