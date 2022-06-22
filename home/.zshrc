@@ -129,6 +129,8 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 
 ## auto completion
+autoload -Uz compinit
+zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
 zstyle ':completion:*' rehash true                              # automatically find new executables in path
@@ -294,10 +296,6 @@ export SBT_OPTS="-Dsbt.override.build.repos=true ${SBT_OPTS}"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="${HOME}/.sdkman"
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
-
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-# fpath+=~/.zfunc
 
 if [[ -n ${ZSH_PROF} ]]; then
   zprof

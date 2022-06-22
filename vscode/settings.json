@@ -20,7 +20,6 @@
         "comments": "off",
         "strings": "on"
     },
-    "diffEditor.ignoreTrimWhitespace": false,
     "workbench.fontAliasing": "antialiased",
     // Terminal config
     "terminal.integrated.inheritEnv": false,
@@ -141,7 +140,7 @@
     "metals.serverProperties": [
         "-Dhttps.protocols=TLSv1.2,TLSv1.3"
     ],
-    "metals.showImplicitArguments": true,
+    "metals.showImplicitArguments": false,
     "metals.showImplicitConversionsAndClasses": true,
     // Javascript/Typescript
     "typescript.preferences.quoteStyle": "single",
@@ -162,7 +161,7 @@
     "[mongodb]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "shellformat.flag": "-bn -ci -kp",
+    "shellformat.flag": "-bn -ci -sr -kp",
     // General
     "github.copilot.enable": {
         "*": true,
