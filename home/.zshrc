@@ -209,11 +209,11 @@ unset __conda_setup
 # which makes base environment not be activated on startup.
 # > conda config --set auto_activate_base false
 
-if [[ ${KERNEL_NAME} == "Linux" ]]; then
+if [[ ${KERNEL_NAME} == "Linux" ]] && [[ -s "${HOME}/.pyenv" ]]; then
   export PYENV_ROOT="$HOME/.pyenv"
   command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
+  # eval "$(pyenv virtualenv-init -)"
 fi
 
 ## Homebrew

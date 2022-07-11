@@ -11,16 +11,19 @@ sudo pacman -Syu
 
 # install packages
 
-sudo pacman -S code vim tmux htop ps_mem
+sudo pacman -S vim tmux htop ps_mem
+# code
 
-
-sudo pacman -S docker
+sudo pacman -S docker docker-compose
+sudo usermod -aG docker ${USER}
 # add current user to `docker` group
 
 
 # dock application
 sudo pacman -S plank
 
+
+## Tunning
 
 # Enable TRIM for SSD
 sudo systemctl enable fstrim.timer
