@@ -11,7 +11,7 @@ sudo pacman -Syu
 
 # install packages
 
-sudo pacman -S vim tmux htop ps_mem
+sudo pacman -S vim tmux htop ps_mem tmux avahi lsof dig make
 # code
 
 sudo pacman -S docker docker-compose
@@ -31,8 +31,6 @@ sudo systemctl enable fstrim.timer
 
 echo "tcp_bbr" | sudo tee /etc/modules-load.d/network-tune.conf > /dev/null
 
-
-
 # aur
 yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save
 
@@ -50,7 +48,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/manjaro/stable/$repo/$arch
 
 
 # Haskell
-pacman -S make
-yay -S stack-static
+# pacman -S make
+# yay -S stack-static
 
 
