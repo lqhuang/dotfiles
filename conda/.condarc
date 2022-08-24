@@ -3,30 +3,46 @@
 ## windows: %HOME%\.condarc
 ## full example is here https://conda.io/projects/conda/en/latest/configuration.html
 
-auto_activate_base: false
+######################################################
+##              Channel Configuration               ##
+######################################################
 
 channels:
   - defaults
-show_channel_urls: false
 default_channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-# TUNA also provides repo service from other third-party sources.
-# check for supported channels: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  # - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
 custom_channels:
   conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+# TUNA also provides repo service from other third-party sources.
+# check for supported channels: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 
-## https://conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html
-## if you are behind a proxy:
+# The "free" channel was removed from the collection of default channels in conda 4.7.0.
+# restore_free_channel: false
+
+######################################################
+##              Network Configuration               ##
+######################################################
 
 # proxy_servers:
 #   http: http://user:pass@hostname:port
 #   https: http://user:pass@hostname:port
 # ssl_verify: false
 
-## or just left it by default, proxy settings are pulled from the `HTTP_PROXY` and
-## `HTTPS_PROXY` environment variables or the system.
+######################################################
+##               Solver Configuration               ##
+######################################################
+
+channel_priority: strict
+experimental_solver: libmamba
+
+######################################################
+##  Output, Prompt, and Flow Control Configuration  ##
+######################################################
+
+auto_activate_base: false
+show_channel_urls: false

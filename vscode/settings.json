@@ -52,7 +52,7 @@
         "**/pnpm-lock.yaml": true,
         "**/yarn.lock": true,
         // Scala
-        "**/target": true,
+        "**/target": true
     },
     // "explorer.experimental.fileNesting.enabled": true,
     // Task
