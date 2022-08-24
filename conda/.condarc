@@ -38,7 +38,8 @@ custom_channels:
 ######################################################
 
 channel_priority: strict
-experimental_solver: libmamba
+pip_interop_enabled: true
+experimental_solver: classic # libmamba
 
 ######################################################
 ##  Output, Prompt, and Flow Control Configuration  ##
