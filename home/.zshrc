@@ -108,9 +108,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-######## Custom ########
+
+######################## Env Setup ############################################
 KERNEL_NAME=$(uname -s)  # Linux / Darwin
 ARCH_NAME=$(uname -m)  # x86_64 / arm64
+
+## set locale config
+export LC_ALL=en_US.UTF-8
+
+## set visual and editor
+export VISUAL=vim
+export EDITOR="${VISUAL}"
 
 # BREW_PREFIX=$(brew --prefix)
 if [[ ${KERNEL_NAME} == "Darwin" ]]; then
@@ -128,6 +136,8 @@ alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 
+######################## Plugins ##############################################
+
 ## auto completion
 autoload -Uz compinit
 zstyle ':completion:*' menu select
@@ -138,6 +148,13 @@ zstyle ':completion:*' rehash true                              # automatically 
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ${ZSH}/cache
+
+if (( $+commands[terraform] )); then
+  TERRAFORM=$(which terraform)
+  ## Load completion for terraform
+  autoload -U +X bashcompinit && bashcompinit
+  complete -o nospace -C ${TERRAFORM} terraform
+fi
 
 ## Plugins section: Enable fish style features
 ### Use syntax highlighting: zsh-syntax-highlighting.zsh
@@ -180,14 +197,8 @@ extract () {
   fi
 }
 
-# Env Setup
 
-## set locale config
-export LC_ALL=en_US.UTF-8
-
-## set visual and editor
-export VISUAL=vim
-export EDITOR="${VISUAL}"
+########################## Software Init ######################################
 
 ## miniconda
 # >>> conda initialize >>>
@@ -270,7 +281,7 @@ fi
 ## Deno
 if [[ -s "${HOME}/.deno/bin/deno" ]]; then
   export DENO_INSTALL="${HOME}/.deno"
-  export PATH="$DENO_INSTALL/bin:$PATH"
+  export PATH="${DENO_INSTALL}/bin:${PATH}"
 fi
 
 ## Custom local bin for Haskell, Rust and etc

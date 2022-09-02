@@ -12,6 +12,7 @@ sudo pacman -Syu
 # install packages
 
 sudo pacman -S vim tmux htop ps_mem tmux avahi lsof dig make
+sudo pacman -S ripgrep fd fzf
 # code
 
 sudo pacman -S docker docker-compose
