@@ -91,15 +91,18 @@
     "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, IndentWidth: 4, MaxEmptyLinesToKeep: 2}",
     // Python
     "python.languageServer": "Pylance",
-    "python.formatting.provider": "black",
-    "python.formatting.yapfArgs": [
-        "--style",
-        "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true, coalesce_brackets: false, split_before_dot: true}"
-    ],
-    "python.formatting.blackArgs": [
-        "--line-length",
-        "79"
-    ],
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    // "python.formatting.provider": "black",
+    // "python.formatting.yapfArgs": [
+    //     "--style",
+    //     "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true, coalesce_brackets: false, split_before_dot: true}"
+    // ],
+    // "python.formatting.blackArgs": [
+    //     "--line-length",
+    //     "79"
+    // ],
     "python.linting.mypyEnabled": true,
     "python.linting.mypyArgs": [
         "--show-error-context",
@@ -113,7 +116,6 @@
         "--ignore",
         "E203,E501,W503"
     ],
-    "python.analysis.typeCheckingMode": "basic",
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
     "black-formatter.args": [
