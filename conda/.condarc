@@ -15,9 +15,7 @@ default_channels:
   # - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
 custom_channels:
   conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 # TUNA also provides repo service from other third-party sources.
 # check for supported channels: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 
@@ -37,7 +35,7 @@ custom_channels:
 ##               Solver Configuration               ##
 ######################################################
 
-channel_priority: strict
+channel_priority: flexible
 pip_interop_enabled: true
 experimental_solver: classic # libmamba
 
