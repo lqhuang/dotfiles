@@ -15,40 +15,51 @@
 - Package manager for lsp servers, linters and formatters:
   [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
 - LSP
-  - https://github.com/neovim/nvim-lspconfig
+  - [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
   - [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
+  - [glepnir/lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim)
 - Formatters
-  - https://github.com/MunifTanjim/prettier.nvim
+  - [MunifTanjim/prettier.nvim](https://github.com/MunifTanjim/prettier.nvim)
 - Auto completions
-  - https://github.com/hrsh7th/nvim-cmp/
+  - [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp/)
+  - [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim): vscode-like
+    pictograms for neovim lsp completion items
+  - [hrsh7th/cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help)
 
 ### Editor
 
-- Enhencement
-  - https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-  - https://github.com/numToStr/Comment.nvim
+- Enhencements
+  - [nvim-treesitter/nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+  - [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
 
 ### UI
 
-- [dstein64/nvim-scrollview](https://github.com/dstein64/nvim-scrollview): 📜📶
-  A Neovim plugin that displays interactive vertical scrollbars.
-- [](https://github.com/projekt0n/github-nvim-theme)
-- [](https://github.com/LunarVim/LunarVim)
+<!-- - [dstein64/nvim-scrollview](https://github.com/dstein64/nvim-scrollview) -->
+
+- [projekt0n/github-nvim-theme](https://github.com/projekt0n/github-nvim-theme)
 - status bar:
   [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-
-https://github.com/onsails/lspkind.nvim
-
-- Utils
+- utils
   - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- greeter
+  - [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
 
 ## Inspired by
 
 - [glepnir/nvim-lua-guide-zh](https://github.com/glepnir/nvim-lua-guide-zh)
 - [glepnir/dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
 - [nshen/learn-neovim-lua](https://github.com/nshen/learn-neovim-lua)
-- [](https://opensourcelibs.com/lib/learn-neovim-lua)
-- [](https://gist.github.com/shanzi/4604361)
-- https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/
-- https://github.com/nvim-lua/kickstart.nvim/
-- https://github.com/craftzdog/dotfiles-public
+- [shanzi](https://gist.github.com/shanzi/4604361)
+- [Rust and Neovim - A Thorough Guide and Walkthrough](https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/)
+- [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+- [craftzdog/dotfiles-public](https://github.com/craftzdog/dotfiles-public)
+- [ayamir/nvimdots](https://github.com/ayamir/nvimdots)
+- [LunarVim/LunarVim](https://github.com/LunarVim/LunarVim)
+
+## Lua
+
+- [Learn X in Y minutes, Where X=Lua](https://learnxinyminutes.com/docs/lua/)
+
+## Awesome
+
+- [rockerBOO/awesome-neovim](https://github.com/rockerBOO/awesome-neovim)

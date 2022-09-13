@@ -1,2 +1,1 @@
-
--- require("plugins")
+require("plugins").load_plugins()
