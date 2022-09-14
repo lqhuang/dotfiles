@@ -11,11 +11,15 @@ export ZSH="${HOME}/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
-  # ZSH_THEME="fishy"
-  ZSH_THEME="ys"
-else
-  ZSH_THEME="af-magic"
+if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+  # ZSH_THEME="robbyrussell"
+  # Do not set ZSH_THEME when using Wrap Terminal
+  if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
+    # ZSH_THEME="fishy"
+    ZSH_THEME="ys"
+  else
+    ZSH_THEME="af-magic"
+  fi
 fi
 
 # Set list of themes to pick from when loading at random
@@ -149,12 +153,12 @@ zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ${ZSH}/cache
 
-if (( $+commands[terraform] )); then
-  TERRAFORM=$(which terraform)
-  ## Load completion for terraform
-  autoload -U +X bashcompinit && bashcompinit
-  complete -o nospace -C ${TERRAFORM} terraform
-fi
+# if (( $+commands[terraform] )); then
+#   TERRAFORM=$(which terraform)
+#   ## Load completion for terraform
+#   autoload -U +X bashcompinit && bashcompinit
+#   complete -o nospace -C ${TERRAFORM} terraform
+# fi
 
 ## Plugins section: Enable fish style features
 ### Use syntax highlighting: zsh-syntax-highlighting.zsh
