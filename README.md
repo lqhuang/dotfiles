@@ -2,12 +2,13 @@
 
 Personal customized configuration files/scripts.
 
-## TODO
+## Dogfile
 
-How to install dotfiles?
+Why not `chezmoi`, `yadm`, `rcm`, `homesick`.
 
-1. Use `rsync` command.
-2. Use `ln -s` command.
+They are so complicated!!!
+
+`dogfile` just softlink files and git repo, no more.
 
 ## Resources
 
