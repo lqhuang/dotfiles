@@ -37,6 +37,7 @@
 <!-- - [dstein64/nvim-scrollview](https://github.com/dstein64/nvim-scrollview) -->
 
 - [projekt0n/github-nvim-theme](https://github.com/projekt0n/github-nvim-theme)
+- [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 - status bar:
   [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - utils
