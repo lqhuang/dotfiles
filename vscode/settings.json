@@ -27,10 +27,10 @@
     "window.nativeTabs": true,
     "window.zoomLevel": 1,
     // Files behavior
+    "explorer.fileNesting.enabled": true,
     "files.eol": "\n",
     "files.trimTrailingWhitespace": true,
     "files.maxMemoryForLargeFilesMB": 16384,
-    "explorer.experimental.fileNesting.enabled": true,
     // visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
     // https://code.visualstudio.com/docs/setup/linux
     "files.watcherExclude": {
@@ -52,7 +52,10 @@
         "**/pnpm-lock.yaml": true,
         "**/yarn.lock": true,
         // Scala
-        "**/target": true
+        "**/target": true,
+        // Python
+        "**/.venv": true,
+        "**/.conda-venv": true
     },
     // "explorer.experimental.fileNesting.enabled": true,
     // Task
@@ -74,6 +77,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[toml]": {
+        "editor.formatOnSave": true,
         "editor.defaultFormatter": "tamasfe.even-better-toml"
     },
     "restructuredtext.experimental": true,
@@ -92,7 +96,7 @@
     // Python
     "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "basic",
-    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.functionReturnTypes": false,
     "python.analysis.inlayHints.variableTypes": false,
     // "python.formatting.provider": "black",
     // "python.formatting.yapfArgs": [
@@ -128,6 +132,7 @@
             79,
             120
         ],
+        "editor.formatOnSave": true,
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
     // Rust
@@ -135,8 +140,9 @@
     // Scala
     "[scala]": {
         "editor.rulers": [
-            79
+            88
         ],
+        "editor.formatOnSave": true,
         "editor.formatOnPaste": true
     },
     "metals.serverProperties": [
@@ -149,6 +155,7 @@
     "typescript.suggest.completeFunctionCalls": true,
     "svelte.enable-ts-plugin": true,
     "[javascript][typescript][javascriptreact][typescriptreact]": {
+        "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     // SQL
@@ -161,6 +168,7 @@
     "Prettier-SQL.SQLFlavourOverride": "postgresql",
     // Others
     "[mongodb]": {
+        "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "shellformat.flag": "-bn -ci -sr -kp",
@@ -178,5 +186,6 @@
     // Telemetry
     "telemetry.telemetryLevel": "error",
     "redhat.telemetry.enabled": false,
-    "mdb.sendTelemetry": false
+    "mdb.sendTelemetry": false,
+    "git.confirmSync": false
 }

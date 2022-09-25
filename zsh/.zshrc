@@ -282,6 +282,11 @@ if [[ -s "$HOME/.nvm/nvm.sh" ]]; then
   export npm_config_robotjs_binary_host="https://cdn.npmmirror.com/binaries/robotj"
 fi
 
+# pnpm start
+export PNPM_HOME="${HOME}/.pnpm-bin"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
 ## Deno
 if [[ -s "${HOME}/.deno/bin/deno" ]]; then
   export DENO_INSTALL="${HOME}/.deno"
