@@ -5,187 +5,177 @@
  *     Linux $HOME/.config/Code/User/settings.json
  */
 {
-    // Editor config
-    "editor.fontSize": 18,
-    "editor.linkedEditing": true,
-    "editor.renderControlCharacters": true,
-    "editor.renderWhitespace": "selection",
-    "editor.inlineSuggest.enabled": true,
-    "editor.guides.bracketPairs": true,
-    "editor.unicodeHighlight.allowedLocales": {
-        "zh-hans": true
-    },
-    "editor.quickSuggestions": {
-        "other": "on",
-        "comments": "off",
-        "strings": "on"
-    },
-    "workbench.fontAliasing": "antialiased",
-    // Terminal config
-    "terminal.integrated.inheritEnv": false,
-    // Apperance
-    "window.nativeTabs": true,
-    "window.zoomLevel": 1,
-    // Files behavior
-    "explorer.fileNesting.enabled": true,
-    "files.eol": "\n",
-    "files.trimTrailingWhitespace": true,
-    "files.maxMemoryForLargeFilesMB": 16384,
-    // visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
-    // https://code.visualstudio.com/docs/setup/linux
-    "files.watcherExclude": {
-        "**/.git/objects/**": true,
-        "**/.git/subtree-cache/**": true,
-        "**/node_modules/*/**": true,
-        "**/.bloop": true,
-        "**/.metals": true,
-        "**/.ammonite": true
-    },
-    "search.exclude": {
-        "**/.git": true,
-        "**/.bloop": true,
-        "**/.metals": true,
-        // Node.js
-        "**/.pnpm": true,
-        "**/node_modules": true,
-        "**/package-lock.json": true,
-        "**/pnpm-lock.yaml": true,
-        "**/yarn.lock": true,
-        // Scala
-        "**/target": true,
-        // Python
-        "**/.venv": true,
-        "**/.conda-venv": true
-    },
-    // "explorer.experimental.fileNesting.enabled": true,
-    // Task
-    // If the Tasks: Run Task command is slow,
-    // disabling auto detect for task providers may help.
-    "task.autoDetect": "off",
-    // Language specific settings
-    // markup language
-    "[markdown]": {
-        "editor.renderWhitespace": "boundary",
-        "editor.wordWrap": "off",
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "files.trimTrailingWhitespace": false
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[yaml][html][json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[toml]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "tamasfe.even-better-toml"
-    },
-    "restructuredtext.experimental": true,
-    "prettier.proseWrap": "always",
-    // Haskell
-    "[haskell]": {
-        "editor.fontFamily": "'Fira Code', 'Cascadia Code', monospace",
-        "editor.fontLigatures": "'ss03', 'ss05', 'zero'",
-        "editor.defaultFormatter": "haskell.haskell"
-    },
-    "haskell.formattingProvider": "stylish-haskell",
-    "haskell.serverExecutablePath": "haskell-language-server-wrapper",
-    // C++ format style
-    // http://clang.llvm.org/docs/ClangFormatStyleOptions.html
-    "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, IndentWidth: 4, MaxEmptyLinesToKeep: 2}",
-    // Python
-    "python.languageServer": "Pylance",
-    "python.analysis.typeCheckingMode": "basic",
-    "python.analysis.inlayHints.functionReturnTypes": false,
-    "python.analysis.inlayHints.variableTypes": false,
-    // "python.formatting.provider": "black",
-    // "python.formatting.yapfArgs": [
-    //     "--style",
-    //     "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true, coalesce_brackets: false, split_before_dot: true}"
-    // ],
-    // "python.formatting.blackArgs": [
-    //     "--line-length",
-    //     "79"
-    // ],
-    "python.linting.mypyEnabled": true,
-    "python.linting.mypyArgs": [
-        "--show-error-context",
-        "--show-column-numbers",
-        "--show-error-codes",
-        "--no-pretty",
-        "--no-color-output"
-    ],
-    "python.linting.flake8Enabled": true,
-    "python.linting.flake8Args": [
-        "--ignore",
-        "E203,E501,W503"
-    ],
-    "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true,
-    "black-formatter.args": [
-        "--line-length",
-        "79"
-    ],
-    "autoDocstring.docstringFormat": "numpy",
-    "[python]": {
-        "editor.rulers": [
-            79,
-            120
-        ],
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "ms-python.black-formatter"
-    },
-    // Rust
-    // "rust-analyzer.checkOnSave.command": "clippy",
+  // Editor config
+  "editor.fontSize": 18,
+  "editor.linkedEditing": true,
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "selection",
+  "editor.inlineSuggest.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.unicodeHighlight.allowedLocales": {
+    "zh-hans": true
+  },
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "off",
+    "strings": "on"
+  },
+  "workbench.fontAliasing": "antialiased",
+  "git.confirmSync": false,
+  // Terminal config
+  "terminal.integrated.inheritEnv": false,
+  // Apperance
+  "window.nativeTabs": true,
+  "window.zoomLevel": 1,
+  // Files behavior
+  "explorer.fileNesting.enabled": true,
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.maxMemoryForLargeFilesMB": 16384,
+  // visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
+  // https://code.visualstudio.com/docs/setup/linux
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/.bloop": true,
+    "**/.metals": true,
+    // Node.js
+    "**/.pnpm": true,
+    "**/node_modules": true,
+    "**/package-lock.json": true,
+    "**/pnpm-lock.yaml": true,
+    "**/yarn.lock": true,
     // Scala
-    "[scala]": {
-        "editor.rulers": [
-            88
-        ],
-        "editor.formatOnSave": true,
-        "editor.formatOnPaste": true
-    },
-    "metals.serverProperties": [
-        "-Dhttps.protocols=TLSv1.2,TLSv1.3"
-    ],
-    "metals.showImplicitArguments": false,
-    "metals.showImplicitConversionsAndClasses": true,
-    // Javascript/Typescript
-    "typescript.preferences.quoteStyle": "single",
-    "typescript.suggest.completeFunctionCalls": true,
-    "svelte.enable-ts-plugin": true,
-    "[javascript][typescript][javascriptreact][typescriptreact]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    // SQL
-    "[sql]": {
-        "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
-    },
-    "Prettier-SQL.commaPosition": "before",
-    "Prettier-SQL.tabSizeOverride": 2,
-    "Prettier-SQL.linesBetweenQueries": 2,
-    "Prettier-SQL.SQLFlavourOverride": "postgresql",
-    // Others
-    "[mongodb]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "shellformat.flag": "-bn -ci -sr -kp",
-    // General
-    "github.copilot.enable": {
-        "*": true,
-        "yaml": true,
-        "plaintext": true,
-        "markdown": true
-    },
-    "extensions.ignoreRecommendations": true,
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.statusBar.enabled": false,
-    "gitlens.currentLine.enabled": false,
-    // Telemetry
-    "telemetry.telemetryLevel": "error",
-    "redhat.telemetry.enabled": false,
-    "mdb.sendTelemetry": false,
-    "git.confirmSync": false
+    "**/target": true,
+    // Python
+    "**/.venv": true,
+    "**/.conda-venv": true
+  },
+  // "explorer.experimental.fileNesting.enabled": true,
+  // Task
+  // If the Tasks: Run Task command is slow,
+  // disabling auto detect for task providers may help.
+  "task.autoDetect": "off",
+
+  // Language specific settings
+  // markup language
+  "[markdown]": {
+    "editor.renderWhitespace": "boundary",
+    "editor.wordWrap": "off",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.trimTrailingWhitespace": false
+  },
+  "[yaml][html][json][jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[toml]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "restructuredtext.experimental": true,
+  "prettier.proseWrap": "always",
+  // Haskell
+  "[haskell]": {
+    "editor.fontFamily": "'Fira Code', 'Cascadia Code', monospace",
+    "editor.fontLigatures": "'ss03', 'ss05', 'zero'",
+    "editor.defaultFormatter": "haskell.haskell"
+  },
+  "haskell.formattingProvider": "stylish-haskell",
+  "haskell.serverExecutablePath": "haskell-language-server-wrapper",
+  // C++ format style
+  // http://clang.llvm.org/docs/ClangFormatStyleOptions.html
+  "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, IndentWidth: 4, MaxEmptyLinesToKeep: 2}",
+  // Python
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.inlayHints.functionReturnTypes": false,
+  "python.analysis.inlayHints.variableTypes": false,
+  // "python.formatting.provider": "black",
+  // "python.formatting.yapfArgs": [
+  //     "--style",
+  //     "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true, coalesce_brackets: false, split_before_dot: true}"
+  // ],
+  // "python.formatting.blackArgs": [
+  //     "--line-length",
+  //     "79"
+  // ],
+  "python.linting.mypyEnabled": true,
+  "python.linting.mypyArgs": [
+    "--show-error-context",
+    "--show-column-numbers",
+    "--show-error-codes",
+    "--no-pretty",
+    "--no-color-output"
+  ],
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": ["--ignore", "E203,E501,W503"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  // "black-formatter.args": [
+  //     "--line-length",
+  //     "79"
+  // ],
+  "autoDocstring.docstringFormat": "numpy",
+  "[python]": {
+    "editor.rulers": [79, 120],
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "isort.args": ["--profile", "black"],
+  // Rust
+  // "rust-analyzer.checkOnSave.command": "clippy",
+  // Scala
+  "[scala]": {
+    "editor.rulers": [88],
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+  },
+  "metals.serverProperties": ["-Dhttps.protocols=TLSv1.2,TLSv1.3"],
+  "metals.showImplicitArguments": false,
+  "metals.showImplicitConversionsAndClasses": true,
+  // Javascript/Typescript
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.suggest.completeFunctionCalls": true,
+  "svelte.enable-ts-plugin": true,
+  "[javascript][typescript][javascriptreact][typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // SQL
+  "[sql]": {
+    "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+  },
+  "Prettier-SQL.commaPosition": "before",
+  "Prettier-SQL.tabSizeOverride": 2,
+  "Prettier-SQL.linesBetweenQueries": 2,
+  "Prettier-SQL.SQLFlavourOverride": "postgresql",
+  // Others
+  "[mongodb]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "shellformat.flag": "-bn -ci -sr -kp",
+
+  // General
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": true,
+    "markdown": true
+  },
+  "extensions.ignoreRecommendations": true,
+  // Telemetry
+  "telemetry.telemetryLevel": "error",
+  "redhat.telemetry.enabled": false,
+  "mdb.sendTelemetry": false
 }
