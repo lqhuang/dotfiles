@@ -20,6 +20,7 @@
     "comments": "off",
     "strings": "on"
   },
+  "diffEditor.ignoreTrimWhitespace": false,
   "workbench.fontAliasing": "antialiased",
   "git.confirmSync": false,
   // Terminal config
@@ -59,13 +60,15 @@
     "**/.conda-venv": true
   },
   // "explorer.experimental.fileNesting.enabled": true,
-  // Task
+  /* Task */
   // If the Tasks: Run Task command is slow,
   // disabling auto detect for task providers may help.
   "task.autoDetect": "off",
 
-  // Language specific settings
-  // markup language
+  /**
+   * Language specific settings
+   */
+  /* markup language */
   "[markdown]": {
     "editor.renderWhitespace": "boundary",
     "editor.wordWrap": "off",
@@ -81,7 +84,7 @@
   },
   "restructuredtext.experimental": true,
   "prettier.proseWrap": "always",
-  // Haskell
+  /* Haskell */
   "[haskell]": {
     "editor.fontFamily": "'Fira Code', 'Cascadia Code', monospace",
     "editor.fontLigatures": "'ss03', 'ss05', 'zero'",
@@ -89,23 +92,26 @@
   },
   "haskell.formattingProvider": "stylish-haskell",
   "haskell.serverExecutablePath": "haskell-language-server-wrapper",
+  /* C/Cpp */
   // C++ format style
   // http://clang.llvm.org/docs/ClangFormatStyleOptions.html
   "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, IndentWidth: 4, MaxEmptyLinesToKeep: 2}",
-  // Python
+  /* Python */
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "basic",
   "python.analysis.inlayHints.functionReturnTypes": false,
   "python.analysis.inlayHints.variableTypes": false,
-  // "python.formatting.provider": "black",
-  // "python.formatting.yapfArgs": [
-  //     "--style",
-  //     "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true, coalesce_brackets: false, split_before_dot: true}"
-  // ],
-  // "python.formatting.blackArgs": [
-  //     "--line-length",
-  //     "79"
-  // ],
+  "python.analysis.autoImportCompletions": true,
+  /** Deprecated settings
+   *
+   * "python.formatting.provider": "yapf",
+   * "python.formatting.yapfArgs": [
+   *   "--style",
+   *   "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true, coalesce_brackets: false, split_before_dot: true}"
+   * ],
+   * "python.linting.flake8Enabled": false,
+   * "python.linting.flake8Args": ["--ignore", "E203,E501,W503,W504"],
+   */
   "python.linting.mypyEnabled": true,
   "python.linting.mypyArgs": [
     "--show-error-context",
@@ -114,27 +120,24 @@
     "--no-pretty",
     "--no-color-output"
   ],
-  "python.linting.flake8Enabled": true,
-  "python.linting.flake8Args": ["--ignore", "E203,E501,W503"],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
-  // "black-formatter.args": [
-  //     "--line-length",
-  //     "79"
-  // ],
   "autoDocstring.docstringFormat": "numpy",
   "[python]": {
     "editor.rulers": [79, 120],
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": true
-    }
+    "editor.defaultFormatter": "ms-python.black-formatter"
+    // "editor.codeActionsOnSave": {
+    //   "source.organizeImports": true
+    // }
   },
+  // Standalone extenstions for Python
+  // "black-formatter.args": ["--line-length", "79"],
   "isort.args": ["--profile", "black"],
-  // Rust
+  "flake8.args": ["--ignore", "E203,E501,W503,W504"],
+  /* Rust */
   // "rust-analyzer.checkOnSave.command": "clippy",
-  // Scala
+  /* Scala */
   "[scala]": {
     "editor.rulers": [88],
     "editor.formatOnSave": true,
@@ -143,7 +146,7 @@
   "metals.serverProperties": ["-Dhttps.protocols=TLSv1.2,TLSv1.3"],
   "metals.showImplicitArguments": false,
   "metals.showImplicitConversionsAndClasses": true,
-  // Javascript/Typescript
+  /* Javascript/Typescript */
   "typescript.preferences.quoteStyle": "single",
   "typescript.suggest.completeFunctionCalls": true,
   "svelte.enable-ts-plugin": true,
@@ -166,7 +169,9 @@
   },
   "shellformat.flag": "-bn -ci -sr -kp",
 
-  // General
+  /**
+   * General
+   */
   "github.copilot.enable": {
     "*": true,
     "yaml": true,
