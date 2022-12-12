@@ -16,8 +16,8 @@
     # default = simple
     followTags = true
 
-# [color]
-#     ui = auto
+[color]
+    ui = auto
 
 [pull]
     ff = only

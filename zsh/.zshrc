@@ -37,7 +37,7 @@ fi
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -82,7 +82,16 @@ fi
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=()
+plugins=(
+  # colored-man-pages
+  # common-aliases
+  nvm
+)
+
+## Customize plugins before Oh My Zsh is sourced
+# nvm plugin
+zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' lazy-cmd nvm node npx pnpx
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,12 +121,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
 ######################## Env Setup ############################################
 KERNEL_NAME=$(uname -s)  # Linux / Darwin
 ARCH_NAME=$(uname -m)  # x86_64 / arm64
 
 ## set locale config
+export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 ## set visual and editor
@@ -142,16 +151,17 @@ alias free='free -m'                      # show sizes in MB
 
 ######################## Plugins ##############################################
 
-## auto completion
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
+# ## auto completion (obviously not required under oh-my-zsh)
+# ## https://zsh.sourceforge.io/Doc/Release/Completion-System.html
+# autoload -Uz compinit
+# zstyle ':completion:*' menu select
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
+# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
 zstyle ':completion:*' rehash true                              # automatically find new executables in path
-## Speed up completions
+# ## Speed up completions
 zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ${ZSH}/cache
+# zstyle ':completion:*' use-cache on
+# zstyle ':completion:*' cache-path ${ZSH}/cache
 
 # if (( $+commands[terraform] )); then
 #   TERRAFORM=$(which terraform)
@@ -179,7 +189,7 @@ fi
 
 ## extract - archive extractor
 ## usage: extract <file>
-extract () {
+extract() {
   if [[ -f $1 ]]; then
     case $1 in
       *.tar.bz2)   tar xjf $1    ;;
@@ -201,7 +211,6 @@ extract () {
   fi
 }
 
-
 ########################## Software Init ######################################
 
 ## miniconda
@@ -209,13 +218,13 @@ extract () {
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('"'"${HOME}"'"/Software/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+  eval "$__conda_setup"
 else
-    if [ -f "${HOME}/Software/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "${HOME}/Software/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="${HOME}/Software/miniconda3/bin:${PATH}"
-    fi
+  if [ -f "${HOME}/Software/miniconda3/etc/profile.d/conda.sh" ]; then
+    . "${HOME}/Software/miniconda3/etc/profile.d/conda.sh"
+  else
+    export PATH="${HOME}/Software/miniconda3/bin:${PATH}"
+  fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
@@ -226,7 +235,7 @@ unset __conda_setup
 
 if [[ ${KERNEL_NAME} == "Linux" ]] && [[ -s "${HOME}/.pyenv" ]]; then
   export PYENV_ROOT="$HOME/.pyenv"
-  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+  command -v pyenv > /dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
   # eval "$(pyenv virtualenv-init -)"
 fi
@@ -244,22 +253,22 @@ fi
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Defer initialization of nvm until nvm, node or a node-dependent command is
-# run. Ensure this block is only run once if .bashrc gets sourced multiple times
-# by checking whether __init_nvm is a function.
-if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; then
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-  declare -a __node_commands=('nvm' 'node' 'npm' 'npx' 'yarn' 'pnpm' 'pnpx' 'gulp' 'grunt' 'webpack')
-  function __init_nvm() {
-    for i in "${__node_commands[@]}"; do unalias $i; done
-    \. "$NVM_DIR"/nvm.sh  # This loads nvm
-    \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-    unset __node_commands
-    unset -f __init_nvm
-  }
-  for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
-fi
+# # Defer initialization of nvm until nvm, node or a node-dependent command is
+# # run. Ensure this block is only run once if .bashrc gets sourced multiple times
+# # by checking whether __init_nvm is a function.
+# if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; then
+#   export NVM_DIR="$HOME/.nvm"
+#   [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+#   declare -a __node_commands=('nvm' 'node' 'npm' 'npx' 'yarn' 'pnpm' 'pnpx' 'gulp' 'grunt' 'webpack')
+#   function __init_nvm() {
+#     for i in "${__node_commands[@]}"; do unalias $i; done
+#     \. "$NVM_DIR"/nvm.sh  # This loads nvm
+#     \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#     unset __node_commands
+#     unset -f __init_nvm
+#   }
+#   for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
+# fi
 
 if [[ -s "$HOME/.nvm/nvm.sh" ]]; then
   # === NPM BINARY CHINA ===

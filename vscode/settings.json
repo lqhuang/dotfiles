@@ -112,6 +112,7 @@
    * "python.linting.flake8Enabled": false,
    * "python.linting.flake8Args": ["--ignore", "E203,E501,W503,W504"],
    */
+  "python.formatting.provider": "none",
   "python.linting.mypyEnabled": true,
   "python.linting.mypyArgs": [
     "--show-error-context",
