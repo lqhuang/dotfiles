@@ -8,10 +8,10 @@ target-dir = "~/.cargo/target"
 
 # Configuration keys related to the registry
 [registry]
-default = "sjtu" # Name of the default ("crates.io") registry to use
+default = "tuna" # Name of the default ("crates.io") registry to use
 
-# [registries.crates-io]
-# index = "https://github.com/rust-lang/crates.io-index"
+[registries.crates-io]
+index = "https://github.com/rust-lang/crates.io-index"
 
 [registries.tuna]
 index = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
@@ -28,7 +28,7 @@ index = "https://rsproxy.cn/crates.io-index"
 # Config source for crates-io
 [source.crates-io]
 registry = "https://github.com/rust-lang/crates.io-index"
-replace-with = "sjtu"
+replace-with = "tuna"
 
 [source.tuna]
 registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"

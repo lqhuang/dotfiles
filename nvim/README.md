@@ -2,8 +2,9 @@
 
 ## Plugins
 
-- Plugin manager:
-  [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
+- Plugin manager
+  - [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
+  - [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - Syntax parser and highlighting:
   - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
   - [p00f/nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
@@ -31,6 +32,8 @@
 - Enhencements
   - [nvim-treesitter/nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
   - [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
+  - [nvim-treesitter/nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
+- [nvim-orgmode/orgmode](https://github.com/nvim-orgmode/orgmode)
 
 ### UI
 
@@ -44,6 +47,7 @@
   - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 - greeter
   - [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
+  - [LazyVim/LazyVim](https://github.com/LazyVim/LazyVim)
 
 ## Inspired by
 

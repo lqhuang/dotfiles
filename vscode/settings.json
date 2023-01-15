@@ -136,6 +136,7 @@
   // "black-formatter.args": ["--line-length", "79"],
   "isort.args": ["--profile", "black"],
   "flake8.args": ["--ignore", "E203,E501,W503,W504"],
+  "ruff.organizeImports": false,
   /* Rust */
   // "rust-analyzer.checkOnSave.command": "clippy",
   /* Scala */
