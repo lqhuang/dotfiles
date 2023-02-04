@@ -129,6 +129,9 @@ ARCH_NAME=$(uname -m)  # x86_64 / arm64
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+## pre-defined `no_proxy``
+export no_proxy=.local,.internal,.arpa,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
+
 ## set visual and editor
 export VISUAL=vim
 export EDITOR="${VISUAL}"
