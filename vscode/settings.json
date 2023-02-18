@@ -5,7 +5,10 @@
  *     Linux $HOME/.config/Code/User/settings.json
  */
 {
-  // Editor config
+  /**
+   * General
+   */
+  /* Editor config */
   "editor.fontSize": 18,
   "editor.linkedEditing": true,
   "editor.renderControlCharacters": true,
@@ -23,16 +26,17 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "workbench.fontAliasing": "antialiased",
   "git.confirmSync": false,
-  // Terminal config
+  /* Terminal config */
   "terminal.integrated.inheritEnv": false,
-  // Apperance
+  /* Apperance */
   "window.nativeTabs": true,
   "window.zoomLevel": 1,
-  // Files behavior
+  /* Files behavior */
   "explorer.fileNesting.enabled": true,
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
   "files.maxMemoryForLargeFilesMB": 16384,
+  // Notes:
   // visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
   // https://code.visualstudio.com/docs/setup/linux
   "files.watcherExclude": {
@@ -41,7 +45,8 @@
     "**/node_modules/*/**": true,
     "**/.bloop": true,
     "**/.metals": true,
-    "**/.ammonite": true
+    "**/.ammonite": true,
+    "**/*venv*": true
   },
   "search.exclude": {
     "**/.git": true,
@@ -56,8 +61,7 @@
     // Scala
     "**/target": true,
     // Python
-    "**/.venv": true,
-    "**/.conda-venv": true
+    "**/*venv*": true
   },
   // "explorer.experimental.fileNesting.enabled": true,
   /* Task */
@@ -91,7 +95,6 @@
     "editor.defaultFormatter": "haskell.haskell"
   },
   "haskell.formattingProvider": "stylish-haskell",
-  "haskell.serverExecutablePath": "haskell-language-server-wrapper",
   /* C/Cpp */
   // C++ format style
   // http://clang.llvm.org/docs/ClangFormatStyleOptions.html
@@ -156,7 +159,7 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // SQL
+  /* SQL */
   "[sql]": {
     "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
   },
@@ -164,7 +167,7 @@
   "Prettier-SQL.tabSizeOverride": 2,
   "Prettier-SQL.linesBetweenQueries": 2,
   "Prettier-SQL.SQLFlavourOverride": "postgresql",
-  // Others
+  /* Others */
   "[mongodb]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -172,7 +175,7 @@
   "shellformat.flag": "-bn -ci -sr -kp",
 
   /**
-   * General
+   * Misc
    */
   "github.copilot.enable": {
     "*": true,
@@ -181,7 +184,7 @@
     "markdown": true
   },
   "extensions.ignoreRecommendations": true,
-  // Telemetry
+  /* Telemetry */
   "telemetry.telemetryLevel": "error",
   "redhat.telemetry.enabled": false,
   "mdb.sendTelemetry": false
