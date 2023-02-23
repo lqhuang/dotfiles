@@ -12,11 +12,11 @@ set -eu -o pipefail
 # FNAME=code-stable-x64.tar.gz
 # TARGET_DIR=${HOME}/Downloads
 
-APP=vscode-linux-cli-x64
-SOURCE_URL=https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64
-FNAME=vscode-cli-alpine-x64-cli.tar.gz
-TARGET_DIR=${HOME}/Downloads
-INSTALL_DIR=${HOME}/.local/bin
+APP="vscode-linux-cli-x64"
+SOURCE_URL="https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64"
+FNAME="vscode-cli-alpine-x64-cli.tar.gz"
+TARGET_DIR="${HOME}/Downloads"
+INSTALL_DIR="${HOME}/.local/bin"
 
 mkdir -p "${TARGET_DIR}"
 curl -fSL "${SOURCE_URL}" -o "${TARGET_DIR}/${FNAME}"
