@@ -16,9 +16,12 @@
   # lightbend-ivy-releases: https://dl.bintray.com/typesafe/ivy-releases/, [organization]/[module]/[revision]/[type]s/[artifact](-[classifier]).[ext]
   # typesafe-ivy-releases: https://repo.typesafe.com/typesafe/ivy-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
   # typesafe-maven-releases: https://repo.typesafe.com/typesafe/maven-releases/
+  typesafe-ivy: https://typesafe.proxy.ustclug.org/typesafe/ivy-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+  typesafe-maven: https://typesafe.proxy.ustclug.org/typesafe/maven-releases/
 
   ## sbt plugin
   # sbt-plugin-releases: https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+  ustclug-sbt-plugin: https://scala-sbt.proxy.ustclug.org/scalasbt/sbt-plugin-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
 
   ## maven central
   # maven-central: https://repo1.maven.org/maven2
