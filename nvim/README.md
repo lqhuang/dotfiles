@@ -50,21 +50,35 @@
   - [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
   - [LazyVim/LazyVim](https://github.com/LazyVim/LazyVim)
 
+### Wait to adapt
+
+- [ruifm/gitlinker.nvim](https://github.com/ruifm/gitlinker.nvim)
+- [gelguy/wilder.nvim](https://github.com/gelguy/wilder.nvim)
+
 ## Inspired by
 
-- [glepnir/nvim-lua-guide-zh](https://github.com/glepnir/nvim-lua-guide-zh)
 - [glepnir/dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
-- [nshen/learn-neovim-lua](https://github.com/nshen/learn-neovim-lua)
 - [shanzi](https://gist.github.com/shanzi/4604361)
 - [Rust and Neovim - A Thorough Guide and Walkthrough](https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/)
 - [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 - [craftzdog/dotfiles-public](https://github.com/craftzdog/dotfiles-public)
 - [ayamir/nvimdots](https://github.com/ayamir/nvimdots)
 - [LunarVim/LunarVim](https://github.com/LunarVim/LunarVim)
+- [AstroNvim/AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
-## Lua
+## Learn vim / neovim / lua
 
+- [glepnir/nvim-lua-guide-zh](https://github.com/glepnir/nvim-lua-guide-zh)
+- [nshen/learn-neovim-lua](https://github.com/nshen/learn-neovim-lua)
 - [Learn X in Y minutes, Where X=Lua](https://learnxinyminutes.com/docs/lua/)
+- [iggredible/Learn-Vim](https://github.com/iggredible/Learn-Vim): Learning Vim
+  and Vimscript doesn't have to be hard. This is the guide that you're looking
+  for 📖
+- [wsdjeg/Learn-Vim_zh_cn](https://github.com/wsdjeg/Learn-Vim_zh_cn):
+  Learn-Vim(the Smart Way) 中文翻译
+- [mhinz/vim-galore](https://github.com/mhinz/vim-galore): 🎓 All things Vim!
+- [wsdjeg/vim-galore-zh_cn](https://github.com/wsdjeg/vim-galore-zh_cn): Vim 从
+  入门到精通
 
 ## Awesome
 

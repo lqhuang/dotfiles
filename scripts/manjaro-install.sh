@@ -10,10 +10,8 @@ sudo pacman -Syy
 sudo pacman -Syu
 
 # install packages
-
-sudo pacman -S vim tmux htop ps_mem tmux avahi lsof dig make
+sudo pacman -S vim tmux htop ps_mem tmux avahi lsof dig make ctop
 sudo pacman -S ripgrep fd fzf
-# code
 
 sudo pacman -S docker docker-compose
 sudo usermod -aG docker ${USER}
@@ -28,7 +26,6 @@ sudo pacman -S plank
 
 # Enable TRIM for SSD
 sudo systemctl enable fstrim.timer
-
 
 echo "tcp_bbr" | sudo tee /etc/modules-load.d/network-tune.conf > /dev/null
 
