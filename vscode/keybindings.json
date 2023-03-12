@@ -1,20 +1,20 @@
 // Place your key bindings in this file to override the defaults
 [
-    {
-        // "ctrl+w" for Linux
-        "key": "ctrl+w",
-        "command": "workbench.action.closeWindow",
-        "when": "!editorIsOpen && !multipleEditorGroups"
-    },
-    {
-        // "cmd+w" for macOS
-        "key": "cmd+w",
-        "command": "workbench.action.closeWindow",
-        "when": "!editorIsOpen && !multipleEditorGroups"
-    },
-    {
-        "key": "F4",
-        "command": "workbench.action.tasks.runTask",
-        "args": "fast-format"
-    }
+  {
+    // "ctrl+w" for Linux
+    "key": "ctrl+w",
+    "command": "workbench.action.closeWindow",
+    "when": "!editorIsOpen && !multipleEditorGroups"
+  },
+  {
+    // "cmd+w" for macOS
+    "key": "cmd+w",
+    "command": "workbench.action.closeWindow",
+    "when": "!editorIsOpen && !multipleEditorGroups"
+  },
+  {
+    "key": "cmd+0", // F4 is buggy?
+    "command": "workbench.action.tasks.runTask",
+    "args": "fast-format"
+  }
 ]
