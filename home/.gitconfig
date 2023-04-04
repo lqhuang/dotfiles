@@ -8,8 +8,18 @@
 [init]
     defaultBranch = master
 
+[feature]
+    manyFiles = true
+    # [How to Improve Performance in Git: The Complete Guide](https://www.git-tower.com/blog/git-performance/)
+
+[index]
+    version = 4
+
 [core]
     autocrlf = input  # Dealing with line endings
+    untrackedcache = true
+    fsmonitor = true
+    commitgraph = true
     # whitespace = trailing-space,space-before-tab,-indent-with-non-tab
 
 [push]
@@ -30,6 +40,3 @@
 
 [alias]
     sl = log --pretty=tformat:'* %C(auto)%h%C(auto)%d %s%Creset %C(auto,blue)(%an)%Creset - %C(auto)%ad'
-
-# [includeIf "gitdir/i:~/git-repo"]
-#     path = ~/somewhere/.gitconfig
