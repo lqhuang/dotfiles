@@ -158,11 +158,16 @@
   /* Javascript/Typescript */
   "typescript.preferences.quoteStyle": "single",
   "typescript.suggest.completeFunctionCalls": true,
-  "svelte.enable-ts-plugin": true,
   "[javascript][typescript][javascriptreact][typescriptreact]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "svelte.enable-ts-plugin": true,
+  "[svelte]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "mdx.experimentalLanguageServer": true,
   /* SQL */
   "[sql]": {
     "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"

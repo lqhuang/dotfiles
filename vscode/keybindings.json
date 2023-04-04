@@ -13,7 +13,7 @@
     "when": "!editorIsOpen && !multipleEditorGroups"
   },
   {
-    "key": "cmd+0", // F4 is buggy?
+    "key": "F4", // F4 is buggy? cmd+0 is also buggy. Probably because of the way how extension be activated.
     "command": "workbench.action.tasks.runTask",
     "args": "fast-format"
   }
