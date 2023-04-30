@@ -40,3 +40,6 @@
 
 [alias]
     sl = log --pretty=tformat:'* %C(auto)%h%C(auto)%d %s%Creset %C(auto,blue)(%an)%Creset - %C(auto)%ad'
+
+# [includeIf "gitdir/i:~/git-repo"]
+#     path = ~/somewhere/.gitconfig

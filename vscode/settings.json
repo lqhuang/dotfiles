@@ -90,7 +90,6 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "restructuredtext.experimental": true,
   "prettier.proseWrap": "always",
   /* Haskell */
   "[haskell]": {
@@ -116,8 +115,6 @@
    *   "--style",
    *   "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true, coalesce_brackets: false, split_before_dot: true}"
    * ],
-   * "python.linting.flake8Enabled": false,
-   * "python.linting.flake8Args": ["--ignore", "E203,E501,W503,W504"],
    */
   "python.formatting.provider": "none",
   "python.linting.mypyEnabled": true,
@@ -131,6 +128,7 @@
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "autoDocstring.docstringFormat": "numpy",
+  "notebook.lineNumbers": "on",
   "[python]": {
     "editor.rulers": [79, 120],
     "editor.formatOnSave": true,

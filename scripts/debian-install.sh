@@ -78,6 +78,8 @@ sudo apt install net-tools curl -y
 sudo apt install htop tmux zsh git -y
 sudo apt install build-essential -y
 
+apt-get install htop tmux zsh git vim knot-dnsutils make python3
+apt-get install neovim ripgrep fd-find fzf
 
 # oh-my-zsh
 # index: https://ohmyz.sh/

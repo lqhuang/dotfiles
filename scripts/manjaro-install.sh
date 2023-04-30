@@ -10,8 +10,10 @@ sudo pacman -Syy
 sudo pacman -Syu
 
 # install packages
-sudo pacman -S vim tmux htop ps_mem tmux avahi lsof dig make ctop
+sudo pacman -S vim tmux htop ps_mem tmux avahi lsof bind-tools make ctop rsync
 sudo pacman -S ripgrep fd fzf
+
+# bind-tools -> dig
 
 sudo pacman -S docker docker-compose
 sudo usermod -aG docker ${USER}

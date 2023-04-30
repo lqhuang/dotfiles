@@ -3,8 +3,8 @@
 # https://doc.rust-lang.org/cargo/reference/config.html
 # https://doc.rust-lang.org/cargo/reference/source-replacement.html
 
-[build]
-target-dir = "~/.cargo/target"
+# [build]
+# target-dir = "~/.cargo/target"
 
 # Configuration keys related to the registry
 [registry]
