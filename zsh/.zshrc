@@ -274,11 +274,16 @@ fi
 #   for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 # fi
 
-if [[ -s "$HOME/.nvm/nvm.sh" ]]; then
+## fnm
+export PATH="/home/lqhuang/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+if [[ -d "$HOME/.nvm" || -d "$HOME/.fnm"  ]]; then
   # === NPM BINARY CHINA ===
   # https://github.com/cnpm/binary-mirror-config/blob/master/package.json#L48
   export NODEJS_ORG_MIRROR="https://cdn.npmmirror.com/binaries/node"
-  export NVM_NODEJS_ORG_MIRROR="https://cdn.npmmirror.com/binaries/node"
+  export NVM_NODEJS_ORG_MIRROR="${NODEJS_ORG_MIRROR}"
+  export FNM_NODE_DIST_MIRROR="${NODEJS_ORG_MIRROR}"
   export PHANTOMJS_CDNURL="https://cdn.npmmirror.com/binaries/phantomjs"
   export CHROMEDRIVER_CDNURL="https://cdn.npmmirror.com/binaries/chromedriver"
   export OPERADRIVER_CDNURL="https://cdn.npmmirror.com/binaries/operadriver"

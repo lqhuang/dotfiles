@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # https://docs.python.org/3/library/argparse.html
 # https://github.com/lra/mackup
+# https://github.com/rhysd/dotfiles
 from __future__ import annotations
 
 import argparse
