@@ -89,9 +89,9 @@ plugins=(
 )
 
 ## Customize plugins before Oh My Zsh is sourced
-# nvm plugin
-zstyle ':omz:plugins:nvm' lazy yes
-zstyle ':omz:plugins:nvm' lazy-cmd nvm node npx pnpx
+# # nvm plugin
+# zstyle ':omz:plugins:nvm' lazy yes
+# zstyle ':omz:plugins:nvm' lazy-cmd nvm node npx pnpx
 
 source $ZSH/oh-my-zsh.sh
 
@@ -275,10 +275,18 @@ fi
 # fi
 
 ## fnm
-export PATH="/home/lqhuang/.local/share/fnm:$PATH"
-eval "`fnm env`"
+if [[ ${KERNEL_NAME} == "Linux" ]]; then
+  FNM_DIR="/home/lqhuang/.local/share/fnm"
+  if [[ -d "${FNM_DIR}"  ]]; then
+    export PATH="${FNM_DIR}:${PATH}"
+    eval "$(fnm env)"
+    # export PATH="${FNM_DIR}/aliases/default/bin:$PATH"
+  fi
+elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
+  eval "$(fnm env)"
+fi
 
-if [[ -d "$HOME/.nvm" || -d "$HOME/.fnm"  ]]; then
+if [[ -d "$HOME/.fnm" || -d "$HOME/.nvm" ]]; then
   # === NPM BINARY CHINA ===
   # https://github.com/cnpm/binary-mirror-config/blob/master/package.json#L48
   export NODEJS_ORG_MIRROR="https://cdn.npmmirror.com/binaries/node"
