@@ -276,7 +276,7 @@ fi
 
 ## fnm
 if [[ ${KERNEL_NAME} == "Linux" ]]; then
-  FNM_DIR="/home/lqhuang/.local/share/fnm"
+  FNM_DIR="${HOME}/.local/share/fnm"
   if [[ -d "${FNM_DIR}"  ]]; then
     export PATH="${FNM_DIR}:${PATH}"
     eval "$(fnm env)"
@@ -308,10 +308,10 @@ if [[ -d "$HOME/.fnm" || -d "$HOME/.nvm" ]]; then
   export npm_config_robotjs_binary_host="https://cdn.npmmirror.com/binaries/robotj"
 fi
 
-# pnpm start
-export PNPM_HOME="${HOME}/.pnpm-bin"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+# # pnpm start
+# export PNPM_HOME="${HOME}/.pnpm-bin"
+# export PATH="$PNPM_HOME:$PATH"
+# # pnpm end
 
 ## Deno
 if [[ -s "${HOME}/.deno/bin/deno" ]]; then
@@ -346,3 +346,6 @@ export SDKMAN_DIR="${HOME}/.sdkman"
 if [[ -n ${ZSH_PROF} ]]; then
   zprof
 fi
+
+# Created by `pipx` on 2023-04-09 17:38:27
+export PATH="$PATH:${HOME}/Library/Python/3.9/bin"

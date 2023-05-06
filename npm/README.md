@@ -1,5 +1,42 @@
 # Setup `npm` Dev Environment
 
+## Install `fnm`
+
+```sh
+curl -fsSL https://fnm.vercel.app/install | bash
+```
+
+```sh
+FNM_DIR="${HOME}/.local/share/fnm"
+if [[ -d "${FNM_DIR}"  ]]; then
+export PATH="${FNM_DIR}:${PATH}"
+eval "$(fnm env)"
+# export PATH="${FNM_DIR}/aliases/default/bin:$PATH"
+fi
+```
+
+Shell setup
+
+```sh
+eval "$(fnm env --use-on-cd)"
+```
+
+## Install `nodejs` from distribution (`root` required)
+
+Node.js LTS
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+apt-get install -y nodejs
+```
+
+Node.js Current
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_current.x | bash -
+apt-get install -y nodejs
+```
+
 ## Install `pnpm`
 
 ### Using Corepack
@@ -16,6 +53,11 @@ be the latest version of pnpm. To upgrade it, check what is the
 
     corepack prepare pnpm@<version> --activate
 
+With Node.js v16.17 or newer, you may install the `latest` version of pnpm by
+just specifying the tag:
+
+    corepack prepare pnpm@latest --activate
+
 ### Using npm
 
     npm install -g pnpm
@@ -24,3 +66,8 @@ Once you have installed `pnpm`, there is no need to use other package managers
 to update it. You can upgrade `pnpm` using itself, like so:
 
     pnpm add -g pnpm
+
+## Ref
+
+- [nodesource/distributions](https://github.com/nodesource/distributions):
+  NodeSource Node.js Binary Distributions
