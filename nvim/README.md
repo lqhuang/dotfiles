@@ -34,6 +34,7 @@
   - [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
   - [nvim-treesitter/nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
   - [kylechui/nvim-surround](https://github.com/kylechui/nvim-surround)
+  - [cappyzawa/trim.nvim](https://github.com/cappyzawa/trim.nvim)
 - [nvim-orgmode/orgmode](https://github.com/nvim-orgmode/orgmode)
 
 ### UI
