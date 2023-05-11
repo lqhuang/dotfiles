@@ -1,0 +1,35 @@
+# Location for configuration file: `$HOME/.cargo/config`
+# References:
+# https://doc.rust-lang.org/cargo/reference/config.html
+# https://doc.rust-lang.org/cargo/reference/source-replacement.html
+
+# [build]
+# target-dir = "~/.cargo/target"
+
+# Configuration keys related to the registry
+[registry]
+# default = "crates-io"
+
+[registries.crates-io]
+# index = "https://github.com/rust-lang/crates.io-index"
+protocol = "sparse"
+
+# Config source for crates-io
+[source.crates-io]
+# registry = "https://github.com/rust-lang/crates.io-index"
+replace-with = "tuna"
+
+[source.tuna]
+# manual: https://mirrors.tuna.tsinghua.edu.cn/help/crates.io-index
+registry = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
+
+[source.ustc]
+# manual: https://mirrors.ustc.edu.cn/help/crates.io-index.html
+registry = "sparse+https://mirrors.ustc.edu.cn/crates.io-index/"
+
+[source.sjtu]
+# manual: https://mirrors.sjtug.sjtu.edu.cn/docs/crates.io
+registry = "sparse+https://mirrors.sjtug.sjtu.edu.cn/crates.io-index/"
+
+[source.rsproxy] # https://rsproxy.cn/
+registry = "sparse+https://rsproxy.cn/index/"
