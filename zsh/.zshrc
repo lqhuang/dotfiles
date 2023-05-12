@@ -1,6 +1,6 @@
-if [[ -n ${ZSH_PROF} ]]; then
-  zmodload zsh/zprof
-fi
+# if [[ -n ${ZSH_PROF} ]]; then
+#   zmodload zsh/zprof
+# fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -215,6 +215,6 @@ if [[ -f "${HOME}/.shared_profile" ]]; then
   source ${HOME}/.shared_profile
 fi
 
-if [[ -n ${ZSH_PROF} ]]; then
-  zprof
-fi
+# if [[ -n ${ZSH_PROF} ]]; then
+#   zprof
+# fi

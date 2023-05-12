@@ -16,3 +16,7 @@ Or just install `oh-my-zsh` from mirror git repo.
 
 - [mroth/evalcache](https://github.com/mroth/evalcache): 🐣 zsh plugin to cache
   eval loads to improve shell startup time
+
+## References
+
+- [如何使用 shell（3/3）—— 配置 zsh](https://a-wing.top/shell/2021/05/10/zsh-config)

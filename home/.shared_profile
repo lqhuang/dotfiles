@@ -11,8 +11,10 @@ ARCH_NAME=$(uname -m)  # x86_64 / arm64
 
 # User configuration
 ## Standalone binary is awesome, that's good for me. (Haskell, Rust, Zig etc.)
-export PATH="${HOME}/.local/bin:${PATH}"
-export MANPATH="${HOME}/.local/man:${MANPATH}"
+if [ -d "$HOME/.local" ]; then
+  export PATH="${HOME}/.local/bin:${PATH}"
+  export MANPATH="${HOME}/.local/man:${MANPATH}"
+fi
 
 ## set locale config
 export LANG=en_US.UTF-8
