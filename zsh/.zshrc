@@ -134,6 +134,10 @@ if [[ ${KERNEL_NAME} == "Darwin" ]]; then
   fi
 fi
 
+######################## ZSH Opts ##############################################
+# https://zsh.sourceforge.io/Doc/Release/Options.html
+bindkey "\eq" push-line-or-edit
+
 ######################## ZSH Plugins ##############################################
 
 # ## auto completion (obviously not required under oh-my-zsh)
@@ -165,14 +169,26 @@ elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
   fi
 fi
 
-# terraform
-TERRAFORM=$(command -v terraform)
-if [[ -x "${TERRAFORM}" ]]; then
-  autoload -U +X bashcompinit && bashcompinit
-  complete -o nospace -C ${TERRAFORM} terraform
-fi
+# # terraform
+# TERRAFORM=$(command -v terraform)
+# if [[ -x "${TERRAFORM}" ]]; then
+#   # oh-my-zsh has loaded `bashcompinit` already
+#   # autoload -U +X bashcompinit && bashcompinit
+#   complete -o nospace -C ${TERRAFORM} terraform
+# fi
 
 ########################## Software Init ######################################
+## fzf
+if [[ -x $(command -v fzf) ]]; then
+  if [[ ${KERNEL_NAME} == "Linux" ]]; then
+    # only for Debian, not for Arch
+    source /usr/share/doc/fzf/examples/completion.zsh
+    # source /usr/share/doc/fzf/examples/key-bindings.zsh
+  elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
+    source ${BREW_PREFIX}/opt/fzf/shell/completion.zsh
+    # source ${BREW_PREFIX}/opt/fzf/shell/key-bindings.zsh
+  fi
+fi
 
 ## miniconda
 # >>> conda initialize >>>
@@ -195,8 +211,8 @@ unset __conda_setup
 # > conda config --set auto_activate_base false
 
 ######################## Source Common ############################################
-if [[ -f "${HOME}/.profile" ]]; then
-  source ${HOME}/.profile
+if [[ -f "${HOME}/.shared_profile" ]]; then
+  source ${HOME}/.shared_profile
 fi
 
 if [[ -n ${ZSH_PROF} ]]; then
