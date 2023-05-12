@@ -125,17 +125,6 @@ source $ZSH/oh-my-zsh.sh
 KERNEL_NAME=$(uname -s)  # Linux / Darwin
 ARCH_NAME=$(uname -m)  # x86_64 / arm64
 
-## set locale config
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-## pre-defined `no_proxy``
-export no_proxy=.local,.internal,.arpa,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
-
-## set visual and editor
-export VISUAL=vim
-export EDITOR="${VISUAL}"
-
 # BREW_PREFIX=$(brew --prefix)
 if [[ ${KERNEL_NAME} == "Darwin" ]]; then
   if [[ ${ARCH_NAME} == 'x86_64' ]]; then
@@ -145,14 +134,7 @@ if [[ ${KERNEL_NAME} == "Darwin" ]]; then
   fi
 fi
 
-# inspired from manjaro `.zshrc` configuration
-# setopt correct                            # Auto correct mistakes
-
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-
-######################## Plugins ##############################################
+######################## ZSH Plugins ##############################################
 
 # ## auto completion (obviously not required under oh-my-zsh)
 # ## https://zsh.sourceforge.io/Doc/Release/Completion-System.html
@@ -166,53 +148,29 @@ zstyle ':completion:*' accept-exact '*(N)'
 # zstyle ':completion:*' use-cache on
 # zstyle ':completion:*' cache-path ${ZSH}/cache
 
-# if (( $+commands[terraform] )); then
-#   TERRAFORM=$(which terraform)
-#   ## Load completion for terraform
-#   autoload -U +X bashcompinit && bashcompinit
-#   complete -o nospace -C ${TERRAFORM} terraform
-# fi
-
 ## Plugins section: Enable fish style features
 ### Use syntax highlighting: zsh-syntax-highlighting.zsh
 ### Use history substring search: zsh-history-substring-search.zsh
 ### Use autosuggestion: zsh-autosuggestions.zsh
 if [[ ${KERNEL_NAME} == "Linux" ]]; then
-  if [[ -f /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
+  if [[ -s /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
     source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
     # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   fi
 elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
-  if [[ -f ${BREW_PREFIX}/share/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
+  if [[ -s ${BREW_PREFIX}/share/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
     source ${BREW_PREFIX}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
     source ${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   fi
 fi
 
-## extract - archive extractor
-## usage: extract <file>
-extract() {
-  if [[ -f $1 ]]; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1    ;;
-      *.tar.gz)    tar xzf $1    ;;
-      *.tar.xz)    tar xJf $1    ;;
-      *.bz2)       bunzip2 $1    ;;
-      *.rar)       unrar x $1    ;;
-      *.gz)        gunzip $1     ;;
-      *.tar)       tar xf $1     ;;
-      *.tbz2)      tar xjf $1    ;;
-      *.tgz)       tar xzf $1    ;;
-      *.zip)       unzip $1      ;;
-      *.Z)         uncompress $1 ;;
-      *.7z)        7z x $1       ;;
-      *)           echo "'$1' cannot be extracted via exract()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
+# terraform
+TERRAFORM=$(command -v terraform)
+if [[ -x "${TERRAFORM}" ]]; then
+  autoload -U +X bashcompinit && bashcompinit
+  complete -o nospace -C ${TERRAFORM} terraform
+fi
 
 ########################## Software Init ######################################
 
@@ -236,116 +194,11 @@ unset __conda_setup
 # which makes base environment not be activated on startup.
 # > conda config --set auto_activate_base false
 
-if [[ ${KERNEL_NAME} == "Linux" ]] && [[ -s "${HOME}/.pyenv" ]]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  command -v pyenv > /dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
-  # eval "$(pyenv virtualenv-init -)"
+######################## Source Common ############################################
+if [[ -f "${HOME}/.profile" ]]; then
+  source ${HOME}/.profile
 fi
-
-## Homebrew
-if [[ ${KERNEL_NAME} == "Darwin" ]]; then
-  [[ ${ARCH_NAME} == "arm64" ]] && export PATH="${BREW_PREFIX}/bin:${BREW_PREFIX}/sbin:${PATH}"
-  export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
-  export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-  # export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-  # export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-fi
-
-## Node Version Manager
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# # Defer initialization of nvm until nvm, node or a node-dependent command is
-# # run. Ensure this block is only run once if .bashrc gets sourced multiple times
-# # by checking whether __init_nvm is a function.
-# if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; then
-#   export NVM_DIR="$HOME/.nvm"
-#   [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-#   declare -a __node_commands=('nvm' 'node' 'npm' 'npx' 'yarn' 'pnpm' 'pnpx')
-#   function __init_nvm() {
-#     for i in "${__node_commands[@]}"; do unalias $i; done
-#     \. "$NVM_DIR"/nvm.sh  # This loads nvm
-#     \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-#     unset __node_commands
-#     unset -f __init_nvm
-#   }
-#   for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
-# fi
-
-## fnm
-if [[ ${KERNEL_NAME} == "Linux" ]]; then
-  FNM_DIR="${HOME}/.local/share/fnm"
-  if [[ -d "${FNM_DIR}"  ]]; then
-    export PATH="${FNM_DIR}:${PATH}"
-    eval "$(fnm env)"
-    # export PATH="${FNM_DIR}/aliases/default/bin:$PATH"
-  fi
-elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
-  eval "$(fnm env)"
-fi
-
-if [[ -d "$HOME/.fnm" || -d "$HOME/.nvm" ]]; then
-  # === NPM BINARY CHINA ===
-  # https://github.com/cnpm/binary-mirror-config/blob/master/package.json#L48
-  export NODEJS_ORG_MIRROR="https://cdn.npmmirror.com/binaries/node"
-  export NVM_NODEJS_ORG_MIRROR="${NODEJS_ORG_MIRROR}"
-  export FNM_NODE_DIST_MIRROR="${NODEJS_ORG_MIRROR}"
-  export PHANTOMJS_CDNURL="https://cdn.npmmirror.com/binaries/phantomjs"
-  export CHROMEDRIVER_CDNURL="https://cdn.npmmirror.com/binaries/chromedriver"
-  export OPERADRIVER_CDNURL="https://cdn.npmmirror.com/binaries/operadriver"
-  export ELECTRON_MIRROR="https://cdn.npmmirror.com/binaries/electron/"
-  export ELECTRON_BUILDER_BINARIES_MIRROR="https://cdn.npmmirror.com/binaries/electron-builder-binaries/"
-  export SASS_BINARY_SITE="https://cdn.npmmirror.com/binaries/node-sass"
-  export SWC_BINARY_SITE="https://cdn.npmmirror.com/binaries/node-swc"
-  export NWJS_URLBASE="https://cdn.npmmirror.com/binaries/nwjs/v"
-  export PUPPETEER_DOWNLOAD_HOST="https://cdn.npmmirror.com/binaries"
-  export SENTRYCLI_CDNURL="https://cdn.npmmirror.com/binaries/sentry-cli"
-  export SAUCECTL_INSTALL_BINARY_MIRROR="https://cdn.npmmirror.com/binaries/saucectl"
-  export npm_config_sharp_binary_host="https://cdn.npmmirror.com/binaries/sharp"
-  export npm_config_sharp_libvips_binary_host="https://cdn.npmmirror.com/binaries/sharp-libvips"
-  export npm_config_robotjs_binary_host="https://cdn.npmmirror.com/binaries/robotj"
-fi
-
-# # pnpm start
-# export PNPM_HOME="${HOME}/.pnpm-bin"
-# export PATH="$PNPM_HOME:$PATH"
-# # pnpm end
-
-## Deno
-if [[ -s "${HOME}/.deno/bin/deno" ]]; then
-  export DENO_INSTALL="${HOME}/.deno"
-  export PATH="${DENO_INSTALL}/bin:${PATH}"
-fi
-
-## Custom local bin for Haskell, Rust and etc
-export PATH="${HOME}/.local/bin:${PATH}"
-
-## Rust
-# rustup path
-if [[ -s "${HOME}/.cargo" ]]; then
-  . "$HOME/.cargo/env"
-fi
-# rustup mirror from tuna, ustc-tug, sjtug
-# export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
-# export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
-# export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-# export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
-export RUSTUP_DIST_SERVER=https://mirror.sjtu.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=https://mirror.sjtu.edu.cn/rust-static/rustup
-
-## sbt / scala
-export SBT_OPTS="-Dsbt.override.build.repos=true ${SBT_OPTS}"
-# export JVM_OPTS="-Dhttps.protocols=TLSv1.2,TLSv1.3 ${JVM_OPTS}"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="${HOME}/.sdkman"
-[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
 if [[ -n ${ZSH_PROF} ]]; then
   zprof
 fi
-
-# Created by `pipx` on 2023-04-09 17:38:27
-export PATH="$PATH:${HOME}/Library/Python/3.9/bin"

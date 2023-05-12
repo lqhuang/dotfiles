@@ -150,6 +150,8 @@
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true
   },
+  "metals.enableIndentOnPaste": true,
+  "metals.enableSemanticHighlighting": true,
   "metals.serverProperties": ["-Dhttps.protocols=TLSv1.2,TLSv1.3"],
   "metals.showImplicitArguments": false,
   "metals.showImplicitConversionsAndClasses": true,
