@@ -1,5 +1,3 @@
-
-
 # select mirrors
 sudo pacman-mirrors -i -c China -m rank
 
@@ -10,19 +8,16 @@ sudo pacman -Syy
 sudo pacman -Syu
 
 # install packages
-sudo pacman -S vim tmux htop ps_mem tmux avahi lsof bind-tools make ctop rsync
-sudo pacman -S ripgrep fd fzf
-
 # bind-tools -> dig
+sudo pacman -S vim tmux htop ps_mem tmux avahi lsof bind-tools make rsync
+sudo pacman -S ripgrep fd fzf
 
 sudo pacman -S docker docker-compose
 sudo usermod -aG docker ${USER}
 # add current user to `docker` group
 
-
 # dock application
-sudo pacman -S plank
-
+# sudo pacman -S plank
 
 ## Tunning
 
@@ -46,9 +41,6 @@ Server = https://mirrors.ustc.edu.cn/manjaro/stable/$repo/$arch
 ## Country : China
 Server = https://mirrors.tuna.tsinghua.edu.cn/manjaro/stable/$repo/$arch
 
-
 # Haskell
 # pacman -S make
 # yay -S stack-static
-
-

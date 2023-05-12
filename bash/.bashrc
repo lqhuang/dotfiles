@@ -54,8 +54,14 @@ alias fgrep="fgrep ${GREP_OPTIONS}"
 ## fzf
 if [[ -x $(command -v fzf) ]]; then
   if [[ ${KERNEL_NAME} == "Linux" ]]; then
-    source /usr/share/doc/fzf/examples/completion.bash
-    # source /usr/share/doc/fzf/examples/key-bindings.bash
+    DISTRO=$(lsb_release -is)
+    if [[ ${DISTRO} == "Debian" ]]; then
+      source /usr/share/doc/fzf/examples/completion.bash
+      # source /usr/share/doc/fzf/examples/key-bindings.bash
+    else
+      source /usr/share/fzf/completion.bash
+      # source /usr/share/fzf/key-bindings.bash
+    fi
   elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
     source ${BREW_PREFIX}/opt/fzf/shell/completion.bash
     # source ${BREW_PREFIX}/opt/fzf/shell/key-bindings.bash

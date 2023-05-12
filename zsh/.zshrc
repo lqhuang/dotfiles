@@ -157,13 +157,13 @@ zstyle ':completion:*' accept-exact '*(N)'
 ### Use history substring search: zsh-history-substring-search.zsh
 ### Use autosuggestion: zsh-autosuggestions.zsh
 if [[ ${KERNEL_NAME} == "Linux" ]]; then
-  if [[ -s /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
+  if [[ -s /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
     source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
     # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   fi
 elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
-  if [[ -s ${BREW_PREFIX}/share/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
+  if [[ -s ${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
     source ${BREW_PREFIX}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
     source ${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   fi
@@ -181,9 +181,14 @@ fi
 ## fzf
 if [[ -x $(command -v fzf) ]]; then
   if [[ ${KERNEL_NAME} == "Linux" ]]; then
-    # only for Debian, not for Arch
-    source /usr/share/doc/fzf/examples/completion.zsh
-    # source /usr/share/doc/fzf/examples/key-bindings.zsh
+    DISTRO=$(lsb_release -is)
+    if [[ ${DISTRO} == "Debian" ]]; then
+      source /usr/share/doc/fzf/examples/completion.zsh
+      # source /usr/share/doc/fzf/examples/key-bindings.zsh
+    else
+      source /usr/share/fzf/completion.zsh
+      # source /usr/share/fzf/key-bindings.zsh
+    fi
   elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
     source ${BREW_PREFIX}/opt/fzf/shell/completion.zsh
     # source ${BREW_PREFIX}/opt/fzf/shell/key-bindings.zsh

@@ -4,20 +4,16 @@ DISTRO=$(lsb_release -is)
 
 sudo -v
 
-
 # set password of root
 sudo passwd root
-
 
 # First Update all
 sudo apt update
 sudo apt dist-upgrade
 
-
 # drivers
 ubuntu-drivers devices
 sudo ubuntu-drivers autoinstall
-
 
 # Install tuna mirror source
 # Debian
@@ -62,24 +58,20 @@ case $DISTRO in
         ;;
 esac
 
-
 # Runlevel graphical.target / multi-user.target
 systemctl get-default
 # systemctl set-default multi-user.target
-
 
 # SSH server
 # sudo apt install openssh-server
 # sudo systemctl restart sshd.service
 
+# testing / sid
+apt-get install -y apt-listchanges apt-listbugs
 
-# utils
-sudo apt install net-tools curl -y
-sudo apt install htop tmux zsh git -y
-sudo apt install build-essential -y
-
-apt-get install htop tmux zsh git vim knot-dnsutils make python3
-apt-get install neovim ripgrep fd-find fzf
+apt-get install -y curl rsync htop tmux zsh git vim knot-dnsutils make python3 iperf3
+apt-get install -y neovim ripgrep fd-find fzf nnn
+apt-get install -y zsh-syntax-highlighting zsh-autosuggestions bash-completion
 
 # oh-my-zsh
 # index: https://ohmyz.sh/
@@ -96,7 +88,6 @@ bash ~/Downloads/Miniconda3-latest-Linux-x86_64.sh -b -p ~/Software/miniconda3
 # conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
 # conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
 # conda config --set show_channel_urls yes
-
 
 # docker-ce
 DISTRO_LOWER=$(echo ${DISTRO} | tr '[:upper:]' '[:lower:]')
@@ -115,12 +106,6 @@ sudo usermod -aG docker ${USER}
 
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
-
-# docker-compose
-# check https://github.com/docker/compose/releases for latest compose release
-sudo curl -L https://github.com/docker/compose/releases/download/1.25.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-
 
 # vscode
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /tmp/microsoft.gpg
@@ -141,13 +126,11 @@ sudo apt-get update
 sudo apt-get install sublime-text -y
 # sudo apt-get install sublime-merge -y
 
-
-# shadowsocks-libev
-sudo apt-get install software-properties-common -y
-sudo add-apt-repository ppa:max-c-lv/shadowsocks-libev -y
-sudo apt-get update
-sudo apt install shadowsocks-libev -y
-
+# # shadowsocks-libev
+# sudo apt-get install software-properties-common -y
+# sudo add-apt-repository ppa:max-c-lv/shadowsocks-libev -y
+# sudo apt-get update
+# sudo apt install shadowsocks-libev -y
 
 # Google Chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -155,16 +138,13 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /et
 sudo apt-get update
 sudo apt-get install google-chrome-stable -y
 
-
 # repair Firefox download file name
 sudo apt install nautilus-filename-repairer
-
 
 # Install LaTex fundamental packages
 sudo apt-get install -y texlive-latex-base
 # xelatex
 sudo apt-get install -y texlive-xetex
-
 
 # Haskell Stack
 curl -sSL https://get.haskellstack.org/ | sh
@@ -173,17 +153,14 @@ stack upgrade --binary-only
 # stack setup
 # stack install hlint
 
-
 # rustup
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile default --default-toolchain beta --no-modify-path
 # rustup component add rustfmt --toolchain beta-x86_64-unknown-linux-gnu
 # rustup component add clippy --toolchain beta-x86_64-unknown-linux-gnu
 
-
 # SDKMAN
 curl -s "https://get.sdkman.io" | bash
-
 
 # nvm - node / npm
 # index: https://github.com/nvm-sh/nvm
@@ -193,16 +170,12 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 npm config set registry https://registry.npm.taobao.org/
 # npm config set registry https://r.cnpmjs.org/
 
-# Linuxbrew
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-
-
 # install kubectl
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
-echo "source <(kubectl completion bash)" >> ~/.bashrc
+# echo "source <(kubectl completion bash)" >> ~/.bashrc
 # or
 # plugins=(git zsh-completions kubectl)
 # for Oh-My-Zsh

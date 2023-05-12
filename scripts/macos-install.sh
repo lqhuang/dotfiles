@@ -27,23 +27,54 @@ fi
 
 # packages to be installed
 apps=(
-    # cmake
-    # coreutils
-    # findutils
-    htop
-    tmux
-    # wget
+  # cmake
+  # coreutils
+  # findutils
+  # wget
+  htop
+  tmux
+  iperf3
+  tree
+  zsh-autosuggestions
+  zsh-history-substring-search
+)
+
+more_cli=(
+  neovim
+  ripgrep
+  fd
+  fnm
+  fzf
+  nnn
+  zsh-syntax-highlighting
+  terraform
+  git-cliff
 )
 
 caskapps=(
-    # alfred
-    # cheatsheet
-    # google-chrome
-    # intellij-idea-ce
-    iterm2
-    # java
-    # pycharm-ce
-    # vagrant
+  # alfred
+  # cheatsheet
+  # google-chrome
+  iterm2
+  sublime-text
+  raycast
+  iina
+  font-noto-sans-cjk-sc
+  firefox
+)
+
+more_caskapps=(
+  zotero
+  cyberduck
+  figma
+  warp
+  stats
+  slack
+  postman
+  alt-tab
+  vnc-viewer
+  readdle-spark
+  the-unarchiver
 )
 
 brew doctor
