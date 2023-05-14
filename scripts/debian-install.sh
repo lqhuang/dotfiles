@@ -69,7 +69,7 @@ systemctl get-default
 # testing / sid
 apt-get install -y apt-listchanges apt-listbugs
 
-apt-get install -y curl rsync htop tmux zsh git vim knot-dnsutils make python3 iperf3
+apt-get install -y curl unzip rsync htop tmux zsh git vim knot-dnsutils make python3 iperf3
 apt-get install -y neovim ripgrep fd-find fzf nnn
 apt-get install -y zsh-syntax-highlighting zsh-autosuggestions bash-completion
 
