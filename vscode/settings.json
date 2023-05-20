@@ -108,23 +108,23 @@
   "python.analysis.inlayHints.functionReturnTypes": false,
   "python.analysis.inlayHints.variableTypes": false,
   "python.analysis.autoImportCompletions": true,
-  /** Deprecated settings
-   *
+  /**
+   * // Deprecated settings
    * "python.formatting.provider": "yapf",
    * "python.formatting.yapfArgs": [
    *   "--style",
    *   "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true, coalesce_brackets: false, split_before_dot: true}"
    * ],
+   * "python.linting.mypyEnabled": true,
+   * "python.linting.mypyArgs": [
+   *   "--show-error-context",
+   *   "--show-column-numbers",
+   *   "--show-error-codes",
+   *   "--no-pretty",
+   *   "--no-color-output"
+   * ],
    */
   "python.formatting.provider": "none",
-  "python.linting.mypyEnabled": true,
-  "python.linting.mypyArgs": [
-    "--show-error-context",
-    "--show-column-numbers",
-    "--show-error-codes",
-    "--no-pretty",
-    "--no-color-output"
-  ],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "autoDocstring.docstringFormat": "numpy",
@@ -139,9 +139,18 @@
   },
   // Standalone extenstions for Python
   // "black-formatter.args": ["--line-length", "79"],
+  // "flake8.args": ["--ignore", "E203,E501,W503,W504"],
   "isort.args": ["--profile", "black"],
-  "flake8.args": ["--ignore", "E203,E501,W503,W504"],
   "ruff.organizeImports": false,
+  "ruff.args": ["--ignore", "C408"],
+  "mypy-type-checker.args": [
+    "--follow-imports=silent", // default
+    "--ignore-missing-imports", // default
+    "--no-pretty", // default
+    "--show-column-numbers",
+    "--show-error-context",
+    "--show-error-codes"
+  ],
   /* Rust */
   // "rust-analyzer.checkOnSave.command": "clippy",
   /* Scala */
@@ -194,7 +203,9 @@
   },
   "extensions.ignoreRecommendations": true,
   /* Telemetry */
-  "telemetry.telemetryLevel": "error",
+  "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
+  "docker-explorer.enableTelemetry": false,
+  "terraform.telemetry.enabled": false,
   "mdb.sendTelemetry": false
 }

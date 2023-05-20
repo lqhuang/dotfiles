@@ -1,12 +1,65 @@
-davidanson.vscode-markdownlint
-donjayamanne.githistory
-eamodio.gitlens
-jithurjacob.nbpreviewer
-justusadam.language-haskell
-ms-python.python
-ms-vscode.cpptools
+
+## Must
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
-njpwerner.autodocstring
+ms-vscode.remote-explorer
+
+## General
+github.copilot
+github.copilot-labs
+github.vscode-github-actions
+
+## Markup
+esbenp.prettier-vscode
+tamasfe.even-better-toml
 redhat.vscode-yaml
-scala-lang.scala
+
+hashicorp.terraform
+matthewpi.caddyfile-support
+
+# inferrinizzard.prettier-sql-vscode
+# mechatroner.rainbow-csv
+# trond-snekvik.simple-rst
+
+## Shell
+foxundermoon.shell-format
+# timonwong.shellcheck
+
+## Haskell
+justusadam.language-haskell
+
+## Python
+charliermarsh.ruff
+ms-python.black-formatter
+ms-python.python
+ms-python.isort
+ms-python.mypy-type-checker
+ms-python.vscode-pylance
+njpwerner.autodocstring
+
+## C/Cpp
+ms-vscode.cpptools
+
+## Rust
+rust-lang.rust-analyzer
+vadimcn.vscode-lldb
+
+## Scala
+scalameta.metals
+
+## Front end
+bradlc.vscode-tailwindcss
+dbaeumer.vscode-eslint
+yoavbls.pretty-ts-errors
+heybourn.headwind
+
+# ms-vscode.live-server
+# svelte.svelte-vscode
+
+## Git
+donjayamanne.githistory
+mhutchie.git-graph
+
+## optional
+AykutSarac.jsoncrack-vscode
+mongodb.mongodb-vscode

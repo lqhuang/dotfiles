@@ -47,6 +47,7 @@ more_cli=(
   fzf
   nnn
   zsh-syntax-highlighting
+  bash-completion@2
   terraform
   git-cliff
 )

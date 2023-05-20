@@ -49,6 +49,8 @@ if [[ ${KERNEL_NAME} == "Linux" ]]; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
+  [[ -r "${BREW_PREFIX}/etc/profile.d/bash_completion.sh" ]] && . "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"
 fi
 
 # # terraform
