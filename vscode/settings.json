@@ -74,20 +74,25 @@
    */
   /* markup language */
   "[markdown]": {
+    "editor.indentSize": 2,
     "editor.renderWhitespace": "boundary",
     "editor.wordWrap": "off",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "files.trimTrailingWhitespace": false
   },
   "[yaml][json][jsonc]": {
+    "editor.indentSize": 2,
+    "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[toml]": {
+    "editor.indentSize": 2,
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "[html][css]": {
-    "editor.formatOnSave": true,
+    "editor.indentSize": 2,
+    "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "prettier.proseWrap": "always",
@@ -155,6 +160,7 @@
   // "rust-analyzer.checkOnSave.command": "clippy",
   /* Scala */
   "[scala]": {
+    "editor.indentSize": 2,
     "editor.rulers": [88],
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true
@@ -168,6 +174,7 @@
   "typescript.preferences.quoteStyle": "single",
   "typescript.suggest.completeFunctionCalls": true,
   "[javascript][typescript][javascriptreact][typescriptreact]": {
+    "editor.indentSize": 2,
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
