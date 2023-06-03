@@ -12,29 +12,68 @@ if [[ ${KERNEL_NAME} == "Darwin" ]]; then
 fi
 
 if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+  export ZSH="${HOME}/.oh-my-zsh"
+  if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
+    # ZSH_THEME="fishy"
+    export ZSH_THEME="ys"
+  else
+    export ZSH_THEME="af-magic"
+  fi
+  source $ZSH/oh-my-zsh.sh
 
+else
+  # ==== ZSH Opts ====
+  # https://zsh.sourceforge.io/Doc/Release/Options.html
+  setopt noflowcontrol
+  bindkey "\eq" push-line-or-edit
+
+  # ==== ZSH Plugins ====
+  # ## auto completion (obviously not required under oh-my-zsh)
+  # ## https://zsh.sourceforge.io/Doc/Release/Completion-System.html
+  autoload -U +X bashcompinit && bashcompinit
+  autoload -Uz compinit
+  zstyle ':completion:*' menu select                              # Set few items style
+  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
+  zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
+  zstyle ':completion:*' rehash true
+  # ## Speed up completions
+  zstyle ':completion:*' accept-exact '*(N)'
+  zstyle ':completion:*' use-cache on
+  # zstyle ':completion:*' cache-path ${ZSH}/cache
+
+  # ==== Aliases ====
+  alias lsa='ls -lah'
+  alias l='ls -lah'
+  alias ll='ls -lh'
+  alias la='ls -lAh'
+
+  EXC_FOLDERS="{.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
+  GREP_OPTIONS="--color=auto --exclude-dir=$EXC_FOLDERS"
+  alias grep="grep ${GREP_OPTIONS}"
+  alias egrep="egrep ${GREP_OPTIONS}"
+  alias fgrep="fgrep ${GREP_OPTIONS}"
 fi
 
-######################## ZSH Opts ##############################################
-# https://zsh.sourceforge.io/Doc/Release/Options.html
-setopt noflowcontrol
+# ######################## ZSH Opts ##############################################
+# # https://zsh.sourceforge.io/Doc/Release/Options.html
+# setopt noflowcontrol
 
-bindkey "\eq" push-line-or-edit
+# bindkey "\eq" push-line-or-edit
 
-######################## ZSH Plugins ##############################################
+# ######################## ZSH Plugins ##############################################
 
-# ## auto completion (obviously not required under oh-my-zsh)
-# ## https://zsh.sourceforge.io/Doc/Release/Completion-System.html
-autoload -U +X bashcompinit && bashcompinit
-autoload -Uz compinit
-zstyle ':completion:*' menu select                              # Set few items style
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
-zstyle ':completion:*' rehash true                              # automatically find new executables in path
-# ## Speed up completions
-zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*' use-cache on
-# zstyle ':completion:*' cache-path ${ZSH}/cache
+# # ## auto completion (obviously not required under oh-my-zsh)
+# # ## https://zsh.sourceforge.io/Doc/Release/Completion-System.html
+# autoload -U +X bashcompinit && bashcompinit
+# autoload -Uz compinit
+# zstyle ':completion:*' menu select                              # Set few items style
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
+# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
+# zstyle ':completion:*' rehash true                              # automatically find new executables in path
+# # ## Speed up completions
+# zstyle ':completion:*' accept-exact '*(N)'
+# zstyle ':completion:*' use-cache on
+# # zstyle ':completion:*' cache-path ${ZSH}/cache
 
 ## Plugins section: Enable fish style features
 ### Use syntax highlighting: zsh-syntax-highlighting.zsh
@@ -61,17 +100,17 @@ fi
 #   complete -o nospace -C ${TERRAFORM} terraform
 # fi
 
-######################## Aliases ############################################
-alias lsa='ls -lah'
-alias l='ls -lah'
-alias ll='ls -lh'
-alias la='ls -lAh'
+# ######################## Aliases ############################################
+# alias lsa='ls -lah'
+# alias l='ls -lah'
+# alias ll='ls -lh'
+# alias la='ls -lAh'
 
-EXC_FOLDERS="{.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
-GREP_OPTIONS="--color=auto --exclude-dir=$EXC_FOLDERS"
-alias grep="grep ${GREP_OPTIONS}"
-alias egrep="egrep ${GREP_OPTIONS}"
-alias fgrep="fgrep ${GREP_OPTIONS}"
+# EXC_FOLDERS="{.bzr,CVS,.git,.hg,.svn,.idea,.tox}"
+# GREP_OPTIONS="--color=auto --exclude-dir=$EXC_FOLDERS"
+# alias grep="grep ${GREP_OPTIONS}"
+# alias egrep="egrep ${GREP_OPTIONS}"
+# alias fgrep="fgrep ${GREP_OPTIONS}"
 
 ########################## Software Init ######################################
 ## fzf
