@@ -15,6 +15,9 @@
 [index]
     version = 4
 
+[log]
+    date = iso8601 # iso8601-strict / rfc2822
+
 [core]
     autocrlf = input  # Dealing with line endings
     untrackedcache = true

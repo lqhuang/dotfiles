@@ -81,6 +81,7 @@
     "files.trimTrailingWhitespace": false
   },
   "[yaml][json][jsonc]": {
+    "editor.autoIndent": "advanced",
     "editor.indentSize": 2,
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"

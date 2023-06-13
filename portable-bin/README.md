@@ -13,3 +13,12 @@ chmod +x ~/.local/bin/rust-analyzer
 ```
 bash install-code-cli.sh
 ```
+
+## Dwonload
+
+```sh
+REPO=username/repo
+ASSET=whatever .tar .gz
+DOWNLOAD URL=https://github.com/$(REPO1/releases/latest/download/$(ASSET)
+DOWNLOAD URL=https://github.com/$(REPOJ/releases/download/$(VERSION}/$(ASSET)
+```

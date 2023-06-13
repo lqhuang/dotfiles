@@ -64,8 +64,7 @@
 - [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 - [craftzdog/dotfiles-public](https://github.com/craftzdog/dotfiles-public)
 - [ayamir/nvimdots](https://github.com/ayamir/nvimdots)
-- [LunarVim/LunarVim](https://github.com/LunarVim/LunarVim)
-- [AstroNvim/AstroNvim](https://github.com/AstroNvim/AstroNvim)
+- [junnplus/dotfiles](https://github.com/junnplus/dotfiles/tree/master/nvim)
 
 ## Learn vim / neovim / lua
 
@@ -84,3 +83,5 @@
 ## Awesome
 
 - [rockerBOO/awesome-neovim](https://github.com/rockerBOO/awesome-neovim)
+- [LunarVim/LunarVim](https://github.com/LunarVim/LunarVim)
+- [AstroNvim/AstroNvim](https://github.com/AstroNvim/AstroNvim)
