@@ -14,18 +14,23 @@
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "selection",
   "editor.inlineSuggest.enabled": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.accessibilitySupport": "off",
   "editor.guides.bracketPairs": true,
+  "editor.experimental.asyncTokenization": true,
   "editor.unicodeHighlight.allowedLocales": {
     "zh-hans": true
   },
-  "editor.quickSuggestions": {
-    "other": "on",
-    "comments": "off",
-    "strings": "on"
-  },
+  // "editor.quickSuggestions": {
+  //   "other": "on",
+  //   "comments": "off",
+  //   "strings": "on"
+  // },
+  "diffEditor.experimental.useVersion2": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "workbench.fontAliasing": "antialiased",
   "git.confirmSync": false,
+  "markdown.editor.pasteUrlAsFormattedLink.enabled": true,
   /* Terminal config */
   "terminal.integrated.inheritEnv": false,
   /* Apperance */
@@ -50,8 +55,6 @@
   },
   "search.exclude": {
     "**/.git": true,
-    "**/.bloop": true,
-    "**/.metals": true,
     // Node.js
     "**/.pnpm": true,
     "**/node_modules": true,
@@ -59,6 +62,8 @@
     "**/pnpm-lock.yaml": true,
     "**/yarn.lock": true,
     // Scala
+    "**/.bloop": true,
+    "**/.metals": true,
     "**/target": true,
     // Python
     "**/*venv*": true
@@ -68,6 +73,8 @@
   // If the Tasks: Run Task command is slow,
   // disabling auto detect for task providers may help.
   "task.autoDetect": "off",
+  /* Extensions */
+  "extensions.ignoreRecommendations": true,
 
   /**
    * Language specific settings
@@ -138,10 +145,10 @@
   "[python]": {
     "editor.rulers": [79, 120],
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "ms-python.black-formatter"
-    // "editor.codeActionsOnSave": {
-    //   "source.organizeImports": true
-    // }
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
   },
   // Standalone extenstions for Python
   // "black-formatter.args": ["--line-length", "79"],
@@ -209,7 +216,6 @@
     "plaintext": true,
     "markdown": true
   },
-  "extensions.ignoreRecommendations": true,
   /* Telemetry */
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
