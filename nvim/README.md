@@ -35,6 +35,7 @@
   - [nvim-treesitter/nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
   - [kylechui/nvim-surround](https://github.com/kylechui/nvim-surround)
   - [cappyzawa/trim.nvim](https://github.com/cappyzawa/trim.nvim)
+  - [nvimdev/guard.nvim](https://github.com/nvimdev/guard.nvim)
 - [nvim-orgmode/orgmode](https://github.com/nvim-orgmode/orgmode)
 
 ### UI

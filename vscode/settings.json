@@ -30,7 +30,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "workbench.fontAliasing": "antialiased",
   "git.confirmSync": false,
-  "markdown.editor.pasteUrlAsFormattedLink.enabled": true,
+  // "markdown.editor.pasteUrlAsFormattedLink.enabled": true,
   /* Terminal config */
   "terminal.integrated.inheritEnv": false,
   /* Apperance */
@@ -45,12 +45,15 @@
   // visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
   // https://code.visualstudio.com/docs/setup/linux
   "files.watcherExclude": {
-    "**/.git/objects/**": true,
-    "**/.git/subtree-cache/**": true,
-    "**/node_modules/*/**": true,
+    // "**/.git/objects/**": true,
+    // "**/.git/subtree-cache/**": true,
+    "**/.git": true,
+    "**/node_modules": true,
     "**/.bloop": true,
     "**/.metals": true,
     "**/.ammonite": true,
+    "**/.venv": true,
+    "**/.conda-venv": true,
     "**/*venv*": true
   },
   "search.exclude": {
@@ -66,6 +69,8 @@
     "**/.metals": true,
     "**/target": true,
     // Python
+    "**/.venv": true,
+    "**/.conda-venv": true,
     "**/*venv*": true
   },
   // "explorer.experimental.fileNesting.enabled": true,

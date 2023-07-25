@@ -12,6 +12,9 @@
     manyFiles = true
     # [How to Improve Performance in Git: The Complete Guide](https://www.git-tower.com/blog/git-performance/)
 
+[fetch]
+    prune = true
+
 [index]
     version = 4
 
