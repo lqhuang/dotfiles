@@ -177,6 +177,11 @@ fi
 #   complete -o nospace -C ${TERRAFORM} terraform
 # fi
 
+########################## ZSH Alias ##########################################
+alias git="noglob git"
+alias rg="noglob rg"
+alias grep="noglob grep"
+
 ########################## Software Init ######################################
 ## fzf
 if [[ -x $(command -v fzf) ]]; then
