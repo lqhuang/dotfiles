@@ -45,16 +45,18 @@
   // visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
   // https://code.visualstudio.com/docs/setup/linux
   "files.watcherExclude": {
-    // "**/.git/objects/**": true,
-    // "**/.git/subtree-cache/**": true,
-    "**/.git": true,
-    "**/node_modules": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    // "**/.git": true,
     "**/.bloop": true,
     "**/.metals": true,
     "**/.ammonite": true,
+    "**/target": true,
     "**/.venv": true,
     "**/.conda-venv": true,
-    "**/*venv*": true
+    "**/*venv*": true,
+    "**/.*_cache": true // `.mypy_cache`, `.pytest_cache`
   },
   "search.exclude": {
     "**/.git": true,
@@ -67,11 +69,13 @@
     // Scala
     "**/.bloop": true,
     "**/.metals": true,
+    "**/.ammonite": true,
     "**/target": true,
     // Python
     "**/.venv": true,
     "**/.conda-venv": true,
-    "**/*venv*": true
+    "**/*venv*": true,
+    "**/.*_cache": true // `.mypy_cache`, `.pytest_cache`
   },
   // "explorer.experimental.fileNesting.enabled": true,
   /* Task */
