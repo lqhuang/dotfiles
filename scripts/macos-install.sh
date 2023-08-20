@@ -59,15 +59,18 @@ caskapps=(
   iterm2
   sublime-text
   raycast
-  iina
   font-noto-sans-cjk-sc
+  iina
   firefox
 )
 
 more_caskapps=(
   zotero
   cyberduck
+  telegram
+  linear-linear
   figma
+  element
   warp
   stats
   slack

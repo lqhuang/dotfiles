@@ -22,8 +22,15 @@ set hidden      " Hide buffers when they are abandoned
 set mouse=a     " Enable mouse usage (all modes)
 set wildmenu    " command-line completion operates in an enhanced mode
 
+set wildmode=longest,list,full " use Bash-like tab completion
+" first tab will complete as much as possible
+" second tab will provide a list
+" third and subsequent tabs will cycle through the completion options
+
 set incsearch   " Incremental search. Highlight while searching with / or ?.
 set hlsearch    " Keep matches highlighted.
+
+set history=200 " Increase default history from 50 to 200
 
 " set noendofline
 " set nofixendofline
@@ -50,6 +57,10 @@ set shiftround     " <Tab>(>>) indents to next multiple of 'shiftwidth'.
 
 set autoindent     " Copy indent from current line when starting a new line
 set smartindent    " Do smart autoindenting when starting a new line.
+
+colorscheme murphy " Set color scheme (dark)
+" you can use `:colorscheme` followed by a space and
+" then press `Tab` or `Ctrl+d` to get a list of the available color schemes
 
 " filetype on         " To enable file type detection
 " filetype plugin on  " enable loading the plugin files for specific file types
