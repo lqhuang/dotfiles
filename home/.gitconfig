@@ -5,6 +5,16 @@
     name = Lanqing Huang
     email = lqhuang@outlook.com
 
+[core]
+    fileMode = true
+    fsmonitor = true
+    untrackedCache = true
+    autocrlf = input  # Dealing with line endings
+    # whitespace = trailing-space,space-before-tab,-indent-with-non-tab
+
+[index]
+    version = 4
+
 [init]
     defaultBranch = master
 
@@ -14,38 +24,36 @@
 
 [fetch]
     prune = true
+    pruneTags = true
+    # A value of 0 will give some reasonable default. If unset, it defaults to 1.
+    # parallel = 0
 
-[index]
-    version = 4
+[pull]
+    ff = only
 
-[log]
-    date = iso8601 # iso8601-strict / rfc2822
-
-[core]
-    autocrlf = input  # Dealing with line endings
-    untrackedcache = true
-    fsmonitor = true
-    commitgraph = true
-    # whitespace = trailing-space,space-before-tab,-indent-with-non-tab
+[merge]
+    # https://git-scm.com/docs/merge-config
+    conflictStyle = zdiff3
 
 [push]
     # default = simple
     followTags = true
 
+[log]
+    date = iso8601 # iso8601-strict / rfc2822
+
 [color]
     ui = auto
-
-[pull]
-    ff = only
 
 [credential]
     helper = store
 
-[oh-my-zsh]
-    hide-dirty = 1
-
 [alias]
     sl = log --pretty=tformat:'* %C(auto)%h%C(auto)%d %s%Creset %C(auto,blue)(%an)%Creset - %C(auto)%ad'
+    gl = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all
 
-# [includeIf "gitdir/i:~/git-repo"]
-#     path = ~/somewhere/.gitconfig
+[include]
+    path = .extra.gitconfig
+
+[oh-my-zsh]
+    hide-dirty = 1

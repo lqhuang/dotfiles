@@ -14,7 +14,7 @@
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "selection",
   "editor.inlineSuggest.enabled": true,
-  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  // "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.accessibilitySupport": "off",
   "editor.guides.bracketPairs": true,
   "editor.experimental.asyncTokenization": true,
@@ -34,6 +34,7 @@
   // "markdown.editor.pasteUrlAsFormattedLink.enabled": true,
   /* Terminal config */
   "terminal.integrated.inheritEnv": false,
+  "terminal.integrated.fontFamily": "MesloLGS NF", // https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k
   /* Apperance */
   // "window.nativeTabs": true,
   "window.titleBarStyle": "custom",
@@ -148,7 +149,6 @@
    *   "--no-color-output"
    * ],
    */
-  "python.formatting.provider": "none",
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "autoDocstring.docstringFormat": "numpy",
