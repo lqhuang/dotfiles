@@ -2,13 +2,20 @@
 KERNEL_NAME=$(uname -s)  # Linux / Darwin
 ARCH_NAME=$(uname -m)  # x86_64 / arm64
 
-# BREW_PREFIX=$(brew --prefix)
+## Homebrew
 if [[ ${KERNEL_NAME} == "Darwin" ]]; then
-  if [[ ${ARCH_NAME} == 'x86_64' ]]; then
-    BREW_PREFIX="/usr/local"
-  else
-    BREW_PREFIX="/opt/homebrew"
-  fi
+  # BREW_PREFIX=$(brew --prefix)
+  export HOMEBREW_PREFIX="/opt/homebrew"
+  export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+  export HOMEBREW_REPOSITORY="/opt/homebrew"
+  export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
+  export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
+  export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
+
+  export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+  export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+  # export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+  # export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
 fi
 
 if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
@@ -86,9 +93,9 @@ if [[ ${KERNEL_NAME} == "Linux" ]]; then
     # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   fi
 elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
-  if [[ -s ${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
-    source ${BREW_PREFIX}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-    source ${BREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  if [[ -s ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    source ${HOMEBREW_PREFIX}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+    source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   fi
 fi
 
@@ -125,8 +132,8 @@ if [[ -x $(command -v fzf) ]]; then
       # source /usr/share/fzf/key-bindings.zsh
     fi
   elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
-    source ${BREW_PREFIX}/opt/fzf/shell/completion.zsh
-    # source ${BREW_PREFIX}/opt/fzf/shell/key-bindings.zsh
+    source ${HOMEBREW_PREFIX}/opt/fzf/shell/completion.zsh
+    # source ${HOMEBREW_PREFIX}/opt/fzf/shell/key-bindings.zsh
   fi
 fi
 

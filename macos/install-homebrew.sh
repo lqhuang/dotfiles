@@ -9,3 +9,7 @@ bash -c "$(curl -fsSL https://github.com/Homebrew/install/raw/master/install.sh)
 
 echo "Please add the following env variables manually..."
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"'
+
+# (Optional) Install extra fonts
+brew tap --custom-remote --force-auto-update homebrew/cask-fonts https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-fonts.git
+brew install font-meslo-lg-nerd-font font-noto-sans-cjk-sc font-noto-serif-cjk-sc

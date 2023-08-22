@@ -23,9 +23,10 @@ export LC_ALL=en_US.UTF-8
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-## pre-defined `no_proxy``
+## Check `~/.zshenv` for custom details.
 # export https_proxy=http://localhost:7890
 # export HTTPS_PROXY=http://localhost:7890
+## pre-defined `no_proxy``
 export no_proxy=.local,.internal,.arpa,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
 export NO_PROXY=.local,.internal,.arpa,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
 
@@ -34,22 +35,13 @@ export VISUAL=nvim
 export EDITOR=vim
 # `VISUAL` 和 `EDITOR` ，会优先使用 `VISUAL` ，当无法使用时才会使用 `EDITOR`
 
-# BREW_PREFIX=$(brew --prefix)
-if [[ ${KERNEL_NAME} == "Darwin" ]]; then
-  if [[ ${ARCH_NAME} == 'x86_64' ]]; then
-    BREW_PREFIX="/usr/local"
-  else
-    BREW_PREFIX="/opt/homebrew"
-  fi
-fi
-
 ######################## Common Aliases ############################################
 # inspired from manjaro `.zshrc` configuration
 # setopt correct                            # Auto correct mistakes
 
 alias cp='cp -i'                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
-alias du='du -h'                     # human-readable sizes
+alias du='du -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias ls='ls --color=auto'                # colored ls output
 
@@ -133,15 +125,6 @@ function _list_env_proxy() {
 }
 
 ########################## Software Init ######################################
-## Homebrew
-if [[ ${KERNEL_NAME} == "Darwin" ]]; then
-  [[ ${ARCH_NAME} == "arm64" ]] && export PATH="${BREW_PREFIX}/bin:${BREW_PREFIX}/sbin:${PATH}"
-  export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
-  export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-  # export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-  # export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-fi
-
 ## fnm
 if [[ ${KERNEL_NAME} == "Linux" ]]; then
   FNM_DIR="${HOME}/.local/share/fnm"
