@@ -80,9 +80,11 @@
 - [mhinz/vim-galore](https://github.com/mhinz/vim-galore): 🎓 All things Vim!
 - [wsdjeg/vim-galore-zh_cn](https://github.com/wsdjeg/vim-galore-zh_cn): Vim 从
   入门到精通
+- [FledgeXu/NeovimZero2Hero](https://github.com/FledgeXu/NeovimZero2Hero)
 
 ## Awesome
 
 - [rockerBOO/awesome-neovim](https://github.com/rockerBOO/awesome-neovim)
 - [LunarVim/LunarVim](https://github.com/LunarVim/LunarVim)
 - [AstroNvim/AstroNvim](https://github.com/AstroNvim/AstroNvim)
+- [NeoVim 插件推荐](https://innei.in/posts/Z-Turn/nvim-plugin-recommend)

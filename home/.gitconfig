@@ -55,5 +55,18 @@
 [include]
     path = .extra.gitconfig
 
+# # Interesting approach to make platform-specific `.gitconfig`
+# # incremental files (such as Credential Helpers)
+# [includeIf "gitdir:/Users"]
+#     path = ~/.gitconfig-macos
+#     # [credential]
+#     # helper = osxkeychain
+# [includeIf "gitdir:C:"]
+#     path = ~/.gitconfig-windows
+#     # [credential]
+#     # helper = manager
+# [includeIf "gitdir:/home"]
+#     path = ~/.gitconfig-linux
+
 [oh-my-zsh]
     hide-dirty = 1

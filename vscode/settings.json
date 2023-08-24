@@ -115,6 +115,9 @@
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
   "prettier.proseWrap": "always",
   /* Haskell */
   "[haskell]": {
