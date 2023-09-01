@@ -35,6 +35,12 @@ export VISUAL=nvim
 export EDITOR=vim
 # `VISUAL` 和 `EDITOR` ，会优先使用 `VISUAL` ，当无法使用时才会使用 `EDITOR`
 
+## Enable shell integration for iTerm2
+DOTFILES="${HOME}/Git/dotfiles"
+if [[ ${TERM_PROGRAM} == 'iTerm.app' && -s "${DOTFILES}/iterm2/iterm2-shell-integration.${SHELL##*/}" ]]; then
+  source "${DOTFILES}/iterm2/iterm2-shell-integration.${SHELL##*/}"
+fi
+
 ######################## Common Aliases ############################################
 # inspired from manjaro `.zshrc` configuration
 # setopt correct                            # Auto correct mistakes
@@ -86,7 +92,7 @@ function _set_env_porxy() {
   echo -e "${bold}Setting proxy env variables...${normal}"
 
   if [ ! -e "$no_proxy" ]; then
-    export no_proxy=".local,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
+    export no_proxy=".local,.internal,.arpa,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
     export NO_PROXY=${no_proxy}
   fi
 

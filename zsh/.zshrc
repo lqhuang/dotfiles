@@ -228,8 +228,8 @@ unset __conda_setup
 # > conda config --set auto_activate_base false
 
 ######################## Source Common ############################################
-if [[ -f "${HOME}/.shared_profile" ]]; then
-  source ${HOME}/.shared_profile
+if [[ -f "${HOME}/Git/dotfiles/.shared_profile" ]]; then
+  source ${HOME}/Git/dotfiles/.shared_profile
 fi
 
 # if [[ -n ${ZSH_PROF} ]]; then
