@@ -51,6 +51,9 @@ alias du='du -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias ls='ls --color=auto'                # colored ls output
 
+alias gs='git status -b'
+alias gss='git status -sb'
+
 alias npm='pnpm'
 ######################## Common Functions ############################################
 ## extract - archive extractor
