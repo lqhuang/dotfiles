@@ -8,6 +8,7 @@ stty -ixon
 ######################## Env Setup ############################################
 KERNEL_NAME=$(uname -s)  # Linux / Darwin
 ARCH_NAME=$(uname -m)  # x86_64 / arm64
+SHELL_NAME="${SHELL##*/}"  # zsh / bash
 
 # User configuration
 ## Standalone binary is awesome, that's good for me. (Haskell, Rust, Zig etc.)
@@ -37,8 +38,8 @@ export EDITOR=vim
 
 ## Enable shell integration for iTerm2
 DOTFILES="${HOME}/Git/dotfiles"
-if [[ ${TERM_PROGRAM} == 'iTerm.app' && -s "${DOTFILES}/iterm2/iterm2-shell-integration.${SHELL##*/}" ]]; then
-  source "${DOTFILES}/iterm2/iterm2-shell-integration.${SHELL##*/}"
+if [[ ${TERM_PROGRAM} == 'iTerm.app' && -s "${DOTFILES}/iterm2/iterm2-shell-integration.${SEHLL_NAME}" ]]; then
+  source "${DOTFILES}/iterm2/iterm2-shell-integration.${SEHLL_NAME}"
 fi
 
 ######################## Common Aliases ############################################
@@ -195,6 +196,25 @@ export SDKMAN_DIR="${HOME}/.sdkman"
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
 ## Python
+
+## miniconda
+if [[ -d "${HOME}/Software/miniconda3" ]]; then
+  # >>> conda initialize >>>
+  # !! Contents within this block are managed by 'conda init' !!
+  __conda_setup="$('"'"${HOME}"'"/Software/miniconda3/bin/conda' shell.${SHELL_NAME} 'hook' 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+  else
+    if [ -f "${HOME}/Software/miniconda3/etc/profile.d/conda.sh" ]; then
+      . "${HOME}/Software/miniconda3/etc/profile.d/conda.sh"
+    else
+      export PATH="${HOME}/Software/miniconda3/bin:${PATH}"
+    fi
+  fi
+  unset __conda_setup
+  # <<< conda initialize <<<
+fi
+
 # # pyenv
 # if [[ ${KERNEL_NAME} == "Linux" ]] && [[ -s "${HOME}/.pyenv" ]]; then
 #   export PYENV_ROOT="$HOME/.pyenv"

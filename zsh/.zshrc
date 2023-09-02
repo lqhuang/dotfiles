@@ -207,28 +207,12 @@ if [[ -x $(command -v fzf) ]]; then
   fi
 fi
 
-## miniconda
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('"'"${HOME}"'"/Software/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-  eval "$__conda_setup"
-else
-  if [ -f "${HOME}/Software/miniconda3/etc/profile.d/conda.sh" ]; then
-    . "${HOME}/Software/miniconda3/etc/profile.d/conda.sh"
-  else
-    export PATH="${HOME}/Software/miniconda3/bin:${PATH}"
-  fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 # Set the `auto_activate_base` parameter to `false` after installation,
 # which makes base environment not be activated on startup.
 # > conda config --set auto_activate_base false
 
 ######################## Source Common ############################################
-if [[ -f "${HOME}/Git/dotfiles/home/.shared_profile" ]]; then
+if [[ -s "${HOME}/Git/dotfiles/home/.shared_profile" ]]; then
   source ${HOME}/Git/dotfiles/home/.shared_profile
 fi
 
