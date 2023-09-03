@@ -8,7 +8,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will # load a random theme each time oh-my-zsh is loaded, in which case,
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
@@ -85,14 +86,11 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 plugins=(
   # colored-man-pages
   # common-aliases
-  # nvm
 )
 
 ## Customize plugins before Oh My Zsh is sourced
-# # nvm plugin
-# zstyle ':omz:plugins:nvm' lazy yes
-# zstyle ':omz:plugins:nvm' lazy-cmd nvm node npx pnpx
 
+## Load and initialize Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -212,9 +210,7 @@ fi
 # > conda config --set auto_activate_base false
 
 ######################## Source Common ############################################
-if [[ -s "${HOME}/Git/dotfiles/home/.shared_profile" ]]; then
-  source ${HOME}/Git/dotfiles/home/.shared_profile
-fi
+[[ -s "${HOME}/Git/dotfiles/home/.shared_profile" ]] && source ${HOME}/Git/dotfiles/home/.shared_profile
 
 # if [[ -n ${ZSH_PROF} ]]; then
 #   zprof

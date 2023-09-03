@@ -58,7 +58,7 @@ set shiftround     " <Tab>(>>) indents to next multiple of 'shiftwidth'.
 set autoindent     " Copy indent from current line when starting a new line
 set smartindent    " Do smart autoindenting when starting a new line.
 
-colorscheme murphy " Set color scheme (dark)
+colorscheme default " Set color scheme (dark)
 " you can use `:colorscheme` followed by a space and
 " then press `Tab` or `Ctrl+d` to get a list of the available color schemes
 

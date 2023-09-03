@@ -1,5 +1,9 @@
 # iTerm2
 
+## Color Schemes
+
+- [mbadolato/iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
+
 ## Features
 
 ### Shell Integration
@@ -21,7 +25,5 @@ Only bash
 ```sh
 curl -L https://iterm2.com/shell_integration/bash -o ${PWD}/iterm2-shell-integration.bash
 ```
-
-## Refs
 
 - [iTerm2 Documentation Shell Integration](https://iterm2.com/documentation-shell-integration.html)

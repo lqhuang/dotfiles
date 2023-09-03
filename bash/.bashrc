@@ -100,7 +100,4 @@ fi
 # > conda config --set auto_activate_base false
 
 ######################## Source Common ############################################
-if [[ -s "${HOME}/Git/dotfiles/home/.shared_profile" ]]; then
-  . ${HOME}/Git/dotfiles/home/.shared_profile
-  # echo "faster"
-fi
+[[ -s "${HOME}/Git/dotfiles/home/.shared_profile" ]] && . ${HOME}/Git/dotfiles/home/.shared_profile
