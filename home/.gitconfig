@@ -33,7 +33,8 @@
 
 [merge]
     # https://git-scm.com/docs/merge-config
-    conflictStyle = zdiff3
+    conflictStyle = diff3
+    # `zdiff3` is over advanced for most stable linux distros
 
 [push]
     # default = simple
