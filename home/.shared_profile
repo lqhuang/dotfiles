@@ -54,8 +54,16 @@ alias ls='ls --color=auto'                # colored ls output
 
 alias gs='git status -b'
 alias gss='git status -sb'
+alias gbl='git branch --list -a -v'
 
 alias npm='pnpm'
+
+if [[ KERNEL_NAME == 'Linux' ]]; then
+  alias rsync='rsync -ah --partial --info=progress2'
+else
+  alias rsync='rsync -ah --partial'
+fi
+
 ######################## Common Functions ############################################
 ## extract - archive extractor
 ## usage: extract <file>
@@ -223,8 +231,8 @@ fi
 #   # eval "$(pyenv virtualenv-init -)"
 # fi
 
-# pipx
-if [[ ${KERNEL_NAME} == "Darwin" ]]; then
-  # Created by `pipx` on 2023-04-09 17:38:27
-  export PATH="$PATH:${HOME}/Library/Python/3.9/bin"
-fi
+# # pipx
+# if [[ ${KERNEL_NAME} == "Darwin" ]]; then
+#   # Created by `pipx` on 2023-04-09 17:38:27
+#   export PATH="$PATH:${HOME}/Library/Python/3.9/bin"
+# fi

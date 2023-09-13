@@ -32,6 +32,7 @@ else
   # ==== ZSH Opts ====
   # https://zsh.sourceforge.io/Doc/Release/Options.html
   setopt noflowcontrol
+  setopt correct
   bindkey "\eq" push-line-or-edit
 
   # ==== ZSH Plugins ====

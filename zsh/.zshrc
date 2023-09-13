@@ -141,6 +141,7 @@ fi
 
 ######################## ZSH Opts ##############################################
 # https://zsh.sourceforge.io/Doc/Release/Options.html
+setopt correct
 bindkey "\eq" push-line-or-edit
 
 ######################## ZSH Plugins ##############################################
