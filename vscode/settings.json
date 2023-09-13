@@ -24,7 +24,7 @@
   // "editor.quickSuggestions": {
   //   "other": "on",
   //   "comments": "off",
-  //   "strings": "on"
+  //   "strings": "off"
   // },
   "diffEditor.experimental.useVersion2": true,
   "diffEditor.ignoreTrimWhitespace": false,
@@ -36,10 +36,10 @@
   "terminal.integrated.inheritEnv": false,
   "terminal.integrated.fontFamily": "MesloLGS NF", // https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k
   /* Apperance */
+  "window.zoomLevel": 1,
   // "window.nativeTabs": true,
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 1,
-  // "window.commandCenter": false,
+  "window.commandCenter": false,
   /* Files behavior */
   "explorer.fileNesting.enabled": true,
   "files.eol": "\n",
