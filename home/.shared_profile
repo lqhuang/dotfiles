@@ -55,6 +55,10 @@ alias ls='ls --color=auto'                # colored ls output
 alias gs='git status -b'
 alias gss='git status -sb'
 alias gbl='git branch --list -a -v'
+alias grh='git reset --hard'
+alias grs='git restore --staged'
+alias grw='git restore --worktree'
+alias gra='git restore --staged --worktree'
 
 alias npm='pnpm'
 
