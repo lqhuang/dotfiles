@@ -41,9 +41,9 @@ experimental: ["jlap"]
 ##               Solver Configuration               ##
 ######################################################
 
-channel_priority: flexible
-pip_interop_enabled: false
-experimental_solver: classic # libmamba
+# channel_priority: flexible
+# pip_interop_enabled: false
+# experimental_solver: classic # libmamba
 
 ######################################################
 ##  Output, Prompt, and Flow Control Configuration  ##
