@@ -10,7 +10,7 @@
   google-maven-central-asia: https://maven-central-asia.storage-download.googleapis.com/maven2/
 
   ## aliyun (https://maven.aliyun.com/mvn/view)
-  aliyun-maven: https://maven.aliyun.com/repository/public/
+  # aliyun-maven: https://maven.aliyun.com/repository/public/
 
   ## typesafe
   # lightbend-ivy-releases: https://dl.bintray.com/typesafe/ivy-releases/, [organization]/[module]/[revision]/[type]s/[artifact](-[classifier]).[ext]
