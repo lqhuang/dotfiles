@@ -3,14 +3,14 @@
   local
 
   ## huawei (https://mirrors.huaweicloud.com)
-  huaweicloud-ivy: https://mirrors.huaweicloud.com/repository/ivy/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
-  huaweicloud-maven-central: https://mirrors.huaweicloud.com/repository/maven/
+  # huaweicloud-ivy: https://mirrors.huaweicloud.com/repository/ivy/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+  # huaweicloud-maven-central: https://mirrors.huaweicloud.com/repository/maven/
 
   ## Google
-  # google-maven-central-asia: https://maven-central-asia.storage-download.googleapis.com/maven2/
+  google-maven-central-asia: https://maven-central-asia.storage-download.googleapis.com/maven2/
 
   ## aliyun (https://maven.aliyun.com/mvn/view)
-  # aliyun-maven: https://maven.aliyun.com/repository/public/
+  aliyun-maven: https://maven.aliyun.com/repository/public/
 
   ## typesafe
   # lightbend-ivy-releases: https://dl.bintray.com/typesafe/ivy-releases/, [organization]/[module]/[revision]/[type]s/[artifact](-[classifier]).[ext]
