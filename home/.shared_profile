@@ -68,6 +68,10 @@ else
   alias rsync='rsync -ah --partial'
 fi
 
+# activate python venv fastly
+alias sap='source ./.venv/bin/activate'
+alias sac='conda activate ./.venv-conda'
+
 ######################## Common Functions ############################################
 ## extract - archive extractor
 ## usage: extract <file>

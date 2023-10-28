@@ -66,6 +66,8 @@
 - [craftzdog/dotfiles-public](https://github.com/craftzdog/dotfiles-public)
 - [ayamir/nvimdots](https://github.com/ayamir/nvimdots)
 - [junnplus/dotfiles](https://github.com/junnplus/dotfiles/tree/master/nvim)
+- [mvandermeulen/nvim](https://github.com/mvandermeulen/nvim): Neovim configured
+  for IDE like usage with Python, Lua, Swift and Rust
 
 ## Learn vim / neovim / lua
 
