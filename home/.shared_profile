@@ -52,6 +52,8 @@ alias du='du -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias ls='ls --color=auto'                # colored ls output
 
+alias gl='git log --pretty=tformat:"* %C(auto)%h%C(auto)%d %s%Creset %C(auto,blue)(%an)%Creset - %C(auto)%ad"'
+alias gp='git pull --rebase'
 alias gs='git status -b'
 alias gss='git status -sb'
 alias gbl='git branch --list -a -v'
