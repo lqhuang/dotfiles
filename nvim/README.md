@@ -37,6 +37,14 @@
   - [cappyzawa/trim.nvim](https://github.com/cappyzawa/trim.nvim)
   - [nvimdev/guard.nvim](https://github.com/nvimdev/guard.nvim)
 - [nvim-orgmode/orgmode](https://github.com/nvim-orgmode/orgmode)
+- [lervag/vimtex](https://github.com/lervag/vimtex): VimTeX: A modern Vim and
+  neovim filetype plugin for LaTeX files.
+- [ryleelyman/latex.nvim](https://github.com/ryleelyman/latex.nvim): No
+  description, website, or topics provided.
+- [iurimateus/luasnip-latex-snippets.nvim](https://github.com/iurimateus/luasnip-latex-snippets.nvim):
+  A port of Gilles Castel's UltiSnip snippets for LuaSnip.
+- [jbyuki/nabla.nvim](https://github.com/jbyuki/nabla.nvim): take your
+  scientific notes ✏️ in Neovim
 
 ### UI
 

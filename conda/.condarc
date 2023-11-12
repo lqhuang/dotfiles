@@ -16,8 +16,12 @@ default_channels:
 custom_channels:
   conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  intel: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  rapidsai: : https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 # TUNA also provides repo service from other third-party sources.
 # check for supported channels: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+
+channel_priority: disabled
 
 # The "free" channel was removed from the collection of default channels in conda 4.7.0.
 # restore_free_channel: false
