@@ -3,7 +3,15 @@
 
 ######################## Options ############################################
 # unset flowcontrol for tmux
-stty -ixon
+[[ $- == *i* ]] && stty -ixon
+
+# Q: What is `[[ $- == *i* ]]`?
+# A: Fix "stty: 'standard input': Inappropriate ioctl for device"
+#
+# ref: https://stackoverflow.com/questions/24623021/getting-stty-standard-input-inappropriate-ioctl-for-device-when-using-scp-thro
+#
+# Why? Acutally, this would display from remote by some programs like `rsync` or else
+# while they're using remote ssh session.
 
 ######################## Env Setup ############################################
 KERNEL_NAME=$(uname -s)  # Linux / Darwin
