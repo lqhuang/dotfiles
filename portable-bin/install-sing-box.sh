@@ -7,9 +7,10 @@ DISTRO=linux
 # LIBC=musl # or gnu
 VERSION="1.6.4"
 
-NAME=sing-box
 REPO=SagerNet/sing-box
-ASSET=${NAME}-${VERSION}-${DISTRO}-${ARCH}.tar.gz
+NAME=sing-box
+RAW_CLI_NAME="${NAME}-${VERSION}-${DISTRO}-${ARCH}" # example: sing-box-1.6.4-linux-amd64v3
+ASSET="${RAW_CLI_NAME}.tar.gz"
 
 # example url:
 # https://github.com/SagerNet/sing-box/releases/download/v1.6.4/sing-box-1.6.4-linux-amd64v3.tar.gz
@@ -22,6 +23,9 @@ echo "${REPO} ${VERSION}: Downloading from ${VERSIONED_URL} and extracting binar
 mkdir -p ${TARGET_DIR}
 curl -L ${VERSIONED_URL} | tar -C ${TARGET_DIR} -xzf -
 
+mv ${TARGET_DIR}/${RAW_CLI_NAME} ${TARGET_DIR}/${NAME}
+chmod u+x ${TARGET_DIR}/${NAME}
+
 echo "Testing installation of ${NAME}"
 command -v ${NAME}
-
+[ $? -eq 0 ] && echo "$cmd command was installed successfully" || echo "$cmd failed"
