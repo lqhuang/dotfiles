@@ -28,4 +28,4 @@ chmod u+x ${TARGET_DIR}/${NAME}
 
 echo "Testing installation of ${NAME}"
 command -v ${NAME}
-[ $? -eq 0 ] && echo "$cmd command was installed successfully" || echo "$cmd failed"
+[[ $? -eq 0 ]] && echo "${NAME} command was installed successfully" || echo "${NAME} failed"

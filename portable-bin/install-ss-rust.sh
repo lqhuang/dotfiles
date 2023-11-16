@@ -23,4 +23,4 @@ curl -L ${VERSIONED_URL} | tar -C ${TARGET_DIR} -xJf -
 
 echo "Testing installation of ${CLI_NAME}"
 command -v ${CLI_NAME}
-[ $? -eq 0 ] && echo "$cmd command was installed successfully" || echo "$cmd failed"
+[ $? -eq 0 ] && echo "${CLI_NAME} command was installed successfully" || echo "${CLI_NAME} failed"

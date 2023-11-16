@@ -22,4 +22,4 @@ curl -L ${VERSIONED_URL} | tar -C ${TARGET_DIR} -xzf -
 
 echo "Testing installation of ${NAME}"
 command -v ${NAME}
-[ $? -eq 0 ] && echo "$cmd command was installed successfully" || echo "$cmd failed"
+[ $? -eq 0 ] && echo "${NAME} command was installed successfully" || echo "${NAME} failed"
