@@ -79,8 +79,8 @@ else
 fi
 
 # activate python venv fastly
-alias sap='source ./.venv/bin/activate'
-alias sac='conda activate ./.venv-conda'
+alias sap="source ./.venv/bin/activate"
+alias sac="conda activate ./.conda-venv"
 
 ######################## Common Functions ############################################
 ## extract - archive extractor
