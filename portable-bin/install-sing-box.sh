@@ -5,7 +5,7 @@ set -eu -o pipefail
 ARCH=amd64v3
 DISTRO=linux
 # LIBC=musl # or gnu
-VERSION="1.6.4"
+VERSION="1.7.5"
 
 REPO=SagerNet/sing-box
 NAME=sing-box

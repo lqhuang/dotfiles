@@ -64,6 +64,8 @@
 
 - [ruifm/gitlinker.nvim](https://github.com/ruifm/gitlinker.nvim)
 - [gelguy/wilder.nvim](https://github.com/gelguy/wilder.nvim)
+- [nvimdev/lspsaga.nvim](https://github.com/nvimdev/lspsaga.nvim): improve
+  neovim lsp experience
 
 ## Inspired by
 
@@ -91,6 +93,9 @@
 - [wsdjeg/vim-galore-zh_cn](https://github.com/wsdjeg/vim-galore-zh_cn): Vim 从
   入门到精通
 - [FledgeXu/NeovimZero2Hero](https://github.com/FledgeXu/NeovimZero2Hero)
+- [LunarVim/Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch):
+  📚 A Neovim config designed from scratch to be understandable
+  <https://www.chrisatmachine.com/>
 
 ## Awesome
 
