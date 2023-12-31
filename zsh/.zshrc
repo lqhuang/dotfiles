@@ -166,12 +166,13 @@ if [[ ${KERNEL_NAME} == "Linux" ]]; then
   if [[ -s /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
     source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-    # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   fi
 elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
   if [[ -s ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
     source ${HOMEBREW_PREFIX}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
     source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source ${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   fi
 fi
 
