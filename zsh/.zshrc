@@ -176,6 +176,11 @@ elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
   fi
 fi
 
+# https://github.com/zsh-users/zsh-syntax-highlighting/issues/573
+# Check default styles here: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/highlighters/main/main-highlighter.zsh
+(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path]=none
+
 # # terraform
 # TERRAFORM=$(command -v terraform)
 # if [[ -x "${TERRAFORM}" ]]; then
