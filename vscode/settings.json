@@ -26,7 +26,7 @@
   //   "comments": "off",
   //   "strings": "off"
   // },
-  "diffEditor.experimental.useVersion2": true,
+  "diffEditor.experimental.showMoves": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "workbench.fontAliasing": "antialiased",
   "git.confirmSync": false,
@@ -37,7 +37,7 @@
   "terminal.integrated.fontFamily": "MesloLGS NF", // https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k
   /* Apperance */
   "window.zoomLevel": 1,
-  // "window.nativeTabs": true,
+  "window.nativeTabs": false,
   "window.titleBarStyle": "custom",
   "window.commandCenter": false,
   /* Files behavior */
@@ -50,8 +50,8 @@
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
+    "**/.git": true,
     "**/node_modules/**": true,
-    // "**/.git": true,
     "**/.bloop": true,
     "**/.metals": true,
     "**/.ammonite": true,
@@ -94,8 +94,10 @@
   /* markup language */
   "[markdown]": {
     "editor.indentSize": 2,
-    "editor.renderWhitespace": "boundary",
+    "editor.autoIndent": "advanced",
+    "editor.detectIndentation": true,
     "editor.wordWrap": "off",
+    "editor.renderWhitespace": "boundary",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "files.trimTrailingWhitespace": false
   },
@@ -120,16 +122,16 @@
   },
   "prettier.proseWrap": "always",
   /* Haskell */
-  "[haskell]": {
-    "editor.fontFamily": "'Fira Code', 'Cascadia Code', monospace",
-    "editor.fontLigatures": "'ss03', 'ss05', 'zero'",
-    "editor.defaultFormatter": "haskell.haskell"
-  },
-  "haskell.formattingProvider": "stylish-haskell",
+  // "[haskell]": {
+  //   "editor.fontFamily": "'Fira Code', 'Cascadia Code', monospace",
+  //   "editor.fontLigatures": "'ss03', 'ss05', 'zero'",
+  //   "editor.defaultFormatter": "haskell.haskell"
+  // },
+  // "haskell.formattingProvider": "stylish-haskell",
   /* C/Cpp */
-  // C++ format style
-  // http://clang.llvm.org/docs/ClangFormatStyleOptions.html
-  "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, IndentWidth: 4, MaxEmptyLinesToKeep: 2}",
+  // // C++ format style
+  // // http://clang.llvm.org/docs/ClangFormatStyleOptions.html
+  // "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, IndentWidth: 4, MaxEmptyLinesToKeep: 2}",
   /* Python */
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "basic",
@@ -169,7 +171,7 @@
   // "flake8.args": ["--ignore", "E203,E501,W503,W504"],
   "isort.args": ["--profile", "black"],
   "ruff.organizeImports": false,
-  "ruff.args": ["--ignore", "C408"],
+  "ruff.lint.args": ["--ignore", "C408"],
   "mypy-type-checker.args": [
     "--follow-imports=silent", // default
     "--ignore-missing-imports", // default
@@ -220,15 +222,19 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "shellformat.flag": "-bn -ci -sr -kp",
-
+  "indentRainbow.updateDelay": 250,
+  "indentRainbow.indicatorStyle": "classic",
+  "editor.guides.indentation": false, // disable built-in indentation guide to avoid conflict
+  // "indentRainbow.lightIndicatorStyleLineWidth": 1,
   /**
    * Misc
    */
   "github.copilot.enable": {
     "*": true,
-    "yaml": true,
     "plaintext": true,
-    "markdown": true
+    "markdown": true,
+    "scminput": false,
+    "yaml": true
   },
   /* Telemetry */
   "telemetry.telemetryLevel": "off",
@@ -236,4 +242,5 @@
   "docker-explorer.enableTelemetry": false,
   "terraform.telemetry.enabled": false,
   "mdb.sendTelemetry": false
+  // "http.proxy": "http://localhost:6152"
 }
