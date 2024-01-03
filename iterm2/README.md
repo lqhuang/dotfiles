@@ -27,3 +27,9 @@ curl -L https://iterm2.com/shell_integration/bash -o ${PWD}/iterm2-shell-integra
 ```
 
 - [iTerm2 Documentation Shell Integration](https://iterm2.com/documentation-shell-integration.html)
+
+## Colors
+
+- [nealmckee/penumbra](https://github.com/nealmckee/penumbra): Penumbra Color
+  Theme
+- [Iterm2-color-schemes](https://iterm2colorschemes.com/)
