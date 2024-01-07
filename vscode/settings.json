@@ -28,7 +28,6 @@
   // },
   "diffEditor.experimental.showMoves": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  "workbench.fontAliasing": "antialiased",
   "git.confirmSync": false,
   "remote.autoForwardPorts": false,
   // "markdown.editor.pasteUrlAsFormattedLink.enabled": true,
@@ -40,6 +39,7 @@
   "window.nativeTabs": false,
   "window.titleBarStyle": "custom",
   "window.commandCenter": false,
+  "workbench.fontAliasing": "antialiased",
   /* Files behavior */
   "explorer.fileNesting.enabled": true,
   "files.eol": "\n",

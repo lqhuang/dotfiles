@@ -33,3 +33,5 @@ curl -L https://iterm2.com/shell_integration/bash -o ${PWD}/iterm2-shell-integra
 - [nealmckee/penumbra](https://github.com/nealmckee/penumbra): Penumbra Color
   Theme
 - [Iterm2-color-schemes](https://iterm2colorschemes.com/)
+- [catppuccin/iterm](https://github.com/catppuccin/iterm): 🍭 Soothing pastel
+  theme for iTerm2

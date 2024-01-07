@@ -59,6 +59,8 @@
 - greeter
   - [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
   - [LazyVim/LazyVim](https://github.com/LazyVim/LazyVim)
+- [catppuccin/nvim](https://github.com/catppuccin/nvim): 🍨 Soothing pastel
+  theme for (Neo)vim
 
 ### Wait to adapt
 
