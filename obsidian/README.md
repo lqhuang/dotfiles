@@ -121,3 +121,5 @@
 - [kepano/obsidian-minimal](https://github.com/kepano/obsidian-minimal): A
   distraction-free and highly customizable theme for Obsidian.
   <https://minimal.guide>
+- [artisticat1/arrows](https://github.com/artisticat1/arrows): Draw arrows
+  across different parts of your notes, similar to on paper

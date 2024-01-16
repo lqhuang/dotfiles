@@ -59,6 +59,9 @@ alias df='df -h'                          # human-readable sizes
 alias du='du -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias ls='ls --color=auto'                # colored ls output
+alias diff="diff --color=auto"
+alias ip="ip -color=auto"
+alias bridge="bridge -color=auto"
 
 alias gl='git log --pretty=tformat:"* %C(auto)%h%C(auto)%d %s%Creset %C(auto,blue)(%an)%Creset - %C(auto)%ad"'
 alias gp='git pull --rebase'

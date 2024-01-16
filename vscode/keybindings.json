@@ -1,17 +1,45 @@
-// Place your key bindings in this file to override the defaults
+// Place your key bindings in this file to override the defaults.
+// Reference: https://code.visualstudio.com/docs/getstarted/keybindings
 [
+  /*
+   * Remove keybindings of zoom in/out to avoid accidental zooming.
+   */
+  // For macOS
   {
-    // "ctrl+w" for Linux
-    "key": "ctrl+w",
-    "command": "workbench.action.closeWindow",
-    "when": "!editorIsOpen && !multipleEditorGroups"
+    "key": "cmd+=",
+    "command": "-workbench.action.zoomIn"
   },
+  {
+    "key": "cmd+-",
+    "command": "-workbench.action.zoomOut"
+  },
+  // For Linux / Windows
+  {
+    "key": "ctrl+=",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.zoomOut"
+  },
+  /*
+   * Enhancement: Close window if there is no editor open.
+   */
   {
     // "cmd+w" for macOS
     "key": "cmd+w",
     "command": "workbench.action.closeWindow",
     "when": "!editorIsOpen && !multipleEditorGroups"
   },
+  {
+    // "ctrl+w" for Linux / Windows
+    "key": "ctrl+w",
+    "command": "workbench.action.closeWindow",
+    "when": "!editorIsOpen && !multipleEditorGroups"
+  },
+  /*
+   * Custom keybindings for tasks.
+   */
   {
     "key": "F4", // F4 is buggy? cmd+0 is also buggy. Probably because of the way how extension be activated.
     "command": "workbench.action.tasks.runTask",

@@ -19,7 +19,8 @@
   "editor.guides.bracketPairs": true,
   "editor.experimental.asyncTokenization": true,
   "editor.unicodeHighlight.allowedLocales": {
-    "zh-hans": true
+    "zh-hans": true,
+    "zh-hant": true
   },
   // "editor.quickSuggestions": {
   //   "other": "on",
@@ -33,7 +34,7 @@
   // "markdown.editor.pasteUrlAsFormattedLink.enabled": true,
   /* Terminal config */
   "terminal.integrated.inheritEnv": false,
-  "terminal.integrated.fontFamily": "MesloLGS NF", // https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k
+  "terminal.integrated.fontFamily": "'MesloLGS NF', monospace",
   /* Apperance */
   "window.zoomLevel": 1,
   "window.nativeTabs": false,
@@ -156,8 +157,6 @@
    */
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
-  "autoDocstring.docstringFormat": "numpy",
-  "notebook.lineNumbers": "on",
   "[python]": {
     "editor.rulers": [79, 120],
     "editor.formatOnSave": true,
@@ -180,6 +179,8 @@
     "--show-error-context",
     "--show-error-codes"
   ],
+  "notebook.lineNumbers": "on",
+  "autoDocstring.docstringFormat": "google",
   /* Rust */
   // "rust-analyzer.checkOnSave.command": "clippy",
   /* Scala */
@@ -216,6 +217,12 @@
   "Prettier-SQL.tabSizeOverride": 2,
   "Prettier-SQL.linesBetweenQueries": 2,
   "Prettier-SQL.SQLFlavourOverride": "postgresql",
+  /* Typst */
+  "typst-lsp.experimentalFormatterMode": "on",
+  "typst-lsp.exportPdf": "never",
+  "[typst]": {
+    "editor.defaultFormatter": "nvarner.typst-lsp"
+  },
   /* Others */
   "[mongodb]": {
     "editor.formatOnSave": true,
@@ -231,8 +238,8 @@
    */
   "github.copilot.enable": {
     "*": true,
-    "plaintext": true,
-    "markdown": true,
+    "plaintext": false,
+    "markdown": false,
     "scminput": false,
     "yaml": true
   },

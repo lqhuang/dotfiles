@@ -42,3 +42,11 @@ Edit `"registry-mirrors"` key in `/etc/docker/daemon.json`:
 - [Mirrors from SJTUG](https://mirrors.sjtug.sjtu.edu.cn/docs/gcr.io)
 - [Docker Proxy](https://dockerproxy.com): 多平台容器镜像代理服务, 支持 Docker
   Hub, GitHub, Google, k8s, Quay 等镜像仓库
+
+## Install on WSL2 without sleep after warning
+
+```bash
+curl -fsSL https://get.docker.com -o get-docker.sh
+sed -i 's/( set -x; sleep 20 )/#( set -x; sleep 20 )/g' get
+sh get-docker.sh
+```
