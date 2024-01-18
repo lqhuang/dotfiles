@@ -129,15 +129,16 @@ function _set_env_porxy() {
     export NO_PROXY=${no_proxy}
   fi
 
-    local proxy=$1
-    export http_proxy=$proxy
-    export https_proxy=$proxy
-    export rsync_proxy=$proxy
-    export HTTP_PROXY=$proxy
-    export HTTPS_PROXY=$proxy
-    export RSYNC_PROXY=$proxy
+  echo -e "Get input proxy url: $1"
+  local proxy="$1"
+  export http_proxy="${proxy}"
+  export https_proxy="${proxy}"
+  export rsync_proxy="${proxy}"
+  export HTTP_PROXY="${proxy}"
+  export HTTPS_PROXY="${proxy}"
+  export RSYNC_PROXY="${proxy}"
 
-    _list_env_proxy
+  _list_env_proxy
 }
 
 function _unset_env_proxy() {
@@ -154,8 +155,7 @@ function _list_env_proxy() {
   echo "${bold}Shell proxy settings:${normal}"
 
   for proxytype in "http" "https" "rsync" "no"; do
-    local proxy_name=${proxytype}_proxy
-    echo -e "${proxytype}_proxy=${!proxy_name}"
+    echo -e "${proxytype}_proxy=$(printenv ${proxytype}_proxy)"
   done
 
   for PROTOTYPE in "HTTP" "HTTPS"  "RSYNC" "NO"; do

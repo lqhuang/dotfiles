@@ -103,6 +103,9 @@
   toggle, and search tags from the Obsidian tag pane
 - [lynchjames/obsidian-mind-map](https://github.com/lynchjames/obsidian-mind-map):
   An Obsidian plugin for displaying markdown notes as mind maps using Markmap.
+- [nhaouari/obsidian-textgenerator-plugin](https://github.com/nhaouari/obsidian-textgenerator-plugin):
+  Text generator is a handy plugin for Obsidian that helps you generate text
+  content using GPT-3 (OpenAI). <https://www.text-gen.com/>
 
 ## For dev
 

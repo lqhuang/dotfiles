@@ -34,7 +34,7 @@
   // "markdown.editor.pasteUrlAsFormattedLink.enabled": true,
   /* Terminal config */
   "terminal.integrated.inheritEnv": false,
-  "terminal.integrated.fontFamily": "'MesloLGS NF', monospace",
+  "terminal.integrated.fontFamily": "'MesloLGS NF', Monaco, monospace",
   /* Apperance */
   "window.zoomLevel": 1,
   "window.nativeTabs": false,
@@ -60,7 +60,7 @@
     "**/.venv": true,
     "**/.conda-venv": true,
     "**/*venv*": true,
-    "**/.*_cache": true // `.mypy_cache`, `.pytest_cache`
+    "**/.*_cache": true
   },
   "search.exclude": {
     "**/.git": true,
@@ -187,12 +187,13 @@
   "[scala]": {
     "editor.indentSize": 2,
     "editor.rulers": [88],
+    "editor.defaultFormatter": "scalameta.metals",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true
   },
-  "metals.enableIndentOnPaste": true,
+  // "metals.enableIndentOnPaste": true,
   "metals.enableSemanticHighlighting": true,
-  "metals.serverProperties": ["-Dhttps.protocols=TLSv1.2,TLSv1.3"],
+  "metals.showInferredType": "minimal",
   "metals.showImplicitArguments": false,
   "metals.showImplicitConversionsAndClasses": true,
   /* Javascript/Typescript */
@@ -239,8 +240,7 @@
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
-    "markdown": false,
-    "scminput": false,
+    "markdown": true,
     "yaml": true
   },
   /* Telemetry */
