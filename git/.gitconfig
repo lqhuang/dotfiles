@@ -16,7 +16,8 @@
     version = 4
 
 [init]
-    defaultBranch = master
+    # defaultBranch = master
+    defaultBranch = main
 
 [feature]
     manyFiles = true
@@ -54,7 +55,7 @@
     gl = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all
 
 [include]
-    path = .extra.gitconfig
+    path = .gitconfig.extra
 
 # # Interesting approach to make platform-specific `.gitconfig`
 # # incremental files (such as Credential Helpers)

@@ -3,3 +3,4 @@
 # - Options: https://learn.microsoft.com/en-us/windows/wsl/wsl-config#main-wsl-settings
 [wsl2]
 guiApplications = false
+vmIdleTimeout = 3600000  # 1 hour
