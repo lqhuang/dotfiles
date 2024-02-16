@@ -1,0 +1,5 @@
+# - Configure global settings with .wslconfig across all installed distributions running on WSL.
+# - File location: %UserProfile%\.wslconfig
+# - Options: https://learn.microsoft.com/en-us/windows/wsl/wsl-config#main-wsl-settings
+[wsl2]
+guiApplications = false
