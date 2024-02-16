@@ -63,7 +63,9 @@ alias diff="diff --color=auto"
 alias ip="ip -color=auto"
 alias bridge="bridge -color=auto"
 
+# part of aliases inspired from: https://github.com/tiimgreen/github-cheat-sheet
 alias gl='git log --pretty=tformat:"* %C(auto)%h%C(auto)%d %s%Creset %C(auto,blue)(%an)%Creset - %C(auto)%ad"'
+alias glg='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
 alias gp='git pull --rebase'
 alias gs='git status -b'
 alias gss='git status -sb'
