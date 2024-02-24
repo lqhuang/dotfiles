@@ -17,7 +17,10 @@
 
 [init]
     # defaultBranch = master
-    defaultBranch = main
+	defaultBranch = main
+
+[branch]
+    sort = -committerdate  # orderted by most recent commits
 
 [feature]
     manyFiles = true
@@ -37,9 +40,17 @@
     conflictStyle = diff3
     # `zdiff3` is over advanced for most stable linux distros
 
+[rebase]
+    missingCommitsCheck = error
+    # updateRefs = true
+
+[rerere]
+	enabled = true
+
 [push]
-    # default = simple
+    default = current
     followTags = true
+	autoSetupRemote = true
 
 [log]
     date = iso8601 # iso8601-strict / rfc2822

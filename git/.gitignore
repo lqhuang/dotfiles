@@ -1,0 +1,7 @@
+# a global .gitignore
+# It defaults to `~/.config/git/ignore`
+# Or set it with
+#   1. cli: `git config --global core.excludesfile ~/.gitignore`
+#   2. config file: `core.excludeFiles = ~/.gitignore`
+
+.DS_Store

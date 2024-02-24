@@ -102,6 +102,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "files.trimTrailingWhitespace": false
   },
+  "prettier.proseWrap": "always",
   "[yaml][json][jsonc]": {
     "editor.autoIndent": "advanced",
     "editor.indentSize": 2,
@@ -121,7 +122,6 @@
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
-  "prettier.proseWrap": "always",
   /* Haskell */
   // "[haskell]": {
   //   "editor.fontFamily": "'Fira Code', 'Cascadia Code', monospace",
@@ -186,14 +186,14 @@
   /* Scala */
   "[scala]": {
     "editor.indentSize": 2,
-    "editor.rulers": [88],
+    "editor.rulers": [80, 100],
     "editor.defaultFormatter": "scalameta.metals",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true
   },
   // "metals.enableIndentOnPaste": true,
   "metals.enableSemanticHighlighting": true,
-  "metals.showInferredType": "minimal",
+  "metals.showInferredType": "false",
   "metals.showImplicitArguments": false,
   "metals.showImplicitConversionsAndClasses": true,
   /* Javascript/Typescript */
@@ -234,6 +234,7 @@
   "indentRainbow.indicatorStyle": "classic",
   "editor.guides.indentation": false, // disable built-in indentation guide to avoid conflict
   // "indentRainbow.lightIndicatorStyleLineWidth": 1,
+
   /**
    * Misc
    */
