@@ -33,3 +33,7 @@ registry = "sparse+https://mirrors.sjtug.sjtu.edu.cn/crates.io-index/"
 
 [source.rsproxy] # https://rsproxy.cn/
 registry = "sparse+https://rsproxy.cn/index/"
+
+
+# https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#gc
+# [gc.auto]

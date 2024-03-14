@@ -76,6 +76,7 @@ alias grw='git restore --worktree'
 alias gra='git restore --staged --worktree'
 
 alias npm='pnpm'
+alias npx='pnpx'
 
 if [[ KERNEL_NAME == 'Linux' ]]; then
   alias rsync='rsync -ah --partial --info=progress2'

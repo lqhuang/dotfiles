@@ -106,6 +106,10 @@
 - [nhaouari/obsidian-textgenerator-plugin](https://github.com/nhaouari/obsidian-textgenerator-plugin):
   Text generator is a handy plugin for Obsidian that helps you generate text
   content using GPT-3 (OpenAI). <https://www.text-gen.com/>
+- [remotely-save/remotely-save](https://github.com/remotely-save/remotely-save):
+  Yet another unofficial Obsidian plugin allowing users to synchronize notes
+  between local device and the cloud service. Supports S3, Dropbox, OneDrive,
+  webdav.
 
 ## For dev
 
@@ -126,3 +130,10 @@
   <https://minimal.guide>
 - [artisticat1/arrows](https://github.com/artisticat1/arrows): Draw arrows
   across different parts of your notes, similar to on paper
+- [mgmeyers/obsidian-style-settings](https://github.com/mgmeyers/obsidian-style-settings):
+  A dynamic user interface for adjusting theme, plugin, and snippet CSS
+  variables within Obsidian
+- [Akifyss/obsidian-border](https://github.com/Akifyss/obsidian-border): A theme
+  for obsidian.md
+- [hydescarf/Obsidian-Theme-Mado-Miniflow](https://github.com/hydescarf/Obsidian-Theme-Mado-Miniflow):
+  A beautiful minimalism theme for Obsidian.
