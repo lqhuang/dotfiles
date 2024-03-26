@@ -171,7 +171,7 @@
   // Standalone extenstions for Python
   // "black-formatter.args": ["--line-length", "79"],
   // "flake8.args": ["--ignore", "E203,E501,W503,W504"],
-  "isort.args": ["--profile", "black"],
+  // "isort.args": ["--profile", "black"],
   "ruff.organizeImports": false,
   "ruff.lint.args": ["--ignore", "C408"],
   "mypy-type-checker.args": [
