@@ -4,10 +4,16 @@ ARCH_NAME=$(uname -m)  # x86_64 / arm64
 
 ## Homebrew
 if [[ ${KERNEL_NAME} == "Darwin" ]]; then
-  # BREW_PREFIX=$(brew --prefix)
+  # export HOMEBREW_SIMULATE_MACOS_ON_LINUX=1
+
+  # The variables `HOMEBREW_PREFIX`, `HOMEBREW_CELLAR` and `HOMEBREW_REPOSITORY`
+  # are also exported to avoid querying them multiple times.
+  # HOMEBREW_PREFIX=$(brew --prefix)
   export HOMEBREW_PREFIX="/opt/homebrew"
   export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
   export HOMEBREW_REPOSITORY="/opt/homebrew"
+  export HOMEBREW_NO_ANALYTICS=1
+
   export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
   export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
   export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
@@ -16,6 +22,8 @@ if [[ ${KERNEL_NAME} == "Darwin" ]]; then
   export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
   # export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
   # export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+
+  export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
 fi
 
 if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
