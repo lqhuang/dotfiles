@@ -105,3 +105,8 @@
 - [LunarVim/LunarVim](https://github.com/LunarVim/LunarVim)
 - [AstroNvim/AstroNvim](https://github.com/AstroNvim/AstroNvim)
 - [NeoVim 插件推荐](https://innei.in/posts/Z-Turn/nvim-plugin-recommend)
+
+- [folke/flash.nvim](https://github.com/folke/flash.nvim): Navigate your code
+  with search labels, enhanced character motions and Treesitter integration
+- [joelazar/nvim-config](https://github.com/joelazar/nvim-config): My neovim
+  config

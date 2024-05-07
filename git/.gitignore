@@ -4,4 +4,40 @@
 #   1. cli: `git config --global core.excludesfile ~/.gitignore`
 #   2. config file: `core.excludeFiles = ~/.gitignore`
 
+# OS
 .DS_Store
+*.pem
+
+# introduce on demand only
+.vscode/
+.idea/
+
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info
+*.whl
+
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+__pypackages__/
+.ipynb_checkpoints/
+
+.venv*/
+.conda-venv*/
+
+# node
+/node_modules
+
+# scala
+.metals/
+metals.sbt
+.bloop/
+.bsp/
+target
+project/project
+
+# clang

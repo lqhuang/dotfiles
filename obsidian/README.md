@@ -137,3 +137,7 @@
   for obsidian.md
 - [hydescarf/Obsidian-Theme-Mado-Miniflow](https://github.com/hydescarf/Obsidian-Theme-Mado-Miniflow):
   A beautiful minimalism theme for Obsidian.
+- [primary-theme/obsidian](https://github.com/primary-theme/obsidian): Comfy,
+  playful but productive theme for Obsidian. "Primary instantly puts you in a
+  relaxed state that opens the door to creativity and exploration. Wonderfully
+  executed down to the smallest details,"

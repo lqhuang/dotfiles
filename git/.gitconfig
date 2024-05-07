@@ -11,13 +11,14 @@
     untrackedCache = true
     autocrlf = input  # Dealing with line endings
     # whitespace = trailing-space,space-before-tab,-indent-with-non-tab
+    excludesFile = ~/.config/git/ignore # explicit write settings by default
 
 [index]
     version = 4
 
 [init]
     # defaultBranch = master
-	defaultBranch = main
+    defaultBranch = main
 
 [branch]
     sort = -committerdate  # orderted by most recent commits
@@ -45,12 +46,12 @@
     # updateRefs = true
 
 [rerere]
-	enabled = true
+    enabled = true
 
 [push]
     default = current
     followTags = true
-	autoSetupRemote = true
+    autoSetupRemote = true
 
 [log]
     date = iso8601 # iso8601-strict / rfc2822

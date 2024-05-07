@@ -27,6 +27,7 @@ REMOTE=https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git sh -c "$(curl -fsSL 
 - [marlonrichert/zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete):
   🤖 Real-time type-ahead completion for Zsh. Asynchronous find-as-you-type
   autocompletion.
+- [le0me55i/zsh-extract](https://github.com/le0me55i/zsh-extract): Plugin for Zshell that extracts the archive file you pass it
 
 ## References
 

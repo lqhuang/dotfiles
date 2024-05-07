@@ -148,7 +148,7 @@ bindkey "\eq" push-line-or-edit
 
 # ## auto completion (obviously not required under oh-my-zsh)
 # ## https://zsh.sourceforge.io/Doc/Release/Completion-System.html
-# autoload -Uz compinit
+# autoload -Uz compinit && compinit
 # zstyle ':completion:*' menu select
 # zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
 # zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
