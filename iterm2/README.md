@@ -35,3 +35,5 @@ curl -L https://iterm2.com/shell_integration/bash -o ${PWD}/iterm2-shell-integra
 - [Iterm2-color-schemes](https://iterm2colorschemes.com/)
 - [catppuccin/iterm](https://github.com/catppuccin/iterm): 🍭 Soothing pastel
   theme for iTerm2
+- [sonph/onehalf](https://github.com/sonph/onehalf): Clean, vibrant and pleasing
+  color schemes for Vim, Sublime Text, iTerm, gnome-terminal and more.
