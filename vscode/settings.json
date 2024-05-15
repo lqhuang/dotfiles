@@ -133,6 +133,10 @@
   // // C++ format style
   // // http://clang.llvm.org/docs/ClangFormatStyleOptions.html
   // "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, IndentWidth: 4, MaxEmptyLinesToKeep: 2}",
+  "[c][cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "cmake.options.statusBarVisibility": "compact",
   /* Python */
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "basic",
@@ -253,5 +257,4 @@
   "docker-explorer.enableTelemetry": false,
   "terraform.telemetry.enabled": false,
   "mdb.sendTelemetry": false
-  // "http.proxy": "http://localhost:6152"
 }

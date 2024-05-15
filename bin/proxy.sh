@@ -71,14 +71,18 @@ function _list_env_proxy() {
 ## Main / Entrypoint
 function main() {
     case "$1" in
-        "set"      ) _set_env_porxy "$2"
-                     ;;
-        "unset"    ) _unset_env_proxy
-                     ;;
-        "list"     ) _list_env_proxy
-                     ;;
-        * | "help" ) echo -e "$HELP_TEXT"
-                     ;;
+        "set")
+            _set_env_porxy "$2"
+            ;;
+        "unset")
+            _unset_env_proxy
+            ;;
+        "list")
+            _list_env_proxy
+            ;;
+        * | "help")
+            echo -e "$HELP_TEXT"
+            ;;
     esac
 }
 
