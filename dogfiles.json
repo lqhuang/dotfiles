@@ -1,7 +1,8 @@
 {
+  "_metavars": {},
   "cargo": {
     "source": "cargo/config",
-    "target": "$HOME/.cargo/config"
+    "target": "${HOME}/.cargo/config"
   },
   "conda": {
     "condarc": {
@@ -14,15 +15,15 @@
     "target": "${HOME}/.config/profile.d/.shared_profile"
   },
   "coursier": {
-    "_meta": {
-      "linux": { "target_dir": "${HOME}/.config/coursier" },
+    "_metavars": {
+      "linux": { "config_dir": "${HOME}/.config/coursier" },
       "darwin": {
-        "target_dir": "${HOME}/Library/Preferences/Coursier"
+        "config_dir": "${HOME}/Library/Preferences/Coursier"
       }
     },
     "mirror": {
       "source": "coursier/mirror.properties",
-      "target": "${target_dir}/mirror.properties"
+      "target": "{config_dir}/mirror.properties"
     }
   },
   "git": {
@@ -35,7 +36,7 @@
     "cabal": {},
     "stack": {
       "source": "stack/config.yaml",
-      "target": "$HOME/.stack/config.yaml"
+      "target": "${HOME}/.stack/config.yaml"
     }
   },
   "mvn": {
@@ -67,39 +68,36 @@
     }
   },
   "vscode": {
-    "_meta": {
+    "_metavars": {
       "linux": {
-        "source_dir": "vscode/",
-        "target_dir": "${HOME}/.config/Code/User"
+        "config_dir": "${HOME}/.config/Code/User"
       },
       "darwin": {
-        "source_dir": "vscode/",
-        "target_dir": "${HOME}/Library/Application Support/Code/User"
+        "config_dir": "${HOME}/Library/Application Support/Code/User"
       }
     },
     "settings": {
-      "source": "${source_dir}/settings.json",
-      "target": "${target_dir}/settings.json"
+      "source": "vscode/settings.json",
+      "target": "{config_dir}/settings.json"
     },
     "tasks": {
-      "source": "${source_dir}/tasks.json",
-      "target": "${target_dir}/tasks.json"
+      "source": "vscode/tasks.json",
+      "target": "{config_dir}/tasks.json"
     },
     "keybindings": {
-      "source": "${source_dir}/keybindings.json",
-      "target": "${target_dir}/keybindings.json"
+      "source": "vscode/keybindings.json",
+      "target": "{config_dir}/keybindings.json"
     }
   },
   "wezterm": {
     "source": "wezterm/wezterm.lua",
-    "target": "$HOME/.config/wezterm/wezterm.lua"
+    "target": "${HOME}/.config/wezterm/wezterm.lua"
   },
   "zsh": {
     "zshrc": {
       "source": "home/.zshrc",
       "target": "${HOME}/.zshrc",
-      "is_dir": false,
-      "pre": ["profile.d"]
+      "prereqs": ["profile.d"]
     }
   }
 }
