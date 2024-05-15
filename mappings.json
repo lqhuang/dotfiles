@@ -9,6 +9,10 @@
       "target": "${HOME}/.condarc"
     }
   },
+  "profile.d": {
+    "source": "home/.shared_profile",
+    "target": "${HOME}/.config/profile.d/.shared_profile"
+  },
   "coursier": {
     "_meta": {
       "linux": { "target_dir": "${HOME}/.config/coursier" },
@@ -94,7 +98,8 @@
     "zshrc": {
       "source": "home/.zshrc",
       "target": "${HOME}/.zshrc",
-      "is_dir": false
+      "is_dir": false,
+      "pre": ["profile.d"]
     }
   }
 }
