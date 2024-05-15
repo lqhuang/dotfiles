@@ -32,3 +32,8 @@ store the config.
 ...
 
 <!-- lazy by default -->
+
+## Development
+
+NOTE: `dogfiles.py` is just a soft link to `dogfiles` (the real entrypoint) in
+the root directory, which is for testing purpose from `dogfiles.test.py`.

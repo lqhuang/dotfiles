@@ -1,63 +1,83 @@
 #!/usr/bin/env python3
-# https://docs.python.org/3/library/argparse.html
+"""dogfiles
+
+A dotfiles manager script written in Python standard library.
+
+Just copy to your dotfiles directory and run it.
+
+check `dogfiles.README.md` for more information.
+"""
 # https://github.com/lra/mackup
 # https://github.com/rhysd/dotfiles
 from __future__ import annotations
 
 import argparse
-from os import getenv
 import json
 import sys
 from functools import partial
+from os import getenv
 from pathlib import Path
-from typing import Optional, cast, TypedDict, Union, Dict
-from pprint import pprint, pformat
+from pprint import pformat
+from typing import Optional, TypedDict, Union, cast
 
-
-assert sys.version_info >= (3, 8), "Unsupported Python version"
+assert sys.version_info >= (3, 9), "Unsupported Python version, please use 3.9+"
 
 ROOT = Path(__file__).resolve().parent
 PLATFORM = sys.platform
-# platform.system()
-DEBUG = getenv("DEBUG", False)
+CONFIG_FILE = "dogfiles.json"
 
-eprint = partial(print, file=sys.stderr)
+DEBUG = bool(getenv("DEBUG", False))
+DRY = bool(getenv("DRY", False))
+
+
+try:
+    from pip._vendor.rich import print
+    from pip._vendor.rich.pretty import pprint
+
+    debug_msg = partial(print)
+    info_msg = partial(print)
+    error_msg = partial(print, file=sys.stderr)
+
+except:  # noqa
+    from pprint import pprint
+
+    debug_msg = partial(print)  # TODO: add prefix [DEBUG]
+    info_msg = partial(print)  # TODO: add prefix [INFO]
+    error_msg = partial(print, file=sys.stderr)
 
 
 class DotfileSetup(TypedDict):
     source: Union[str, Path]
     target: Union[str, Path]
     is_dir: bool
+    _metavars: dict[str, str]
 
 
-# explict `Dict` for compatibility reason in python < 3.10
-Config = Dict[str, DotfileSetup]
+Config = dict[str, DotfileSetup]
 
 
-def load_mappings(map_fname: Path) -> Config:
+def load_config(map_fname: Path) -> Config:
     with open(map_fname) as fh:
         data = json.load(fh)
     return data
 
 
-def search_mapping_file() -> Optional[Path]:
+def search_config_file() -> Optional[Path]:
     files = tuple(ROOT.glob("mappings.json"))
     if len(files) == 0:
         return None
     return files[0]
 
 
-def link_dotfiles(names: Optional[list[str]], config: Config) -> None:
-    ...
+def link_dotfiles(names: Optional[list[str]], config: Config) -> None: ...
 
 
-def show_current_status(names: Optional[list[str]], config: Config) -> None:
-    ...
+def show_current_status(names: Optional[list[str]], config: Config) -> None: ...
 
 
 def print_config(names: Optional[list[str]], config: Config) -> None:
     if names is None:
-        pprint(config, compact=False)
+        pprint(config)
     else:  # specified names
         for each in names:
             print(f"{each}: {pformat(config.get(each, 'Not found'))}")
@@ -65,14 +85,13 @@ def print_config(names: Optional[list[str]], config: Config) -> None:
 
 def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
-    parser.add_argument("-c", "--config", dest="config_file", type=Path)
+    parser.add_argument("-c", "--config", dest="config_path", type=Path)
     parser.add_argument("-f", "--force", action="store_true")
 
     run_group = parser.add_mutually_exclusive_group(required=False)
     run_group.add_argument("-p", "--print", action="store_true")
     run_group.add_argument("-s", "--status", action="store_true")
-    run_group.add_argument("-e", "--execute", action="store_true")
-    run_group.add_argument("-r", "--dry", action="store_true")
+    run_group.add_argument("--dry", action="store_true")
 
     range_group = parser.add_mutually_exclusive_group(required=True)
     range_group.add_argument("-a", "--all", action="store_true")
@@ -85,37 +104,39 @@ def build_arg_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def main():
+def main() -> None:
     parser = build_arg_parser()
     args = parser.parse_args()
 
     if DEBUG:
-        print("[DEBUG] Input args:", repr(args))
+        debug_msg("Input args:", repr(args))
+    if args.dry:
+        global DRY
+        info_msg("Dry run mode")
+        DRY = True
 
-    if (config_fname := args.config_file) is not None:
-        if not cast(Path, config_fname).is_file():
-            eprint(f"Cannot found input file `{config_fname}`")
+    if (config_path := args.config_path) is not None:
+        if not cast(Path, config_path).is_file():
+            error_msg(f"Cannot found input file `{config_path}`")
             sys.exit(1)
     else:
-        config_fname = search_mapping_file()
-        if config_fname is None:
-            eprint("Do not found `mappings.json` file.")
+        config_path = search_config_file()
+        if config_path is None:
+            error_msg(f"Do not found `${CONFIG_FILE}` configuration file.")
 
     if DEBUG:
-        print("[DEBUG] Config file path:", config_fname)
-    config_json = load_mappings(cast(Path, config_fname))
+        debug_msg("Config file path:", config_path)
+    config_json = load_config(cast(Path, config_path))
 
     if args.print:
         print_config(args.names, config_json)
         sys.exit(0)
-    if args.status:
+    elif args.status:
         ...
         sys.exit(0)
-    if args.execute:
+    else:
         ...
         sys.exit(0)
-    if args.dry:
-        ...
 
 
 if __name__ == "__main__":
