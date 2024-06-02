@@ -76,7 +76,7 @@
     path = .gitconfig.extra
 
 [includeIf "gitdir/i:**/typef-dev/**"]
-    path = ~/.config/git/typef.gitconfig
+    path = ~/.config/git/.gitconfig.typef
 
 [oh-my-zsh]
     hide-dirty = 1
