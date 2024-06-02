@@ -103,7 +103,18 @@
     "files.trimTrailingWhitespace": false
   },
   "prettier.proseWrap": "always",
-  "[yaml][json][jsonc]": {
+  "[html][css]": {
+    "editor.indentSize": 2,
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json][jsonc]": {
+    "editor.autoIndent": "advanced",
+    "editor.indentSize": 2,
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
     "editor.autoIndent": "advanced",
     "editor.indentSize": 2,
     "editor.formatOnSave": false,
@@ -113,11 +124,6 @@
     "editor.indentSize": 2,
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "tamasfe.even-better-toml"
-  },
-  "[html][css]": {
-    "editor.indentSize": 2,
-    "editor.formatOnSave": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
@@ -245,6 +251,7 @@
   /**
    * Misc
    */
+  "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
@@ -257,4 +264,5 @@
   "docker-explorer.enableTelemetry": false,
   "terraform.telemetry.enabled": false,
   "mdb.sendTelemetry": false
+  // "http.proxy": "http://localhost:6152"
 }
