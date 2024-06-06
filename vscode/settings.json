@@ -16,8 +16,9 @@
   "editor.inlineSuggest.enabled": true,
   // "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.accessibilitySupport": "off",
-  "editor.guides.bracketPairs": true,
   "editor.experimental.asyncTokenization": true,
+  "editor.guides.bracketPairs": true,
+  "editor.minimap.size": "fill",
   "editor.unicodeHighlight.allowedLocales": {
     "zh-hans": true,
     "zh-hant": true
@@ -142,6 +143,8 @@
   "[c][cpp]": {
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
   },
+  "cmake.configureOnOpen": false,
+  "cmake.configureOnEdit": false,
   "cmake.options.statusBarVisibility": "compact",
   /* Python */
   "python.languageServer": "Pylance",
@@ -238,14 +241,19 @@
     "editor.defaultFormatter": "nvarner.typst-lsp"
   },
   /* Others */
+  "[ansible]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[mongodb]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "shellformat.flag": "-bn -ci -sr -kp",
+
   "indentRainbow.updateDelay": 250,
   "indentRainbow.indicatorStyle": "classic",
-  "editor.guides.indentation": false, // disable built-in indentation guide to avoid conflict
+  // disable built-in indentation guide to avoid conflict to indentRainbow plugin
+  // "editor.guides.indentation": false,
   // "indentRainbow.lightIndicatorStyleLineWidth": 1,
 
   /**
@@ -263,6 +271,7 @@
   "redhat.telemetry.enabled": false,
   "docker-explorer.enableTelemetry": false,
   "terraform.telemetry.enabled": false,
-  "mdb.sendTelemetry": false
+  "mdb.sendTelemetry": false,
+  "prisma.showPrismaDataPlatformNotification": false
   // "http.proxy": "http://localhost:6152"
 }

@@ -59,6 +59,9 @@
 [color]
     ui = auto
 
+[github]
+    user = lqhuang
+
 [credential]
     helper = store
 

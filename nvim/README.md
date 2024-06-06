@@ -45,6 +45,7 @@
   A port of Gilles Castel's UltiSnip snippets for LuaSnip.
 - [jbyuki/nabla.nvim](https://github.com/jbyuki/nabla.nvim): take your
   scientific notes ✏️ in Neovim
+- [stevearc/oil.nvim](https://github.com/stevearc/oil.nvim): Neovim file explorer: edit your filesystem like a buffer
 
 ### UI
 
