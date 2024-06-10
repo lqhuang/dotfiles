@@ -133,6 +133,7 @@ if [[ ${KERNEL_NAME} == "Darwin" ]]; then
   export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
   export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
 
+  # export HOMEBREW_INSTALL_FROM_API=1
   export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
   export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
   # export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
@@ -146,6 +147,7 @@ elif [[ ${KERNEL_NAME} == "Linux" && -d "/home/linuxbrew" ]]; then
   export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:";
   export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}";
 
+  export HOMEBREW_INSTALL_FROM_API=1
   export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
   export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
   export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
