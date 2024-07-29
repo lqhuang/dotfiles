@@ -98,12 +98,13 @@
     "editor.indentSize": 2,
     "editor.autoIndent": "advanced",
     "editor.detectIndentation": true,
-    "editor.wordWrap": "off",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
     "editor.renderWhitespace": "boundary",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "files.trimTrailingWhitespace": false
   },
-  "prettier.proseWrap": "always",
+  "prettier.proseWrap": "preserve",
   "[html][css]": {
     "editor.indentSize": 2,
     "editor.formatOnSave": false,
@@ -155,6 +156,7 @@
   "python.analysis.inlayHints.pytestParameters": true,
   "python.analysis.autoFormatStrings": true,
   "python.createEnvironment.contentButton": "hide",
+  "python.experiments.enabled": true,
   /**
    * // Deprecated settings
    * "python.formatting.provider": "yapf",
@@ -180,11 +182,14 @@
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit"
     }
+    // "github.copilot.editor.enableCodeActions": false
   },
   // Standalone extenstions for Python
   // "black-formatter.args": ["--line-length", "79"],
   // "flake8.args": ["--ignore", "E203,E501,W503,W504"],
-  // "isort.args": ["--profile", "black"],
+  "isort.check": true,
+  "isort.args": ["--profile", "black"],
+  "isort.serverEnabled": true,
   "ruff.organizeImports": false,
   "ruff.lint.args": ["--ignore", "C408"],
   "mypy-type-checker.args": [
@@ -273,5 +278,4 @@
   "terraform.telemetry.enabled": false,
   "mdb.sendTelemetry": false,
   "prisma.showPrismaDataPlatformNotification": false
-  // "http.proxy": "http://localhost:6152"
 }

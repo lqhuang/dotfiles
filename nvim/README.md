@@ -81,6 +81,7 @@
 - [junnplus/dotfiles](https://github.com/junnplus/dotfiles/tree/master/nvim)
 - [mvandermeulen/nvim](https://github.com/mvandermeulen/nvim): Neovim configured
   for IDE like usage with Python, Lua, Swift and Rust
+- https://kennethnym.com/blog/my-neovim-setup/
 
 ## Learn vim / neovim / lua
 

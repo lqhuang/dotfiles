@@ -6,7 +6,7 @@ BIN_FOLDER="${HOME}/.local/bin"
 PREFIX_LOCATION="${HOME}/.conda"
 VERSION="latest"
 
-# Computing artifact location
+# Computing artifact suffix
 case "$(uname)" in
   Linux)
     PLATFORM="linux"
@@ -54,11 +54,11 @@ fi
 chmod +x "${BIN_FOLDER}/micromamba"
 
 if hash conda > /dev/null 2>&1; then
-  echo "You have conda installed, do not soft link micromamba to conda"
+  echo "You have 'conda' installed, do not soft link 'micromamba' to 'conda'"
 else
-  echo "No installed 'conda' founded, trying soft link micromamba to conda"
+  echo "No installed 'conda' founded, trying soft link 'micromamba' to 'conda'"
   ln -s "${BIN_FOLDER}/micromamba" "${BIN_FOLDER}/conda"
 fi
 
-echo "Successfully installed micromamba, add the following line to your shell configuration file:"
+echo "Successfully installed 'micromamba', add the following line to your shell configuration file:"
 "${BIN_FOLDER}/micromamba" --dry-run shell init -p "${PREFIX_LOCATION}"
