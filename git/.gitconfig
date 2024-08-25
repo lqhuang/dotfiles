@@ -78,8 +78,8 @@
 [url "https://github.com/"]
     insteadOf = ssh://git@github.com/
 
-[include]
-    path = .gitconfig.extra
+# [include]
+#     path = .gitconfig.extra
 
 [includeIf "gitdir/i:**/typef-dev/**"]
     path = ~/.config/git/.gitconfig.typef

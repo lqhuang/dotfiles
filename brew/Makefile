@@ -14,6 +14,5 @@ install:
 dump:
 	brew bundle dump
 
-force-dump:
+dump-force:
 	brew bundle dump --force
-
