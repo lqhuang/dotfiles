@@ -23,11 +23,11 @@
     "zh-hans": true,
     "zh-hant": true
   },
-  // "editor.quickSuggestions": {
-  //   "other": "on",
-  //   "comments": "off",
-  //   "strings": "off"
-  // },
+  "editor.quickSuggestions": {
+    // "other": "on",
+    // "comments": "off",
+    "strings": "on"
+  },
   "diffEditor.experimental.showMoves": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "git.confirmSync": false,
@@ -46,6 +46,9 @@
   "explorer.fileNesting.enabled": true,
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   // Notes:
   // visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
   // https://code.visualstudio.com/docs/setup/linux
@@ -104,12 +107,18 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "files.trimTrailingWhitespace": false
   },
+  "mdx.experimentalLanguageServer": true,
   "prettier.proseWrap": "preserve",
   "[html][css]": {
     "editor.indentSize": 2,
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "tailwindCSS.experimental.classRegex": [
+    // https://github.com/lukeed/clsx?tab=readme-ov-file#tailwind-support
+    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"] // myself regex for shadcn
+  ],
   "[json][jsonc]": {
     "editor.autoIndent": "advanced",
     "editor.indentSize": 2,
@@ -218,19 +227,34 @@
   "metals.showImplicitArguments": false,
   "metals.showImplicitConversionsAndClasses": true,
   /* Javascript/Typescript */
+  "prettier.semi": false,
+  "typescript.format.enable": false,
+  "typescript.format.semicolons": "remove",
   "typescript.preferences.quoteStyle": "single",
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.preferences.useAliasesForRenames": false,
   "typescript.suggest.completeFunctionCalls": true,
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "[javascript][typescript][javascriptreact][typescriptreact]": {
     "editor.indentSize": 2,
+    "editor.tabSize": 2,
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // You can also set `editor.codeActionsOnSave` to an array of Code Actions to execute in order.
+    "editor.codeActionsOnSave": {
+      "source.convertImportFormat": "always",
+      "source.removeUnusedImports": "never",
+      "source.sortImports": "always",
+      // `organizeImports` is not the same thing as `sortImports`.
+      "source.organizeImports": "never"
+    }
   },
   "svelte.enable-ts-plugin": true,
   "[svelte]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
-  "mdx.experimentalLanguageServer": true,
   /* SQL */
   "[sql]": {
     "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
@@ -254,7 +278,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "shellformat.flag": "-bn -ci -sr -kp",
-
   "indentRainbow.updateDelay": 250,
   "indentRainbow.indicatorStyle": "classic",
   // disable built-in indentation guide to avoid conflict to indentRainbow plugin
@@ -267,13 +290,14 @@
   "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": true,
-    "plaintext": false,
+    "plaintext": true,
     "markdown": true,
     "yaml": true
   },
   /* Telemetry */
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
+  "dotnetAcquisitionExtension.enableTelemetry": false,
   "docker-explorer.enableTelemetry": false,
   "terraform.telemetry.enabled": false,
   "mdb.sendTelemetry": false,
