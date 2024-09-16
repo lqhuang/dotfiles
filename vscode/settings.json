@@ -206,7 +206,7 @@
     "--ignore-missing-imports", // default
     "--no-pretty", // default
     "--show-column-numbers",
-    "--show-error-context",
+    // "--show-error-context",
     "--show-error-codes"
   ],
   "notebook.lineNumbers": "on",
