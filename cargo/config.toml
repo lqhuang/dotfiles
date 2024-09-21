@@ -17,7 +17,7 @@ protocol = "sparse"
 # Config source for crates-io
 [source.crates-io]
 # registry = "https://github.com/rust-lang/crates.io-index"
-replace-with = "tuna"
+replace-with = "sjtu"
 
 [source.tuna]
 # manual: https://mirrors.tuna.tsinghua.edu.cn/help/crates.io-index

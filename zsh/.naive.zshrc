@@ -18,12 +18,14 @@ if [[ ${KERNEL_NAME} == "Darwin" ]]; then
   export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
   export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
 
-  export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
-  export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-  # export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-  # export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+  # __HOST="https://mirrors.tuna.tsinghua.edu.cn"
+  __HOST="https://mirrors.ustc.edu.cn"
+  export HOMEBREW_API_DOMAIN="${__HOST}/homebrew-bottles/api"
+  export HOMEBREW_BOTTLE_DOMAIN="${__HOST}/homebrew-bottles"
+  # export HOMEBREW_BREW_GIT_REMOTE="${__HOST}/git/homebrew/brew.git"
+  # export HOMEBREW_CORE_GIT_REMOTE="${__HOST}/git/homebrew/homebrew-core.git"
 
-  export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
+  # export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
 fi
 
 if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then

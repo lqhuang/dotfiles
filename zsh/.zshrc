@@ -124,6 +124,17 @@ KERNEL_NAME=$(uname -s)  # Linux / Darwin
 ARCH_NAME=$(uname -m)  # x86_64 / arm64
 
 ## Homebrew
+__init_brew_bottles () {
+  # local HOST="https://mirrors.tuna.tsinghua.edu.cn"
+  local HOST="https://mirrors.ustc.edu.cn"
+
+  # export HOMEBREW_INSTALL_FROM_API=1
+  export HOMEBREW_API_DOMAIN="${HOST}/homebrew-bottles/api"
+  export HOMEBREW_BOTTLE_DOMAIN="${HOST}/homebrew-bottles"
+  # export HOMEBREW_BREW_GIT_REMOTE="${HOST}/git/homebrew/brew.git"
+  # export HOMEBREW_CORE_GIT_REMOTE="${HOST}/git/homebrew/homebrew-core.git"
+}
+
 if [[ ${KERNEL_NAME} == "Darwin" ]]; then
   # BREW_PREFIX=$(brew --prefix)
   export HOMEBREW_PREFIX="/opt/homebrew"
@@ -133,11 +144,7 @@ if [[ ${KERNEL_NAME} == "Darwin" ]]; then
   export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
   export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
 
-  # export HOMEBREW_INSTALL_FROM_API=1
-  export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
-  export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-  # export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-  # export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+  __init_brew_bottles
 elif [[ ${KERNEL_NAME} == "Linux" && -d "/home/linuxbrew" ]]; then
   # echo $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew";
@@ -147,11 +154,7 @@ elif [[ ${KERNEL_NAME} == "Linux" && -d "/home/linuxbrew" ]]; then
   export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:";
   export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}";
 
-  export HOMEBREW_INSTALL_FROM_API=1
-  export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
-  export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-  export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-  export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+  __init_brew_bottles
 fi
 
 ######################## ZSH Opts ##############################################
