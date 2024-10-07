@@ -20,7 +20,7 @@ SHELL_NAME="${SHELL##*/}"  # zsh / bash
 
 # User configuration
 ## Standalone binary is awesome, that's good for me. (Haskell, Rust, Zig etc.)
-if [ -d "$HOME/.local" ]; then
+if [[ -d "$HOME/.local" ]]; then
   export PATH="${HOME}/.local/bin:${PATH}"
   export MANPATH="${HOME}/.local/man:${MANPATH}"
 fi
@@ -33,8 +33,6 @@ export LC_ALL=en_US.UTF-8
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 ## Check `~/.zshenv` for custom details.
-# export https_proxy=http://localhost:7890
-# export HTTPS_PROXY=http://localhost:7890
 ## pre-defined `no_proxy``
 export no_proxy=.local,.internal,.arpa,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
 export NO_PROXY=.local,.internal,.arpa,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
@@ -229,23 +227,23 @@ export SDKMAN_DIR="${HOME}/.sdkman"
 
 ## Python
 
-## miniconda
-if [[ -d "${HOME}/Software/miniconda3" ]]; then
-  # >>> conda initialize >>>
-  # !! Contents within this block are managed by 'conda init' !!
-  __conda_setup="$('"'"${HOME}"'"/Software/miniconda3/bin/conda' shell.${SHELL_NAME} 'hook' 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-  else
-    if [ -f "${HOME}/Software/miniconda3/etc/profile.d/conda.sh" ]; then
-      . "${HOME}/Software/miniconda3/etc/profile.d/conda.sh"
-    else
-      export PATH="${HOME}/Software/miniconda3/bin:${PATH}"
-    fi
-  fi
-  unset __conda_setup
-  # <<< conda initialize <<<
-fi
+# ## miniconda
+# if [[ -d "${HOME}/Software/miniconda3" ]]; then
+#   # >>> conda initialize >>>
+#   # !! Contents within this block are managed by 'conda init' !!
+#   __conda_setup="$('"'"${HOME}"'"/Software/miniconda3/bin/conda' shell.${SHELL_NAME} 'hook' 2> /dev/null)"
+#   if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+#   else
+#     if [ -f "${HOME}/Software/miniconda3/etc/profile.d/conda.sh" ]; then
+#       . "${HOME}/Software/miniconda3/etc/profile.d/conda.sh"
+#     else
+#       export PATH="${HOME}/Software/miniconda3/bin:${PATH}"
+#     fi
+#   fi
+#   unset __conda_setup
+#   # <<< conda initialize <<<
+# fi
 
 if hash micromamba > /dev/null 2>&1; then
   # >>> mamba initialize >>>
@@ -263,19 +261,11 @@ if hash micromamba > /dev/null 2>&1; then
   alias conda="micromamba"
 fi
 
-# # pyenv
-# if [[ ${KERNEL_NAME} == "Linux" ]] && [[ -s "${HOME}/.pyenv" ]]; then
-#   export PYENV_ROOT="$HOME/.pyenv"
-#   command -v pyenv > /dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-#   eval "$(pyenv init -)"
-#   # eval "$(pyenv virtualenv-init -)"
-# fi
-
-# # pipx
-# if [[ ${KERNEL_NAME} == "Darwin" ]]; then
-#   # Created by `pipx` on 2023-04-09 17:38:27
-#   export PATH="$PATH:${HOME}/Library/Python/3.9/bin"
-# fi
+## UV
+if hash uv > /dev/null 2>&1; then
+  source <(uv generate-shell-completion ${SHELL_NAME})
+  source <(uvx --generate-shell-completion ${SHELL_NAME})
+fi
 
 # TODO: detect shell type and binary path, then init completions
 # source <(helm completion zsh)

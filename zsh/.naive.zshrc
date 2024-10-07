@@ -99,9 +99,9 @@ fi
 ### Use autosuggestion: zsh-autosuggestions.zsh
 if [[ ${KERNEL_NAME} == "Linux" ]]; then
   if [[ -s /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
-    source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+    # source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-    # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   fi
 elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
   if [[ -s ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
@@ -110,13 +110,12 @@ elif [[ ${KERNEL_NAME} == "Darwin" ]]; then
   fi
 fi
 
-# # terraform
-# TERRAFORM=$(command -v terraform)
-# if [[ -x "${TERRAFORM}" ]]; then
-#   # oh-my-zsh has loaded `bashcompinit` already
-#   # autoload -U +X bashcompinit && bashcompinit
-#   complete -o nospace -C ${TERRAFORM} terraform
-# fi
+# https://github.com/zsh-users/zsh-syntax-highlighting/issues/573
+# Check default styles here: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/highlighters/main/main-highlighter.zsh
+(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path]=none
+
+
 
 # ######################## Aliases ############################################
 # alias lsa='ls -lah'

@@ -173,7 +173,7 @@ bindkey "\eq" push-line-or-edit
 zstyle ':completion:*' rehash true                              # automatically find new executables in path
 # ## Speed up completions
 zstyle ':completion:*' accept-exact '*(N)'
-# zstyle ':completion:*' use-cache on
+zstyle ':completion:*' use-cache on
 # zstyle ':completion:*' cache-path ${ZSH}/cache
 
 ## Plugins section: Enable fish style features
@@ -198,14 +198,6 @@ fi
 # Check default styles here: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/highlighters/main/main-highlighter.zsh
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
-
-# # terraform
-# TERRAFORM=$(command -v terraform)
-# if [[ -x "${TERRAFORM}" ]]; then
-#   # oh-my-zsh has loaded `bashcompinit` already
-#   # autoload -U +X bashcompinit && bashcompinit
-#   complete -o nospace -C ${TERRAFORM} terraform
-# fi
 
 ########################## ZSH Alias ##########################################
 alias git="noglob git"

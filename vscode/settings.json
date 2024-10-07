@@ -31,6 +31,7 @@
   "diffEditor.experimental.showMoves": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "git.confirmSync": false,
+  // "git.autorefresh": true,
   "remote.autoForwardPorts": false,
   // "markdown.editor.pasteUrlAsFormattedLink.enabled": true,
   /* Terminal config */
@@ -117,7 +118,13 @@
   "tailwindCSS.experimental.classRegex": [
     // https://github.com/lukeed/clsx?tab=readme-ov-file#tailwind-support
     ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
-    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"] // myself regex for shadcn
+    // https://cva.style/docs/getting-started/installation#intellisense
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    // https://www.tailwind-variants.org/docs/getting-started#intellisense-setup-optional
+    ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    // config for shadcn utils
+    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
   "[json][jsonc]": {
     "editor.autoIndent": "advanced",
@@ -202,6 +209,7 @@
   "ruff.organizeImports": false,
   "ruff.lint.args": ["--ignore", "C408"],
   "mypy-type-checker.args": [
+    "--check-untyped-defs",
     "--follow-imports=silent", // default
     "--ignore-missing-imports", // default
     "--no-pretty", // default
