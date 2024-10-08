@@ -30,8 +30,9 @@
   },
   "diffEditor.experimental.showMoves": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  "git.confirmSync": false,
   // "git.autorefresh": true,
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "never",
   "remote.autoForwardPorts": false,
   // "markdown.editor.pasteUrlAsFormattedLink.enabled": true,
   /* Terminal config */

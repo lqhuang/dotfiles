@@ -13,3 +13,4 @@ They are so complicated!!!
 ## Resources
 
 - [GitHub ❤ ~/](https://dotfiles.github.io/utilities/)
+- [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles): 🔧 .files, including ~/.macos — sensible hacker defaults for macOS <https://mths.be/dotfiles>

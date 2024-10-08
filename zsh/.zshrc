@@ -136,10 +136,14 @@ __init_brew_bottles () {
 }
 
 if [[ ${KERNEL_NAME} == "Darwin" ]]; then
-  # BREW_PREFIX=$(brew --prefix)
+  # The variables `HOMEBREW_PREFIX`, `HOMEBREW_CELLAR` and `HOMEBREW_REPOSITORY`
+  # are also exported to avoid querying them multiple times.
+  # HOMEBREW_PREFIX=$(brew --prefix)
   export HOMEBREW_PREFIX="/opt/homebrew"
   export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
   export HOMEBREW_REPOSITORY="/opt/homebrew"
+  export HOMEBREW_NO_ANALYTICS=1
+
   export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
   export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
   export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
@@ -159,6 +163,7 @@ fi
 
 ######################## ZSH Opts ##############################################
 # https://zsh.sourceforge.io/Doc/Release/Options.html
+setopt noflowcontrol
 setopt correct
 bindkey "\eq" push-line-or-edit
 
