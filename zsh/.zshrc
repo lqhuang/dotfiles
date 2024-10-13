@@ -165,6 +165,7 @@ fi
 # https://zsh.sourceforge.io/Doc/Release/Options.html
 setopt noflowcontrol
 setopt correct
+setopt ignore_eof
 bindkey "\eq" push-line-or-edit
 
 ######################## ZSH Plugins ##############################################
