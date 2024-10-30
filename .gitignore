@@ -1,6 +1,6 @@
 .DS_Store
 
-.zwc
+*.zwc
 
 __pycache__
 .mypy_cache
