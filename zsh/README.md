@@ -41,3 +41,11 @@ REMOTE=https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git sh -c "$(curl -fsSL 
 - [@laixintao's snippet to load pyenv lazily](https://github.com/laixintao/myrc/blob/8d85f27a2f20504d3095cd017895c69bf5575440/.zshrc#L77)
 - [Moving Away From Oh-My-Zsh](https://ianyepan.github.io/posts/moving-away-from-ohmyzsh/)
 - [vincentbernat/zshrc](https://github.com/vincentbernat/zshrc): My .zshrc
+- [A Guide to the Zsh Completion with Examples](https://thevaluable.dev/zsh-completion-guide-examples/)
+- [Setting up zim with zsh](https://jade.fyi/blog/zsh-zim-setup/)
+
+## Lazy Loading
+
+- [goarano/zsh-lazy-load](https://github.com/goarano/zsh-lazy-load): zsh/bash plugin for lazy loading completions
+- [qoomon/zsh-lazyload](https://github.com/qoomon/zsh-lazyload): zsh plugin for lazy load commands and speed up start up time of zsh
+- [rsteube/lazycomplete](https://github.com/rsteube/lazycomplete): lazy loading for shell completion scripts

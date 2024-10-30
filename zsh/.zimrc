@@ -1,3 +1,28 @@
+# Start configuration added by Zim install {{{
+#
+# This is not sourced during shell startup, and it's only used to configure the
+# zimfw plugin manager.
+#
+
+#
+# Modules
+#
+
+# Sets sane Zsh built-in environment options.
+zmodule environment
+# Provides handy git aliases and functions.
+zmodule git
+# Applies correct bindkeys for input events.
+zmodule input
+# Sets a custom terminal title.
+zmodule termtitle
+# Utility aliases and functions. Adds colour to ls, grep and less.
+zmodule utility
+
+#
+# Prompt
+#
+
 # Exposes to prompts how long the last command took to execute, used by asciiship.
 zmodule duration-info
 # Exposes git repository status information to prompts, used by asciiship.
@@ -29,5 +54,28 @@ zmodule zsh-users/zsh-history-substring-search
 zmodule zsh-users/zsh-autosuggestions
 # }}} End configuration added by Zim install
 
-zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found
-zmodule romkatv/powerlevel10k --use degit
+#
+# Load basic setup
+#
+zmodule ${HOME}/Git/dotfiles/zsh/my.zprofile
+zmodule ${HOME}/Git/dotfiles/home/
+
+#
+# Official Zim modules
+#
+#zmodule fzf
+
+#
+# Oh My Zsh
+#
+zmodule ohmyzsh/ohmyzsh --root plugins/bazel
+# zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found
+zmodule ohmyzsh/ohmyzsh --root plugins/extract
+# It's important to add this line before the line sourcing zimfw.zsh
+# zstyle :omz:plugins:iterm2 shell-integration yes
+zmodule ohmyzsh/ohmyzsh --root plugins/iterm2
+# zmodule ohmyzsh/ohmyzsh --root plugins/macos
+# zmodule ohmyzsh/ohmyzsh --root plugins/sbt
+zmodule ohmyzsh/ohmyzsh --root plugins/sdk
+zmodule ohmyzsh/ohmyzsh --root plugins/uv
+
