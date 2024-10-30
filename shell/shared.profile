@@ -162,7 +162,8 @@ alias sac="conda activate ./.conda-venv"
 #
 # Javascript / Typescript
 #
-## fnm
+
+# fnm
 if [[ ${KERNEL_NAME} == "Linux" ]]; then
   FNM_DIR="${HOME}/.local/share/fnm"
   if [[ -d "${FNM_DIR}" ]]; then
@@ -194,7 +195,7 @@ if [[ -s $(command -v fnm) ]]; then
   export npm_config_robotjs_binary_host="https://cdn.npmmirror.com/binaries/robotj"
 fi
 
-## Deno
+# Deno
 if [[ -s "${HOME}/.deno/bin/deno" ]]; then
   export DENO_INSTALL="${HOME}/.deno"
   export PATH="${DENO_INSTALL}/bin:${PATH}"
@@ -203,6 +204,7 @@ fi
 #
 # Rust
 #
+
 # rustup path
 if [[ -s "${HOME}/.cargo" ]]; then
   . "$HOME/.cargo/env"
@@ -219,6 +221,7 @@ fi
 #
 # Scala
 #
+
 # sbt / scala / sdkman
 export SBT_OPTS="-Dsbt.override.build.repos=true ${SBT_OPTS}"
 export JVM_OPTS="-Dhttps.protocols=TLSv1.2,TLSv1.3 ${JVM_OPTS}"
@@ -231,11 +234,11 @@ export SDKMAN_DIR="${HOME}/.sdkman"
 # Python
 #
 
-# ## miniconda
+# # miniconda
 #
-# Set the `auto_activate_base` parameter to `false` after installation,
-# which makes base environment not be activated on startup.
-# > conda config --set auto_activate_base false
+# # Set the `auto_activate_base` parameter to `false` after installation,
+# # which makes base environment not be activated on startup.
+# # > conda config --set auto_activate_base false
 #
 # if [[ -d "${HOME}/Software/miniconda3" ]]; then
 #   # >>> conda initialize >>>
@@ -254,6 +257,7 @@ export SDKMAN_DIR="${HOME}/.sdkman"
 #   # <<< conda initialize <<<
 # fi
 
+# micromamba
 if hash micromamba > /dev/null 2>&1; then
   # >>> mamba initialize >>>
   # !! Contents within this block are managed by 'mamba init' !!
@@ -270,13 +274,8 @@ if hash micromamba > /dev/null 2>&1; then
   alias conda="micromamba"
 fi
 
-## UV
+# uv
 if hash uv > /dev/null 2>&1; then
   source <(uv generate-shell-completion ${SHELL_NAME})
   source <(uvx --generate-shell-completion ${SHELL_NAME})
 fi
-
-# TODO: detect shell type and binary path, then init completions
-# source <(helm completion zsh)
-# source <(kubectl completion zsh)
-# source <(k3s completion zsh)

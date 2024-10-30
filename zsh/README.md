@@ -43,6 +43,7 @@ REMOTE=https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git sh -c "$(curl -fsSL 
 - [vincentbernat/zshrc](https://github.com/vincentbernat/zshrc): My .zshrc
 - [A Guide to the Zsh Completion with Examples](https://thevaluable.dev/zsh-completion-guide-examples/)
 - [Setting up zim with zsh](https://jade.fyi/blog/zsh-zim-setup/)
+- [sindresorhus/pure](https://github.com/sindresorhus/pure): Pretty, minimal and fast ZSH prompt
 
 ## Lazy Loading
 

@@ -23,12 +23,15 @@ zmodule utility
 # Prompt
 #
 
-# Exposes to prompts how long the last command took to execute, used by asciiship.
-zmodule duration-info
-# Exposes git repository status information to prompts, used by asciiship.
-zmodule git-info
-# A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
-zmodule asciiship
+# # Exposes to prompts how long the last command took to execute, used by asciiship.
+# zmodule duration-info
+# # Exposes git repository status information to prompts, used by asciiship.
+# zmodule git-info
+# # A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
+# zmodule asciiship
+
+# Load pure as prompt theme
+zmodule sindresorhus/pure --source async.zsh --source pure.zsh
 
 #
 # Completion
@@ -57,25 +60,24 @@ zmodule zsh-users/zsh-autosuggestions
 #
 # Load basic setup
 #
-zmodule ${HOME}/Git/dotfiles/zsh/my.zprofile
-zmodule ${HOME}/Git/dotfiles/home/
+zmodule ${HOME}/Git/dotfiles/zsh
+zmodule ${HOME}/Git/dotfiles/shell
 
 #
 # Official Zim modules
 #
+
 #zmodule fzf
 
 #
 # Oh My Zsh
 #
+
 zmodule ohmyzsh/ohmyzsh --root plugins/bazel
-# zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found
+zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found
 zmodule ohmyzsh/ohmyzsh --root plugins/extract
-# It's important to add this line before the line sourcing zimfw.zsh
-# zstyle :omz:plugins:iterm2 shell-integration yes
-zmodule ohmyzsh/ohmyzsh --root plugins/iterm2
+# zmodule ohmyzsh/ohmyzsh --root plugins/iterm2
 # zmodule ohmyzsh/ohmyzsh --root plugins/macos
 # zmodule ohmyzsh/ohmyzsh --root plugins/sbt
-zmodule ohmyzsh/ohmyzsh --root plugins/sdk
-zmodule ohmyzsh/ohmyzsh --root plugins/uv
-
+# zmodule ohmyzsh/ohmyzsh --root plugins/sdk
+# zmodule ohmyzsh/ohmyzsh --root plugins/uv

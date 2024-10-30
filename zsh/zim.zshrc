@@ -1,4 +1,4 @@
-zmodload zsh/zprof
+# zmodload zsh/zprof
 export ZDOTDIR="${HOME}/.zsh"
 
 # Start configuration added by Zim install {{{
@@ -47,7 +47,7 @@ bindkey "\eq" push-line-or-edit
 zstyle ':zim:zmodule' use 'degit'
 
 # Apply Shell Integration Script for iTerm2
-zstyle :omz:plugins:iterm2 shell-integration yes
+#zstyle :omz:plugins:iterm2 shell-integration yes
 
 # --------------------
 # Module configuration
@@ -156,4 +156,4 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
-zprof
+# zprof

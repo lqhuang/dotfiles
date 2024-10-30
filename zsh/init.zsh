@@ -2,7 +2,9 @@
 KERNEL_NAME=$(uname -s)  # Linux / Darwin
 ARCH_NAME=$(uname -m)  # x86_64 / arm64
 
-## Homebrew
+#
+# Homebrew
+#
 __init_brew_bottles()  {
   # local HOST="https://mirrors.tuna.tsinghua.edu.cn"
   local HOST="https://mirrors.ustc.edu.cn"
@@ -39,6 +41,3 @@ elif [[ ${KERNEL_NAME} == "Linux" && -d "/home/linuxbrew" ]]; then
 
   __init_brew_bottles
 fi
-
-######################## Source Common ############################################
-[[ -s "${HOME}/Git/dotfiles/home/.shared_profile" ]] && source "${HOME}/Git/dotfiles/home/.shared_profile"
