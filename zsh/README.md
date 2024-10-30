@@ -1,5 +1,13 @@
 # ZSH
 
+## Resources
+
+- [zimfw/zimfw](https://github.com/zimfw/zimfw): Zim: Modular, customizable, and
+  blazing fast Zsh framework <https://zimfw.sh>
+- [romkatv/zsh4humans](https://github.com/romkatv/zsh4humans): A turnkey configuration for Zsh
+
+## Oh-My-Zsh
+
 Alternative git mirror of `ohmyzsh` in China:
 <https://mirrors.tuna.tsinghua.edu.cn/help/ohmyzsh.git>
 
@@ -15,10 +23,7 @@ Or just install `oh-my-zsh` from mirror git repo.
 REMOTE=https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-## Framework
-
-- [zimfw/zimfw](https://github.com/zimfw/zimfw): Zim: Modular, customizable, and
-  blazing fast Zsh framework <https://zimfw.sh>
+## Zimfw
 
 ## Plugins
 
