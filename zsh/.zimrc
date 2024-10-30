@@ -66,13 +66,12 @@ zmodule ${HOME}/Git/dotfiles/shell
 #
 # Official Zim modules
 #
-
-#zmodule fzf
+zmodule fzf
+zmodule magic-enter
 
 #
 # Oh My Zsh
 #
-
 zmodule ohmyzsh/ohmyzsh --root plugins/bazel
 zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found
 zmodule ohmyzsh/ohmyzsh --root plugins/extract
