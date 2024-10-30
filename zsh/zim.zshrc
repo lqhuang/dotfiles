@@ -116,6 +116,12 @@ zstyle ':completion:*' accept-exact '*(N)'  # Speed up completions in some cases
 zstyle ':completion:*' use-cache on
 zstyle ':completion::complete:*' cache-path "${ZDOTDIR}/.zcompcache"
 
+#
+# pure
+#
+PURE_PROMPT_SYMBOL="»" # https://util.unicode.org/UnicodeJsps/character.jsp?a=00BB
+PURE_PROMPT_VICMD_SYMBOL="«"
+
 # ------------------
 # Initialize modules
 # ------------------
