@@ -104,7 +104,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # Disable path highlighting
 # https://github.com/zsh-users/zsh-syntax-highlighting/issues/573
 # Check default styles here: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/highlighters/main/main-highlighter.zsh
-(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
+typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
 
 #

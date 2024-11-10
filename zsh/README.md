@@ -14,6 +14,7 @@
 
 ## Profiling
 
+- [Faster and enjoyable ZSH (maybe)](https://htr3n.github.io/2018/07/faster-zsh/)
 - [Profiling zsh startup time](https://stevenvanbael.com/profiling-zsh-startup)
 - [Speeding Up My Shell (Oh My Zsh)](https://blog.mattclemente.com/2020/06/26/oh-my-zsh-slow-to-load/#it's-probably-nvm): Always trying to be better
 - 🌟 [Speeding Up Zsh](https://www.joshyin.cc/blog/speeding-up-zsh): This post documents the steps I took to speed up my Zsh startup times by more than 95%. I hope that anyone else struggling with sluggish startup times will find these optimizations helpful.
@@ -40,10 +41,11 @@ REMOTE=https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git sh -c "$(curl -fsSL 
 
 - [Commands](https://zimfw.sh/docs/commands/)
 
+Sequence of zmodules is critically important. 🥹
+
 ## References
 
 - [如何使用 shell（3/3）—— 配置 zsh](https://a-wing.top/shell/2021/05/10/zsh-config)
-- [Faster and enjoyable ZSH (maybe)](https://htr3n.github.io/2018/07/faster-zsh/)
 - [@laixintao's snippet to load pyenv lazily](https://github.com/laixintao/myrc/blob/8d85f27a2f20504d3095cd017895c69bf5575440/.zshrc#L77)
 - [Moving Away From Oh-My-Zsh](https://ianyepan.github.io/posts/moving-away-from-ohmyzsh/)
 - [vincentbernat/zshrc](https://github.com/vincentbernat/zshrc): My .zshrc
@@ -57,7 +59,15 @@ REMOTE=https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git sh -c "$(curl -fsSL 
 - [qoomon/zsh-lazyload](https://github.com/qoomon/zsh-lazyload): zsh plugin for lazy load commands and speed up start up time of zsh
 - [rsteube/lazycomplete](https://github.com/rsteube/lazycomplete): lazy loading for shell completion scripts
 
-### Lazy loading sdkman
+## Trouble Shooting
+
+for `marlonrichert/zsh-autocomplete`
+
+- [I don't want this thing: expansion, How to hide?](https://github.com/marlonrichert/zsh-autocomplete/issues/759)
+  - and then happens "named directory stack" expansion ...
+  - [question regarding `~` named directory](https://github.com/marlonrichert/zsh-autocomplete/discussions/529)
+
+Lazy loading sdkman
 
 - [sdkman/sdkman-cli/issues/977](https://github.com/sdkman/sdkman-cli/issues/977): Bug: Slow startup/init in ZSH
 - [sdkman-lazy.zsh](https://gist.github.com/Amar1729/294c6e310b191405bf8fceb72e96b399)

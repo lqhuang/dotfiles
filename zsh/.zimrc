@@ -46,7 +46,8 @@ zmodule sindresorhus/pure --source async.zsh --source pure.zsh
 zmodule zsh-users/zsh-completions --fpath src
 # Enables and configures smart and extensive tab completion.
 # completion must be sourced after all modules that add completion definitions.
-zmodule completion
+#zmodule completion
+zmodule marlonrichert/zsh-autocomplete # third-party plugin to replace completion
 
 #
 # Modules that must be initialized last
@@ -96,8 +97,3 @@ zmodule ohmyzsh/ohmyzsh --root plugins/extract
 # zmodule ohmyzsh/ohmyzsh --root plugins/sbt
 # zmodule ohmyzsh/ohmyzsh --root plugins/sdk
 # zmodule ohmyzsh/ohmyzsh --root plugins/uv
-
-#
-# third-party modules
-#
-zmodule marlonrichert/zsh-autocomplete --cmd "zsh-defer source {}/zsh-autocomplete.plugin.zsh"
