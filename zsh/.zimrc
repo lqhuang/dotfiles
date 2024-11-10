@@ -1,3 +1,8 @@
+#
+# speed up suites: zsh-defer and evalcache
+#
+zmodule romkatv/zsh-defer --source zsh-defer.plugin.zsh --autoload zsh-defer
+
 # Start configuration added by Zim install {{{
 #
 # This is not sourced during shell startup, and it's only used to configure the
@@ -58,16 +63,27 @@ zmodule zsh-users/zsh-autosuggestions
 # }}} End configuration added by Zim install
 
 #
-# Load basic setup
+# fundamental modules (required to find cli command in brew environment)
 #
-zmodule ${HOME}/Git/dotfiles/zsh
-zmodule ${HOME}/Git/dotfiles/shell
+zmodule ${HOME}/Git/dotfiles/shell --source homebrew.zsh
 
 #
 # Official Zim modules
 #
-zmodule fzf
+zmodule fzf --cmd "zsh-defer source {}/init.zsh"
 zmodule magic-enter
+
+#zmodule romkatv/zsh-defer -d  # -d Don't initialize the module root or uninstall the module.
+# zmodule mroth/evalcache
+
+#
+# Load in-tree setup
+#
+zmodule ${HOME}/Git/dotfiles/shell --source shared.zsh
+zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/javascript.sh"
+zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/python.sh"
+zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/jvm.sh"
+zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/rust.sh"
 
 #
 # Oh My Zsh
@@ -80,3 +96,8 @@ zmodule ohmyzsh/ohmyzsh --root plugins/extract
 # zmodule ohmyzsh/ohmyzsh --root plugins/sbt
 # zmodule ohmyzsh/ohmyzsh --root plugins/sdk
 # zmodule ohmyzsh/ohmyzsh --root plugins/uv
+
+#
+# third-party modules
+#
+zmodule marlonrichert/zsh-autocomplete --cmd "zsh-defer source {}/zsh-autocomplete.plugin.zsh"

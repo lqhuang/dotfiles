@@ -57,8 +57,7 @@
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
-    "**/.git": true,
-    "**/node_modules/**": true,
+    "**/node_modules": true,
     "**/.bloop": true,
     "**/.metals": true,
     "**/.ammonite": true,
@@ -127,13 +126,13 @@
     // config for shadcn utils
     ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
-  "[json][jsonc]": {
+  "[json][jsonc][mongodb]": {
     "editor.autoIndent": "advanced",
     "editor.indentSize": 2,
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[yaml]": {
+  "[yaml][dockercompose][ansible]": {
     "editor.autoIndent": "advanced",
     "editor.indentSize": 2,
     "editor.formatOnSave": false,
@@ -279,12 +278,8 @@
     "editor.defaultFormatter": "nvarner.typst-lsp"
   },
   /* Others */
-  "[ansible]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[mongodb]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[shellscript]": {
+    "editor.indentSize": 2
   },
   "shellformat.flag": "-bn -ci -sr -kp",
   "indentRainbow.updateDelay": 250,

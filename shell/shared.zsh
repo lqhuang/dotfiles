@@ -15,8 +15,8 @@
 
 ######################## Env Setup ############################################
 KERNEL_NAME=$(uname -s)  # Linux / Darwin
-ARCH_NAME=$(uname -m)  # x86_64 / arm64
-SHELL_NAME="${SHELL##*/}"  # zsh / bash
+#ARCH_NAME=$(uname -m)  # x86_64 / arm64
+#SHELL_NAME="${SHELL##*/}"  # zsh / bash
 
 # User configuration
 ## Standalone binary is awesome, that's good for me. (Haskell, Rust, Zig etc.)
@@ -38,7 +38,7 @@ export no_proxy=.local,.internal,.arpa,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
 export NO_PROXY=.local,.internal,.arpa,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
 
 ## set visual and editor
-export VISUAL=nvim
+export VISUAL=vim # nvim
 export EDITOR=vim
 # `VISUAL` 和 `EDITOR` ，会优先使用 `VISUAL` ，当无法使用时才会使用 `EDITOR`
 
@@ -157,125 +157,3 @@ alias sac="conda activate ./.conda-venv"
 #     echo -e "${PROTOTYPE}_PROXY=$(printenv ${PROTOTYPE}_PROXY)"
 #   done
 # }
-
-########################## Software Init ######################################
-#
-# Javascript / Typescript
-#
-
-# fnm
-if [[ ${KERNEL_NAME} == "Linux" ]]; then
-  FNM_DIR="${HOME}/.local/share/fnm"
-  if [[ -d "${FNM_DIR}" ]]; then
-    export PATH="${FNM_DIR}:${PATH}"
-  fi
-fi
-
-if [[ -s $(command -v fnm) ]]; then
-  eval "$(fnm env)"
-
-  # === NPM BINARY CHINA ===
-  # https://github.com/cnpm/binary-mirror-config/blob/master/package.json#L48
-  export NODEJS_ORG_MIRROR="https://cdn.npmmirror.com/binaries/node"
-  export NVM_NODEJS_ORG_MIRROR="${NODEJS_ORG_MIRROR}"
-  export FNM_NODE_DIST_MIRROR="${NODEJS_ORG_MIRROR}"
-  export PHANTOMJS_CDNURL="https://cdn.npmmirror.com/binaries/phantomjs"
-  export CHROMEDRIVER_CDNURL="https://cdn.npmmirror.com/binaries/chromedriver"
-  export OPERADRIVER_CDNURL="https://cdn.npmmirror.com/binaries/operadriver"
-  export ELECTRON_MIRROR="https://cdn.npmmirror.com/binaries/electron/"
-  export ELECTRON_BUILDER_BINARIES_MIRROR="https://cdn.npmmirror.com/binaries/electron-builder-binaries/"
-  export SASS_BINARY_SITE="https://cdn.npmmirror.com/binaries/node-sass"
-  export SWC_BINARY_SITE="https://cdn.npmmirror.com/binaries/node-swc"
-  export NWJS_URLBASE="https://cdn.npmmirror.com/binaries/nwjs/v"
-  export PUPPETEER_DOWNLOAD_HOST="https://cdn.npmmirror.com/binaries"
-  export SENTRYCLI_CDNURL="https://cdn.npmmirror.com/binaries/sentry-cli"
-  export SAUCECTL_INSTALL_BINARY_MIRROR="https://cdn.npmmirror.com/binaries/saucectl"
-  export npm_config_sharp_binary_host="https://cdn.npmmirror.com/binaries/sharp"
-  export npm_config_sharp_libvips_binary_host="https://cdn.npmmirror.com/binaries/sharp-libvips"
-  export npm_config_robotjs_binary_host="https://cdn.npmmirror.com/binaries/robotj"
-fi
-
-# Deno
-if [[ -s "${HOME}/.deno/bin/deno" ]]; then
-  export DENO_INSTALL="${HOME}/.deno"
-  export PATH="${DENO_INSTALL}/bin:${PATH}"
-fi
-
-#
-# Rust
-#
-
-# rustup path
-if [[ -s "${HOME}/.cargo" ]]; then
-  . "$HOME/.cargo/env"
-  # rustup mirror from tuna, ustc-tug, sjtug
-  # export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
-  # export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
-  # export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-  # export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
-  export RUSTUP_DIST_SERVER=https://mirror.sjtu.edu.cn/rust-static
-  export RUSTUP_UPDATE_ROOT=https://mirror.sjtu.edu.cn/rust-static/rustup
-  #export CARGO_HTTP_MULTIPLEXING=false
-fi
-
-#
-# Scala
-#
-
-# sbt / scala / sdkman
-export SBT_OPTS="-Dsbt.override.build.repos=true ${SBT_OPTS}"
-export JVM_OPTS="-Dhttps.protocols=TLSv1.2,TLSv1.3 ${JVM_OPTS}"
-
-# #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-# export SDKMAN_DIR="${HOME}/.sdkman"
-# [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
-
-#
-# Python
-#
-
-# # miniconda
-#
-# # Set the `auto_activate_base` parameter to `false` after installation,
-# # which makes base environment not be activated on startup.
-# # > conda config --set auto_activate_base false
-#
-# if [[ -d "${HOME}/Software/miniconda3" ]]; then
-#   # >>> conda initialize >>>
-#   # !! Contents within this block are managed by 'conda init' !!
-#   __conda_setup="$('"'"${HOME}"'"/Software/miniconda3/bin/conda' shell.${SHELL_NAME} 'hook' 2> /dev/null)"
-#   if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-#   else
-#     if [ -f "${HOME}/Software/miniconda3/etc/profile.d/conda.sh" ]; then
-#       . "${HOME}/Software/miniconda3/etc/profile.d/conda.sh"
-#     else
-#       export PATH="${HOME}/Software/miniconda3/bin:${PATH}"
-#     fi
-#   fi
-#   unset __conda_setup
-#   # <<< conda initialize <<<
-# fi
-
-# micromamba
-if hash micromamba > /dev/null 2>&1; then
-  # >>> mamba initialize >>>
-  # !! Contents within this block are managed by 'mamba init' !!
-  export MAMBA_EXE="${HOME}/.local/bin/micromamba"
-  export MAMBA_ROOT_PREFIX="${HOME}/.conda"
-  __mamba_setup="$("$MAMBA_EXE" shell hook --shell "${SHELL_NAME}" --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-      eval "$__mamba_setup"
-  else
-      alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
-  fi
-  unset __mamba_setup
-  # <<< mamba initialize <<<
-  alias conda="micromamba"
-fi
-
-# uv
-if hash uv > /dev/null 2>&1; then
-  source <(uv generate-shell-completion ${SHELL_NAME})
-  source <(uvx --generate-shell-completion ${SHELL_NAME})
-fi
