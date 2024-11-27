@@ -81,11 +81,8 @@
 # [include]
 #     path = .gitconfig.extra
 
-[includeIf "gitdir/i:**/typef-dev/**"]
+[includeIf "gitdir/i:**/Workspace/**"]
     path = ~/.config/git/.gitconfig.typef
-
-[oh-my-zsh]
-    hide-dirty = 1
 
 # # Interesting approach to make platform-specific `.gitconfig`
 # # incremental files (such as Credential Helpers)
