@@ -1,4 +1,5 @@
 {
+  // "prettier.proseWrap": "always"
   "files.associations": {
     "*.zimrc": "shellscript"
   }

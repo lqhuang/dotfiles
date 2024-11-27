@@ -110,6 +110,8 @@
   },
   "mdx.experimentalLanguageServer": true,
   "prettier.proseWrap": "preserve",
+  // "prettier.trailingComma": "all",
+  "prettier.singleQuote": true,
   "[html][css]": {
     "editor.indentSize": 2,
     "editor.formatOnSave": false,
@@ -143,6 +145,9 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
+  "evenBetterToml.formatter.alignComments": true,
+  "evenBetterToml.formatter.arrayAutoCollapse": true,
+  "evenBetterToml.schema.links": true,
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
@@ -194,30 +199,34 @@
   "[python]": {
     "editor.rulers": [79, 120],
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit",
+      "source.unusedImports": "never"
     }
     // "github.copilot.editor.enableCodeActions": false
   },
-  // Standalone extenstions for Python
-  // "black-formatter.args": ["--line-length", "79"],
-  // "flake8.args": ["--ignore", "E203,E501,W503,W504"],
-  "isort.check": true,
-  "isort.args": ["--profile", "black"],
-  "isort.serverEnabled": true,
-  "ruff.organizeImports": false,
-  "ruff.lint.args": ["--ignore", "C408"],
-  "mypy-type-checker.args": [
-    "--check-untyped-defs",
-    "--follow-imports=silent", // default
-    "--ignore-missing-imports", // default
-    "--no-pretty", // default
-    "--show-column-numbers",
-    // "--show-error-context",
-    "--show-error-codes"
-  ],
   "notebook.lineNumbers": "on",
+  "notebook.formatOnSave.enabled": true,
+  "notebook.defaultFormatter": "charliermarsh.ruff",
+  "notebook.codeActionsOnSave": {
+    "notebook.source.fixAll": "explicit",
+    "notebook.source.organizeImports": "explicit",
+    "notebook.source.unusedImports": "never"
+  },
+  // Standalone extenstions for Python
+  "ruff.organizeImports": true,
+  "ruff.nativeServer": "on",
+  "mypy-type-checker.preferDaemon": true,
+  // "mypy-type-checker.args": [
+  //   "--check-untyped-defs",
+  //   "--follow-imports=silent", // default
+  //   "--ignore-missing-imports", // default
+  //   "--no-pretty", // default
+  //   "--show-column-numbers",
+  //   "--show-error-codes"
+  // ],
   "autoDocstring.docstringFormat": "google",
   /* Rust */
   // "rust-analyzer.checkOnSave.command": "clippy",
@@ -235,7 +244,6 @@
   "metals.showImplicitArguments": false,
   "metals.showImplicitConversionsAndClasses": true,
   /* Javascript/Typescript */
-  "prettier.semi": false,
   "typescript.format.enable": false,
   "typescript.format.semicolons": "remove",
   "typescript.preferences.quoteStyle": "single",

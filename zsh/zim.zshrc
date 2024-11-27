@@ -119,8 +119,15 @@ zstyle ':completion::complete:*' cache-path "${ZDOTDIR}/.zcompcache"
 #
 # pure
 #
-PURE_PROMPT_SYMBOL="»" # https://util.unicode.org/UnicodeJsps/character.jsp?a=00BB
+# https://www.unicode.org/charts/nameslist/n_2190.html
+# https://util.unicode.org/UnicodeJsps/character.jsp?a=00BB
+PURE_PROMPT_SYMBOL="»"
 PURE_PROMPT_VICMD_SYMBOL="«"
+
+#
+# marlonrichert/zsh-autocomplete
+#
+zstyle ':autocomplete:*' delay 0.2
 
 # ------------------
 # Initialize modules
@@ -161,5 +168,12 @@ for key ('k') bindkey -M vicmd ${key} history-substring-search-up
 for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
+
+#
+# marlonrichert/zsh-autocomplete
+#
+# reassign keys **after** loading autocomplete. (not working ???)
+bindkey              '^I'         menu-complete
+bindkey "$terminfo[kcbt]" reverse-menu-complete
 
 # zprof

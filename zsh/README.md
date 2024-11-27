@@ -7,10 +7,9 @@
 - [romkatv/zsh4humans](https://github.com/romkatv/zsh4humans): A turnkey configuration for Zsh
 - [romkatv/zsh-defer](https://github.com/romkatv/zsh-defer): Deferred execution of Zsh commands
 - [mroth/evalcache](https://github.com/mroth/evalcache): 🐣 zsh plugin to cache eval loads to improve shell startup time
-- [marlonrichert/zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete):
-  🤖 Real-time type-ahead completion for Zsh. Asynchronous find-as-you-type
-  autocompletion.
+- [marlonrichert/zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete): 🤖 Real-time type-ahead completion for Zsh. Asynchronous find-as-you-type autocompletion.
 - [le0me55i/zsh-extract](https://github.com/le0me55i/zsh-extract): Plugin for Zshell that extracts the archive file you pass it
+- https://github.com/so-fancy/diff-so-fancy/blob/next/pro-tips.md
 
 ## Profiling
 
@@ -72,3 +71,28 @@ Lazy loading sdkman
 - [sdkman/sdkman-cli/issues/977](https://github.com/sdkman/sdkman-cli/issues/977): Bug: Slow startup/init in ZSH
 - [sdkman-lazy.zsh](https://gist.github.com/Amar1729/294c6e310b191405bf8fceb72e96b399)
 - [qoomon/zsh-lazyload](https://github.com/qoomon/zsh-lazyload): zsh plugin for lazy load commands and speed up start up time of zsh
+
+> I think I cannot get used to autocompletion. I find it a bit annoying. First,
+> these candidates that pop up under the current position on the screen and
+> create the distraction. Next, the logic itself. I have, say, "keyboard.json"
+> and "keymaps" directory in my current dir. I type "vim key<TAB>" and it
+> automatically selects "keymaps" instead of forcing me to make a choice. And in
+> order to complete with "keyboard.json" I need to press 3 more keys - DOWN,
+> DOWN and Enter (or TAB again) to select the file.
+>
+> Without autocompletion plugin, it would key "vim key<TAB>" - and I would see
+> two candidates. At this point, I would be forced to make my choice, and I
+> would do it by adding one more letter that makes the difference ("b"), then
+> TAB again - and I have my command.
+>
+> Even fzf-completion feels more natural, because there by typing "\*\*<TAB>" I
+> actually express the desire to select the item(s) from the list.
+>
+> Even worse, I type "vim ~/.zs<TAB>" and I end up with "vim ~/.fzf.zsh". No
+> idea why.
+>
+> I find that most of the time autocompletion plug-in forces the value that I am
+> not interested in. Traditional autocompletion seems to work better for me.
+> Maybe I am missing something about configuring autosuggestion plug-in.
+>
+> https://www.reddit.com/r/zsh/comments/v08lsx/zshautocomplete_vs_zshautosuggestions_vs_fig/
