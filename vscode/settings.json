@@ -54,14 +54,19 @@
   // Notes:
   // visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
   // https://code.visualstudio.com/docs/setup/linux
+  // Glob Patterns Reference: https://code.visualstudio.com/docs/editor/glob-patterns
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
-    "**/node_modules": true,
+    "**/node_modules/*/**": true,
+    "**/.next": true,
     "**/.bloop": true,
     "**/.metals": true,
+    "**/.cache": true,
+    "**/.classpath": true,
     "**/.ammonite": true,
     "**/target": true,
+    "**/out": true,
     "**/.venv": true,
     "**/.conda-venv": true,
     "**/*venv*": true,
@@ -70,21 +75,26 @@
   "search.exclude": {
     "**/.git": true,
     // Node.js
-    "**/.pnpm": true,
     "**/node_modules": true,
     "**/package-lock.json": true,
+    "**/.pnpm": true,
     "**/pnpm-lock.yaml": true,
     "**/yarn.lock": true,
+    "**/.next": true,
     // Scala
     "**/.bloop": true,
     "**/.metals": true,
     "**/.ammonite": true,
+    "**/.cache": true,
+    "**/.classpath": true,
     "**/target": true,
+    "**/out": true,
     // Python
     "**/.venv": true,
     "**/.conda-venv": true,
     "**/*venv*": true,
-    "**/.*_cache": true // `.mypy_cache`, `.pytest_cache`
+    "**/.*_cache": true, // `.mypy_cache`, `.pytest_cache`
+    "**/uv.lock": true
   },
   // "explorer.experimental.fileNesting.enabled": true,
   /* Task */
