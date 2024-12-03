@@ -15,8 +15,10 @@ fi
 
 if [[ -s $(command -v fnm) ]]; then
   eval "$(fnm env)"
-  source <(fnm completions --shell ${SHELL_NAME})
-  # source <(pnpm completion ${SHELL_NAME})
+  # completions are registered by brew already
+  #source <(fnm completions --shell ${SHELL_NAME})
+
+  #source <(pnpm completion ${SHELL_NAME})
 
   # === NPM BINARY CHINA ===
   # https://github.com/cnpm/binary-mirror-config/blob/master/package.json#L48

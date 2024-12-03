@@ -89,11 +89,12 @@ zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/rust.sh"
 #
 # Oh My Zsh
 #
-zmodule ohmyzsh/ohmyzsh --root plugins/bazel
 zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found
 zmodule ohmyzsh/ohmyzsh --root plugins/extract
 # zmodule ohmyzsh/ohmyzsh --root plugins/iterm2
 # zmodule ohmyzsh/ohmyzsh --root plugins/macos
+
+# zmodule ohmyzsh/ohmyzsh --root plugins/bazel
+# zmodule ohmyzsh/ohmyzsh --root plugins/uv
 # zmodule ohmyzsh/ohmyzsh --root plugins/sbt
 # zmodule ohmyzsh/ohmyzsh --root plugins/sdk
-# zmodule ohmyzsh/ohmyzsh --root plugins/uv

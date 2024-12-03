@@ -129,6 +129,17 @@ PURE_PROMPT_VICMD_SYMBOL="«"
 #
 zstyle ':autocomplete:*' delay 0.2
 
+#
+# Configuring `brew` completions in zsh
+#
+# https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+#
+# To make Homebrew’s completions available in zsh, the Homebrew-managed `zsh/site-functions` path
+# needs to be inserted into `FPATH` before initialising zsh’s completion facility.
+if [[ -d "/opt/homebrew/share/zsh/site-functions" ]]; then
+  fpath[1,0]="/opt/homebrew/share/zsh/site-functions"
+fi
+
 # ------------------
 # Initialize modules
 # ------------------
