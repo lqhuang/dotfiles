@@ -42,6 +42,24 @@ REMOTE=https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git sh -c "$(curl -fsSL 
 
 Sequence of zmodules is critically important. 🥹
 
+### Completion is not working under Ubuntu
+
+If you use Ubuntu and installed Zsh with apt, then add the following line to your `~/.zshenv` file:
+
+```sh
+skip_global_compinit=1
+```
+
+In case you're getting a "warning: completion was already initialized before completion module." message in the terminal, then append the following script to `~/.zshenv` and restart your terminal to check further:
+
+```sh
+autoload -Uz +X compinit
+functions[compinit]=$'print -u2 \'compinit being called at \'${funcfiletrace[1]}
+'${functions[compinit]}
+```
+
+- [Troubleshooting: Completion is not working](https://github.com/zimfw/zimfw/wiki/Troubleshooting#completion-is-not-working)
+
 ## References
 
 - [如何使用 shell（3/3）—— 配置 zsh](https://a-wing.top/shell/2021/05/10/zsh-config)

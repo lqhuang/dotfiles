@@ -1,9 +1,5 @@
 # iTerm2
 
-## Color Schemes
-
-- [mbadolato/iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
-
 ## Features
 
 ### Shell Integration
@@ -28,11 +24,13 @@ curl -L https://iterm2.com/shell_integration/bash -o ${PWD}/iterm2-shell-integra
 
 - [iTerm2 Documentation Shell Integration](https://iterm2.com/documentation-shell-integration.html)
 
-## Colors
+## Color Schemes
 
+- [mbadolato/iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
+  - [Iterm2-color-schemes](https://iterm2colorschemes.com/)
+  - [webinstall.dev - iterm2-themes](https://webinstall.dev/iterm2-themes/)
 - [nealmckee/penumbra](https://github.com/nealmckee/penumbra): Penumbra Color
   Theme
-- [Iterm2-color-schemes](https://iterm2colorschemes.com/)
 - [catppuccin/iterm](https://github.com/catppuccin/iterm): 🍭 Soothing pastel
   theme for iTerm2
 - [sonph/onehalf](https://github.com/sonph/onehalf): Clean, vibrant and pleasing

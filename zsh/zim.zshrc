@@ -130,6 +130,11 @@ PURE_PROMPT_VICMD_SYMBOL="«"
 zstyle ':autocomplete:*' delay 0.2
 
 #
+# extra zsh completions
+#
+#fpath+=~/.zfunc
+
+#
 # Configuring `brew` completions in zsh
 #
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
