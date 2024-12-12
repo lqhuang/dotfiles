@@ -2,6 +2,7 @@
 
 ## Resources
 
+- [Laurence Tratt: Faster Shell Startup With Shell Switching](https://tratt.net/laurie/blog/2024/faster_shell_startup_with_shell_switching.html)
 - [zimfw/zimfw](https://github.com/zimfw/zimfw): Zim: Modular, customizable, and
   blazing fast Zsh framework <https://zimfw.sh>
 - [romkatv/zsh4humans](https://github.com/romkatv/zsh4humans): A turnkey configuration for Zsh

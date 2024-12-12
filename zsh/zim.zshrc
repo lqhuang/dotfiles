@@ -124,10 +124,10 @@ zstyle ':completion::complete:*' cache-path "${ZDOTDIR}/.zcompcache"
 PURE_PROMPT_SYMBOL="»"
 PURE_PROMPT_VICMD_SYMBOL="«"
 
-#
-# marlonrichert/zsh-autocomplete
-#
-zstyle ':autocomplete:*' delay 0.2
+# #
+# # marlonrichert/zsh-autocomplete
+# #
+# zstyle ':autocomplete:*' delay 0.2
 
 #
 # extra zsh completions
@@ -185,11 +185,11 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
-#
-# marlonrichert/zsh-autocomplete
-#
-# reassign keys **after** loading autocomplete. (not working ???)
-bindkey              '^I'         menu-complete
-bindkey "$terminfo[kcbt]" reverse-menu-complete
+# #
+# # marlonrichert/zsh-autocomplete
+# #
+# # reassign keys **after** loading autocomplete. (not working ???)
+# bindkey              '^I'         menu-complete
+# bindkey "$terminfo[kcbt]" reverse-menu-complete
 
 # zprof

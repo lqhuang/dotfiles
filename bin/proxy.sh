@@ -31,7 +31,7 @@ function _set_env_porxy() {
     echo -e "Setting proxy env variables..."
 
     if [ ! -e "$no_proxy" ]; then
-        export no_proxy=".local,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
+        export no_proxy="localhost,.local,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
         export NO_PROXY=${no_proxy}
     fi
 

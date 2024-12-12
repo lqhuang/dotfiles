@@ -46,6 +46,7 @@
 - [jbyuki/nabla.nvim](https://github.com/jbyuki/nabla.nvim): take your
   scientific notes ✏️ in Neovim
 - [stevearc/oil.nvim](https://github.com/stevearc/oil.nvim): Neovim file explorer: edit your filesystem like a buffer
+- [m4xshen/hardtime.nvim](https://github.com/m4xshen/hardtime.nvim): Establish good command workflow and quit bad habit
 
 ### UI
 
@@ -112,3 +113,5 @@
   with search labels, enhanced character motions and Treesitter integration
 - [joelazar/nvim-config](https://github.com/joelazar/nvim-config): My neovim
   config
+
+https://m4xshen.dev/posts/build-your-modern-neovim-config-in-lua
