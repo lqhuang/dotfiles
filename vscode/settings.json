@@ -137,6 +137,7 @@
     ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"],
     // config for shadcn utils
     ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+    // TODO: add regex for `const` variables
   ],
   "[json][jsonc][mongodb]": {
     "editor.autoIndent": "advanced",
@@ -271,7 +272,7 @@
     "editor.codeActionsOnSave": {
       "source.convertImportFormat": "always",
       "source.removeUnusedImports": "never",
-      "source.sortImports": "always",
+      "source.sortImports": "never",
       // `organizeImports` is not the same thing as `sortImports`.
       "source.organizeImports": "never"
     }

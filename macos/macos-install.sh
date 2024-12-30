@@ -95,4 +95,3 @@ brew cask update
 brew cask install --appdir="/Applications" ${caskapps[@]}
 brew cleanup
 brew cask cleanup
-

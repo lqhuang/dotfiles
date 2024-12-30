@@ -81,7 +81,7 @@
 # [include]
 #     path = .gitconfig.extra
 
-[includeIf "gitdir/i:**/Workspace/**"]
+[includeIf "gitdir/i:~/Workspace/**"]
     path = ~/.config/git/.gitconfig.typef
 
 # # Interesting approach to make platform-specific `.gitconfig`

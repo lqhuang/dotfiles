@@ -1,0 +1,29 @@
+# # Configuration
+#
+# - Overview https://ghostty.org/docs/config
+#    - if `$XDG_CONFIG_HOME` is not defined, it defaults to `$HOME/.config/ghostty/config`
+#    - macOS only: `$HOME/Library/Application\ Support/com.mitchellh.ghostty/config`
+# - Option Reference https://ghostty.org/docs/config/#configuration-options
+#
+# Combine multiple configuration files by using the `config-file` option.
+#
+# ```
+# config-file = some/relative/sub/config
+# config-file = ?optional/config
+# config-file = /absolute/path/config
+# ```
+
+font-size = 18
+clipboard-trim-trailing-spaces = true
+shell-integration = zsh
+
+# cursor-style =
+# cursor-style-blink =
+
+
+#
+# macOS only
+#
+
+window-colorspace = display-p3
+macos-titlebar-style = tabs

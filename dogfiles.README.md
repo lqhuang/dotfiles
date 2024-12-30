@@ -37,3 +37,10 @@ store the config.
 
 NOTE: `dogfiles.py` is just a soft link to `dogfiles` (the real entrypoint) in
 the root directory, which is for testing purpose from `dogfiles.test.py`.
+
+## Inspirations
+
+- https://github.com/anishathalye/dotbot
+- https://github.com/jessfraz/dotfiles/blob/master/Makefile
+- https://github.com/silverwind/dotfiles/blob/master/install.sh
+- https://gist.github.com/ekzhang/3bc0943dc1376d8f434d9bc8cb6bf907
