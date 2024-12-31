@@ -17,6 +17,13 @@ font-size = 18
 clipboard-trim-trailing-spaces = true
 shell-integration = zsh
 
+# check a list of available themes by `ghostty +list-themes`
+
+theme = "iTerm2 Pastel Dark Background"
+#theme = "Atom"
+#theme = "GitHub Dark"
+
+
 # cursor-style =
 # cursor-style-blink =
 
