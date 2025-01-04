@@ -18,11 +18,13 @@ clipboard-trim-trailing-spaces = true
 shell-integration = zsh
 
 # check a list of available themes by `ghostty +list-themes`
-
 theme = "iTerm2 Pastel Dark Background"
 #theme = "Atom"
 #theme = "GitHub Dark"
 
+term = xterm-256color
+window-padding-x = 20
+window-padding-y = 12
 
 # cursor-style =
 # cursor-style-blink =
