@@ -255,6 +255,8 @@
   },
   // "metals.enableIndentOnPaste": true,
   "metals.enableSemanticHighlighting": true,
+  "metals.inlayHints.implicitArguments.enable": true,
+  "metals.inlayHints.implicitConversions.enable": true,
   "metals.showInferredType": "false",
   "metals.showImplicitArguments": false,
   "metals.showImplicitConversionsAndClasses": true,

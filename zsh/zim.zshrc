@@ -121,8 +121,16 @@ zstyle ':completion::complete:*' cache-path "${ZDOTDIR}/.zcompcache"
 #
 # https://www.unicode.org/charts/nameslist/n_2190.html
 # https://util.unicode.org/UnicodeJsps/character.jsp?a=00BB
-PURE_PROMPT_SYMBOL="»"
-PURE_PROMPT_VICMD_SYMBOL="«"
+if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
+  # Warn me that I'm not in local shell
+  zstyle :prompt:pure:user color red
+  zstyle :prompt:pure:host color red
+  zstyle :prompt:pure:path color green
+else
+  PURE_PROMPT_SYMBOL="»"
+  PURE_PROMPT_VICMD_SYMBOL="«"
+fi
+
 
 # #
 # # marlonrichert/zsh-autocomplete

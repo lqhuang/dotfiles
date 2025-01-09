@@ -15,7 +15,8 @@
 
 font-size = 18
 clipboard-trim-trailing-spaces = true
-shell-integration = zsh
+# shell-integration = zsh
+custom-shader-animation = true
 
 # check a list of available themes by `ghostty +list-themes`
 theme = "iTerm2 Pastel Dark Background"
@@ -29,10 +30,8 @@ window-padding-y = 12
 # cursor-style =
 # cursor-style-blink =
 
-
 #
 # macOS only
 #
-
 window-colorspace = display-p3
 macos-titlebar-style = tabs
