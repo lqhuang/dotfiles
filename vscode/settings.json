@@ -296,6 +296,8 @@
   "Prettier-SQL.tabSizeOverride": 2,
   "Prettier-SQL.linesBetweenQueries": 2,
   "Prettier-SQL.SQLFlavourOverride": "postgresql",
+  /* LeTex */
+  "latex-workshop.formatting.latex": "tex-fmt",
   /* Typst */
   "typst-lsp.experimentalFormatterMode": "on",
   "typst-lsp.exportPdf": "never",

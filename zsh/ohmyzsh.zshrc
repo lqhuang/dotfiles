@@ -233,7 +233,8 @@ fi
 # > conda config --set auto_activate_base false
 
 ######################## Source Common ############################################
-[[ -s "${HOME}/Git/dotfiles/home/.shared_profile" ]] && source ${HOME}/Git/dotfiles/home/.shared_profile
+[[ -s "${HOME}/Git/dotfiles/shell/shared.zsh" ]] && source ${HOME}/Git/dotfiles/shell/shared.zsh
+[[ -s "${HOME}/Git/dotfiles/shell/javascript.sh" ]] && source ${HOME}/Git/dotfiles/shell/javascript.sh
 
 # if [[ -n ${ZSH_PROF} ]]; then
 #   zprof

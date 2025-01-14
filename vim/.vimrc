@@ -96,3 +96,6 @@ vnoremap <C-S-Down> :m'>+<CR>gv=gv
 packadd! matchit
 
 " set clipboard+=unnamedplus
+
+set rtp+=/opt/homebrew/opt/fzf
+
