@@ -16,7 +16,6 @@
   "editor.inlineSuggest.enabled": true,
   // "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.accessibilitySupport": "off",
-  "editor.experimental.asyncTokenization": true,
   "editor.guides.bracketPairs": true,
   "editor.minimap.size": "fill",
   "editor.unicodeHighlight.allowedLocales": {
@@ -30,11 +29,9 @@
   },
   "diffEditor.experimental.showMoves": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  // "git.autorefresh": true,
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
   "remote.autoForwardPorts": false,
-  // "markdown.editor.pasteUrlAsFormattedLink.enabled": true,
   /* Terminal config */
   "terminal.integrated.inheritEnv": false,
   "terminal.integrated.fontFamily": "'MesloLGS NF', Monaco, monospace",
@@ -100,7 +97,6 @@
     "**/.*_cache": true, // `.mypy_cache`, `.pytest_cache`
     "**/uv.lock": true
   },
-  // "explorer.experimental.fileNesting.enabled": true,
   /* Task */
   // If the Tasks: Run Task command is slow,
   // disabling auto detect for task providers may help.
@@ -111,7 +107,7 @@
   /**
    * Language specific settings
    */
-  /* markup language */
+  /* markdown */
   "[markdown]": {
     "editor.indentSize": 2,
     "editor.autoIndent": "advanced",
@@ -122,9 +118,12 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "files.trimTrailingWhitespace": false
   },
-  "mdx.experimentalLanguageServer": true,
+  "markdown.preview.fontSize": 16,
+  "markdown.validate.enabled": true,
   "prettier.proseWrap": "preserve",
-  // "prettier.trailingComma": "all",
+  "mdx.experimentalLanguageServer": true,
+  /* HTML/CSS */
+  "prettier.trailingComma": "all",
   "prettier.singleQuote": true,
   "[html][css]": {
     "editor.indentSize": 2,
@@ -143,6 +142,7 @@
     ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
     // TODO: add regex for `const` variables
   ],
+  /* configuration languages */
   "[json][jsonc][mongodb]": {
     "editor.autoIndent": "advanced",
     "editor.indentSize": 2,
@@ -163,9 +163,11 @@
   "evenBetterToml.formatter.alignComments": true,
   "evenBetterToml.formatter.arrayAutoCollapse": true,
   "evenBetterToml.schema.links": true,
+  /* Dockerfile / Cloud native related */
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
+
   /* Haskell */
   // "[haskell]": {
   //   "editor.fontFamily": "'Fira Code', 'Cascadia Code', monospace",
@@ -174,8 +176,10 @@
   // },
   // "haskell.formattingProvider": "stylish-haskell",
   /* C/Cpp */
-  // // C++ format style
-  // // http://clang.llvm.org/docs/ClangFormatStyleOptions.html
+  /**
+   * C++ format style
+   * http://clang.llvm.org/docs/ClangFormatStyleOptions.html
+   */
   // "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, IndentWidth: 4, MaxEmptyLinesToKeep: 2}",
   "[c][cpp]": {
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
@@ -184,33 +188,6 @@
   "cmake.configureOnEdit": false,
   "cmake.options.statusBarVisibility": "compact",
   /* Python */
-  "python.languageServer": "Pylance",
-  "python.analysis.typeCheckingMode": "basic",
-  "python.analysis.inlayHints.variableTypes": false,
-  "python.analysis.inlayHints.callArgumentNames": "off",
-  "python.analysis.inlayHints.functionReturnTypes": true,
-  "python.analysis.inlayHints.pytestParameters": true,
-  "python.analysis.autoFormatStrings": true,
-  "python.createEnvironment.contentButton": "hide",
-  "python.experiments.enabled": true,
-  /**
-   * // Deprecated settings
-   * "python.formatting.provider": "yapf",
-   * "python.formatting.yapfArgs": [
-   *   "--style",
-   *   "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true, coalesce_brackets: false, split_before_dot: true}"
-   * ],
-   * "python.linting.mypyEnabled": true,
-   * "python.linting.mypyArgs": [
-   *   "--show-error-context",
-   *   "--show-column-numbers",
-   *   "--show-error-codes",
-   *   "--no-pretty",
-   *   "--no-color-output"
-   * ],
-   */
-  "python.testing.unittestEnabled": false,
-  "python.testing.pytestEnabled": true,
   "[python]": {
     "editor.rulers": [79, 120],
     "editor.formatOnSave": true,
@@ -222,6 +199,32 @@
     }
     // "github.copilot.editor.enableCodeActions": false
   },
+  "python.createEnvironment.contentButton": "hide",
+  "python.createEnvironment.trigger": "off",
+  "python.languageServer": "Pylance",
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.inlayHints.variableTypes": false,
+  "python.analysis.inlayHints.callArgumentNames": "partial",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.cacheLSPData": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.showOnlyDirectDependenciesInAutoImport": true,
+  "python.analysis.supportDocstringTemplate": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.typeEvaluation.enableReachabilityAnalysis": true,
+  "python.analysis.typeEvaluation.strictDictionaryInference": true,
+  "python.analysis.typeEvaluation.strictListInference": true,
+  "python.analysis.typeEvaluation.strictSetInference": true,
+  "python.analysis.aiCodeActions": {
+    "generateDocstring": true,
+    "generateSymbol": true,
+    "implementAbstractClasses": true
+  },
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.experiments.enabled": true,
   "notebook.lineNumbers": "on",
   "notebook.formatOnSave.enabled": true,
   "notebook.defaultFormatter": "charliermarsh.ruff",
@@ -230,10 +233,25 @@
     "notebook.source.organizeImports": "explicit",
     "notebook.source.unusedImports": "never"
   },
-  // Standalone extenstions for Python
+  // Standalone extenstions of Python
   "ruff.organizeImports": true,
-  "ruff.nativeServer": "on",
+  "ruff.lint.ignore": ["F401"],
   "mypy-type-checker.preferDaemon": true,
+  "autoDocstring.docstringFormat": "google",
+  /* Deprecated settings for Python */
+  //  "python.formatting.provider": "yapf",
+  //  "python.formatting.yapfArgs": [
+  //    "--style",
+  //    "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true, coalesce_brackets: false, split_before_dot: true}"
+  //  ],
+  //  "python.linting.mypyEnabled": true,
+  //  "python.linting.mypyArgs": [
+  //    "--show-error-context",
+  //    "--show-column-numbers",
+  //    "--show-error-codes",
+  //    "--no-pretty",
+  //    "--no-color-output"
+  //  ],
   // "mypy-type-checker.args": [
   //   "--check-untyped-defs",
   //   "--follow-imports=silent", // default
@@ -242,7 +260,6 @@
   //   "--show-column-numbers",
   //   "--show-error-codes"
   // ],
-  "autoDocstring.docstringFormat": "google",
   /* Rust */
   // "rust-analyzer.checkOnSave.command": "clippy",
   /* Scala */
@@ -268,7 +285,6 @@
   "typescript.preferences.useAliasesForRenames": false,
   "typescript.suggest.completeFunctionCalls": true,
   "typescript.implementationsCodeLens.enabled": true,
-  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "[javascript][typescript][javascriptreact][typescriptreact]": {
     "editor.indentSize": 2,
     "editor.tabSize": 2,
@@ -304,11 +320,28 @@
   "[typst]": {
     "editor.defaultFormatter": "nvarner.typst-lsp"
   },
-  /* Others */
+  /* Shell */
   "[shellscript]": {
     "editor.indentSize": 2
   },
   "shellformat.flag": "-bn -ci -sr -kp",
+
+  /**
+   * GitHub
+   */
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "github.copilot.advanced": {
+    "authProvider": "github",
+    "useLanguageServer": true
+  },
+  "github.copilot.chat.edits.codesearch.enabled": true,
+  "github.copilot.chat.generateTests.codeLens": true,
+  "github.copilot.chat.search.semanticTextResults": true,
+
+  /**
+   * Misc & Plugins
+   */
   "indentRainbow.updateDelay": 250,
   "indentRainbow.indicatorStyle": "classic",
   // disable built-in indentation guide to avoid conflict to indentRainbow plugin
@@ -316,15 +349,16 @@
   // "indentRainbow.lightIndicatorStyleLineWidth": 1,
 
   /**
-   * Misc
+   * Experimental settings
    */
-  "github.copilot.editor.enableAutoCompletions": true,
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": true,
-    "markdown": true,
-    "yaml": true
-  },
+  "editor.experimental.asyncTokenization": true,
+  "editor.experimental.preferTreeSitter": ["typescript"],
+  "editor.experimentalEditContextEnabled": true,
+  "diffEditor.experimental.useTrueInlineView": true,
+  "extensions.experimental.deferredStartupFinishedActivation": true,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "notebook.experimental.remoteSave": true,
+
   /* Telemetry */
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
