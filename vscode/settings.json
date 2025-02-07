@@ -233,6 +233,8 @@
     "notebook.source.organizeImports": "explicit",
     "notebook.source.unusedImports": "never"
   },
+  // NOTE: https://github.com/microsoft/vscode-jupyter/wiki/IPyWidget-Support-in-VS-Code-Python
+  "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
   // Standalone extenstions of Python
   "ruff.organizeImports": true,
   "ruff.lint.ignore": ["F401"],
@@ -365,6 +367,6 @@
   "dotnetAcquisitionExtension.enableTelemetry": false,
   "docker-explorer.enableTelemetry": false,
   "terraform.telemetry.enabled": false,
-  "mdb.sendTelemetry": false,
+  // "mdb.sendTelemetry": false,
   "prisma.showPrismaDataPlatformNotification": false
 }

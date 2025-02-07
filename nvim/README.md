@@ -101,6 +101,7 @@
 - [LunarVim/Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch):
   📚 A Neovim config designed from scratch to be understandable
   <https://www.chrisatmachine.com/>
+- [Build your modern Neovim config in Lua | Max Shen Dev](https://m4xshen.dev/posts/build-your-modern-neovim-config-in-lua): Learn how to build a modern Neovim configuration in Lua with options, mappings, autocmds, and plugins. Follow a structured approach to enhance your Neovim experience.
 
 ## Awesome
 
@@ -113,5 +114,4 @@
   with search labels, enhanced character motions and Treesitter integration
 - [joelazar/nvim-config](https://github.com/joelazar/nvim-config): My neovim
   config
-
-https://m4xshen.dev/posts/build-your-modern-neovim-config-in-lua
+- [echasnovski/mini.nvim](https://github.com/echasnovski/mini.nvim): Library of 40+ independent Lua modules improving overall Neovim (version 0.8 and higher) experience with minimal effort
