@@ -130,17 +130,28 @@
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  /**
+   * OMG: [paolotiu/tailwind-intellisense-regex-list](https://github.com/paolotiu/tailwind-intellisense-regex-list)
+   */
   "tailwindCSS.experimental.classRegex": [
     // https://github.com/lukeed/clsx?tab=readme-ov-file#tailwind-support
     ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
     // https://cva.style/docs/getting-started/installation#intellisense
-    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ["cva\\(((?:[^()]|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(((?:[^()]|\\([^()]*\\))*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
     // https://www.tailwind-variants.org/docs/getting-started#intellisense-setup-optional
     ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"],
     // config for shadcn utils
-    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-    // TODO: add regex for `const` variables
+    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    // config for tailwind-merge
+    // https://github.com/tailwindlabs/tailwindcss/discussions/7554#discussioncomment-4440751
+    ["(?:twMerge|twJoin)\\(([^;]*)[\\);]", "[`'\"`]([^'\"`;]*)[`'\"`]"],
+    // tailwind-variants
+    ["tv\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"],
+    // for `const` variables
+    // "(?:const|let|var)\\s+[\\w$_][_\\w\\d]*\\s*=\\s*['\\\"](.*?)['\\\"]"
+    // for string variable with keywords
+    "(?:\\b(?:const|let|var)\\s+)?[\\w$_]*(?:[Ss]tyles|twStyles|[Cc]lassnames)[\\w\\d]*\\s*(?:=|\\+=)\\s*['\"]([^'\"]*)['\"]"
   ],
   /* configuration languages */
   "[json][jsonc][mongodb]": {
@@ -307,6 +318,9 @@
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
   /* SQL */
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
   "[sql]": {
     "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
   },

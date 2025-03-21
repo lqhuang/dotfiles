@@ -20,6 +20,13 @@ if [[ -s $(command -v fnm) ]]; then
 
   #source <(pnpm completion ${SHELL_NAME})
 
+  # export PNPM_HOME="${HOME}/Library/pnpm"
+  export PNPM_HOME="${HOME}/.local/share/pnpm"
+  case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+  esac
+
   # === NPM BINARY CHINA ===
   # https://github.com/cnpm/binary-mirror-config/blob/master/package.json#L48
   export NODEJS_ORG_MIRROR="https://cdn.npmmirror.com/binaries/node"

@@ -27,25 +27,26 @@ SHELL_NAME="${SHELL##*/}"  # zsh / bash
 # fi
 
 # micromamba
-if hash micromamba > /dev/null 2>&1; then
-
+export MAMBA_EXE='/opt/homebrew/opt/micromamba/bin/mamba'
+if [[ -s "$MAMBA_EXE" ]]; then
   # # >>> mamba initialize >>>
-  # # !! Contents within this block are managed by 'micromamba shell init' !!
-  # export MAMBA_EXE='/opt/homebrew/bin/micromamba';
+  # # !! Contents within this block are managed by 'mamba shell init' !!
+  # export MAMBA_EXE='/opt/homebrew/opt/micromamba/bin/mamba';
   # export MAMBA_ROOT_PREFIX='/opt/homebrew';
   # __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
   # if [ $? -eq 0 ]; then
   #     eval "$__mamba_setup"
   # else
-  #     alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
+  #     alias mamba="$MAMBA_EXE"  # Fallback on help from mamba activate
   # fi
   # unset __mamba_setup
   # # <<< mamba initialize <<<
 
   export MAMBA_ROOT_PREFIX="${HOME}/.conda"
   # register shell completion
-  source <(micromamba shell hook --shell "${SHELL_NAME}" --root-prefix "${MAMBA_ROOT_PREFIX}")
-  alias conda="micromamba"
+  source <("$MAMBA_EXE" shell hook --shell "${SHELL_NAME}" --root-prefix "${MAMBA_ROOT_PREFIX}")
+  alias mamba="$MAMBA_EXE"
+  alias conda="$MAMBA_EXE"
 fi
 
 # uv

@@ -85,6 +85,7 @@ zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/javascript.sh"
 zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/python.sh"
 zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/jvm.sh"
 zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/rust.sh"
+zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/misc.sh"
 
 #
 # Oh My Zsh
