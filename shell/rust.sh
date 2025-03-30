@@ -4,7 +4,7 @@
 
 # rustup path
 if [[ -s "${HOME}/.cargo" ]]; then
-  . "$HOME/.cargo/env"
+  . "${HOME}/.cargo/env"
   # rustup mirror from tuna, ustc-tug, sjtug
   # export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
   # export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup

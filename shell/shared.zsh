@@ -25,6 +25,9 @@ if [[ -d "$HOME/.local" ]]; then
   export MANPATH="${HOME}/.local/man:${MANPATH}"
 fi
 
+## Nix single user configuration if installed
+if [ -e ${HOME}/.nix-profile/etc/profile.d/nix.sh ]; then . ${HOME}/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
 ## set locale config
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
