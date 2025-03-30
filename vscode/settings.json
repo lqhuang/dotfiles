@@ -80,6 +80,10 @@
     "**/pnpm-lock.yaml": true,
     "**/yarn.lock": true,
     "**/.next": true,
+    "**/.turbo": true,
+    "**/tsconfig.tsbuildinfo": true,
+    "**/.clerk": true,
+    "**/storybook-static": true,
     // Scala
     "**/.bloop": true,
     "**/.metals": true,
@@ -312,11 +316,11 @@
       "source.organizeImports": "never"
     }
   },
-  "svelte.enable-ts-plugin": true,
-  "[svelte]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "svelte.svelte-vscode"
-  },
+  // "svelte.enable-ts-plugin": true,
+  // "[svelte]": {
+  //   "editor.formatOnSave": true,
+  //   "editor.defaultFormatter": "svelte.svelte-vscode"
+  // },
   /* SQL */
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
@@ -351,7 +355,7 @@
     "authProvider": "github",
     "useLanguageServer": true
   },
-  "github.copilot.chat.edits.codesearch.enabled": true,
+  "github.copilot.chat.codesearch.enabled": true,
   "github.copilot.chat.generateTests.codeLens": true,
   "github.copilot.chat.search.semanticTextResults": true,
 
@@ -382,5 +386,6 @@
   "docker-explorer.enableTelemetry": false,
   "terraform.telemetry.enabled": false,
   // "mdb.sendTelemetry": false,
-  "prisma.showPrismaDataPlatformNotification": false
+  "prisma.showPrismaDataPlatformNotification": false,
+  "ansible.lightspeed.URL": ""
 }
