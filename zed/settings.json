@@ -16,8 +16,10 @@
   "base_keymap": "VSCode",
   "theme": {
     "mode": "light",
-     "light": "One Light",
-     "dark": "One Dark"
+    "light": "One Light",
+    "dark": "One Dark"
   },
-  "buffer_font_size": 18
+  "enable_language_server": false,
+  "buffer_font_size": 18,
+  "ui_font_size": 20
 }

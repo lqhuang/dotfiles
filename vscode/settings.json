@@ -14,7 +14,7 @@
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "selection",
   "editor.inlineSuggest.enabled": true,
-  // "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.accessibilitySupport": "off",
   "editor.guides.bracketPairs": true,
   "editor.minimap.size": "fill",
@@ -31,7 +31,6 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
-  "remote.autoForwardPorts": false,
   /* Terminal config */
   "terminal.integrated.inheritEnv": false,
   "terminal.integrated.fontFamily": "'MesloLGS NF', Monaco, monospace",
@@ -45,9 +44,7 @@
   "explorer.fileNesting.enabled": true,
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
+  "files.associations": { "*.css": "tailwindcss" },
   // Notes:
   // visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
   // https://code.visualstudio.com/docs/setup/linux
@@ -107,6 +104,8 @@
   "task.autoDetect": "off",
   /* Extensions */
   "extensions.ignoreRecommendations": true,
+  /* Remote */
+  "remote.autoForwardPorts": false,
 
   /**
    * Language specific settings
@@ -181,6 +180,7 @@
   /* Dockerfile / Cloud native related */
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    // "editor.defaultFormatter": "foxundermoon.shell-format"
   },
 
   /* Haskell */
@@ -220,14 +220,14 @@
   "python.analysis.autoFormatStrings": true,
   "python.analysis.autoImportCompletions": true,
   "python.analysis.inlayHints.variableTypes": false,
-  "python.analysis.inlayHints.callArgumentNames": "partial",
+  "python.analysis.inlayHints.callArgumentNames": "off",
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.inlayHints.pytestParameters": true,
   "python.analysis.cacheLSPData": true,
   "python.analysis.completeFunctionParens": true,
   "python.analysis.showOnlyDirectDependenciesInAutoImport": true,
   "python.analysis.supportDocstringTemplate": true,
-  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.typeCheckingMode": "standard",
   "python.analysis.typeEvaluation.enableReachabilityAnalysis": true,
   "python.analysis.typeEvaluation.strictDictionaryInference": true,
   "python.analysis.typeEvaluation.strictListInference": true,
@@ -289,11 +289,7 @@
   },
   // "metals.enableIndentOnPaste": true,
   "metals.enableSemanticHighlighting": true,
-  "metals.inlayHints.implicitArguments.enable": true,
-  "metals.inlayHints.implicitConversions.enable": true,
-  "metals.showInferredType": "false",
-  "metals.showImplicitArguments": false,
-  "metals.showImplicitConversionsAndClasses": true,
+  "metals.inlayHints.hintsInPatternMatch.enable": true,
   /* Javascript/Typescript */
   "typescript.format.enable": false,
   "typescript.format.semicolons": "remove",
@@ -349,15 +345,20 @@
   /**
    * GitHub
    */
-  "github.copilot.editor.enableAutoCompletions": true,
-  "github.copilot.nextEditSuggestions.enabled": false,
   "github.copilot.advanced": {
     "authProvider": "github",
     "useLanguageServer": true
   },
+  "github.copilot.enable": {
+    "markdown": true
+  },
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "github.copilot.chat.editor.temporalContext.enabled": true,
   "github.copilot.chat.codesearch.enabled": true,
   "github.copilot.chat.generateTests.codeLens": true,
   "github.copilot.chat.search.semanticTextResults": true,
+  "github.copilot.chat.agent.thinkingTool": true,
+  "github.copilot.chat.edits.temporalContext.enabled": true,
 
   /**
    * Misc & Plugins
@@ -367,12 +368,12 @@
   // disable built-in indentation guide to avoid conflict to indentRainbow plugin
   // "editor.guides.indentation": false,
   // "indentRainbow.lightIndicatorStyleLineWidth": 1,
+  "ansible.lightspeed.enabled": false, // Fix notification for lightspeed login
 
   /**
    * Experimental settings
    */
   "editor.experimental.asyncTokenization": true,
-  "editor.experimental.preferTreeSitter": ["typescript"],
   "editor.experimentalEditContextEnabled": true,
   "diffEditor.experimental.useTrueInlineView": true,
   "extensions.experimental.deferredStartupFinishedActivation": true,
@@ -385,7 +386,6 @@
   "dotnetAcquisitionExtension.enableTelemetry": false,
   "docker-explorer.enableTelemetry": false,
   "terraform.telemetry.enabled": false,
-  // "mdb.sendTelemetry": false,
-  "prisma.showPrismaDataPlatformNotification": false,
-  "ansible.lightspeed.URL": ""
+  "mdb.sendTelemetry": false,
+  "prisma.showPrismaDataPlatformNotification": false
 }

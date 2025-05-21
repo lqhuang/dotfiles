@@ -1,6 +1,8 @@
-# git-config: https://git-scm.com/docs/git-config
-# Customizing-Git-Git-Configuration: https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
-# some commented options have been default from git 2.0
+# - [git-config](https://git-scm.com/docs/git-config)
+# - [Customizing-Git-Git-Configuration](https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
+# - [How to Improve Performance in Git: The Complete Guide](https://www.git-tower.com/blog/git-performance/)
+#
+# Serveral commented options have been default from git 2.0
 [user]
     name = Lanqing Huang
     email = lqhuang@outlook.com
@@ -12,9 +14,14 @@
     autocrlf = input  # Dealing with line endings
     # whitespace = trailing-space,space-before-tab,-indent-with-non-tab
     excludesFile = ~/.config/git/ignore # explicit write settings by default
+    commitgraph = true
 
 [index]
     version = 4
+    # To enable the new index format, run:
+    # ```
+    # git update-index --index-version 4
+    # ```
 
 [init]
     # defaultBranch = master
@@ -25,13 +32,13 @@
 
 [feature]
     manyFiles = true
-    # [How to Improve Performance in Git: The Complete Guide](https://www.git-tower.com/blog/git-performance/)
 
 [fetch]
     prune = true
     pruneTags = true
     # A value of 0 will give some reasonable default. If unset, it defaults to 1.
     # parallel = 0
+    writeCommitGraph = true
 
 [submodule]
     fetchJobs = 8
@@ -67,6 +74,8 @@
 
 [credential]
     helper = store
+    helper = osxkeychain
+    # helper = /usr/local/share/gcm-core/git-credential-manager
 
 [alias]
     sl = log --pretty=tformat:'* %C(auto)%h%C(auto)%d %s%Creset %C(auto,blue)(%an)%Creset - %C(auto)%ad'
@@ -97,5 +106,5 @@
 # [includeIf "gitdir:/home"]
 #     path = ~/.gitconfig-linux
 
-
-
+[credential "https://dev.azure.com"]
+    useHttpPath = true

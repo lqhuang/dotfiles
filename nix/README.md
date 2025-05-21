@@ -40,3 +40,7 @@ I will:
   3. If `NIX_CONFIG` is set, its contents are treated as the contents of a configuration file.
 - [Best practices — nix.dev documentation](https://nix.dev/guides/best-practices.html)
 - [Nix Reference Manual - Experimental features](https://nix.dev/manual/nix/2.24/development/experimental-features)
+
+## Inspirations
+
+- [Using Nix for Everything](https://kyswtn.com/posts/nix-for-everything): How I configure everything using Nix everywhere
