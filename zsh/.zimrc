@@ -99,3 +99,8 @@ zmodule ohmyzsh/ohmyzsh --root plugins/extract
 # zmodule ohmyzsh/ohmyzsh --root plugins/uv
 # zmodule ohmyzsh/ohmyzsh --root plugins/sbt
 # zmodule ohmyzsh/ohmyzsh --root plugins/sdk
+
+#
+# Misc
+#
+zmodule carlosedp/mill-zsh-completions  --cmd "zsh-defer source {}/mill-zsh-completions.plugin.zsh"
