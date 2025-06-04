@@ -51,10 +51,10 @@
     sort = -committerdate  # orderted by most recent commits
 
 [diff]
-	submodule = short
+    submodule = short
 
 [status]
-	submodulesummary = true
+    submodulesummary = true
 
 [fetch]
     prune = true
@@ -86,6 +86,16 @@
 [alias]
     sl = log --pretty=tformat:'* %C(auto)%h%C(auto)%d %s%Creset %C(auto,blue)(%an)%Creset - %C(auto)%ad'
     gl = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all
+
+#
+# Extended Git features
+#
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
 #
 # Non command line settings or external tools

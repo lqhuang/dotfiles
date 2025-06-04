@@ -3,7 +3,6 @@
 # On macOS and Linux, Ruff expects that file to be located at `~/.config/ruff/ruff.toml`, and respects the `XDG_CONFIG_HOME` specification.
 #
 # On Windows, Ruff expects that file to be located at `~\AppData\Roaming\ruff\ruff.toml`.
-
 line-length = 88
 indent-width = 4
 extend-exclude = [".venv*"]
@@ -12,12 +11,12 @@ preview = true
 [format]
 docstring-code-format = true
 docstring-code-line-length = 79
-preview = true
+# preview = true
 skip-magic-trailing-comma = true
 
 [lint]
 typing-modules = ["collections.abc"]
-preview = true
+# preview = true
 
 extend-ignore = [
     "E501",    # Line too long (95 > 88 characters)
