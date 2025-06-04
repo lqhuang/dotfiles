@@ -19,6 +19,7 @@
   - [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
   - [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
   - [glepnir/lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim)
+  - [dense-analysis/ale](https://github.com/dense-analysis/ale): Check syntax in Vim/Neovim asynchronously and fix files, with Language Server Protocol (LSP) support
 - Formatters
   - [MunifTanjim/prettier.nvim](https://github.com/MunifTanjim/prettier.nvim)
 - Auto completions

@@ -23,6 +23,26 @@
     # git update-index --index-version 4
     # ```
 
+[feature]
+    manyFiles = true
+
+[color]
+    ui = auto
+
+[rerere]
+    enabled = true
+
+[submodule]
+    fetchJobs = 8
+
+[credential]
+    helper = store
+    # helper = osxkeychain
+    # helper = /usr/local/share/gcm-core/git-credential-manager
+
+#
+# Define major function behaviors
+#
 [init]
     # defaultBranch = master
     defaultBranch = main
@@ -30,8 +50,11 @@
 [branch]
     sort = -committerdate  # orderted by most recent commits
 
-[feature]
-    manyFiles = true
+[diff]
+	submodule = short
+
+[status]
+	submodulesummary = true
 
 [fetch]
     prune = true
@@ -39,9 +62,6 @@
     # A value of 0 will give some reasonable default. If unset, it defaults to 1.
     # parallel = 0
     writeCommitGraph = true
-
-[submodule]
-    fetchJobs = 8
 
 [pull]
     ff = only
@@ -55,9 +75,6 @@
     missingCommitsCheck = error
     # updateRefs = true
 
-[rerere]
-    enabled = true
-
 [push]
     default = current
     followTags = true
@@ -66,26 +83,29 @@
 [log]
     date = iso8601 # iso8601-strict / rfc2822
 
-[color]
-    ui = auto
-
-[github]
-    user = lqhuang
-
-[credential]
-    helper = store
-    helper = osxkeychain
-    # helper = /usr/local/share/gcm-core/git-credential-manager
-
 [alias]
     sl = log --pretty=tformat:'* %C(auto)%h%C(auto)%d %s%Creset %C(auto,blue)(%an)%Creset - %C(auto)%ad'
     gl = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all
+
+#
+# Non command line settings or external tools
+#
+
+[github]
+    user = lqhuang
 
 [url "https://github.com/"]
     insteadOf = git@github.com:
 
 [url "https://github.com/"]
     insteadOf = ssh://git@github.com/
+
+[credential "https://dev.azure.com"]
+    useHttpPath = true
+
+#
+# Include other git config files or Conditional Includes
+#
 
 # [include]
 #     path = .gitconfig.extra
@@ -95,16 +115,12 @@
 
 # # Interesting approach to make platform-specific `.gitconfig`
 # # incremental files (such as Credential Helpers)
-# [includeIf "gitdir:/Users"]
-#     path = ~/.gitconfig-macos
-#     # [credential]
-#     # helper = osxkeychain
+[includeIf "gitdir/i:/Users"]
+    [credential]
+        helper = osxkeychain
 # [includeIf "gitdir:C:"]
 #     path = ~/.gitconfig-windows
 #     # [credential]
 #     # helper = manager
 # [includeIf "gitdir:/home"]
 #     path = ~/.gitconfig-linux
-
-[credential "https://dev.azure.com"]
-    useHttpPath = true
