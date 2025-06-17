@@ -37,7 +37,9 @@ __pypackages__/
 metals.sbt
 .bloop/
 .bsp/
-target
+target/
 project/project
+## Mill
+out/
 
 # clang
