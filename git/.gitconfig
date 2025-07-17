@@ -117,6 +117,7 @@
 #
 # Include other git config files or Conditional Includes
 #
+# - `includeIf.<condition>.path`
 
 # [include]
 #     path = .gitconfig.extra

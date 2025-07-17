@@ -61,6 +61,7 @@
     "**/.cache": true,
     "**/.classpath": true,
     "**/.ammonite": true,
+    "**/.mill": true,
     "**/target": true,
     "**/out": true,
     "**/.venv": true,
@@ -81,6 +82,7 @@
     "**/tsconfig.tsbuildinfo": true,
     "**/.clerk": true,
     "**/storybook-static": true,
+    "**/dist": true,
     // Scala
     "**/.bloop": true,
     "**/.metals": true,
@@ -89,6 +91,7 @@
     "**/.bsp": true,
     "**/.scala-build": true,
     "**/.classpath": true,
+    "**/.mill": true,
     "**/target": true,
     "**/out": true,
     // Python
@@ -363,14 +366,6 @@
   "github.copilot.chat.edits.temporalContext.enabled": true,
   "chat.mcp.discovery.enabled": true,
   "chat.mcp.enabled": true,
-  "mcp": {
-    "servers": {
-      "context7": {
-        "type": "http",
-        "url": "https://mcp.context7.com/mcp"
-      }
-    }
-  },
 
   /**
    * Misc & Plugins
@@ -386,6 +381,10 @@
    * Experimental settings
    */
   "editor.experimental.asyncTokenization": true,
+  "editor.experimental.preferTreeSitter.typescript": true,
+  "editor.experimental.preferTreeSitter.css": true,
+  "editor.experimental.preferTreeSitter.regex": true,
+  "editor.experimental.preferTreeSitter.ini": true,
   "editor.experimentalEditContextEnabled": true,
   "diffEditor.experimental.useTrueInlineView": true,
   "extensions.experimental.deferredStartupFinishedActivation": true,

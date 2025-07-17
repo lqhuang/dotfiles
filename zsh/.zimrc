@@ -103,4 +103,4 @@ zmodule ohmyzsh/ohmyzsh --root plugins/extract
 #
 # Misc
 #
-zmodule carlosedp/mill-zsh-completions  --cmd "zsh-defer source {}/mill-zsh-completions.plugin.zsh"
+#zmodule carlosedp/mill-zsh-completions  --cmd "zsh-defer source {}/mill-zsh-completions.plugin.zsh"

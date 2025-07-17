@@ -16,3 +16,4 @@
 - [You might be overusing Vim visual mode](https://m4xshen.dev/posts/overuse-vim-visual-mode)
 - [Practical Vim command workflow](https://m4xshen.dev/posts/vim-command-workflow)
 - [Essential Vim commands for efficient text editing](https://m4xshen.dev/posts/vim-basic-commands)
+- [The VIM Experience | Omar Abid - Personal Blog](https://omarabid.com/vim): 7 years journey with VIM

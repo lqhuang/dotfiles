@@ -19,6 +19,7 @@
 - [Speeding Up My Shell (Oh My Zsh)](https://blog.mattclemente.com/2020/06/26/oh-my-zsh-slow-to-load/#it's-probably-nvm): Always trying to be better
 - 🌟 [Speeding Up Zsh](https://www.joshyin.cc/blog/speeding-up-zsh): This post documents the steps I took to speed up my Zsh startup times by more than 95%. I hope that anyone else struggling with sluggish startup times will find these optimizations helpful.
   - [Comparison of ZSH frameworks and plugin managers](https://gist.github.com/laggardkernel/4a4c4986ccdcaf47b91e8227f9868ded): Comparison of ZSH frameworks and plugin managers. GitHub Gist: instantly share code, notes, and snippets.
+- [mattmc3/antidote](https://github.com/mattmc3/antidote): https://antidote.sh - the cure to slow zsh plugin management
 
 ## Oh-My-Zsh
 
@@ -115,3 +116,6 @@ Lazy loading sdkman
 > Maybe I am missing something about configuring autosuggestion plug-in.
 >
 > https://www.reddit.com/r/zsh/comments/v08lsx/zshautocomplete_vs_zshautosuggestions_vs_fig/
+
+https://github.com/SmartHypercube/fancy-prompt
+
