@@ -50,8 +50,8 @@ if [[ -s "$MAMBA_EXE" ]]; then
 fi
 
 # uv
-if hash uv > /dev/null 2>&1; then
+# if hash uv > /dev/null 2>&1; then
   # completions are registered by brew already
   #source <(uv generate-shell-completion ${SHELL_NAME})
   #source <(uvx --generate-shell-completion ${SHELL_NAME})
-fi
+# fi

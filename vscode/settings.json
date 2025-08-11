@@ -183,7 +183,6 @@
   /* Dockerfile / Cloud native related */
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-    // "editor.defaultFormatter": "foxundermoon.shell-format"
   },
 
   /* Haskell */
@@ -290,9 +289,15 @@
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true
   },
+  "metals.enableBestEffort": true,
   // "metals.enableIndentOnPaste": true,
   "metals.enableSemanticHighlighting": true,
+  "metals.defaultBspToBuildTool": true,
   "metals.inlayHints.hintsInPatternMatch.enable": true,
+  "metals.inlayHints.implicitArguments.enable": true,
+  "metals.javaHome": "/home/lqhuang/.sdkman/candidates/java/current",
+  "metals.javaVersion": "21",
+  "metals.verboseCompilation": true,
   /* Javascript/Typescript */
   "typescript.format.enable": false,
   "typescript.format.semicolons": "remove",
@@ -341,11 +346,16 @@
   },
   /* Shell */
   "[shellscript]": {
-    "editor.indentSize": 2
+    "editor.indentSize": 2,
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   // `-ln <bash|posix|auto>`: Language dialect
   // `-kp`: Keep column alignment paddings (DEPRECATED)
   "shellformat.flag": "-ln bash -bn -ci -sr ",
+  /* Others */
+  "[ignore][properties][jvmoptions][hosts]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
 
   /**
    * GitHub
@@ -376,6 +386,7 @@
   // "editor.guides.indentation": false,
   // "indentRainbow.lightIndicatorStyleLineWidth": 1,
   "ansible.lightspeed.enabled": false, // Fix notification for lightspeed login
+  "docker.extension.enableComposeLanguageServer": false,
 
   /**
    * Experimental settings

@@ -3,6 +3,11 @@
 #
 zmodule romkatv/zsh-defer --source zsh-defer.plugin.zsh --autoload zsh-defer
 
+#
+# User installed completions
+#
+zmodule ${HOME}/Git/dotfiles/shell --source completions.zsh
+
 # Start configuration added by Zim install {{{
 #
 # This is not sourced during shell startup, and it's only used to configure the
@@ -103,4 +108,3 @@ zmodule ohmyzsh/ohmyzsh --root plugins/extract
 #
 # Misc
 #
-#zmodule carlosedp/mill-zsh-completions  --cmd "zsh-defer source {}/mill-zsh-completions.plugin.zsh"
