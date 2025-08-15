@@ -129,8 +129,6 @@
   "prettier.proseWrap": "preserve",
   "mdx.experimentalLanguageServer": true,
   /* HTML/CSS */
-  "prettier.trailingComma": "all",
-  "prettier.singleQuote": true,
   "[html][css]": {
     "editor.indentSize": 2,
     "editor.formatOnSave": false,
@@ -320,6 +318,9 @@
       "source.organizeImports": "never"
     }
   },
+  "prettier.trailingComma": "all",
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
   // "svelte.enable-ts-plugin": true,
   // "[svelte]": {
   //   "editor.formatOnSave": true,

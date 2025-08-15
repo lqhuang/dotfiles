@@ -7,13 +7,13 @@
     },
     "context7": {
       "type": "stdio",
-      "command": "npx",
+      "command": "pnpx",
       "args": ["-y", "@upstash/context7-mcp@latest"],
       "gallery": true
     },
     "memory": {
       "type": "stdio",
-      "command": "npx",
+      "command": "pnpx",
       "args": ["-y", "@modelcontextprotocol/server-memory@latest"],
       "env": {
         "MEMORY_FILE_PATH": "${input:memory_file_path}"
@@ -22,7 +22,7 @@
     },
     "sequentialthinking": {
       "type": "stdio",
-      "command": "npx",
+      "command": "pnpx",
       "args": ["-y", "@modelcontextprotocol/server-sequential-thinking@latest"],
       "gallery": true
     }
