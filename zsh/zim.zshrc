@@ -1,6 +1,86 @@
 # zmodload zsh/zprof
 export ZDOTDIR="${HOME}/.zsh"
 
+#
+# Customized setup before the Zim.
+#
+
+# https://zsh.sourceforge.io/Doc/Release/Options.html
+setopt noflowcontrol
+setopt ignore_eof
+# setopt correct
+
+# bind `Ctrl-Q` to `push-line-or-edit` that
+# saves the current input, then executes a new command, and releases the saved content afterwards.
+bindkey "\eq" push-line-or-edit
+
+#
+# iTerm2
+#
+# Apply Shell Integration Script for iTerm2
+#zstyle :omz:plugins:iterm2 shell-integration yes
+
+#
+# zsh-autosuggestions
+#
+# Performance optimizations
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+
+#
+# zsh auto completions
+#
+# https://zsh.sourceforge.io/Doc/Release/Completion-System.html
+zstyle ':completion:*' rehash true          # automatically find new executables in path,
+zstyle ':completion:*' accept-exact '*(N)'  # Speed up completions in some cases
+zstyle ':completion:*' use-cache on
+zstyle ':completion::complete:*' cache-path "${ZDOTDIR}/.zcompcache"
+
+#
+# pure
+#
+# https://www.unicode.org/charts/nameslist/n_2190.html
+# https://util.unicode.org/UnicodeJsps/character.jsp?a=00BB
+if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
+  # Warn me that I'm not in local shell
+  zstyle :prompt:pure:user color red
+  zstyle :prompt:pure:host color red
+  zstyle :prompt:pure:path color green
+else
+  PURE_PROMPT_SYMBOL="»"
+  PURE_PROMPT_VICMD_SYMBOL="«"
+fi
+
+#
+# extra zsh completions
+#
+EXTRA_ZSH_COMPLETIONS="${ZDOTDIR}/functions"
+if [[ -d "${EXTRA_ZSH_COMPLETIONS}" ]]; then
+  # fpath+="${EXTRA_ZSH_COMPLETIONS}"  # append to last
+  fpath[1,0]="${EXTRA_ZSH_COMPLETIONS}"  # append to first
+fi
+
+#
+# Configuring `brew` completions in zsh
+#
+# https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+#
+# To make Homebrew’s completions available in zsh, the Homebrew-managed `zsh/site-functions` path
+# needs to be inserted into `FPATH` before initialising zsh’s completion facility.
+if [[ -d "/opt/homebrew/share/zsh/site-functions" ]]; then
+  fpath[1,0]="/opt/homebrew/share/zsh/site-functions"
+fi
+
+# #
+# # marlonrichert/zsh-autocomplete
+# #
+# zstyle ':autocomplete:*' delay 0.2
+# # reassign keys **after** loading autocomplete. (not working ???)
+# bindkey              '^I'         menu-complete
+# bindkey "$terminfo[kcbt]" reverse-menu-complete
+
+# -------------------------------------------------------------------- #
+
 # Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells
@@ -25,19 +105,13 @@ setopt HIST_IGNORE_ALL_DUPS
 bindkey -e
 
 # Prompt for spelling correction of commands.
-#setopt CORRECT
+setopt CORRECT
 
 # Customize spelling correction prompt.
-#SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 
 # Remove path separator from WORDCHARS.
 WORDCHARS=${WORDCHARS//[\/]}
-
-# https://zsh.sourceforge.io/Doc/Release/Options.html
-setopt noflowcontrol
-setopt correct
-setopt ignore_eof
-bindkey "\eq" push-line-or-edit
 
 # -----------------
 # Zim configuration
@@ -45,9 +119,6 @@ bindkey "\eq" push-line-or-edit
 
 # Use degit instead of git as the default tool to install and update modules.
 zstyle ':zim:zmodule' use 'degit'
-
-# Apply Shell Integration Script for iTerm2
-#zstyle :omz:plugins:iterm2 shell-integration yes
 
 # --------------------
 # Module configuration
@@ -101,64 +172,18 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 #typeset -A ZSH_HIGHLIGHT_STYLES
 #ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
 
-# Disable path highlighting
+# My (@lqhuang) personal customization to disable path highlighting
 # https://github.com/zsh-users/zsh-syntax-highlighting/issues/573
 # Check default styles here: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/highlighters/main/main-highlighter.zsh
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
-
-#
-# zsh autocompletion
-#
-# https://zsh.sourceforge.io/Doc/Release/Completion-System.html
-zstyle ':completion:*' rehash true          # automatically find new executables in path,
-zstyle ':completion:*' accept-exact '*(N)'  # Speed up completions in some cases
-zstyle ':completion:*' use-cache on
-zstyle ':completion::complete:*' cache-path "${ZDOTDIR}/.zcompcache"
-
-#
-# pure
-#
-# https://www.unicode.org/charts/nameslist/n_2190.html
-# https://util.unicode.org/UnicodeJsps/character.jsp?a=00BB
-if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
-  # Warn me that I'm not in local shell
-  zstyle :prompt:pure:user color red
-  zstyle :prompt:pure:host color red
-  zstyle :prompt:pure:path color green
-else
-  PURE_PROMPT_SYMBOL="»"
-  PURE_PROMPT_VICMD_SYMBOL="«"
-fi
-
-
-# #
-# # marlonrichert/zsh-autocomplete
-# #
-# zstyle ':autocomplete:*' delay 0.2
-
-#
-# extra zsh completions
-#
-#fpath+=~/.zfunc
-
-#
-# Configuring `brew` completions in zsh
-#
-# https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
-#
-# To make Homebrew’s completions available in zsh, the Homebrew-managed `zsh/site-functions` path
-# needs to be inserted into `FPATH` before initialising zsh’s completion facility.
-if [[ -d "/opt/homebrew/share/zsh/site-functions" ]]; then
-  fpath[1,0]="/opt/homebrew/share/zsh/site-functions"
-fi
 
 # ------------------
 # Initialize modules
 # ------------------
 
 #ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
-ZIM_HOME=${ZDOTDIR}/zim
+ZIM_HOME=${ZDOTDIR:-${HOME}/.zsh}/zim
 # Download zimfw plugin manager if missing.
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
   if (( ${+commands[curl]} )); then
@@ -170,8 +195,8 @@ if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
   fi
 fi
 # Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
-if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
-  source ${ZIM_HOME}/zimfw.zsh init -q
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
+  source ${ZIM_HOME}/zimfw.zsh init
 fi
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh
@@ -192,12 +217,5 @@ for key ('k') bindkey -M vicmd ${key} history-substring-search-up
 for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
-
-# #
-# # marlonrichert/zsh-autocomplete
-# #
-# # reassign keys **after** loading autocomplete. (not working ???)
-# bindkey              '^I'         menu-complete
-# bindkey "$terminfo[kcbt]" reverse-menu-complete
 
 # zprof

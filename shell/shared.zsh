@@ -69,6 +69,8 @@ alias grh='git reset --hard'
 alias grs='git restore --staged'
 alias grw='git restore --worktree'
 alias gra='git restore --staged --worktree'
+alias fgbc='git branch --all --no-color | fzf --select-1 | xargs git checkout'
+alias fgbd="git branch --no-color | fzf --multi | xargs -I {} git branch -D '{}'"
 
 alias npm='pnpm'
 alias npx='pnpx'

@@ -9,6 +9,8 @@
 - [romkatv/zsh-defer](https://github.com/romkatv/zsh-defer): Deferred execution of Zsh commands
 - [mroth/evalcache](https://github.com/mroth/evalcache): 🐣 zsh plugin to cache eval loads to improve shell startup time
 - [marlonrichert/zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete): 🤖 Real-time type-ahead completion for Zsh. Asynchronous find-as-you-type autocompletion.
+- [zdharma-continuum/fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting): Feature-rich syntax highlighting for ZSH
+  - alternative for `zsh-users/zsh-syntax-highlighting`
 - [le0me55i/zsh-extract](https://github.com/le0me55i/zsh-extract): Plugin for Zshell that extracts the archive file you pass it
 - https://github.com/so-fancy/diff-so-fancy/blob/next/pro-tips.md
 
@@ -20,6 +22,8 @@
 - 🌟 [Speeding Up Zsh](https://www.joshyin.cc/blog/speeding-up-zsh): This post documents the steps I took to speed up my Zsh startup times by more than 95%. I hope that anyone else struggling with sluggish startup times will find these optimizations helpful.
   - [Comparison of ZSH frameworks and plugin managers](https://gist.github.com/laggardkernel/4a4c4986ccdcaf47b91e8227f9868ded): Comparison of ZSH frameworks and plugin managers. GitHub Gist: instantly share code, notes, and snippets.
 - [mattmc3/antidote](https://github.com/mattmc3/antidote): https://antidote.sh - the cure to slow zsh plugin management
+- [Speeding Up My ZSH Shell ⚡ - Scott Spence](https://scottspence.com/posts/speeding-up-my-zsh-shell)
+- [How to use the shell (3/3) - Configuring zsh - SoByte](https://www.sobyte.net/post/2022-06/shell-3/): Lightweight, clean, simple. This is what I'm looking for in a zsh configuration
 
 ## Oh-My-Zsh
 
@@ -71,6 +75,10 @@ functions[compinit]=$'print -u2 \'compinit being called at \'${funcfiletrace[1]}
 - [A Guide to the Zsh Completion with Examples](https://thevaluable.dev/zsh-completion-guide-examples/)
 - [Setting up zim with zsh](https://jade.fyi/blog/zsh-zim-setup/)
 - [sindresorhus/pure](https://github.com/sindresorhus/pure): Pretty, minimal and fast ZSH prompt
+- [SmartHypercube/fancy-prompt](https://github.com/SmartHypercube/fancy-prompt): Hypercube's fancy prompt
+- [Some useful Zsh key-bindings | QuarticCat's Blog](https://blog.quarticcat.com/posts/some-useful-zsh-key-bindings/)
+  - [zsh: 18 Zsh Line Editor](https://zsh.sourceforge.io/Doc/Release/Zsh-Line-Editor.html): zsh: 18 Zsh Line Editor
+  - 🌟 [marlonrichert/zsh-edit](https://github.com/marlonrichert/zsh-edit): 🛠 Better command line editing tools for Zsh
 
 ## Lazy Loading
 
@@ -117,5 +125,48 @@ Lazy loading sdkman
 >
 > https://www.reddit.com/r/zsh/comments/v08lsx/zshautocomplete_vs_zshautosuggestions_vs_fig/
 
-https://github.com/SmartHypercube/fancy-prompt
+### Performance
 
+```console
+$ ZDOTDIR="${HOME}"; for i in $(seq 1 5); do time /bin/zsh -i -c exit; done
+/bin/zsh -i -c exit  0.03s user 0.02s system 74% cpu 0.067 total
+/bin/zsh -i -c exit  0.03s user 0.02s system 69% cpu 0.070 total
+/bin/zsh -i -c exit  0.03s user 0.02s system 68% cpu 0.068 total
+/bin/zsh -i -c exit  0.02s user 0.02s system 69% cpu 0.066 total
+/bin/zsh -i -c exit  0.02s user 0.02s system 69% cpu 0.066 total
+```
+
+Super fast now! 🥰
+
+### Completions load optimization
+
+Extremely long completion list can slow down the shell startup time. For example, `kubectl` has a very long completion list.
+
+```console
+$ kubectl completion zsh | wc -l
+13090
+```
+
+The official documentation puts this in `.zshrc`, which is a very poor way of writing performance
+
+```sh
+source <(kubectl completion zsh)
+```
+
+Try to generate a completion file instead, and put it in your custom completions directory, e.g. `~/.zsh/functions`.
+
+```sh
+kubectl completion zsh > ~/.zsh/functions/_kubectl.zsh
+```
+
+Add the completions directory to your `fpath` in `.zshrc`:
+
+```sh
+if [[ -d "~/.zsh/functions" ]]; then
+  FPATH=~/.zsh/functions:$FPATH
+  # or
+  # fpath+="~/.zsh/functions"
+fi
+```
+
+Which will make Zsh load the completions only when you actually use the command, instead of loading it at shell startup.

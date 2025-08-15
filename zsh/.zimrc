@@ -58,15 +58,18 @@ zmodule completion
 # Modules that must be initialized last
 #
 
-# Fish-like syntax highlighting for Zsh.
-# zsh-users/zsh-syntax-highlighting must be sourced after completion
-zmodule zsh-users/zsh-syntax-highlighting
+## Fish-like syntax highlighting for Zsh.
+## zsh-users/zsh-syntax-highlighting must be sourced after completion
+#zmodule zsh-users/zsh-syntax-highlighting
 # Fish-like history search (up arrow) for Zsh.
 # zsh-users/zsh-history-substring-search must be sourced after zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 # Fish-like autosuggestions for Zsh.
 zmodule zsh-users/zsh-autosuggestions
 # }}} End configuration added by Zim install
+
+# faster than zsh-users/zsh-syntax-highlighting
+zmodule zdharma-continuum/fast-syntax-highlighting
 
 #
 # fundamental modules (required to find cli command in brew environment)
@@ -76,11 +79,9 @@ zmodule ${HOME}/Git/dotfiles/shell --source homebrew.zsh
 #
 # Official Zim modules
 #
+zmodule archive
 zmodule fzf --cmd "zsh-defer source {}/init.zsh"
 zmodule magic-enter
-
-#zmodule romkatv/zsh-defer -d  # -d Don't initialize the module root or uninstall the module.
-# zmodule mroth/evalcache
 
 #
 # Load in-tree setup
@@ -108,3 +109,6 @@ zmodule ohmyzsh/ohmyzsh --root plugins/extract
 #
 # Misc
 #
+
+# Better command line editing tools for Zsh
+zmodule marlonrichert/zsh-edit --no-submodules
