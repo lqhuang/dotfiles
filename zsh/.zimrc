@@ -72,7 +72,8 @@ zmodule zsh-users/zsh-autosuggestions
 zmodule zdharma-continuum/fast-syntax-highlighting
 
 #
-# fundamental modules (required to find cli command in brew environment)
+# Fundamental modules (required to find cli command in brew environment)
+# and do not defer this.
 #
 zmodule ${HOME}/Git/dotfiles/shell --source homebrew.zsh
 
@@ -91,6 +92,7 @@ zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/javascript.sh"
 zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/python.sh"
 zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/jvm.sh"
 zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/rust.sh"
+zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/clang.sh"
 zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/misc.sh"
 
 #
