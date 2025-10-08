@@ -5,6 +5,27 @@
 - [Enabling Touch ID for sudo in macOS Sonoma](https://jc0b.computer/posts/enabling-touchid-for-sudo-macos-sonoma)
 - [Useful built-in macOS command-line utilities](https://weiyen.net/articles/useful-macos-cmd-line-utilities/): macOS comes with a lot of built-in utilities. Here's a list of some that I find interesting.
 
+## Setup first time
+
+### Remove shortcuts from Mission Control
+
+`System Preferences > Keyboard > Shortcuts`
+
+Remove the following shortcuts:
+
+- Mission Control x `Control + Up Arrow`
+- Mission Control / Move left a space x `Control + Left Arrow`
+- Mission Control / Move right a space x `Control + Right Arrow`
+
+### Remove shortcuts from Spotlight
+
+`System Preferences > Keyboard > Shortcuts`
+
+Remove the following shortcuts:
+
+- Show Spotlight search x `Command + Space`
+- Show Finder search window x `Option + Command + Space`
+
 ## Keybindings
 
 > [!WARNING]

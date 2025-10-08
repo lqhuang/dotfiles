@@ -31,3 +31,6 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
 # enable sshd service
 sudo systemsetup -setremotelogin on
 sudo systemsetup -getremotelogin
+
+### Disable Spotlight
+sudo mdutil -a -i off

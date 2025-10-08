@@ -12,6 +12,8 @@ __init_brew_bottles()  {
   export HOMEBREW_BOTTLE_DOMAIN="${HOST}/homebrew-bottles"
   # export HOMEBREW_BREW_GIT_REMOTE="${HOST}/git/homebrew/brew.git"
   # export HOMEBREW_CORE_GIT_REMOTE="${HOST}/git/homebrew/homebrew-core.git"
+  export HOMEBREW_NO_ANALYTICS="1"
+  export HOMEBREW_DOWNLOAD_CONCURRENCY="auto"
 }
 
 if [[ ${KERNEL_NAME} == "Darwin" ]]; then
@@ -21,7 +23,6 @@ if [[ ${KERNEL_NAME} == "Darwin" ]]; then
   export HOMEBREW_PREFIX="/opt/homebrew"
   export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
   export HOMEBREW_REPOSITORY="/opt/homebrew"
-  export HOMEBREW_NO_ANALYTICS=1
 
   export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
   export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
