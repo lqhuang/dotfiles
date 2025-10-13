@@ -71,3 +71,4 @@ to update it. You can upgrade `pnpm` using itself, like so:
 
 - [nodesource/distributions](https://github.com/nodesource/distributions):
   NodeSource Node.js Binary Distributions
+- [bodadotsh/npm-security-best-practices](https://github.com/bodadotsh/npm-security-best-practices): How to stay safe from NPM supply chain attacks
