@@ -114,15 +114,18 @@
    * Language specific settings
    */
   /* markdown */
-  "[markdown]": {
+  "[plaintext][markdown]": {
     "editor.indentSize": 2,
     "editor.autoIndent": "advanced",
     "editor.detectIndentation": true,
-    "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 80,
-    "editor.renderWhitespace": "boundary",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "files.trimTrailingWhitespace": false
+    // "editor.wordWrap": "wordWrapColumn",
+    // "editor.wordWrapColumn": 80,
+    "editor.wordWrap": "on",
+    "editor.wrappingStrategy": "advanced",
+    "editor.renderWhitespace": "boundary"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "markdown.preview.fontSize": 16,
   "markdown.validate.enabled": true,
@@ -164,11 +167,14 @@
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[yaml][dockercompose][ansible]": {
+  "[yaml][dockercompose][ansible][github-actions-workflow]": {
     "editor.autoIndent": "advanced",
-    "editor.indentSize": 2,
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "redhat.vscode-yaml",
     "editor.formatOnSave": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.indentSize": 2,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
   },
   "[toml]": {
     "editor.indentSize": 2,
@@ -180,7 +186,7 @@
   "evenBetterToml.schema.links": true,
   /* Dockerfile / Cloud native related */
   "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
 
   /* Haskell */
@@ -379,8 +385,6 @@
   "github.copilot.chat.search.semanticTextResults": true,
   "github.copilot.chat.agent.thinkingTool": true,
   "github.copilot.chat.edits.temporalContext.enabled": true,
-  "chat.mcp.discovery.enabled": true,
-  "chat.mcp.enabled": true,
 
   /**
    * Misc & Plugins
