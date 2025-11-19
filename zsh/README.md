@@ -170,3 +170,25 @@ fi
 ```
 
 Which will make Zsh load the completions only when you actually use the command, instead of loading it at shell startup.
+
+## prompt
+
+- https://github.com/SmartHypercube/fancy-prompt/blob/master/fancy-prompt.sh
+
+## Troubleshooting
+
+## VSCode terminal init ZSH correctly
+
+The current version of VSCode may ignore your `.zshrc` while defined a different `ZDOTDIR` than default and so was not able to find the `.zshrc`.
+
+For example, I have set `ZDOTDIR=$HOME/.zsh` in my system environment variables, so VSCode terminal cannot find my `.zshrc` at `$HOME/.zshrc`. Solution is also easy that create a symlink from `$HOME/.zshrc` to `$ZDOTDIR/.zshrc`
+
+The related integration script could be found by
+
+```sh
+echo "Shell integration script for VS Code is $(code --locate-shell-integration-path zsh)"
+```
+
+Aha, there is `. $USER_ZDOTDIR/.zshrc` in the script. So we could also set `$USER_ZDOTDIR` to `$HOME`, too. (Though, it's not recommended. I would prefer the symlink way.)
+
+- [zsh - Vscode terminal not loading .zshrc on startup! How can I fix this? - Stack Overflow](https://stackoverflow.com/questions/70409788/vscode-terminal-not-loading-zshrc-on-startup-how-can-i-fix-this)

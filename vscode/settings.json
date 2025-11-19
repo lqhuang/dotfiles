@@ -18,6 +18,8 @@
   "editor.accessibilitySupport": "off",
   "editor.guides.bracketPairs": true,
   "editor.minimap.size": "fill",
+  "editor.unicodeHighlight.ambiguousCharacters": true,
+  "editor.unicodeHighlight.invisibleCharacters": true,
   "editor.unicodeHighlight.allowedLocales": {
     "zh-hans": true,
     "zh-hant": true
@@ -29,8 +31,10 @@
   },
   "diffEditor.experimental.showMoves": true,
   "diffEditor.ignoreTrimWhitespace": false,
+  /* Git config */
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
+  "git.pruneOnFetch": true,
   /* Terminal config */
   "terminal.integrated.inheritEnv": false,
   "terminal.integrated.fontFamily": "'MesloLGS NF', Monaco, monospace",
@@ -134,60 +138,52 @@
   /* HTML/CSS */
   "[html][css]": {
     "editor.indentSize": 2,
-    "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   /**
    * OMG: [paolotiu/tailwind-intellisense-regex-list](https://github.com/paolotiu/tailwind-intellisense-regex-list)
    */
-  "tailwindCSS.experimental.classRegex": [
-    // https://github.com/lukeed/clsx?tab=readme-ov-file#tailwind-support
-    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
-    // https://cva.style/docs/getting-started/installation#intellisense
-    ["cva\\(((?:[^()]|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cx\\(((?:[^()]|\\([^()]*\\))*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
-    // https://www.tailwind-variants.org/docs/getting-started#intellisense-setup-optional
-    ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    // config for shadcn utils
-    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
-    // config for tailwind-merge
-    // https://github.com/tailwindlabs/tailwindcss/discussions/7554#discussioncomment-4440751
-    ["(?:twMerge|twJoin)\\(([^;]*)[\\);]", "[`'\"`]([^'\"`;]*)[`'\"`]"],
-    // tailwind-variants
-    ["tv\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"],
-    // for `const` variables
-    // "(?:const|let|var)\\s+[\\w$_][_\\w\\d]*\\s*=\\s*['\\\"](.*?)['\\\"]"
-    // for string variable with keywords
-    "(?:\\b(?:const|let|var)\\s+)?[\\w$_]*(?:[Ss]tyles|twStyles|[Cc]lassnames)[\\w\\d]*\\s*(?:=|\\+=)\\s*['\"]([^'\"]*)['\"]"
-  ],
+  // "tailwindCSS.experimental.classRegex": [
+  //   // https://github.com/lukeed/clsx?tab=readme-ov-file#tailwind-support
+  //   ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+  //   // https://cva.style/docs/getting-started/installation#intellisense
+  //   ["cva\\(((?:[^()]|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+  //   ["cx\\(((?:[^()]|\\([^()]*\\))*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+  //   // https://www.tailwind-variants.org/docs/getting-started#intellisense-setup-optional
+  //   ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"],
+  //   // config for shadcn utils
+  //   ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+  //   // config for tailwind-merge
+  //   // https://github.com/tailwindlabs/tailwindcss/discussions/7554#discussioncomment-4440751
+  //   ["(?:twMerge|twJoin)\\(([^;]*)[\\);]", "[`'\"`]([^'\"`;]*)[`'\"`]"],
+  //   // tailwind-variants
+  //   ["tv\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"],
+  //   // for `const` variables
+  //   // "(?:const|let|var)\\s+[\\w$_][_\\w\\d]*\\s*=\\s*['\\\"](.*?)['\\\"]"
+  //   // for string variable with keywords
+  //   "(?:\\b(?:const|let|var)\\s+)?[\\w$_]*(?:[Ss]tyles|twStyles|[Cc]lassnames)[\\w\\d]*\\s*(?:=|\\+=)\\s*['\"]([^'\"]*)['\"]"
+  // ],
   /* configuration languages */
   "[json][jsonc][mongodb]": {
     "editor.autoIndent": "advanced",
     "editor.indentSize": 2,
-    "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[yaml][dockercompose][ansible][github-actions-workflow]": {
+  // "yaml.keyOrdering": true,
+  "[yaml][dockercompose][github-actions-workflow]": {
     "editor.autoIndent": "advanced",
-    // "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.defaultFormatter": "redhat.vscode-yaml",
-    "editor.formatOnSave": false,
     "editor.indentSize": 2,
     "editor.insertSpaces": true,
     "editor.tabSize": 2
   },
   "[toml]": {
     "editor.indentSize": 2,
-    "editor.formatOnSave": true,
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "evenBetterToml.formatter.alignComments": true,
   "evenBetterToml.formatter.arrayAutoCollapse": true,
   "evenBetterToml.schema.links": true,
-  /* Dockerfile / Cloud native related */
-  "[dockerfile]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
 
   /* Haskell */
   // "[haskell]": {
@@ -305,6 +301,7 @@
   /* Javascript/Typescript */
   "typescript.format.enable": false,
   "typescript.format.semicolons": "remove",
+  "typescript.implementationsCodeLens.enabled": true,
   "typescript.preferences.quoteStyle": "single",
   "javascript.preferences.importModuleSpecifier": "project-relative",
   "typescript.preferences.importModuleSpecifier": "project-relative",
@@ -313,7 +310,8 @@
   "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.preferences.useAliasesForRenames": false,
   "typescript.suggest.completeFunctionCalls": true,
-  "typescript.implementationsCodeLens.enabled": true,
+  // "typescript.experimental.useTsgo": true,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "[javascript][typescript][javascriptreact][typescriptreact]": {
     "editor.indentSize": 2,
     "editor.tabSize": 2,
@@ -360,11 +358,36 @@
     "editor.indentSize": 2,
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
+  "shellformat.path": "shfmt",
+  "shellformat.effectLanguages": [
+    "shellscript",
+    "dotenv",
+    "dockerfile",
+    "ignore",
+    "hosts",
+    "jvmoptions",
+    "properties"
+  ],
   // `-ln <bash|posix|auto>`: Language dialect
   // `-kp`: Keep column alignment paddings (DEPRECATED)
-  "shellformat.flag": "-ln bash -bn -ci -sr ",
+  "shellformat.flag": "-ln bash -i 2 -bn -ci -sr",
+  /* Cloud native related - docker, ansible, hashicorp, ... */
+  "docker.extension.enableComposeLanguageServer": true,
+  "[dockerfile]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "ansible.lightspeed.enabled": false, // Fix notification for lightspeed login
+  "ansible.completion.provideRedirectModules": true,
+  "ansible.completion.provideModuleOptionAliases": true,
+  "[ansible][ansible-jinja]": {
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.indentSize": 2,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
   /* Others */
-  "[ignore][properties][jvmoptions][hosts]": {
+  "[ignore][properties][jvmoptions][hosts][dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
 
@@ -385,6 +408,15 @@
   "github.copilot.chat.search.semanticTextResults": true,
   "github.copilot.chat.agent.thinkingTool": true,
   "github.copilot.chat.edits.temporalContext.enabled": true,
+  "chat.mcp.discovery.enabled": {
+    "claude-desktop": true,
+    "windsurf": true,
+    "cursor-global": true,
+    "cursor-workspace": true
+  },
+  "GitHub.copilot-chat": true,
+  "chat.mcp.autostart": "newAndOutdated",
+  "chat.mcp.access": "all",
 
   /**
    * Misc & Plugins
@@ -394,8 +426,6 @@
   // disable built-in indentation guide to avoid conflict to indentRainbow plugin
   // "editor.guides.indentation": false,
   // "indentRainbow.lightIndicatorStyleLineWidth": 1,
-  "ansible.lightspeed.enabled": false, // Fix notification for lightspeed login
-  "docker.extension.enableComposeLanguageServer": false,
 
   /**
    * Experimental settings
@@ -405,10 +435,8 @@
   "editor.experimental.preferTreeSitter.css": true,
   "editor.experimental.preferTreeSitter.regex": true,
   "editor.experimental.preferTreeSitter.ini": true,
-  "editor.experimentalEditContextEnabled": true,
   "diffEditor.experimental.useTrueInlineView": true,
   "extensions.experimental.deferredStartupFinishedActivation": true,
-  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "notebook.experimental.remoteSave": true,
 
   /* Telemetry */
