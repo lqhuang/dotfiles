@@ -35,3 +35,4 @@ curl -L https://iterm2.com/shell_integration/bash -o ${PWD}/iterm2-shell-integra
   theme for iTerm2
 - [sonph/onehalf](https://github.com/sonph/onehalf): Clean, vibrant and pleasing
   color schemes for Vim, Sublime Text, iTerm, gnome-terminal and more.
+- [jblais493/compline](https://github.com/jblais493/compline): A color palette for Deep contemplation and work <https://complinetheme.com>

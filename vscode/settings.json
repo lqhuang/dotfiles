@@ -284,6 +284,7 @@
   /* Scala */
   "[scala]": {
     "editor.indentSize": 2,
+    "editor.tabSize": 2,
     "editor.rulers": [80, 100],
     "editor.defaultFormatter": "scalameta.metals",
     "editor.formatOnSave": true,
@@ -358,7 +359,7 @@
     "editor.indentSize": 2,
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "shellformat.path": "shfmt",
+  // "shellformat.path": "shfmt",
   "shellformat.effectLanguages": [
     "shellscript",
     "dotenv",

@@ -69,6 +69,8 @@ fi
 # needs to be inserted into `FPATH` before initialising zsh’s completion facility.
 if [[ -d "/opt/homebrew/share/zsh/site-functions" ]]; then
   fpath[1,0]="/opt/homebrew/share/zsh/site-functions"
+  # the same effect
+  #fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
 fi
 
 # #

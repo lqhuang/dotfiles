@@ -39,7 +39,9 @@ metals.sbt
 .bsp/
 target/
 project/project
+.scala-build/
 ## Mill
 out/
 
 # clang
+

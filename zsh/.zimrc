@@ -88,12 +88,12 @@ zmodule magic-enter
 # Load in-tree setup
 #
 zmodule ${HOME}/Git/dotfiles/shell --source shared.zsh
-zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/javascript.sh"
-zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/python.sh"
-zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/jvm.sh"
-zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/rust.sh"
-zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/clang.sh"
-zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/misc.sh"
+zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/javascript.zsh"
+zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/python.zsh"
+zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/jvm.zsh"
+zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/rust.zsh"
+zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/clang.zsh"
+zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/misc.zsh"
 
 #
 # Oh My Zsh
