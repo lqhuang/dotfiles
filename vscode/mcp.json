@@ -8,13 +8,13 @@
     "context7": {
       "type": "stdio",
       "command": "pnpx",
-      "args": ["-y", "@upstash/context7-mcp@latest"],
+      "args": ["@upstash/context7-mcp@latest"],
       "gallery": true
     },
     "memory": {
       "type": "stdio",
       "command": "pnpx",
-      "args": ["-y", "@modelcontextprotocol/server-memory@latest"],
+      "args": ["@modelcontextprotocol/server-memory@latest"],
       "env": {
         "MEMORY_FILE_PATH": "${input:memory_file_path}"
       },
@@ -23,7 +23,7 @@
     "sequentialthinking": {
       "type": "stdio",
       "command": "pnpx",
-      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking@latest"],
+      "args": ["@modelcontextprotocol/server-sequential-thinking@latest"],
       "gallery": true
     }
   },

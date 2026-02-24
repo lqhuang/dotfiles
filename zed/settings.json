@@ -15,7 +15,7 @@
   },
   "base_keymap": "VSCode",
   "theme": {
-    "mode": "light",
+    "mode": "system",
     "light": "One Light",
     "dark": "One Dark"
   },

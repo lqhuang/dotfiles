@@ -296,8 +296,7 @@
   "metals.defaultBspToBuildTool": true,
   "metals.inlayHints.hintsInPatternMatch.enable": true,
   "metals.inlayHints.implicitArguments.enable": true,
-  "metals.javaHome": "/home/lqhuang/.sdkman/candidates/java/current",
-  "metals.javaVersion": "21",
+  "metals.javaHome": "~/.sdkman/candidates/java/current",
   "metals.verboseCompilation": true,
   /* Javascript/Typescript */
   "typescript.format.enable": false,
