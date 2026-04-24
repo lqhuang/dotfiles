@@ -12,6 +12,9 @@
 # config-file = ?optional/config
 # config-file = /absolute/path/config
 # ```
+#
+# default config location in macOS changed:
+# https://github.com/ghostty-org/ghostty/discussions/5687
 
 font-size = 18
 clipboard-trim-trailing-spaces = true

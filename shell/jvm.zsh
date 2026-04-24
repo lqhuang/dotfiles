@@ -3,7 +3,7 @@
 #
 
 # sbt / scala / sdkman
-export SBT_OPTS="-Dsbt.override.build.repos=true ${SBT_OPTS}"
+# export SBT_OPTS="-Dsbt.override.build.repos=true ${SBT_OPTS}"
 export JVM_OPTS="-Dhttps.protocols=TLSv1.2,TLSv1.3 ${JVM_OPTS}"
 
 # export MILL_OUTPUT_DIR=".mill"

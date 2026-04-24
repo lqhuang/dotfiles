@@ -44,6 +44,7 @@
   "window.titleBarStyle": "custom",
   "window.commandCenter": false,
   "workbench.fontAliasing": "antialiased",
+  "workbench.shadows": false,
   /* Files behavior */
   "explorer.fileNesting.enabled": true,
   "files.eol": "\n",
@@ -285,9 +286,12 @@
   "[scala]": {
     "editor.indentSize": 2,
     "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.detectIndentation": true,
+    "editor.guides.indentation": true,
     "editor.rulers": [80, 100],
     "editor.defaultFormatter": "scalameta.metals",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.formatOnPaste": true
   },
   "metals.enableBestEffort": true,

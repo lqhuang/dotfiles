@@ -12,6 +12,8 @@
   - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
   - [nvim-treesitter/nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
   - [nvim-treesitter/nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+- [lumen-oss/lz.n](https://github.com/lumen-oss/lz.n): 🦥 A dead simple lazy-loading Lua library for Neovim plugins.
+- [yochem/lazy-vimpack](https://github.com/yochem/lazy-vimpack): Use the Lazy.nvim spec with Nvim's built-in package
 
 ### General
 
@@ -64,6 +66,8 @@
 - [karb94/neoscroll.nvim](https://github.com/karb94/neoscroll.nvim): Smooth scrolling neovim plugin written in lua
 - [3rd/image.nvim](https://github.com/3rd/image.nvim): 🖼️ Bringing images to Neovim.
 - [HiPhish/rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim): Rainbow delimiters for Neovim with Tree-sitter <https://gitlab.com/HiPhish/rainbow-delimiters.nvim>
+- [Bekaboo/dropbar.nvim](https://github.com/Bekaboo/dropbar.nvim): IDE-like breadcrumbs, out of the box
+- [b0o/incline.nvim](https://github.com/b0o/incline.nvim): 🎈 Floating statuslines for Neovim
 
 ### Editor
 
@@ -187,3 +191,4 @@ Auto completions
 - [joelazar/nvim-config](https://github.com/joelazar/nvim-config): My neovim
   config
 - [echasnovski/mini.nvim](https://github.com/echasnovski/mini.nvim): Library of 40+ independent Lua modules improving overall Neovim (version 0.8 and higher) experience with minimal effort
+- [rockerBOO/awesome-neovim](https://github.com/rockerBOO/awesome-neovim): Collections of awesome neovim plugins.
