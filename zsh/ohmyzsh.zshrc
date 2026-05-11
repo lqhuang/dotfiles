@@ -125,14 +125,13 @@ ARCH_NAME=$(uname -m)  # x86_64 / arm64
 
 ## Homebrew
 __init_brew_bottles () {
-  # local HOST="https://mirrors.tuna.tsinghua.edu.cn"
-  local HOST="https://mirrors.ustc.edu.cn"
+  local host="https://mirrors.cernet.edu.cn"
 
   # export HOMEBREW_INSTALL_FROM_API=1
-  export HOMEBREW_API_DOMAIN="${HOST}/homebrew-bottles/api"
-  export HOMEBREW_BOTTLE_DOMAIN="${HOST}/homebrew-bottles"
-  # export HOMEBREW_BREW_GIT_REMOTE="${HOST}/git/homebrew/brew.git"
-  # export HOMEBREW_CORE_GIT_REMOTE="${HOST}/git/homebrew/homebrew-core.git"
+  export HOMEBREW_API_DOMAIN="${host}/homebrew-bottles/api"
+  export HOMEBREW_BOTTLE_DOMAIN="${host}/homebrew-bottles"
+  # export HOMEBREW_BREW_GIT_REMOTE="${host}/git/homebrew/brew.git"
+  # export HOMEBREW_CORE_GIT_REMOTE="${host}/git/homebrew/homebrew-core.git"
 }
 
 if [[ ${KERNEL_NAME} == "Darwin" ]]; then

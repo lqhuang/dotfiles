@@ -21,9 +21,11 @@ fi
 if [[ -s $(command -v fnm) || -s $(command -v pnpm) ]]; then
   # === NPM BINARY CHINA ===
   # https://github.com/cnpm/binary-mirror-config/blob/master/package.json#L48
-  export NODEJS_ORG_MIRROR="https://cdn.npmmirror.com/binaries/node"
-  export NVM_NODEJS_ORG_MIRROR="${NODEJS_ORG_MIRROR}"
-  export FNM_NODE_DIST_MIRROR="${NODEJS_ORG_MIRROR}"
+  # export NODE_MIRROR="https://cdn.npmmirror.com/binaries/node"
+  export NODE_MIRROR="https://mirrors.cernet.edu.cn/nodejs-release/"
+  export NVM_NODEJS_ORG_MIRROR="${NODE_MIRROR}"
+  export FNM_NODE_DIST_MIRROR="${NODE_MIRROR}"
+
   export PHANTOMJS_CDNURL="https://cdn.npmmirror.com/binaries/phantomjs"
   export CHROMEDRIVER_CDNURL="https://cdn.npmmirror.com/binaries/chromedriver"
   export OPERADRIVER_CDNURL="https://cdn.npmmirror.com/binaries/operadriver"

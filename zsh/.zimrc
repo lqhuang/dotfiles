@@ -93,6 +93,7 @@ zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/python.zsh"
 zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/jvm.zsh"
 zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/rust.zsh"
 zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/clang.zsh"
+zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/haskell.zsh"
 zmodule ${HOME}/Git/dotfiles/shell --cmd "zsh-defer source {}/misc.zsh"
 
 #
