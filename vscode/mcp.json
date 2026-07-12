@@ -10,29 +10,6 @@
       "command": "pnpx",
       "args": ["@upstash/context7-mcp@latest"],
       "gallery": true
-    },
-    "memory": {
-      "type": "stdio",
-      "command": "pnpx",
-      "args": ["@modelcontextprotocol/server-memory@latest"],
-      "env": {
-        "MEMORY_FILE_PATH": "${input:memory_file_path}"
-      },
-      "gallery": true
-    },
-    "sequentialthinking": {
-      "type": "stdio",
-      "command": "pnpx",
-      "args": ["@modelcontextprotocol/server-sequential-thinking@latest"],
-      "gallery": true
     }
-  },
-  "inputs": [
-    {
-      "id": "memory_file_path",
-      "type": "promptString",
-      "description": "Path to the memory storage file",
-      "password": false
-    }
-  ]
+  }  
 }

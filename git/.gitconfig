@@ -6,6 +6,10 @@
 [user]
     name = Lanqing Huang
     email = lqhuang@outlook.com
+    signingkey = ~/.ssh/git.pub
+
+[gpg]
+	format = ssh
 
 [core]
     filemode = true
@@ -111,8 +115,8 @@
 [url "https://github.com/"]
     insteadOf = ssh://git@github.com/
 
-[credential "https://dev.azure.com"]
-    useHttpPath = true
+# [credential "https://dev.azure.com"]
+#     useHttpPath = true
 
 #
 # Include other git config files or Conditional Includes

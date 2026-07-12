@@ -17,7 +17,12 @@
   "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.accessibilitySupport": "off",
   "editor.guides.bracketPairs": true,
+  "editor.guides.indentation": true,
   "editor.minimap.size": "fill",
+  "editor.autoIndent": "advanced",
+  "editor.indentSize": 2,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
   "editor.unicodeHighlight.ambiguousCharacters": true,
   "editor.unicodeHighlight.invisibleCharacters": true,
   "editor.unicodeHighlight.allowedLocales": {
@@ -29,7 +34,6 @@
     // "comments": "off",
     "strings": "on"
   },
-  "diffEditor.experimental.showMoves": true,
   "diffEditor.ignoreTrimWhitespace": false,
   /* Git config */
   "git.confirmSync": false,
@@ -39,6 +43,7 @@
   "terminal.integrated.inheritEnv": false,
   "terminal.integrated.fontFamily": "'MesloLGS NF', Monaco, monospace",
   /* Apperance */
+  "explorer.fileNesting.enabled": true,
   "window.zoomLevel": 1,
   "window.nativeTabs": false,
   "window.titleBarStyle": "custom",
@@ -46,10 +51,9 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.shadows": false,
   /* Files behavior */
-  "explorer.fileNesting.enabled": true,
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
-  "files.associations": { "*.css": "tailwindcss" },
+  "files.associations": { "*.css": "tailwindcss", "*.mill": "scala" },
   // Notes:
   // visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
   // https://code.visualstudio.com/docs/setup/linux
@@ -60,19 +64,18 @@
     "**/node_modules/*/**": true,
     "**/.next": true,
     "**/.bsp": true,
-    "**/.metals": true,
     "**/.scala-build": true,
-    "**/.bloop": true,
     "**/.cache": true,
     "**/.classpath": true,
     "**/.ammonite": true,
     "**/.mill": true,
-    "**/target": true,
     "**/out": true,
     "**/.venv": true,
     "**/.conda-venv": true,
     "**/*venv*": true,
-    "**/.*_cache": true
+    "**/.*_cache": true,
+    "**/.bloop/**": true,
+    "**/.metals/**/*.{java,scala}": true
   },
   "search.exclude": {
     "**/.git": true,
@@ -120,9 +123,6 @@
    */
   /* markdown */
   "[plaintext][markdown]": {
-    "editor.indentSize": 2,
-    "editor.autoIndent": "advanced",
-    "editor.detectIndentation": true,
     // "editor.wordWrap": "wordWrapColumn",
     // "editor.wordWrapColumn": 80,
     "editor.wordWrap": "on",
@@ -138,7 +138,6 @@
   "mdx.experimentalLanguageServer": true,
   /* HTML/CSS */
   "[html][css]": {
-    "editor.indentSize": 2,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   /**
@@ -166,20 +165,21 @@
   // ],
   /* configuration languages */
   "[json][jsonc][mongodb]": {
-    "editor.autoIndent": "advanced",
-    "editor.indentSize": 2,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "json.schemaDownload.trustedDomains": {
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://ui.shadcn.com/schema.json": true
+    // "https://schemastore.azurewebsites.net/": true,
+    // "https://raw.githubusercontent.com/": true,
   },
   // "yaml.keyOrdering": true,
   "[yaml][dockercompose][github-actions-workflow]": {
-    "editor.autoIndent": "advanced",
-    "editor.defaultFormatter": "redhat.vscode-yaml",
-    "editor.indentSize": 2,
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "[toml]": {
-    "editor.indentSize": 2,
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "evenBetterToml.formatter.alignComments": true,
@@ -207,6 +207,8 @@
   "cmake.options.statusBarVisibility": "compact",
   /* Python */
   "[python]": {
+    "editor.indentSize": 4,
+    "editor.tabSize": 4,
     "editor.rulers": [79, 120],
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "charliermarsh.ruff",
@@ -215,7 +217,6 @@
       "source.organizeImports": "explicit",
       "source.unusedImports": "never"
     }
-    // "github.copilot.editor.enableCodeActions": false
   },
   "python.createEnvironment.contentButton": "hide",
   "python.createEnvironment.trigger": "off",
@@ -284,11 +285,6 @@
   // "rust-analyzer.checkOnSave.command": "clippy",
   /* Scala */
   "[scala]": {
-    "editor.indentSize": 2,
-    "editor.tabSize": 2,
-    "editor.autoIndent": "advanced",
-    "editor.detectIndentation": true,
-    "editor.guides.indentation": true,
     "editor.rulers": [80, 100],
     "editor.defaultFormatter": "scalameta.metals",
     "editor.formatOnSave": false,
@@ -299,31 +295,24 @@
   "metals.enableSemanticHighlighting": true,
   "metals.defaultBspToBuildTool": true,
   "metals.inlayHints.hintsInPatternMatch.enable": true,
-  "metals.inlayHints.implicitArguments.enable": true,
   "metals.javaHome": "~/.sdkman/candidates/java/current",
   "metals.verboseCompilation": true,
   /* Javascript/Typescript */
-  "typescript.format.enable": false,
-  "typescript.format.semicolons": "remove",
-  "typescript.implementationsCodeLens.enabled": true,
-  "typescript.preferences.quoteStyle": "single",
-  "javascript.preferences.importModuleSpecifier": "project-relative",
-  "typescript.preferences.importModuleSpecifier": "project-relative",
-  "javascript.preferences.importModuleSpecifierEnding": "auto",
-  "typescript.preferences.importModuleSpecifierEnding": "auto",
-  "typescript.preferences.preferTypeOnlyAutoImports": true,
-  "typescript.preferences.useAliasesForRenames": false,
-  "typescript.suggest.completeFunctionCalls": true,
-  // "typescript.experimental.useTsgo": true,
-  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "js/ts.format.enabled": false,
+  "js/ts.implementationsCodeLens.enabled": true,
+  "js/ts.preferences.quoteStyle": "single",
+  "js/ts.preferences.importModuleSpecifier": "project-relative",
+  "js/ts.preferences.preferTypeOnlyAutoImports": true,
+  "js/ts.preferences.useAliasesForRenames": false,
+  "js/ts.suggest.completeFunctionCalls": true,
+  // "js/ts.experimental.useTsgo": true,
+  "js/ts.tsserver.experimental.enableProjectDiagnostics": true,
   "[javascript][typescript][javascriptreact][typescriptreact]": {
-    "editor.indentSize": 2,
-    "editor.tabSize": 2,
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     // You can also set `editor.codeActionsOnSave` to an array of Code Actions to execute in order.
     "editor.codeActionsOnSave": {
-      "source.convertImportFormat": "always",
+      // "source.convertImportFormat": "always",
       "source.removeUnusedImports": "never",
       "source.sortImports": "never",
       // `organizeImports` is not the same thing as `sortImports`.
@@ -359,7 +348,6 @@
   },
   /* Shell */
   "[shellscript]": {
-    "editor.indentSize": 2,
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   // "shellformat.path": "shfmt",
@@ -384,11 +372,7 @@
   "ansible.completion.provideRedirectModules": true,
   "ansible.completion.provideModuleOptionAliases": true,
   "[ansible][ansible-jinja]": {
-    "editor.autoIndent": "advanced",
-    "editor.defaultFormatter": "redhat.vscode-yaml",
-    "editor.indentSize": 2,
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   /* Others */
   "[ignore][properties][jvmoptions][hosts][dotenv]": {
@@ -398,38 +382,24 @@
   /**
    * GitHub
    */
-  "github.copilot.advanced": {
-    "authProvider": "github",
-    "useLanguageServer": true
-  },
   "github.copilot.enable": {
     "markdown": true
   },
   "github.copilot.nextEditSuggestions.enabled": false,
-  "github.copilot.chat.editor.temporalContext.enabled": true,
   "github.copilot.chat.codesearch.enabled": true,
-  "github.copilot.chat.generateTests.codeLens": true,
-  "github.copilot.chat.search.semanticTextResults": true,
-  "github.copilot.chat.agent.thinkingTool": true,
-  "github.copilot.chat.edits.temporalContext.enabled": true,
-  "chat.mcp.discovery.enabled": {
-    "claude-desktop": true,
-    "windsurf": true,
-    "cursor-global": true,
-    "cursor-workspace": true
-  },
-  "GitHub.copilot-chat": true,
-  "chat.mcp.autostart": "newAndOutdated",
   "chat.mcp.access": "all",
+  "chat.tools.urls.autoApprove": {
+    "https://code.visualstudio.com": true,
+    "https://github.com/microsoft/vscode/wiki/*": true,
+    "https://www.rfc-editor.org": true,
+    "https://docs.oracle.com": true
+  },
 
   /**
    * Misc & Plugins
    */
-  "indentRainbow.updateDelay": 250,
-  "indentRainbow.indicatorStyle": "classic",
-  // disable built-in indentation guide to avoid conflict to indentRainbow plugin
-  // "editor.guides.indentation": false,
-  // "indentRainbow.lightIndicatorStyleLineWidth": 1,
+  // --disable-gpu-vsync // for high fresh rate monitor, e.g. 144Hz, 165Hz, 240Hz, ...
+  // --disable-frame-rate-limit // disable rate limit from Chromium
 
   /**
    * Experimental settings
@@ -439,6 +409,7 @@
   "editor.experimental.preferTreeSitter.css": true,
   "editor.experimental.preferTreeSitter.regex": true,
   "editor.experimental.preferTreeSitter.ini": true,
+  "diffEditor.experimental.showMoves": true,
   "diffEditor.experimental.useTrueInlineView": true,
   "extensions.experimental.deferredStartupFinishedActivation": true,
   "notebook.experimental.remoteSave": true,

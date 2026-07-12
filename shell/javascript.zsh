@@ -18,7 +18,7 @@ if [[ -s $(command -v fnm) ]]; then
   #source <(fnm completions --shell ${SHELL_NAME})
 fi
 
-if [[ -s $(command -v fnm) || -s $(command -v pnpm) ]]; then
+if [[ -s $(command -v fnm) ]]; then
   # === NPM BINARY CHINA ===
   # https://github.com/cnpm/binary-mirror-config/blob/master/package.json#L48
   # export NODE_MIRROR="https://cdn.npmmirror.com/binaries/node"
@@ -47,3 +47,11 @@ if [[ -s "${HOME}/.deno/bin/deno" ]]; then
   export DENO_INSTALL="${HOME}/.deno"
   export PATH="${DENO_INSTALL}/bin:${PATH}"
 fi
+
+# pnpm
+export PNPM_HOME="${HOME}/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end

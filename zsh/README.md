@@ -14,6 +14,7 @@
 - [le0me55i/zsh-extract](https://github.com/le0me55i/zsh-extract): Plugin for Zshell that extracts the archive file you pass it
 - https://github.com/so-fancy/diff-so-fancy/blob/next/pro-tips.md
 - [gh:rossmacarthur/sheldon](https://github.com/rossmacarthur/sheldon): Fast, configurable, shell plugin manager <https://sheldon.cli.rs>
+- [gh:Giammarco-Ferranti/deja](https://github.com/Giammarco-Ferranti/deja): Predictive inline shell autosuggestions for zsh — Go daemon, no TUI, no sync
 
 ## Profiling
 
