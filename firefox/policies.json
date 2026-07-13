@@ -1,13 +1,13 @@
 {
   "policies": {
-    "AppAutoUpdate": false,
+    "AppAutoUpdate": true,
     "CaptivePortal": false,
     "DisableFirefoxStudies": true,
     "DisableProfileRefresh": true,
     "DisableRemoteImprovements": true,
     "DisableTelemetry": true,
     "FirefoxHome": {
-      "Search": false,
+      "Search": true,
       "TopSites": false,
       "SponsoredTopSites": false,
       "Highlights": false,
@@ -19,7 +19,7 @@
       "Locked": false
     },
     "FirefoxSuggest": {
-      "WebSuggestions": false,
+      "WebSuggestions": true,
       "SponsoredSuggestions": false,
       "ImproveSuggest": false,
       "Locked": false
@@ -28,7 +28,7 @@
       "Enabled": false,
       "Chatbot": false,
       "LinkPreviews": false,
-      "TabGroups": false,
+      "TabGroups": true,
       "Locked": false
     },
     "UserMessaging": {
@@ -40,12 +40,12 @@
       "FirefoxLabs": false,
       "Locked": false
     },
-    "ManualAppUpdateOnly": true,
-    "NewTabPage": false,
+    "ManualAppUpdateOnly": false,
+    "NewTabPage": true,
     "NoDefaultBookmarks": true,
-    "SearchSuggestEnabled": false,
+    "SearchSuggestEnabled": true,
     "SearchEngines": {
-      "Remove": ["Perplexity", "Google", "Bing", "eBay"],
+      "Remove": ["Perplexity", "Google"],
       "Add": [
         {
           "Name": "No AI DuckDuckGo",

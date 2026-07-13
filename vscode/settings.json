@@ -185,6 +185,14 @@
   "evenBetterToml.formatter.alignComments": true,
   "evenBetterToml.formatter.arrayAutoCollapse": true,
   "evenBetterToml.schema.links": true,
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ],
 
   /* Haskell */
   // "[haskell]": {
