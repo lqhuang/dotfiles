@@ -330,6 +330,7 @@
   "prettier.trailingComma": "all",
   "prettier.singleQuote": true,
   "prettier.semi": false,
+  "vitest.shellType": "terminal",
   // "svelte.enable-ts-plugin": true,
   // "[svelte]": {
   //   "editor.formatOnSave": true,

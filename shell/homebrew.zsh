@@ -1,6 +1,8 @@
 #
 # Homebrew
 #
+# do what `eval "$(brew shellenv)"` does, but without calling `brew` command
+#
 KERNEL_NAME=$(uname -s)  # Linux / Darwin
 
 __init_brew_bottles()  {
@@ -31,7 +33,6 @@ if [[ ${KERNEL_NAME} == "Darwin" ]]; then
 
   __init_brew_bottles
 elif [[ ${KERNEL_NAME} == "Linux" && -d "/home/linuxbrew" ]]; then
-  # echo $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
   export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
   export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"

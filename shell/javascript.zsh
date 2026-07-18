@@ -14,11 +14,10 @@ if [[ ${KERNEL_NAME} == "Linux" ]]; then
 fi
 if [[ -s $(command -v fnm) ]]; then
   eval "$(fnm env)"
+  # eval "$(fnm env --use-on-cd)"
   # completions are registered by brew already
   #source <(fnm completions --shell ${SHELL_NAME})
-fi
 
-if [[ -s $(command -v fnm) ]]; then
   # === NPM BINARY CHINA ===
   # https://github.com/cnpm/binary-mirror-config/blob/master/package.json#L48
   # export NODE_MIRROR="https://cdn.npmmirror.com/binaries/node"

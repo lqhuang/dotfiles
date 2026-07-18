@@ -40,10 +40,13 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export no_proxy=.local,.internal,.arpa,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
 export NO_PROXY=.local,.internal,.arpa,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
 
-## set visual and editor
+## Set visual and editor
 export VISUAL=vim # nvim
 export EDITOR=vim
-# `VISUAL` 和 `EDITOR` ，会优先使用 `VISUAL` ，当无法使用时才会使用 `EDITOR`
+# Use `VISUAL` by default, then `EDITOR` if `VISUAL` is not set or unavailable.
+
+## Set shell integration for VSCode
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
 
 ######################## Common Aliases ############################################
 # inspired from manjaro `.zshrc` configuration
