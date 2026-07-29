@@ -1,6 +1,9 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 
 file_opener = "vscode"
+model = "gpt-5.6-sol"
+model_reasoning_effort = "max"
+service_tier = "default"
 
 [features]
 memories = true
