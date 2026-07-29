@@ -10,6 +10,7 @@ pnpx skills add wshobson/agents -g -a universal --skill bazel-build-optimization
 pnpx skills add mattpocock/skills -g -a universal --skill research --skill tdd --skill handoff
 pnpx skills add trailofbits/skills -g -a universal --skill audit-context-building --skill differential-review
 pnpx skills add mcollina/skills -g -a universal --skill node --skill typescript-magician --skill documentation
+pnpx skills add GoogleChrome/modern-web-guidance -g -a universal --skill modern-web-guidance
 ```
 
 ## References

@@ -40,7 +40,7 @@
   "git.openRepositoryInParentFolders": "never",
   "git.pruneOnFetch": true,
   /* Terminal config */
-  "terminal.integrated.inheritEnv": false,
+  // "terminal.integrated.inheritEnv": false,
   "terminal.integrated.fontFamily": "'MesloLGS NF', Monaco, monospace",
   /* Apperance */
   "explorer.fileNesting.enabled": true,
@@ -330,7 +330,7 @@
   "prettier.trailingComma": "all",
   "prettier.singleQuote": true,
   "prettier.semi": false,
-  "vitest.shellType": "terminal",
+  // "vitest.shellType": "terminal",
   // "svelte.enable-ts-plugin": true,
   // "[svelte]": {
   //   "editor.formatOnSave": true,
