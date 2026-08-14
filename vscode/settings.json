@@ -226,29 +226,29 @@
       "source.unusedImports": "never"
     }
   },
-  "python.createEnvironment.contentButton": "hide",
-  "python.createEnvironment.trigger": "off",
   "python.languageServer": "Pylance",
   "python.analysis.autoFormatStrings": true,
   "python.analysis.autoImportCompletions": true,
-  "python.analysis.inlayHints.variableTypes": false,
-  "python.analysis.inlayHints.callArgumentNames": "off",
-  "python.analysis.inlayHints.functionReturnTypes": true,
-  "python.analysis.inlayHints.pytestParameters": true,
   "python.analysis.cacheLSPData": true,
   "python.analysis.completeFunctionParens": true,
+  "python.analysis.inlayHints.callArgumentNames": "off",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": false,
+  "python.analysis.inlayHints.pytestParameters": true,
   "python.analysis.showOnlyDirectDependenciesInAutoImport": true,
-  "python.analysis.supportDocstringTemplate": true,
-  "python.analysis.typeCheckingMode": "standard",
   "python.analysis.typeEvaluation.enableReachabilityAnalysis": true,
+  "python.analysis.typeEvaluation.enableExperimentalFeatures": true,
   "python.analysis.typeEvaluation.strictDictionaryInference": true,
   "python.analysis.typeEvaluation.strictListInference": true,
   "python.analysis.typeEvaluation.strictSetInference": true,
   "python.analysis.aiCodeActions": {
-    "generateDocstring": true,
-    "generateSymbol": true,
-    "implementAbstractClasses": true
+    "generateDocstring": true
   },
+  "python.analysis.enableParallelIndexing": true,
+  "python.analysis.excludeLibraryDiagnostics": true,
+  "python.analysis.useNearestConfiguration": true,
+  "python.analysis.typeCheckingMode": "standard",
+  "python.pyrefly.typeCheckingMode": "strict",
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "python.experiments.enabled": true,
@@ -267,6 +267,15 @@
   "ruff.lint.ignore": ["F401"],
   "mypy-type-checker.preferDaemon": true,
   "autoDocstring.docstringFormat": "google",
+
+  /** OMG. Please don't activate the environment with your hacky workarounds. */
+  "python.createEnvironment.contentButton": "hide",
+  "python.createEnvironment.trigger": "off",
+  "python.useEnvironmentsExtension": true,
+  "python.terminal.activateEnvironment": false,
+  "python.terminal.activateEnvInCurrentTerminal": false,
+  "python-envs.terminal.autoActivationType": "off",
+
   /* Deprecated settings for Python */
   //  "python.formatting.provider": "yapf",
   //  "python.formatting.yapfArgs": [
@@ -313,7 +322,6 @@
   "js/ts.preferences.preferTypeOnlyAutoImports": true,
   "js/ts.preferences.useAliasesForRenames": false,
   "js/ts.suggest.completeFunctionCalls": true,
-  // "js/ts.experimental.useTsgo": true,
   "js/ts.tsserver.experimental.enableProjectDiagnostics": true,
   "[javascript][typescript][javascriptreact][typescriptreact]": {
     "editor.formatOnSave": true,
@@ -403,6 +411,7 @@
     "https://www.rfc-editor.org": true,
     "https://docs.oracle.com": true
   },
+  "chat.remoteAgentHosts": [],
 
   /**
    * Misc & Plugins

@@ -2,14 +2,15 @@
   "servers": {
     "deepwiki": {
       "type": "http",
-      "url": "https://mcp.deepwiki.com/sse",
-      "gallery": true
-    },
-    "context7": {
-      "type": "stdio",
-      "command": "pnpx",
-      "args": ["@upstash/context7-mcp@latest"],
+      "url": "https://mcp.deepwiki.com/mcp",
       "gallery": true
     }
-  }  
+    // "context7": {
+    //   "type": "http",
+    //   "url": "https://mcp.context7.com/mcp",
+    //   "headers": {
+    //     "Authorization": "Bearer YOUR_API_KEY"
+    //   }
+    // }
+  }
 }
