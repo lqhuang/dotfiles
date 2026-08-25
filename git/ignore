@@ -6,9 +6,8 @@
 
 # OS
 .DS_Store
-*.pem
 
-# introduce on demand only
+# Introduce on demand only
 .vscode/
 .idea/
 
@@ -30,18 +29,25 @@ __pypackages__/
 .conda-venv*/
 
 # node
-/node_modules
+node_modules/
 
 # scala
-.metals/
-metals.sbt
 .bloop/
 .bsp/
+.scala-build/
+## sbt
 target/
 project/project
-.scala-build/
+## Metals
+.metals/
+metals.sbt
 ## Mill
 out/
+.mill-out/
+.mill/
 
 # clang
 
+
+# My custom
+.references/

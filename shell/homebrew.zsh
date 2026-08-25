@@ -17,6 +17,7 @@ __init_brew_bottles()  {
   # export HOMEBREW_CORE_GIT_REMOTE="${host}/git/homebrew/homebrew-core.git"
   export HOMEBREW_NO_ANALYTICS="1"
   export HOMEBREW_DOWNLOAD_CONCURRENCY="auto"
+  export HOMEBREW_CASK_OPTS="--no-quarantine"
 }
 
 if [[ ${KERNEL_NAME} == "Darwin" ]]; then

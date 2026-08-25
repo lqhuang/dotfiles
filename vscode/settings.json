@@ -168,12 +168,15 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "json.schemaDownload.trustedDomains": {
-    "https://www.schemastore.org/": true,
-    "https://json.schemastore.org/": true,
     "https://json-schema.org/": true,
-    "https://ui.shadcn.com/schema.json": true
-    // "https://schemastore.azurewebsites.net/": true,
-    // "https://raw.githubusercontent.com/": true,
+    "https://json.schemastore.org/": true,
+    "https://www.schemastore.org/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://sing-box.sagernet.org/": true,
+    "https://ui.shadcn.com/": true
   },
   // "yaml.keyOrdering": true,
   "[yaml][dockercompose][github-actions-workflow]": {
@@ -252,6 +255,7 @@
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "python.experiments.enabled": true,
+  "python.REPL.enableREPLSmartSend": false,
   "notebook.lineNumbers": "on",
   "notebook.formatOnSave.enabled": true,
   "notebook.defaultFormatter": "charliermarsh.ruff",
@@ -405,6 +409,7 @@
   "github.copilot.nextEditSuggestions.enabled": false,
   "github.copilot.chat.codesearch.enabled": true,
   "chat.mcp.access": "all",
+  "chat.editor.preferCopilotHarness": true,
   "chat.tools.urls.autoApprove": {
     "https://code.visualstudio.com": true,
     "https://github.com/microsoft/vscode/wiki/*": true,
