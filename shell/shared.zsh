@@ -25,9 +25,6 @@ if [[ -d "$HOME/.local" ]]; then
   export MANPATH="${HOME}/.local/man:${MANPATH}"
 fi
 
-## Nix single user configuration if installed
-if [ -e ${HOME}/.nix-profile/etc/profile.d/nix.sh ]; then . ${HOME}/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
 ## set locale config
 # export LANG=en_US.UTF-8
 # export LC_ALL=en_US.UTF-8
@@ -49,6 +46,13 @@ export EDITOR=vim
 
 ## Set shell integration for VSCode
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
+## Nix single user configuration if installed
+if [ -e ${HOME}/.nix-profile/etc/profile.d/nix.sh ]; then . ${HOME}/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+## Mise shims
+## The same to `eval "$(mise activate zsh --shims)"`
+# export PATH="${HOME}/.local/share/mise/shims:${PATH}"
 
 ######################## Common Aliases ############################################
 # inspired from manjaro `.zshrc` configuration
@@ -90,6 +94,8 @@ fi
 # activate python venv fastly
 alias sap="source ./.venv/bin/activate"
 alias sac="conda activate ./.conda-venv"
+# activate mise environment
+alias sam='eval "$(mise activate zsh)"'
 
 ######################## Common Functions ############################################
 # ## extract - archive extractor
