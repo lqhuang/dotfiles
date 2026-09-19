@@ -23,6 +23,7 @@
   "editor.indentSize": 2,
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
+  "editor.semanticHighlighting.enabled": true,
   "editor.unicodeHighlight.ambiguousCharacters": true,
   "editor.unicodeHighlight.invisibleCharacters": true,
   "editor.unicodeHighlight.allowedLocales": {
@@ -182,21 +183,31 @@
   "[yaml][dockercompose][github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ],
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "evenBetterToml.formatter.alignComments": true,
   "evenBetterToml.formatter.arrayAutoCollapse": true,
   "evenBetterToml.schema.links": true,
+  "evenBetterToml.semanticTokens": true,
 
-  /* Haskell */
+  /** Haskell */
   // "[haskell]": {
   //   "editor.fontFamily": "'Fira Code', 'Cascadia Code', monospace",
   //   "editor.fontLigatures": "'ss03', 'ss05', 'zero'",
   //   "editor.defaultFormatter": "haskell.haskell"
   // },
   // "haskell.formattingProvider": "stylish-haskell",
-  /* C/Cpp */
+
+  /** C/Cpp */
   /**
    * C++ format style
    * http://clang.llvm.org/docs/ClangFormatStyleOptions.html
@@ -208,7 +219,8 @@
   "cmake.configureOnOpen": false,
   "cmake.configureOnEdit": false,
   "cmake.options.statusBarVisibility": "compact",
-  /* Python */
+
+  /** Python */
   "[python]": {
     "editor.indentSize": 4,
     "editor.tabSize": 4,
@@ -236,9 +248,7 @@
   "python.analysis.typeEvaluation.strictDictionaryInference": true,
   "python.analysis.typeEvaluation.strictListInference": true,
   "python.analysis.typeEvaluation.strictSetInference": true,
-  "python.analysis.aiCodeActions": {
-    "generateDocstring": true
-  },
+  "python.analysis.aiCodeActions": { "generateDocstring": true },
   "python.analysis.enableParallelIndexing": true,
   "python.analysis.excludeLibraryDiagnostics": true,
   "python.analysis.useNearestConfiguration": true,
@@ -256,6 +266,17 @@
     "notebook.source.organizeImports": "explicit",
     "notebook.source.unusedImports": "never"
   },
+  /* OMG. Please don't activate the environment with your hacky workarounds. */
+  "python.createEnvironment.contentButton": "hide",
+  "python.createEnvironment.trigger": "off",
+  "python.useEnvironmentsExtension": true,
+  "python.terminal.activateEnvironment": false,
+  "python.terminal.activateEnvInCurrentTerminal": false,
+  "python-envs.terminal.autoActivationType": "off",
+  // Why constant or readonly variables in Python become bold by default ...
+  "editor.semanticTokenColorCustomizations": {
+    "rules": { "variable.readonly:python": { "bold": false } }
+  },
   // NOTE: https://github.com/microsoft/vscode-jupyter/wiki/IPyWidget-Support-in-VS-Code-Python
   "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
   // Standalone extenstions of Python
@@ -264,39 +285,10 @@
   "mypy-type-checker.preferDaemon": true,
   "autoDocstring.docstringFormat": "google",
 
-  /** OMG. Please don't activate the environment with your hacky workarounds. */
-  "python.createEnvironment.contentButton": "hide",
-  "python.createEnvironment.trigger": "off",
-  "python.useEnvironmentsExtension": true,
-  "python.terminal.activateEnvironment": false,
-  "python.terminal.activateEnvInCurrentTerminal": false,
-  "python-envs.terminal.autoActivationType": "off",
-
-  /* Deprecated settings for Python */
-  //  "python.formatting.provider": "yapf",
-  //  "python.formatting.yapfArgs": [
-  //    "--style",
-  //    "{based_on_style: pep8, indent_width: 4, indent_dictionary_value: true, coalesce_brackets: false, split_before_dot: true}"
-  //  ],
-  //  "python.linting.mypyEnabled": true,
-  //  "python.linting.mypyArgs": [
-  //    "--show-error-context",
-  //    "--show-column-numbers",
-  //    "--show-error-codes",
-  //    "--no-pretty",
-  //    "--no-color-output"
-  //  ],
-  // "mypy-type-checker.args": [
-  //   "--check-untyped-defs",
-  //   "--follow-imports=silent", // default
-  //   "--ignore-missing-imports", // default
-  //   "--no-pretty", // default
-  //   "--show-column-numbers",
-  //   "--show-error-codes"
-  // ],
-  /* Rust */
+  /** Rust */
   // "rust-analyzer.checkOnSave.command": "clippy",
-  /* Scala */
+
+  /** Scala */
   "[scala]": {
     "editor.rulers": [80, 100],
     "editor.defaultFormatter": "scalameta.metals",
@@ -310,7 +302,8 @@
   "metals.inlayHints.hintsInPatternMatch.enable": true,
   "metals.javaHome": "~/.sdkman/candidates/java/current",
   "metals.verboseCompilation": true,
-  /* Javascript/Typescript */
+
+  /** Javascript/Typescript */
   "js/ts.format.enabled": false,
   "js/ts.implementationsCodeLens.enabled": true,
   "js/ts.preferences.quoteStyle": "single",
@@ -340,26 +333,37 @@
   //   "editor.formatOnSave": true,
   //   "editor.defaultFormatter": "svelte.svelte-vscode"
   // },
-  /* SQL */
+
+  /** SQL */
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
   "[sql]": {
-    "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+    "editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc"
   },
-  "Prettier-SQL.commaPosition": "before",
-  "Prettier-SQL.tabSizeOverride": 2,
-  "Prettier-SQL.linesBetweenQueries": 2,
-  "Prettier-SQL.SQLFlavourOverride": "postgresql",
-  /* LeTex */
+  "SQL-Formatter-VSCode.dialect": "postgresql",
+  "SQL-Formatter-VSCode.dataTypeCase": "upper",
+  "SQL-Formatter-VSCode.keywordCase": "upper",
+  "SQL-Formatter-VSCode.functionCase": "lower",
+  "SQL-Formatter-VSCode.identifierCase": "lower",
+  "SQL-Formatter-VSCode.indentStyle": "standard",
+  "SQL-Formatter-VSCode.logicalOperatorNewline": "before",
+  "SQL-Formatter-VSCode.expressionWidth": 50,
+  "SQL-Formatter-VSCode.linesBetweenQueries": 2,
+  "SQL-Formatter-VSCode.denseOperators": false,
+  "SQL-Formatter-VSCode.newlineBeforeSemicolon": false,
+
+  /** LeTex */
   "latex-workshop.formatting.latex": "tex-fmt",
-  /* Typst */
+
+  /** Typst */
   "typst-lsp.experimentalFormatterMode": "on",
   "typst-lsp.exportPdf": "never",
   "[typst]": {
     "editor.defaultFormatter": "nvarner.typst-lsp"
   },
-  /* Shell */
+
+  /** Shell */
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
@@ -376,7 +380,8 @@
   // `-ln <bash|posix|auto>`: Language dialect
   // `-kp`: Keep column alignment paddings (DEPRECATED)
   "shellformat.flag": "-ln bash -i 2 -bn -ci -sr",
-  /* Cloud native related - docker, ansible, hashicorp, ... */
+
+  /** Cloud native related - docker, ansible, hashicorp, ... */
   "docker.extension.enableComposeLanguageServer": true,
   "[dockerfile]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -387,7 +392,8 @@
   "[ansible][ansible-jinja]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  /* Others */
+
+  /** Others */
   "[ignore][properties][jvmoptions][hosts][dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
@@ -429,7 +435,7 @@
   "extensions.experimental.deferredStartupFinishedActivation": true,
   "notebook.experimental.remoteSave": true,
 
-  /* Telemetry */
+  /** Telemetry */
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
   "dotnetAcquisitionExtension.enableTelemetry": false,

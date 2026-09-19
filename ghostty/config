@@ -17,24 +17,42 @@
 # https://github.com/ghostty-org/ghostty/discussions/5687
 
 font-size = 18
-clipboard-trim-trailing-spaces = true
-# shell-integration = zsh
-custom-shader-animation = true
 
-# check a list of available themes by `ghostty +list-themes`
+#
+# Features
+#
+
+# Explicitly enable major features to ensure only the `path` feature is disabled
+shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo
+
+# We've added `ssh-terminfo` to `shell-integration-features`,
+# so Ghostty automatically converts `TERM` from `xterm-ghostty` to `xterm-256color`
+# when connecting to remote hosts
+#term = xterm-256color
+
+clipboard-trim-trailing-spaces = true
+
+#
+# Apperance
+#
+
+# Check a list of available themes by `ghostty +list-themes`
 theme = "iTerm2 Pastel Dark Background"
 #theme = "Atom"
 #theme = "GitHub Dark"
 
-term = xterm-256color
+#cursor-style =
+#cursor-style-blink =
+
 window-padding-x = 20
 window-padding-y = 12
-
-# cursor-style =
-# cursor-style-blink =
 
 #
 # macOS only
 #
+
+window-vsync = true
 window-colorspace = display-p3
-macos-titlebar-style = tabs
+#macos-titlebar-style = tabs # A little buggy on macOS 27 now. Wait to fix
+macos-auto-secure-input = true
+macos-secure-input-indication = true
