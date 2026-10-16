@@ -62,36 +62,45 @@
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
-    "**/node_modules/*/**": true,
+    "**/.references/*/**": true,
+    // JS/TS
+    "**/node_modules": true,
     "**/.next": true,
+    "**/.emit": true,
+    "**/dist": true,
+    // Scala
     "**/.bsp": true,
     "**/.scala-build": true,
     "**/.cache": true,
     "**/.classpath": true,
     "**/.ammonite": true,
     "**/.mill": true,
+    "**/.bloop": true,
+    "**/.metals": true,
     "**/out": true,
+    "**/target": true,
+    // Python
     "**/.venv": true,
     "**/.conda-venv": true,
     "**/*venv*": true,
-    "**/.*_cache": true,
-    "**/.bloop/**": true,
-    "**/.metals/**/*.{java,scala}": true
+    "**/.*_cache": true
   },
   "search.exclude": {
     "**/.git": true,
+    "**/.references": true,
     // Node.js
     "**/node_modules": true,
     "**/package-lock.json": true,
-    "**/.pnpm": true,
     "**/pnpm-lock.yaml": true,
     "**/yarn.lock": true,
+    "**/tsconfig.tsbuildinfo": true,
+    "**/dist": true,
+    "**/.emit": true,
+    "**/.pnpm": true,
     "**/.next": true,
     "**/.turbo": true,
-    "**/tsconfig.tsbuildinfo": true,
     "**/.clerk": true,
     "**/storybook-static": true,
-    "**/dist": true,
     // Scala
     "**/.bloop": true,
     "**/.metals": true,
@@ -101,14 +110,14 @@
     "**/.scala-build": true,
     "**/.classpath": true,
     "**/.mill": true,
-    "**/target": true,
     "**/out": true,
+    "**/target": true,
     // Python
+    "**/uv.lock": true,
     "**/.venv": true,
     "**/.conda-venv": true,
     "**/*venv*": true,
-    "**/.*_cache": true, // `.mypy_cache`, `.pytest_cache`
-    "**/uv.lock": true
+    "**/.*_cache": true // `.mypy_cache`, `.pytest_cache`
   },
   /* Task */
   // If the Tasks: Run Task command is slow,
@@ -216,6 +225,7 @@
   "[c][cpp]": {
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
   },
+  "C_Cpp.enhancedColorization": "enabled",
   "cmake.configureOnOpen": false,
   "cmake.configureOnEdit": false,
   "cmake.options.statusBarVisibility": "compact",
@@ -311,6 +321,7 @@
   "js/ts.preferences.preferTypeOnlyAutoImports": true,
   "js/ts.preferences.useAliasesForRenames": false,
   "js/ts.suggest.completeFunctionCalls": true,
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
   "js/ts.tsserver.experimental.enableProjectDiagnostics": true,
   "[javascript][typescript][javascriptreact][typescriptreact]": {
     "editor.formatOnSave": true,
@@ -338,20 +349,6 @@
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
-  "[sql]": {
-    "editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc"
-  },
-  "SQL-Formatter-VSCode.dialect": "postgresql",
-  "SQL-Formatter-VSCode.dataTypeCase": "upper",
-  "SQL-Formatter-VSCode.keywordCase": "upper",
-  "SQL-Formatter-VSCode.functionCase": "lower",
-  "SQL-Formatter-VSCode.identifierCase": "lower",
-  "SQL-Formatter-VSCode.indentStyle": "standard",
-  "SQL-Formatter-VSCode.logicalOperatorNewline": "before",
-  "SQL-Formatter-VSCode.expressionWidth": 50,
-  "SQL-Formatter-VSCode.linesBetweenQueries": 2,
-  "SQL-Formatter-VSCode.denseOperators": false,
-  "SQL-Formatter-VSCode.newlineBeforeSemicolon": false,
 
   /** LeTex */
   "latex-workshop.formatting.latex": "tex-fmt",

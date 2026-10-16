@@ -51,8 +51,20 @@ export EDITOR=vim
 if [ -e ${HOME}/.nix-profile/etc/profile.d/nix.sh ]; then . ${HOME}/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 ## Mise shims
+if [[ -d "${HOME}/.local/share/mise/shims" ]]; then
+  export PATH="${HOME}/.local/share/mise/shims:${PATH}"
+fi
 ## The same to `eval "$(mise activate zsh --shims)"`
 # export PATH="${HOME}/.local/share/mise/shims:${PATH}"
+
+## Opt-out claude telemetry
+export DO_NOT_TRACK=1
+export DISABLE_TELEMETRY=1
+export DISABLE_BUG_COMMAND=1
+export DISABLE_ERROR_REPORTING=1
+export DISABLE_FEEDBACK_COMMAND=1
+export CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1
+export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 
 ######################## Common Aliases ############################################
 # inspired from manjaro `.zshrc` configuration
@@ -80,7 +92,8 @@ alias grw='git restore --worktree'
 alias gra='git restore --staged --worktree'
 alias fgbc='git branch --all --no-color | fzf --select-1 | xargs git checkout'
 alias fgbd="git branch --no-color | fzf --multi | xargs -I {} git branch -D '{}'"
-alias gcs='git clone --depth 2 --single-branch --recurse-submodules'
+alias gcd1='git clone --depth 1 --single-branch --recurse-submodules'
+alias gcd2='git clone --depth 2 --single-branch --recurse-submodules'
 
 alias npm='pnpm'
 alias npx='pnpx'
@@ -95,7 +108,8 @@ fi
 alias sap="source ./.venv/bin/activate"
 alias sac="conda activate ./.conda-venv"
 # activate mise environment
-alias sam='eval "$(mise activate zsh)"'
+alias emaz='eval "$(mise activate zsh)"'
+alias emas='eval "$(mise activate zsh --shims)"'
 
 ######################## Common Functions ############################################
 # ## extract - archive extractor
