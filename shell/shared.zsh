@@ -52,10 +52,11 @@ if [ -e ${HOME}/.nix-profile/etc/profile.d/nix.sh ]; then . ${HOME}/.nix-profile
 
 ## Mise shims
 if [[ -d "${HOME}/.local/share/mise/shims" ]]; then
+  # eval "$(mise activate zsh)"
+  # eval "$(fnox activate zsh)"
+  ## The same to `eval "$(mise activate zsh --shims)"`
   export PATH="${HOME}/.local/share/mise/shims:${PATH}"
 fi
-## The same to `eval "$(mise activate zsh --shims)"`
-# export PATH="${HOME}/.local/share/mise/shims:${PATH}"
 
 ## Opt-out claude telemetry
 export DO_NOT_TRACK=1

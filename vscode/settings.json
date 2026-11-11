@@ -27,8 +27,8 @@
   "editor.unicodeHighlight.ambiguousCharacters": true,
   "editor.unicodeHighlight.invisibleCharacters": true,
   "editor.unicodeHighlight.allowedLocales": {
-    "zh-hans": true,
-    "zh-hant": true
+    "zh-hant": true,
+    "zh-hans": true
   },
   "editor.quickSuggestions": {
     // "other": "on",
@@ -49,8 +49,10 @@
   "window.nativeTabs": false,
   "window.titleBarStyle": "custom",
   "window.commandCenter": false,
+  "window.autoDetectColorScheme": false,
   "workbench.fontAliasing": "antialiased",
   "workbench.shadows": false,
+  // "workbench.preferredLightColorTheme": "Light Modern",
   /* Files behavior */
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
@@ -62,7 +64,8 @@
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
-    "**/.references/*/**": true,
+    "**/.references/**": true,
+    "**/.cache": true,
     // JS/TS
     "**/node_modules": true,
     "**/.next": true,
@@ -71,14 +74,13 @@
     // Scala
     "**/.bsp": true,
     "**/.scala-build": true,
-    "**/.cache": true,
     "**/.classpath": true,
     "**/.ammonite": true,
     "**/.mill": true,
-    "**/.bloop": true,
-    "**/.metals": true,
     "**/out": true,
     "**/target": true,
+    "**/.bloop/**": true,
+    "**/.metals/**/*.{java,scala}": true,
     // Python
     "**/.venv": true,
     "**/.conda-venv": true,
@@ -87,6 +89,7 @@
   },
   "search.exclude": {
     "**/.git": true,
+    "**/.cache": true,
     "**/.references": true,
     // Node.js
     "**/node_modules": true,
@@ -102,16 +105,15 @@
     "**/.clerk": true,
     "**/storybook-static": true,
     // Scala
-    "**/.bloop": true,
-    "**/.metals": true,
-    "**/.ammonite": true,
-    "**/.cache": true,
     "**/.bsp": true,
     "**/.scala-build": true,
+    "**/.ammonite": true,
     "**/.classpath": true,
     "**/.mill": true,
     "**/out": true,
     "**/target": true,
+    "**/.bloop/**": true,
+    "**/.metals/**/*.{java,scala}": true,
     // Python
     "**/uv.lock": true,
     "**/.venv": true,
@@ -125,6 +127,7 @@
   "task.autoDetect": "off",
   /* Extensions */
   "extensions.ignoreRecommendations": true,
+  "extensions.autoUpdateDelay": 168,
   /* Remote */
   "remote.autoForwardPorts": false,
 
@@ -139,7 +142,7 @@
     "editor.wrappingStrategy": "advanced",
     "editor.renderWhitespace": "boundary"
   },
-  "[markdown]": {
+  "[markdown][mdx]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "markdown.preview.fontSize": 16,
