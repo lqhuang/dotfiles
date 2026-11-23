@@ -1,7 +1,7 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 
 # file_opener = "vscode"
-model = "gpt-6-astra"
+model = "gpt-6.2-astra"
 model_reasoning_effort = "medium"
 service_tier = "default"
 
@@ -40,4 +40,40 @@ trusted_hash = "sha256:defea43402fc8edba23234c694a1117cf80efc2da38968a40a1004cd9
 trusted_hash = "sha256:5aa5ec474e0bb546f207794993b37fdf7507e54a64e09216be164c5b7b42a197"
 
 [hooks.state."ponytail@ponytail:hooks/claude-codex-hooks.json:subagent_start:0:0"]
-trusted_hash = "sha256:1423b56c1322f96c8f74c51c1e7ae9a047b904c1fa43ee9165d462fd7a6e70ef"
+trusted_hash = "sha256:5b2c1dfa8c7ecc5e8881c8e69479f65d46ed727e0bc5b8e7b4553cee9e5c3daf"
+
+##
+
+[projects."/Users/lqhuang/Workspace/chaos-monkey-ai"]
+trust_level = "trusted"
+
+[projects."/Users/lqhuang/Workspace/alphainbay-lark-to-intacct"]
+trust_level = "trusted"
+
+[projects."/Users/lqhuang/Workspace/rules_scala"]
+trust_level = "trusted"
+
+[projects."/Users/lqhuang/Git/scala-native-http"]
+trust_level = "trusted"
+
+[projects."/Users/lqhuang/Git/homelab-automation"]
+trust_level = "trusted"
+
+[projects."/Users/lqhuang/Git/waku"]
+trust_level = "trusted"
+
+[projects."/Users/lqhuang/Git/scala-binding-foundation"]
+trust_level = "trusted"
+
+[projects."/Users/lqhuang/Git/redef"]
+trust_level = "trusted"
+
+[projects."/Users/lqhuang/Git/minimal-reproducible-issues"]
+trust_level = "trusted"
+
+[projects."/Users/lqhuang/Git/waku-page-and-router-same-time/references/waku"]
+trust_level = "trusted"
+
+[projects."/Users/lqhuang/Git/waku-page-and-router-same-time"]
+trust_level = "trusted"
+

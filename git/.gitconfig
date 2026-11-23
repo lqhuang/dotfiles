@@ -3,6 +3,7 @@
 # - [How to Improve Performance in Git: The Complete Guide](https://www.git-tower.com/blog/git-performance/)
 #
 # Serveral commented options have been default from git 2.0
+
 [user]
     name = Lanqing Huang
     email = lqhuang@outlook.com
@@ -41,13 +42,21 @@
     fetchJobs = 8
 
 [credential]
-    helper = store
-    # helper = osxkeychain
-    # helper = /usr/local/share/gcm-core/git-credential-manager
+	helper = cache --timeout 21600
+    #helper = store
+    #helper = osxkeychain
+
+    # Notes from hickford/git-credential-oauth README
+    #
+    # You may choose a different storage helper such as `osxkeychain`, `wincred` or `libsecret`,
+    # but git-credential-oauth must be configured last. This ensures Git checks for _stored_ credentials
+    # before generating _new_ credentials.
+	helper = oauth -device
 
 #
 # Define major function behaviors
 #
+
 [init]
     # defaultBranch = master
     defaultBranch = main
@@ -103,6 +112,35 @@
     required = true
 
 #
+# Conditional includes for different environments
+#
+
+# Include other git config files or Conditional Includes
+#
+# - `includeIf.<condition>.path`
+#
+# For example, include different git config files based on the repository location
+#
+# ```gitconfig
+# [include]
+#     path = .gitconfig.extra
+#
+# [includeIf "gitdir:C:"]
+#     path = ~/.gitconfig-windows
+#     # [credential]
+#     # helper = manager
+#
+# [includeIf "gitdir:/home"]
+#     path = ~/.gitconfig-linux
+# ```
+
+[includeIf "gitdir/i:~/Workspace/**"]
+    path = ~/.config/git/typef.gitconfig
+
+[includeIf "gitdir/i:/Users"]
+    path = ~/.config/git/darwin.gitconfig
+
+#
 # Non command line settings or external tools
 #
 
@@ -115,26 +153,9 @@
 [url "https://github.com/"]
     insteadOf = ssh://git@github.com/
 
+[credential "https://ampcode.com/"]
+	helper =
+	helper = !amp git-credential-helper
+
 # [credential "https://dev.azure.com"]
 #     useHttpPath = true
-
-#
-# Include other git config files or Conditional Includes
-#
-# - `includeIf.<condition>.path`
-
-# [include]
-#     path = .gitconfig.extra
-
-[includeIf "gitdir/i:~/Workspace/**"]
-    path = ~/.config/git/typef.gitconfig
-
-[includeIf "gitdir/i:/Users"]
-    path = ~/.config/git/darwin.gitconfig
-
-# [includeIf "gitdir:C:"]
-#     path = ~/.gitconfig-windows
-#     # [credential]
-#     # helper = manager
-# [includeIf "gitdir:/home"]
-#     path = ~/.gitconfig-linux
